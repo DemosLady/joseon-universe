@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>조선 힙합 유니버스 | 두 개의 삼부작, 스물네 곡의 이야기</title>
+<meta name="description" content="조선을 배경으로 한 국악 힙합 두 삼부작. 스물네 곡으로 먼저 만들어진 이야기 — 붓과 불의 이야기, 그리고 소금과 바다의 이야기.">
+<meta name="keywords" content="조선힙합, 국악힙합, 웹소설, 사극, 단편소설, 한국힙합, 퓨전국악, demosaii">
+<meta name="author" content="demosaii">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="조선 힙합 유니버스 | 두 개의 삼부작">
+<meta property="og:description" content="스물네 곡으로 먼저 만들어진 이야기. 여섯 장의 앨범이 하나의 이야기를 이룹니다.">
+<meta property="og:site_name" content="조선 힙합 유니버스 · demosaii">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="COVER_IMAGE_URL_HERE">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Song+Myung&family=Nanum+Myeongjo:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0d1220;
+    --ink-deep:#070b14;
+    --hanji:#efe8d8;
+    --moon:#cfd6e4;
+    --seal:#8c2f2a;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--ink);
+    background-image:radial-gradient(120% 80% at 50% -10%, #1b2436 0%, var(--ink) 55%, var(--ink-deep) 100%);
+    color:var(--moon);
+    font-family:"Nanum Myeongjo", serif;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    max-width:780px;
+    margin:0 auto;
+    padding:110px 24px 0;
+    text-align:center;
+  }
+  .eyebrow{
+    font-family:"Gowun Dodum", sans-serif;
+    font-size:11.5px;
+    letter-spacing:.44em;
+    text-indent:.44em;
+    color:#7d8ba6;
+    margin:0 0 38px;
+  }
+  .hero h1{
+    font-family:"Song Myung", serif;
+    font-size:clamp(38px,8vw,68px);
+    font-weight:400;
+    letter-spacing:.1em;
+    text-indent:.1em;
+    line-height:1.3;
+    margin:0;
+    color:#f2f4f8;
+  }
+  .hero .sub{
+    font-family:"Gowun Dodum", sans-serif;
+    font-size:12px;
+    letter-spacing:.28em;
+    text-indent:.28em;
+    color:#6f7d96;
+    margin:26px 0 0;
+  }
+
+  /* ---------- motto ---------- */
+  .motto{
+    max-width:620px;
+    margin:64px auto 0;
+    padding:0 24px;
+    text-align:center;
+    font-family:"Song Myung", serif;
+    font-size:clamp(16px,3.4vw,19px);
+    line-height:2.3;
+    color:#aab6cb;
+    letter-spacing:.05em;
+    word-break:keep-all;
+  }
+  .motto span{ display:block; }
+  .motto span + span{ color:#7d8ba6; }
+
+  /* ---------- intro ---------- */
+  .intro{
+    max-width:600px;
+    margin:60px auto 0;
+    padding:0 24px;
+    text-align:center;
+    font-family:"Gowun Dodum", sans-serif;
+    font-size:14.5px;
+    line-height:2.15;
+    color:#8b98b0;
+    word-break:keep-all;
+  }
+  .intro p{ margin:0 0 14px; }
+  .intro b{ color:#dfe4ee; font-weight:400; }
+
+  /* ---------- chapters ---------- */
+  .chapters{
+    max-width:700px;
+    margin:86px auto 0;
+    padding:0 24px;
+  }
+  .part{
+    font-family:"Gowun Dodum", sans-serif;
+    font-size:11px;
+    letter-spacing:.4em;
+    text-indent:.4em;
+    color:#66748c;
+    margin:0 0 6px;
+    text-align:center;
+  }
+  .part-kr{
+    font-family:"Song Myung", serif;
+    font-size:17px;
+    letter-spacing:.24em;
+    text-indent:.24em;
+    color:#c3ccdc;
+    text-align:center;
+    margin:0 0 26px;
+  }
+  .part-kr + ol{ margin-bottom:64px; }
+
+  ol.list{
+    list-style:none;
+    margin:0;
+    padding:0;
+    border-top:1px solid rgba(143,158,186,.14);
+  }
+  ol.list li{ border-bottom:1px solid rgba(143,158,186,.14); }
+
+  ol.list a,
+  ol.list .soon{
+    display:flex;
+    align-items:baseline;
+    gap:18px;
+    padding:22px 6px;
+    text-decoration:none;
+    color:inherit;
+    transition:background .25s ease, padding-left .25s ease;
+  }
+  ol.list a:hover,
+  ol.list a:focus{
+    background:rgba(207,214,228,.05);
+    padding-left:16px;
+  }
+  .no{
+    font-family:"Gowun Dodum", sans-serif;
+    font-size:10.5px;
+    letter-spacing:.2em;
+    color:#5d6a80;
+    white-space:nowrap;
+    padding-top:4px;
+  }
+  .t{ flex:1; min-width:0; }
+  .t .kr{
+    font-family:"Song Myung", serif;
+    font-size:21px;
+    letter-spacing:.06em;
+    color:#e6ebf4;
+    display:block;
+    margin-bottom:7px;
+  }
+  .t .desc{
+    font-family:"Nanum Myeongjo", serif;
+    font-size:14px;
+    line-height:1.85;
+    color:#7f8da5;
+    display:block;
+    word-break:keep-all;
+  }
+  .go{
+    font-family:"Gowun Dodum", sans-serif;
+    font-size:11px;
+    letter-spacing:.16em;
+    color:#8f9db5;
+    white-space:nowrap;
+    padding-top:6px;
+  }
+  ol.list a:hover .go{ color:var(--moon); }
+
+  .soon{ opacity:.4; cursor:default; }
+  .soon .go{ color:#66748c; }
+
+  /* ---------- listen ---------- */
+  .listen{
+    max-width:700px;
+    margin:34px auto 0;
+    padding:52px 24px 0;
+    border-top:1px solid rgba(143,158,186,.14);
+    text-align:center;
+  }
+  .listen h2{
+    font-family:"Song Myung", serif;
+    font-weight:400;
+    font-size:19px;
+    letter-spacing:.18em;
+    text-indent:.18em;
+    color:#dfe4ee;
+    margin:0 0 14px;
+  }
+  .listen p{
+    font-family:"Gowun Dodum", sans-serif;
+    font-size:13.5px;
+    line-height:2;
+    color:#8492ab;
+    margin:0 0 26px;
+    word-break:keep-all;
+  }
+  .btn{
+    display:inline-block;
+    font-family:"Gowun Dodum", sans-serif;
+    font-size:13px;
+    letter-spacing:.14em;
+    color:#e6ebf4;
+    text-decoration:none;
+    border:1px solid rgba(207,214,228,.32);
+    padding:14px 30px;
+    transition:border-color .25s ease, background .25s ease;
+  }
+  .btn:hover, .btn:focus{
+    border-color:var(--moon);
+    background:rgba(207,214,228,.06);
+  }
+
+  /* ---------- about ---------- */
+  .about{
+    max-width:640px;
+    margin:90px auto 0;
+    padding:44px 24px 130px;
+    border-top:1px solid rgba(143,158,186,.14);
+    font-family:"Gowun Dodum", sans-serif;
+    font-size:13.5px;
+    line-height:2.05;
+    color:#8492ab;
+    text-align:center;
+    word-break:keep-all;
+  }
+  .about p{ margin:0 0 16px; }
+  .about-name{
+    font-family:"Song Myung", serif;
+    font-size:19px;
+    letter-spacing:.2em;
+    text-indent:.2em;
+    color:#dfe4ee;
+  }
+  .about-tags{
+    font-size:11.5px;
+    color:#5d6a80;
+    letter-spacing:.04em;
+  }
+
+  a:focus-visible{ outline:2px solid var(--moon); outline-offset:3px; }
+
+  @media (max-width:640px){
+    .hero{ padding-top:76px; }
+    .chapters{ margin-top:64px; }
+    .t .kr{ font-size:19px; }
+    .go{ display:none; }
+    ol.list a, ol.list .soon{ gap:14px; padding:20px 4px; }
+  }
+
+  @media (prefers-reduced-motion:no-preference){
+    .hero, .motto, .intro, .chapters{ animation:rise .9s ease-out both; }
+    .motto{ animation-delay:.1s; }
+    .intro{ animation-delay:.18s; }
+    .chapters{ animation-delay:.26s; }
+    @keyframes rise{
+      from{ opacity:0; transform:translateY(14px); }
+      to{ opacity:1; transform:none; }
+    }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <p class="eyebrow">DEMOSAII</p>
+  <h1>조선 힙합<br>유니버스</h1>
+  <p class="sub">THE JOSEON HIP-HOP UNIVERSE</p>
+</header>
+
+<p class="motto">
+  <span>붓은 꺾여도 먹은 마르지 않는다</span>
+  <span>불은 태우고, 소금은 지킨다</span>
+</p>
+
+<section class="intro">
+  <p>이것은 <b>스물네 곡으로 먼저 만들어진 이야기</b>입니다.</p>
+  <p>조선을 배경으로 한 국악 힙합 두 개의 삼부작 — 붓과 불의 이야기, 그리고 소금과 바다의 이야기. 여섯 장의 앨범이 하나의 이야기를 이룹니다.</p>
+</section>
+
+<nav class="chapters" aria-label="전체 장 목록">
+
+  <p class="part">TRILOGY ONE</p>
+  <p class="part-kr">불의 삼부작</p>
+  <ol class="list">
+    <li>
+      <a href="tistory_ch1_blood_and_fog.html">
+        <span class="no">제 1 장</span>
+        <span class="t">
+          <span class="kr">피와 안개</span>
+          <span class="desc">기록에서 지워진 여자와, 그 여자를 잃은 왕</span>
+        </span>
+        <span class="go">읽기 →</span>
+      </a>
+    </li>
+    <li>
+      <a href="tistory_ch2_ink_and_embers.html">
+        <span class="no">제 2 장</span>
+        <span class="t">
+          <span class="kr">먹과 불씨</span>
+          <span class="desc">한 줄의 글이 노래가 되고, 노래가 함성이 되던 밤</span>
+        </span>
+        <span class="go">읽기 →</span>
+      </a>
+    </li>
+    <li>
+      <a href="tistory_ch3_ash_and_seed.html">
+        <span class="no">제 3 장</span>
+        <span class="t">
+          <span class="kr">재와 씨앗</span>
+          <span class="desc">불이 꺼진 자리, 그리고 마루 밑의 한 장</span>
+        </span>
+        <span class="go">읽기 →</span>
+      </a>
+    </li>
+  </ol>
+
+  <p class="part">TRILOGY TWO</p>
+  <p class="part-kr">바다 삼부작</p>
+  <ol class="list">
+    <li>
+      <div class="soon">
+        <span class="no">제 4 장</span>
+        <span class="t">
+          <span class="kr">소금과 파도</span>
+          <span class="desc">육지가 끝나는 곳에서 네 사람이 모이다</span>
+        </span>
+        <span class="go">준비 중</span>
+      </div>
+    </li>
+    <li>
+      <div class="soon">
+        <span class="no">제 5 장</span>
+        <span class="t">
+          <span class="kr">바다와 뼈</span>
+          <span class="desc">폭풍이 지나가고, 가라앉은 진실이 떠오르다</span>
+        </span>
+        <span class="go">준비 중</span>
+      </div>
+    </li>
+    <li>
+      <div class="soon">
+        <span class="no">제 6 장</span>
+        <span class="t">
+          <span class="kr">섬과 별</span>
+          <span class="desc">각자가 자기의 답을 찾는다</span>
+        </span>
+        <span class="go">준비 중</span>
+      </div>
+    </li>
+  </ol>
+
+</nav>
+
+<section class="listen">
+  <h2>먼저 음악이 있었습니다</h2>
+  <p>여섯 장의 앨범, 스물네 곡.<br>국악 힙합 — 거문고, 가야금, 해금, 대금, 장구가 붐뱁 위에 만납니다.</p>
+  <a class="btn" href="https://soundcloud.com/demosaii" target="_blank" rel="noopener">전곡 듣기 — SoundCloud →</a>
+</section>
+
+<footer class="about">
+  <p class="about-name">demosaii</p>
+  <p>조선 시대를 배경으로 국악과 힙합을 섞어 이야기를 만듭니다. 가사는 전곡 한국어이고, 이야기는 음악에서 먼저 태어났습니다.</p>
+  <p class="about-tags">#조선힙합 #국악힙합 #웹소설 #사극 #한국힙합 #퓨전국악 #demosaii</p>
+</footer>
+
+</body>
+</html>
