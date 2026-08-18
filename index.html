@@ -26,12 +26,16 @@
     --hanji:#efe8d8;
     --moon:#cfd6e4;
     --seal:#8c2f2a;
+    --fire:#a8402f;      /* trilogy one */
+    --sea:#2f7d8c;       /* trilogy two */
   }
   *{box-sizing:border-box;}
   body{
     margin:0;
     background:var(--ink);
-    background-image:radial-gradient(120% 80% at 50% -10%, #1b2436 0%, var(--ink) 55%, var(--ink-deep) 100%);
+    background-image:
+      radial-gradient(circle at 50% 300px, rgba(214,224,240,.10) 0 190px, rgba(214,224,240,.035) 191px 230px, transparent 231px),
+      radial-gradient(120% 80% at 50% -10%, #1b2436 0%, var(--ink) 55%, var(--ink-deep) 100%);
     color:var(--moon);
     font-family:"Nanum Myeongjo", serif;
     -webkit-font-smoothing:antialiased;
@@ -140,12 +144,55 @@
   ol.list a,
   ol.list .soon{
     display:flex;
-    align-items:baseline;
-    gap:18px;
-    padding:22px 6px;
+    align-items:center;
+    gap:20px;
+    padding:18px 6px;
     text-decoration:none;
     color:inherit;
     transition:background .25s ease, padding-left .25s ease;
+  }
+
+  /* cover thumbnail */
+  .cover{
+    width:78px;
+    height:78px;
+    flex:0 0 78px;
+    object-fit:cover;
+    background:#161d2c;
+    filter:saturate(.55) brightness(.82);
+    transition:filter .35s ease, transform .35s ease;
+  }
+  ol.list a:hover .cover,
+  ol.list a:focus .cover{
+    filter:saturate(1) brightness(1);
+    transform:scale(1.03);
+  }
+  .soon .cover{ filter:saturate(.15) brightness(.6); }
+
+  /* the two trilogies carry their own colour */
+  .fire .part{ color:#a8695c; }
+  .fire .part-kr{ color:#dcbcb2; }
+  .fire ol.list a:hover, .fire ol.list a:focus{ background:rgba(168,64,47,.10); }
+  .fire .no{ color:#9c6559; }
+  .fire ol.list li{ border-bottom-color:rgba(168,64,47,.20); }
+  .fire ol.list{ border-top-color:rgba(168,64,47,.20); }
+
+  .sea .part{ color:#6fa3ad; }
+  .sea .part-kr{ color:#b3d2d8; }
+  .sea ol.list a:hover, .sea ol.list a:focus{ background:rgba(47,125,140,.10); }
+  .sea .no{ color:#5e8f99; }
+  .sea ol.list li{ border-bottom-color:rgba(47,125,140,.20); }
+  .sea ol.list{ border-top-color:rgba(47,125,140,.20); }
+
+  /* thin rule under each trilogy heading */
+  .part-kr::after{
+    content:"";
+    display:block;
+    width:34px;
+    height:1px;
+    margin:16px auto 0;
+    background:currentColor;
+    opacity:.5;
   }
   ol.list a:hover,
   ol.list a:focus{
@@ -265,7 +312,8 @@
     .chapters{ margin-top:64px; }
     .t .kr{ font-size:19px; }
     .go{ display:none; }
-    ol.list a, ol.list .soon{ gap:14px; padding:20px 4px; }
+    ol.list a, ol.list .soon{ gap:14px; padding:16px 4px; }
+    .cover{ width:62px; height:62px; flex-basis:62px; }
   }
 
   @media (prefers-reduced-motion:no-preference){
@@ -300,11 +348,13 @@
 
 <nav class="chapters" aria-label="전체 장 목록">
 
+  <div class="fire">
   <p class="part">TRILOGY ONE</p>
   <p class="part-kr">불의 삼부작</p>
   <ol class="list">
     <li>
       <a href="tistory_ch1_blood_and_fog.html">
+        <img class="cover" src="covers/ch1.jpg" alt="피와 안개 앨범 커버" loading="lazy">
         <span class="no">제 1 장</span>
         <span class="t">
           <span class="kr">피와 안개</span>
@@ -315,6 +365,7 @@
     </li>
     <li>
       <a href="tistory_ch2_ink_and_embers.html">
+        <img class="cover" src="covers/ch2.jpg" alt="먹과 불씨 앨범 커버" loading="lazy">
         <span class="no">제 2 장</span>
         <span class="t">
           <span class="kr">먹과 불씨</span>
@@ -325,6 +376,7 @@
     </li>
     <li>
       <a href="tistory_ch3_ash_and_seed.html">
+        <img class="cover" src="covers/ch3.jpg" alt="재와 씨앗 앨범 커버" loading="lazy">
         <span class="no">제 3 장</span>
         <span class="t">
           <span class="kr">재와 씨앗</span>
@@ -335,11 +387,15 @@
     </li>
   </ol>
 
+  </div>
+
+  <div class="sea">
   <p class="part">TRILOGY TWO</p>
   <p class="part-kr">바다 삼부작</p>
   <ol class="list">
     <li>
       <div class="soon">
+        <img class="cover" src="covers/ch4.jpg" alt="소금과 파도 앨범 커버" loading="lazy">
         <span class="no">제 4 장</span>
         <span class="t">
           <span class="kr">소금과 파도</span>
@@ -350,6 +406,7 @@
     </li>
     <li>
       <div class="soon">
+        <img class="cover" src="covers/ch5.jpg" alt="바다와 뼈 앨범 커버" loading="lazy">
         <span class="no">제 5 장</span>
         <span class="t">
           <span class="kr">바다와 뼈</span>
@@ -360,6 +417,7 @@
     </li>
     <li>
       <div class="soon">
+        <img class="cover" src="covers/ch6.jpg" alt="섬과 별 앨범 커버" loading="lazy">
         <span class="no">제 6 장</span>
         <span class="t">
           <span class="kr">섬과 별</span>
@@ -369,6 +427,7 @@
       </div>
     </li>
   </ol>
+  </div>
 
 </nav>
 
