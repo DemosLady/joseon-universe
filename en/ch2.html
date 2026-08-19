@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z5RGZRN1YF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Z5RGZRN1YF');
+  gtag('config', 'G-FS3RY08FBH');
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ink and Embers — Chapter Two | The Joseon Hip-Hop Universe</title>
+<meta name="description" content="Chapter Two of the Joseon Hip-Hop Universe. Ink and Embers — the night one written line became a song, and the song became a roar.">
+<meta name="keywords" content="Joseon hip-hop, gugak hip-hop, Korean traditional music, historical fiction, Korean history, demosaii">
+<meta name="author" content="demosaii">
+
+<!-- Link previews (Open Graph) -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ink and Embers — Chapter Two | The Joseon Hip-Hop Universe">
+<meta property="og:description" content="They can seize paper. They cannot seize a sound. The year a scholar's writing became a song.">
+<meta property="og:site_name" content="The Joseon Hip-Hop Universe · demosaii">
+<meta property="og:locale" content="en_US">
+<!-- Album cover image URL goes here -->
+<meta property="og:image" content="COVER_IMAGE_URL_HERE">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Song+Myung&family=Nanum+Myeongjo:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0d1220;          /* night ground */
+    --ink-deep:#070b14;
+    --hanji:#efe8d8;        /* paper */
+    --hanji-edge:#e2d8c2;
+    --brush:#1a1a1a;        /* body text */
+    --brush-soft:#4a4640;
+    --seal:#8c2f2a;         /* the one red: seal / blood */
+    --moon:#cfd6e4;
+  }
+
+  *{box-sizing:border-box;}
+
+  body{
+    margin:0;
+    background:var(--ink);
+    background-image:
+      radial-gradient(120% 80% at 50% -10%, #1b2436 0%, var(--ink) 55%, var(--ink-deep) 100%);
+    color:var(--moon);
+    font-family:"Nanum Myeongjo", serif;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    max-width:760px;
+    margin:0 auto;
+    padding:96px 24px 72px;
+    text-align:center;
+  }
+  .eyebrow{
+    font-family:"Gowun Dodum", sans-serif;
+    font-size:12px;
+    letter-spacing:.42em;
+    text-indent:.42em;
+    color:#7d8ba6;
+    margin:0 0 34px;
+  }
+  .hero h1{
+    font-family:"Song Myung", serif;
+    font-size:clamp(46px,10vw,84px);
+    font-weight:400;
+    letter-spacing:.12em;
+    text-indent:.12em;
+    margin:0;
+    color:#f2f4f8;
+    line-height:1.15;
+  }
+  .hero .en{
+    font-family:"Gowun Dodum", sans-serif;
+    font-size:12px;
+    letter-spacing:.3em;
+    text-indent:.3em;
+    color:#6f7d96;
+    margin:22px 0 0;
+  }
+  .chapter-mark{
+    margin:44px auto 0;
+    width:1px;
+    height:64px;
+    background:linear-gradient(to bottom, transparent, #6f7d96 30%, transparent);
+  }
+  .chapter-no{
+    font-family:"Song Myung", serif;
+    font-size:15px;
+    letter-spacing:.3em;
+    text-indent:.3em;
+    color:#8e9ab1;
+    margin:18px 0 0;
+  }
+
+  /* ---------- paper ---------- */
+  .paper{
+    max-width:660px;
+    margin:0 auto 88px;
+    background:var(--hanji);
+    background-image:
+      repeating-linear-gradient(0deg, rgba(0,0,0,.012) 0 1px, transparent 1px 3px),
+      radial-gradient(90% 60% at 30% 10%, #f5efe1 0%, var(--hanji) 60%),
+      radial-gradient(70% 50% at 80% 90%, #e8dfcb 0%, transparent 70%);
+    color:var(--brush);
+    padding:76px 62px 84px;
+    box-shadow:0 40px 90px rgba(0,0,0,.55);
+    position:relative;
+  }
+  .paper::before,
+  .paper::after{
+    content:"";
+    position:absolute;
+    left:0; right:0;
+    height:10px;
+    background:var(--hanji-edge);
+    -webkit-mask-image:repeating-linear-gradient(90deg,#000 0 7px,transparent 7px 9px);
+            mask-image:repeating-linear-gradient(90deg,#000 0 7px,transparent 7px 9px);
+    opacity:.55;
+  }
+  .paper::before{top:-6px;}
+  .paper::after{bottom:-6px;}
+
+  .paper p{
+    font-size:17.5px;
+    line-height:2.15;
+    letter-spacing:.005em;
+    margin:0 0 1.55em;
+    word-break:keep-all;
+  }
+  .paper p.lead{
+    font-size:20px;
+    line-height:2;
+  }
+  .paper .quiet{ color:var(--brush-soft); }
+
+  /* dialogue lines sit slightly apart */
+  .paper p.say{
+    margin-left:.2em;
+    color:#26262a;
+  }
+
+  /* ---------- section marks ---------- */
+  .mark{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    margin:56px 0 40px;
+  }
+  .mark span{
+    font-family:"Song Myung", serif;
+    font-size:14px;
+    letter-spacing:.34em;
+    text-indent:.34em;
+    color:#8a8070;
+    white-space:nowrap;
+  }
+  .mark i{
+    display:block;
+    height:1px;
+    flex:1;
+    background:linear-gradient(to right, rgba(60,52,40,.42), rgba(60,52,40,0));
+  }
+  .mark.first{ margin-top:0; }
+
+  /* ---------- the one red ---------- */
+  .seal-line{
+    margin:64px 0 0;
+    text-align:center;
+    font-family:"Song Myung", serif;
+    font-size:19px;
+    line-height:2.1;
+    color:var(--seal);
+    letter-spacing:.06em;
+  }
+
+  /* ---------- listen block ---------- */
+  .listen{
+    max-width:660px;
+    margin:0 auto;
+    padding:0 24px 110px;
+    text-align:center;
+  }
+  .listen h2{
+    font-family:"Song Myung", serif;
+    font-weight:400;
+    font-size:22px;
+    letter-spacing:.14em;
+    text-indent:.14em;
+    color:#dfe4ee;
+    margin:0 0 12px;
+  }
+  .listen .note{
+    font-family:"Gowun Dodum", sans-serif;
+    font-size:13.5px;
+    line-height:2;
+    color:#8492ab;
+    margin:0 0 34px;
+  }
+  .player{
+    border-radius:2px;
+    overflow:hidden;
+    box-shadow:0 24px 60px rgba(0,0,0,.5);
+  }
+  .player iframe{ display:block; }
+  .credit{
+    font-family:"Gowun Dodum", sans-serif;
+    font-size:11px;
+    color:#5d6a80;
+    margin:14px 0 0;
+    letter-spacing:.04em;
+  }
+  .credit a{ color:#7b89a2; text-decoration:none; }
+  .credit a:hover, .credit a:focus{ color:#cfd6e4; text-decoration:underline; }
+
+  .next{
+    max-width:660px;
+    margin:0 auto;
+    padding:0 24px 120px;
+    text-align:center;
+    font-family:"Song Myung", serif;
+    font-size:15px;
+    letter-spacing:.22em;
+    text-indent:.22em;
+    color:#6f7d96;
+  }
+  .next b{ font-weight:400; color:#aab6cb; }
+
+  /* ---------- intro ---------- */
+  .intro{
+    max-width:620px;
+    margin:0 auto 56px;
+    padding:0 24px;
+    text-align:center;
+    font-family:"Gowun Dodum", sans-serif;
+    font-size:14.5px;
+    line-height:2.1;
+    color:#8b98b0;
+    word-break:keep-all;
+  }
+  .intro p{ margin:0 0 12px; }
+  .intro b{ color:#dfe4ee; font-weight:400; }
+
+  /* ---------- chapter map ---------- */
+  .map{
+    max-width:660px;
+    margin:0 auto;
+    padding:0 24px 90px;
+  }
+  .map h2{
+    font-family:"Song Myung", serif;
+    font-weight:400;
+    font-size:20px;
+    letter-spacing:.16em;
+    text-indent:.16em;
+    color:#dfe4ee;
+    text-align:center;
+    margin:0 0 40px;
+  }
+  .map-part{
+    font-family:"Gowun Dodum", sans-serif;
+    font-size:11.5px;
+    letter-spacing:.34em;
+    text-indent:.34em;
+    color:#6f7d96;
+    margin:30px 0 14px;
+  }
+  .map ol{
+    list-style:none;
+    margin:0;
+    padding:0;
+    border-top:1px solid rgba(143,158,186,.16);
+  }
+  .map li{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    padding:15px 4px;
+    border-bottom:1px solid rgba(143,158,186,.16);
+    font-family:"Nanum Myeongjo", serif;
+    font-size:16px;
+    color:#aab6cb;
+    word-break:keep-all;
+  }
+  .map li span{
+    font-family:"Gowun Dodum", sans-serif;
+    font-size:11px;
+    letter-spacing:.18em;
+    color:#66748c;
+    white-space:nowrap;
+  }
+  .map li em{
+    font-style:normal;
+    font-size:13.5px;
+    color:#6f7d96;
+  }
+  .map li.here{ color:#f2f4f8; }
+  .map li.here span{ color:var(--seal); }
+  .map li.here::after{
+    content:"READING NOW";
+    margin-left:auto;
+    font-family:"Gowun Dodum", sans-serif;
+    font-size:10.5px;
+    letter-spacing:.16em;
+    color:var(--seal);
+    white-space:nowrap;
+  }
+  .next-line{
+    margin:36px 0 0;
+    text-align:center;
+    font-family:"Song Myung", serif;
+    font-size:15px;
+    letter-spacing:.22em;
+    text-indent:.22em;
+    color:#6f7d96;
+  }
+  .next-line b{ font-weight:400; color:#aab6cb; }
+
+  /* ---------- about ---------- */
+  .about{
+    max-width:660px;
+    margin:0 auto;
+    padding:44px 24px 120px;
+    border-top:1px solid rgba(143,158,186,.16);
+    font-family:"Gowun Dodum", sans-serif;
+    font-size:13.5px;
+    line-height:2.05;
+    color:#8492ab;
+    text-align:center;
+    word-break:keep-all;
+  }
+  .about p{ margin:0 0 16px; }
+  .about-name{
+    font-family:"Song Myung", serif;
+    font-size:19px;
+    letter-spacing:.2em;
+    text-indent:.2em;
+    color:#dfe4ee;
+  }
+  .about-links a{
+    color:#cfd6e4;
+    text-decoration:none;
+    border-bottom:1px solid rgba(207,214,228,.35);
+    padding-bottom:2px;
+  }
+  .about-links a:hover, .about-links a:focus{ color:#fff; border-color:#fff; }
+  .about-tags{
+    font-size:11.5px;
+    color:#5d6a80;
+    letter-spacing:.04em;
+  }
+
+  a:focus-visible{ outline:2px solid var(--moon); outline-offset:3px; }
+
+  @media (max-width:640px){
+    .hero{ padding:64px 20px 52px; }
+    .paper{ padding:52px 26px 60px; margin-bottom:64px; }
+    .paper p{ font-size:16.5px; line-height:2.05; }
+    .paper p.lead{ font-size:18px; }
+  }
+
+  @media (prefers-reduced-motion:no-preference){
+    .paper, .hero{ animation:rise .9s ease-out both; }
+    .paper{ animation-delay:.15s; }
+    @keyframes rise{
+      from{ opacity:0; transform:translateY(14px); }
+      to{ opacity:1; transform:none; }
+    }
+  }
+
+  /* ---------- top bar: language switch ---------- */
+  .topbar{
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+    max-width:660px; margin:0 auto; padding:24px 24px 0;
+    font-family:"Gowun Dodum", sans-serif; font-size:12px;
+  }
+  .topbar .home{ color:#8492ab; text-decoration:none; letter-spacing:.1em; }
+  .topbar .home:hover{ color:#cfd6e4; }
+  .langwrap{ position:relative; }
+  .langbtn{
+    background:none; border:1px solid rgba(143,158,186,.3); color:#aab6cb;
+    font-family:"Gowun Dodum", sans-serif; font-size:11.5px; letter-spacing:.12em;
+    padding:7px 14px; cursor:pointer; display:flex; align-items:center; gap:8px;
+    transition:border-color .2s ease, color .2s ease;
+  }
+  .langbtn:hover{ border-color:rgba(207,214,228,.6); color:#e6ebf4; }
+  .langbtn .caret{ font-size:9px; opacity:.7; }
+  .langmenu{
+    position:absolute; top:calc(100% + 6px); inset-inline-end:0; min-width:132px;
+    background:#141b2a; border:1px solid rgba(143,158,186,.24);
+    display:none; z-index:20;
+  }
+  .langmenu.open{ display:block; }
+  .langmenu a{
+    display:block; padding:11px 16px; color:#aab6cb; text-decoration:none;
+    font-family:"Gowun Dodum", sans-serif; font-size:12px; letter-spacing:.06em;
+    border-bottom:1px solid rgba(143,158,186,.14);
+  }
+  .langmenu a:last-child{ border-bottom:none; }
+  .langmenu a:hover, .langmenu a:focus{ background:rgba(207,214,228,.08); color:#fff; }
+  .langmenu a[aria-current="true"]{ color:#fff; }
+  .langmenu a[aria-current="true"]::before{ content:"· "; color:var(--seal); }
+
+  /* ---------- lyrics link inside the listen block ---------- */
+  .lyrics-link{
+    display:inline-block; margin:24px 0 0;
+    font-family:"Gowun Dodum", sans-serif; font-size:13px; letter-spacing:.1em;
+    color:#cfd6e4; text-decoration:none;
+    border-bottom:1px solid rgba(207,214,228,.32); padding-bottom:3px;
+  }
+  .lyrics-link:hover, .lyrics-link:focus{ color:#fff; border-color:#fff; }
+
+  /* ---------- next chapter button ---------- */
+  .nextnav{
+    max-width:660px; margin:0 auto; padding:0 24px 30px;
+  }
+  .nextnav a{
+    display:flex; align-items:center; justify-content:space-between; gap:20px;
+    text-decoration:none; color:inherit;
+    border:1px solid rgba(143,158,186,.24);
+    padding:26px 28px;
+    transition:border-color .25s ease, background .25s ease;
+  }
+  .nextnav a:hover, .nextnav a:focus{
+    border-color:rgba(207,214,228,.55);
+    background:rgba(207,214,228,.05);
+  }
+  .nextnav .lbl{
+    font-family:"Gowun Dodum", sans-serif; font-size:10.5px; letter-spacing:.34em;
+    color:#66748c; display:block; margin-bottom:9px;
+  }
+  .nextnav .ttl{
+    font-family:"Song Myung", serif; font-size:23px; letter-spacing:.05em; color:#e6ebf4;
+    display:block;
+  }
+  .nextnav .dsc{
+    font-family:"Nanum Myeongjo", serif; font-size:13.5px; color:#7f8da5;
+    display:block; margin-top:8px;
+  }
+  .nextnav .arrow{
+    font-family:"Gowun Dodum", sans-serif; font-size:20px; color:#8f9db5; flex:0 0 auto;
+  }
+  .nextnav a:hover .arrow{ color:#cfd6e4; }
+  .nextnav.done a{ border-style:dashed; }
+
+  @media (max-width:640px){
+    .nextnav a{ padding:20px; }
+    .nextnav .ttl{ font-size:20px; }
+    .nextnav .arrow{ display:none; }
+  }
+
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="home" href="index.html">← Contents</a>
+  <div class="langwrap">
+    <button class="langbtn" type="button" aria-haspopup="true" aria-expanded="false">English<span class="caret">▾</span></button>
+    <div class="langmenu" role="menu">
+      <a href="../tistory_ch2_ink_and_embers.html" role="menuitem" aria-current="false">한국어</a>
+      <a href="ch2.html" role="menuitem" aria-current="true">English</a>
+    </div>
+  </div>
+</div>
+
+
+<header class="hero">
+  <p class="eyebrow">THE JOSEON HIP-HOP UNIVERSE</p>
+  <h1>Ink and Embers</h1>
+  <p class="en">먹과 불씨</p>
+  <div class="chapter-mark" aria-hidden="true"></div>
+  <p class="chapter-no">CHAPTER TWO</p>
+</header>
+
+<section class="intro">
+  <p>This is <b>a story that was written as twenty-four songs first.</b></p>
+  <p>Two trilogies of Korean gugak hip-hop set in the Joseon era — one of brush and fire, one of salt and sea. Six albums, one story.</p>
+</section>
+
+<article class="paper">
+
+  <div class="mark first"><span>ONE</span><i></i></div>
+
+  <p class="lead">Yun-je submitted his petition in the third month of the year he turned twenty-nine.</p>
+
+  <p>The night before, he rewrote it three times. After the third draft he sat for a long while without putting out the candle — not from hesitation, but because he liked the sentence. He had a habit of staring at a sentence for a long time when it pleased him.</p>
+
+  <p>At dawn he put on his official robes and placed the paper inside his coat.</p>
+
+  <p>The content was not complicated. Over the past ten years there had been three purges, and the charge in all three had been written in exactly the same words; and if the same sentence appears three times, it means the sentence is not a fact but a form. Yun-je set it out point by point. He did not include a single line of feeling. <span class="quiet">He believed that would protect him.</span></p>
+
+  <p>Three days later he was in the state tribunal's prison.</p>
+
+  <p>During the interrogation he was asked the same question three times. Who put you up to it. Who wrote it with you. Who did you show the paper to. Three times he gave the same answer.</p>
+
+  <p class="say">"No one put me up to it."</p>
+
+  <p>The interrogation ended and the sentence came down. He was spared beheading. In its place — Jeju.</p>
+
+  <p>On the day he was led out in chains, someone spat at him as he came from the cell. It was a man who, until three days earlier, had called him a loyal servant of the throne.</p>
+
+  <div class="mark"><span>TWO</span><i></i></div>
+
+  <p>The wind on Jeju is not like the wind on the mainland.</p>
+
+  <p>Mainland wind passes. Jeju wind stays. Sit in a one-room thatched house and it comes in through the cracks in the wall and keeps you company all night. His first winter Yun-je could not sleep because of that sound. His second winter he could not sleep without it.</p>
+
+  <p>By day he passed for a fisherman. He learned to cast a net, and where he did not learn he pretended to be learning. There was a law forbidding exiles to work, but to enforce it someone would have had to feed them, and no one did, so no one mentioned the law.</p>
+
+  <p>At night he took up a brush.</p>
+
+  <p>Paper was precious. So at first he wrote on the dirt floor. When he had finished he rubbed it out with his foot. One day a village boy saw this and asked.</p>
+
+  <p class="say">"Why write it if you're only going to erase it?"</p>
+
+  <p>Yun-je answered.</p>
+
+  <p class="say">"I'm not writing something to erase. I'm writing something to be remembered."</p>
+
+  <p>The following year that boy brought him a bundle of paper. When asked where he had got it, he did not answer.</p>
+
+  <div class="mark"><span>THREE</span><i></i></div>
+
+  <p>In the spring of the third year, a young man knelt in front of the house.</p>
+
+  <p class="say">"Master, your writing has reached the capital."</p>
+
+  <p>Yun-je did not understand. His writing had never left this island.</p>
+
+  <p class="say">"It's going around the marketplace as a song. A clown sings it, and the words are your sentences."</p>
+
+  <p class="say">"My sentences, you say."</p>
+
+  <p class="say">"I learned them by heart. 'If the same charge is written three times, it is not a crime — it is a form.'"</p>
+
+  <p>Yun-je was silent for a long time.</p>
+
+  <p>He had thought what he wrote existed on paper. Paper, when burned, is gone. So he had lived ten years believing his writing would one day disappear.</p>
+
+  <p>And it had become a song.</p>
+
+  <p class="seal-line">A song cannot be burned.</p>
+
+  <div class="mark"><span>FOUR</span><i></i></div>
+
+  <p>Tal-swe had no family name.</p>
+
+  <p>It was not the custom to give family names to the lowborn, so he lived his whole life with a single childhood name, and even that people shortened as they pleased. In the marketplace they called him Tal-swe — because he came out in a mask.</p>
+
+  <p>When he laid out his mat at the Jongno crossroads, people gathered. What he did was always the same. First he came out in a nobleman's mask and walked with his hands clasped behind his back. Everyone recognised that walk. Then he caught his foot on his own stick and fell — and even falling, he did not unclasp his hands. People laughed. <span class="quiet">What exactly they were laughing at, only the ones laughing knew.</span></p>
+
+  <p>The city patrol saw it many times. They could not arrest him. Tal-swe had never once said a name. Not this lord, not that lord. He had only walked with his hands behind his back.</p>
+
+  <p class="say">"One day we'll catch that one."</p>
+
+  <p>said one patrolman. The other answered.</p>
+
+  <p class="say">"On what charge?"</p>
+
+  <div class="mark"><span>FIVE</span><i></i></div>
+
+  <p>The writing from Jeju came into Tal-swe's hands one spring.</p>
+
+  <p>A trader off a boat had slipped a single sheet between sacks of salt. Tal-swe could read a little. Very little. So he took the paper to an old teacher at the tavern and asked him to read it aloud.</p>
+
+  <p>The teacher read it. When he finished he folded the paper.</p>
+
+  <p class="say">"This is dangerous writing."</p>
+  <p class="say">"What do you mean?"</p>
+  <p class="say">"The meaning is simple. That's what makes it dangerous."</p>
+
+  <p>Tal-swe memorised it on the spot. Three hearings and he had it. Memorising is a clown's trade.</p>
+
+  <p>Then he burned the paper in front of the teacher.</p>
+
+  <p class="say">"What a waste."</p>
+  <p class="say">"They can seize paper. They can't seize a sound."</p>
+
+  <p>Seven days later a new song was going around the Jongno market. The tune was an ordinary folk melody and the words were funny — about a provincial magistrate who copies out the same document three times. People laughed.</p>
+
+  <p>A month later the song was in Kaesong, and two months later in Pyongyang.</p>
+
+  <div class="mark"><span>SIX</span><i></i></div>
+
+  <p>The nun at the hermitage on Songni Mountain had the dharma name Jeong-an.</p>
+
+  <p>Jeong for stillness, An for peace. The old monk who gave her that name died two years later, and so <span class="quiet">the only person who knew the name was wrong was Jeong-an herself.</span></p>
+
+  <p>She had grown up inside the palace walls until she was seventeen. Her father was Inspector General. On the night the purge broke, Jeong-an hid beneath the floorboards and watched her father dragged out. He did not cry out. He only asked them to put his shoes on him. A patrolman put his shoes on him. That was what stayed inside her — not a scream, but the hands that fastened the shoes.</p>
+
+  <p>Her mother became a government slave. Jeong-an was passed to an aunt of the clan, and at twenty-three she shaved her head.</p>
+
+  <p>She thought if she struck the wooden bell she could forget. That if she recited the sutras she could cover it over. She recited a thousand times. When she closed her eyes she saw her father's feet and the patrolman's hands.</p>
+
+  <p class="say">"Buddha."</p>
+
+  <p>Jeong-an said one night.</p>
+
+  <p class="say">"This is not a prayer."</p>
+
+  <div class="mark"><span>SEVEN</span><i></i></div>
+
+  <p>The song came up from below the mountain that autumn.</p>
+
+  <p>A man carrying firewood on his back was humming it. Jeong-an heard the tune first, and then the words.</p>
+
+  <p class="say">"Where did you hear that song?"</p>
+  <p class="say">"Everyone in the market sings it, ma'am."</p>
+  <p class="say">"Sing it once more."</p>
+
+  <p>The man sang it, smiling. He sang it the way you sing a funny song.</p>
+
+  <p>Jeong-an listened to the end.</p>
+
+  <p>What was inside the song was not a funny story. It was a story about the same charge written three times. <span class="quiet">One of those three times was her father.</span></p>
+
+  <p>She did not sleep that night. Nor the next. On the morning of the third day, Jeong-an set down the wooden bell and walked down the mountain.</p>
+
+  <p>Walking down, she did not take off her monastic robe. It did not occur to her to.</p>
+
+  <div class="mark"><span>EIGHT</span><i></i></div>
+
+  <p>Jeong-an and Tal-swe met in a tavern in a back alley of Jongno.</p>
+
+  <p>Jeong-an asked first.</p>
+
+  <p class="say">"Who wrote that song?"</p>
+  <p class="say">"I wrote it."</p>
+  <p class="say">"That's a lie."</p>
+
+  <p>Tal-swe looked at her a moment. The shaved head, the worn robe, and the eyes.</p>
+
+  <p class="say">"It's writing that came from Jeju."</p>
+  <p class="say">"The name."</p>
+  <p class="say">"I don't know it. Knowing it is dangerous."</p>
+  <p class="say">"I have to know that name."</p>
+  <p class="say">"Why?"</p>
+
+  <p>Jeong-an answered.</p>
+
+  <p class="say">"One of the three times he wrote about was my father."</p>
+
+  <p>That night, for the first time in his life, Tal-swe said the name aloud to another person.</p>
+
+  <div class="mark"><span>NINE</span><i></i></div>
+
+  <p>The beacons went up on the night of the twenty-seventh of the tenth month.</p>
+
+  <p>The first fire rose on Jeju. Three days' sailing away — so it was not a signal but a promise: a promise that we have begun. The second rose on Songni Mountain, and the third in the Jongno marketplace.</p>
+
+  <p>Tal-swe wore no mask. For the first time in ten years he stood before people with his own face. He snapped his drumstick and traded it for a torch.</p>
+
+  <p>Jeong-an stood before the palace wall in her monastic robe. Someone asked what a nun was doing there, and no one could answer. Jeong-an called her father's name over the wall. Once. And then someone behind her called a different name. And another called another.</p>
+
+  <p class="seal-line">Four hundred names and more<br>were called before the palace that night.</p>
+
+  <div class="mark"><span>TEN</span><i></i></div>
+
+  <p>And that was the end of it.</p>
+
+  <p>At dawn the soldiers came in. The uprising did not last half a day. Fire caught in the marketplace, and the fire that caught was not a beacon. It was just fire.</p>
+
+  <p>Tal-swe survived. <span class="quiet">Why he alone got out, he never understood as long as he lived.</span></p>
+
+  <p>Jeong-an was arrested and released, because she was a nun. The state had never established a procedure for turning a nun into a traitor. Jeong-an walked back to Songni Mountain. The smell of smoke had settled into her robe, and three washings would not take it out.</p>
+
+  <p>Yun-je was brought from Jeju ten days later.</p>
+
+  <p>Before boarding the boat he burned every sheet of paper in the house. While they burned he called for a boy — the boy who used to bring him paper. He would be about sixteen now.</p>
+
+  <p class="say">"Can you learn it by heart?"</p>
+
+  <p>The boy nodded.</p>
+
+  <p>Yun-je read him the last page. The boy had it in three hearings.</p>
+
+  <p>And then Yun-je burned that page too.</p>
+
+</article>
+
+<section class="listen">
+  <h2>The music of this chapter</h2>
+  <p class="note">This story was music before it was prose.<br>Four songs from Chapter Two — listen while you read.</p>
+
+  <div class="player">
+    <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" title="Ink and Embers playlist"
+      src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2236166681&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+  </div>
+
+  <p class="credit">
+    <a href="https://soundcloud.com/demosaii" title="demosaii" target="_blank" rel="noopener">demosaii</a> ·
+    <a href="https://soundcloud.com/demosaii/sets/ink-and-embers" title="Ink and Embers" target="_blank" rel="noopener">먹과 불씨 | Ink and Embers</a>
+  </p>
+
+  <p><a class="lyrics-link" href="../lyrics-ch2.html">Read the full lyrics of this album →</a></p>
+</section>
+
+<nav class="nextnav">
+  <a href="ch3.html">
+    <span>
+      <span class="lbl">NEXT CHAPTER</span>
+      <span class="ttl">Ash and Seed</span>
+      <span class="dsc">what remains when the fire goes out, and one sheet under the floorboards</span>
+    </span>
+    <span class="arrow">→</span>
+  </a>
+</nav>
+
+<nav class="map" aria-label="All chapters">
+  <h2>The whole story</h2>
+
+  <p class="map-part">THE FIRE TRILOGY</p>
+  <ol>
+    <li><span>CH. 1</span> Blood and Fog <em>— the palace, and a name erased</em></li>
+    <li class="here"><span>CH. 2</span> Ink and Embers <em>— four voices, one uprising</em></li>
+    <li><span>CH. 3</span> Ash and Seed <em>— what remains when the fire goes out</em></li>
+  </ol>
+
+  <p class="map-part">THE SEA TRILOGY</p>
+  <ol start="4">
+    <li><span>CH. 4</span> Salt and Waves <em>— four people gather</em></li>
+    <li><span>CH. 5</span> Sea and Bones <em>— the sunken truth rises</em></li>
+    <li><span>CH. 6</span> Island and Stars <em>— each finds their own answer</em></li>
+  </ol>
+
+  <p class="next-line">NEXT — <b>Ash and Seed</b></p>
+</nav>
+
+<section class="about">
+  <p class="about-name">demosaii</p>
+  <p>I write Joseon-era stories as hip-hop songs. Geomungo, gayageum, haegeum, daegeum and janggu over boom bap beats, every lyric in Korean. Two trilogies, six albums, twenty-four songs.</p>
+  <p class="about-links">
+    <a href="https://soundcloud.com/demosaii" target="_blank" rel="noopener">Listen to everything — SoundCloud →</a>
+  </p>
+  <p class="about-tags">#JoseonHipHop #GugakHipHop #KoreanTraditional #HistoricalFiction #demosaii</p>
+</section>
+
+
+<script>
+  (function(){
+    var btn = document.querySelector('.langbtn');
+    var menu = document.querySelector('.langmenu');
+    if(!btn || !menu) return;
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.addEventListener('click', function(){
+      menu.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape'){
+        menu.classList.remove('open');
+        btn.setAttribute('aria-expanded','false');
+      }
+    });
+  })();
+</script>
+
+</body>
+</html>
