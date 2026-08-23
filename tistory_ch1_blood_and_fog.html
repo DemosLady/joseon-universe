@@ -458,9 +458,26 @@
     .nextnav .arrow{ display:none; }
   }
 
+
+  /* ---------- faint panorama behind everything ---------- */
+  .panorama{
+    position:fixed; inset:0; z-index:0; pointer-events:none;
+    background-image:url("art/hero.jpg");
+    background-size:cover;
+    background-position:center 42%;
+    background-repeat:no-repeat;
+    opacity:.09;
+    filter:grayscale(.35) contrast(.9);
+    mix-blend-mode:screen;
+  }
+  body > *:not(.panorama){ position:relative; z-index:1; }
+  @media (max-width:760px){ .panorama{ opacity:.06; background-position:center 50%; } }
+
 </style>
 </head>
 <body>
+
+<div class="panorama" aria-hidden="true"></div>
 
 <div class="topbar">
   <a class="home" href="index.html">← 목차</a>

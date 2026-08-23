@@ -87,9 +87,26 @@
     .st .en{ font-size:13.5px; }
     .track h2{ font-size:22px; }
   }
+
+  /* ---------- faint panorama behind everything ---------- */
+  .panorama{
+    position:fixed; inset:0; z-index:0; pointer-events:none;
+    background-image:url("art/hero.jpg");
+    background-size:cover;
+    background-position:center 42%;
+    background-repeat:no-repeat;
+    opacity:.09;
+    filter:grayscale(.35) contrast(.9);
+    mix-blend-mode:screen;
+  }
+  body > *:not(.panorama){ position:relative; z-index:1; }
+  @media (max-width:760px){ .panorama{ opacity:.06; background-position:center 50%; } }
+
 </style>
 </head>
 <body>
+
+<div class="panorama" aria-hidden="true"></div>
 
 <div class="topbar">
   <a href="tistory_ch3_ash_and_seed.html">← 이야기로 · Back to the story</a>

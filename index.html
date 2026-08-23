@@ -46,6 +46,7 @@
     background-image:
       radial-gradient(circle at 50% 300px, rgba(214,224,240,.10) 0 190px, rgba(214,224,240,.035) 191px 230px, transparent 231px),
       radial-gradient(120% 80% at 50% -10%, #1b2436 0%, var(--ink) 55%, var(--ink-deep) 100%);
+    position:relative;
     color:var(--moon);
     font-family:"Nanum Myeongjo", serif;
     -webkit-font-smoothing:antialiased;
@@ -418,9 +419,30 @@
     .nextnav .arrow{ display:none; }
   }
 
+
+  /* ---------- faint panorama behind everything ---------- */
+  .panorama{
+    position:fixed; inset:0; z-index:0; pointer-events:none;
+    background-image:url("art/hero.jpg");
+    background-size:cover;
+    background-position:center 42%;
+    background-repeat:no-repeat;
+    opacity:.10;
+    filter:grayscale(.35) contrast(.9);
+    mix-blend-mode:screen;
+  }
+  /* keep all real content above it */
+  body > *:not(.panorama){ position:relative; z-index:1; }
+
+  @media (max-width:760px){
+    .panorama{ opacity:.07; background-position:center 50%; }
+  }
+
 </style>
 </head>
 <body>
+
+<div class="panorama" aria-hidden="true"></div>
 
 <div class="topbar">
   <a class="home" href="https://soundcloud.com/demosaii">demosaii</a>

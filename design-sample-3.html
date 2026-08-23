@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>조선 이야기 — 디자인 시안 3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Nanum+Myeongjo:wght@400;700&family=IBM+Plex+Sans+KR:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --hanji:#EFE8D8;
+    --hanji-pale:#F6F1E5;
+    --ink:#2A2722;
+    --ink-soft:#6B655A;
+    --ember:#B4472A;      /* the one warm accent, taken from the burning palace */
+    --deep:#171C24;       /* the sea at night */
+    --rule:rgba(42,39,34,.18);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; color:var(--ink);
+    font-family:"Nanum Myeongjo", serif;
+    -webkit-font-smoothing:antialiased;
+    background:var(--hanji);
+    background-image:
+      repeating-linear-gradient(0deg, rgba(42,39,34,.014) 0 1px, transparent 1px 5px),
+      repeating-linear-gradient(90deg, rgba(42,39,34,.01) 0 1px, transparent 1px 7px);
+  }
+  .wrap{ max-width:1140px; margin:0 auto; padding:0 34px; }
+
+  /* ═══════════ hero: the painting first, the words after ═══════════ */
+  .banner{
+    width:100%; display:block; border-bottom:1px solid var(--rule);
+    background:var(--hanji-pale);
+  }
+  .banner img{ width:100%; height:auto; display:block; }
+
+  .titleblock{ padding:70px 0 0; max-width:760px; }
+  .kicker{
+    font-family:"IBM Plex Sans KR",sans-serif; font-weight:400; font-size:11px;
+    letter-spacing:.44em; text-indent:.44em; color:var(--ink-soft); margin:0 0 26px;
+  }
+  h1{
+    font-family:"Gowun Batang",serif; font-weight:700;
+    font-size:clamp(44px,7.6vw,88px); line-height:1.05; letter-spacing:.03em; margin:0;
+  }
+  h1 .en{
+    display:block; margin-top:22px;
+    font-family:"IBM Plex Sans KR",sans-serif; font-weight:300;
+    font-size:clamp(12px,1.7vw,15px); letter-spacing:.38em; text-indent:.38em;
+    color:var(--ink-soft);
+  }
+  .lede{
+    max-width:48ch; margin:36px 0 0; font-size:17px; line-height:2.1;
+    color:var(--ink-soft); word-break:keep-all;
+  }
+  .lede b{ color:var(--ink); font-weight:700; }
+
+  .motto-inline{
+    margin:44px 0 0; padding:22px 0 0; border-top:1px solid var(--rule);
+    font-family:"Gowun Batang",serif; font-size:16px; line-height:2.2;
+    letter-spacing:.04em; color:var(--ink);
+  }
+  .motto-inline span{ display:block; }
+  .motto-inline span+span{ color:var(--ink-soft); font-size:.92em; }
+
+  /* ═══════════ trilogy sections ═══════════ */
+  .sec{ margin:110px 0 0; }
+  .sec-head{ display:flex; align-items:baseline; gap:20px; margin:0 0 34px; }
+  .sec-head .idx{
+    font-family:"Gowun Batang",serif; font-size:14px; letter-spacing:.3em;
+    color:var(--ink-soft); white-space:nowrap;
+  }
+  .sec-head h2{
+    font-family:"Gowun Batang",serif; font-weight:700; font-size:25px;
+    margin:0; letter-spacing:.05em; white-space:nowrap;
+  }
+  .sec-head .line{ flex:1; height:1px; background:var(--rule); }
+  .sec-head .en{
+    font-family:"IBM Plex Sans KR",sans-serif; font-weight:300; font-size:10.5px;
+    letter-spacing:.26em; color:var(--ink-soft); white-space:nowrap;
+  }
+
+  .grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:30px; }
+
+  .ch{ display:block; text-decoration:none; color:inherit; }
+  .ch figure{ margin:0; overflow:hidden; background:var(--hanji-pale); }
+  .ch img{
+    width:100%; aspect-ratio:1/1; object-fit:cover; display:block;
+    filter:saturate(.9);
+    transition:transform .6s cubic-bezier(.2,.7,.3,1), filter .4s ease;
+  }
+  .ch:hover img, .ch:focus-visible img{ transform:scale(1.035); filter:saturate(1.05); }
+  .ch .no{
+    font-family:"IBM Plex Sans KR",sans-serif; font-weight:400; font-size:10px;
+    letter-spacing:.3em; color:var(--ink-soft); margin:18px 0 8px;
+  }
+  .ch h3{ font-family:"Gowun Batang",serif; font-weight:700; font-size:23px; margin:0 0 3px; }
+  .ch .sub{
+    font-family:"IBM Plex Sans KR",sans-serif; font-weight:300; font-size:10.5px;
+    letter-spacing:.2em; color:var(--ink-soft); margin:0 0 12px;
+  }
+  .ch p{ margin:0; font-size:14.5px; line-height:1.95; color:var(--ink-soft); word-break:keep-all; }
+  .ch .go{
+    display:inline-block; margin-top:14px;
+    font-family:"IBM Plex Sans KR",sans-serif; font-size:11px; letter-spacing:.16em;
+    color:var(--ink); border-bottom:1px solid var(--rule); padding-bottom:2px;
+    transition:border-color .3s ease;
+  }
+  .ch:hover .go{ border-color:var(--ink); }
+  .ch.soon{ pointer-events:none; }
+  .ch.soon img{ filter:saturate(.2) opacity(.5); }
+  .ch.soon .go{ color:var(--ink-soft); border:0; }
+
+  /* ═══════════ painted divider ═══════════ */
+  .divider{ margin:104px 0 0; }
+  .divider img{ width:100%; height:auto; display:block; mix-blend-mode:multiply; opacity:.9; }
+
+  /* ═══════════ listen ═══════════ */
+  .listen{
+    margin:104px 0 0; position:relative; overflow:hidden;
+    background:var(--deep); color:var(--hanji-pale);
+  }
+  .listen .bg{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+    opacity:.55;
+  }
+  .listen .inner{
+    position:relative; z-index:2; padding:74px 56px;
+    display:flex; align-items:center; justify-content:space-between; gap:40px; flex-wrap:wrap;
+  }
+  .listen h2{
+    font-family:"Gowun Batang",serif; font-weight:400;
+    font-size:clamp(22px,3.2vw,32px); margin:0 0 12px; letter-spacing:.04em;
+  }
+  .listen p{
+    margin:0; font-family:"IBM Plex Sans KR",sans-serif; font-weight:300;
+    font-size:13px; line-height:2.05; color:rgba(246,241,229,.66);
+  }
+  .btn{
+    flex:0 0 auto; display:inline-block; text-decoration:none;
+    font-family:"IBM Plex Sans KR",sans-serif; font-size:12.5px; letter-spacing:.16em;
+    color:var(--hanji-pale); border:1px solid rgba(246,241,229,.5);
+    padding:16px 32px; transition:background .3s ease, color .3s ease;
+  }
+  .btn:hover, .btn:focus-visible{ background:var(--hanji-pale); color:var(--deep); }
+
+  /* ═══════════ footer ═══════════ */
+  footer{
+    margin:0; padding:78px 0 100px; text-align:center;
+    font-family:"IBM Plex Sans KR",sans-serif; font-weight:300;
+    font-size:12.5px; line-height:2.1; color:var(--ink-soft);
+  }
+  .seal{
+    width:52px; height:52px; margin:0 auto 26px;
+    background:var(--ember); color:var(--hanji-pale);
+    display:grid; place-items:center; font-family:"Gowun Batang",serif;
+    font-size:15px; line-height:1.2; text-align:center; transform:rotate(-3deg);
+  }
+  footer a{ color:var(--ink); text-decoration:none; border-bottom:1px solid var(--rule); }
+  footer a:hover{ border-color:var(--ink); }
+
+  a:focus-visible{ outline:2px solid var(--ember); outline-offset:4px; }
+
+  @media (max-width:960px){ .grid{ grid-template-columns:repeat(2,1fr); gap:26px; } }
+  @media (max-width:620px){
+    .wrap{ padding:0 20px; }
+    .titleblock{ padding-top:46px; }
+    .grid{ grid-template-columns:1fr; gap:34px; }
+    .sec{ margin-top:74px; }
+    .sec-head{ flex-wrap:wrap; gap:12px; }
+    .sec-head .en{ display:none; }
+    .listen .inner{ padding:48px 26px; }
+    .divider{ margin-top:70px; }
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .titleblock,.sec{ animation:rise .9s cubic-bezier(.2,.7,.3,1) both; }
+    @keyframes rise{ from{opacity:0;transform:translateY(16px);} to{opacity:1;transform:none;} }
+  }
+</style>
+</head>
+<body>
+
+<!-- the painting comes first -->
+<div class="banner">
+  <img src="art/hero.jpg" alt="불타는 궁궐에서 바다를 건너 눈 덮인 북쪽 산까지 이어지는 수묵 파노라마">
+</div>
+
+<div class="wrap">
+
+  <header class="titleblock">
+    <p class="kicker">국악 힙합 · GUGAK HIP-HOP</p>
+    <h1>조선 이야기<span class="en">JOSEON STORIES</span></h1>
+    <p class="lede">
+      <b>노래가 먼저 있었습니다.</b> 스물여덟 곡, 일곱 장의 앨범, 하나의 이야기 —
+      궁궐에서 시작해 바다를 건너 북쪽 국경에서 이어집니다.
+      가사는 전곡 한국어이고, 이야기는 음악에서 태어났습니다.
+    </p>
+    <p class="motto-inline">
+      <span>붓은 꺾여도 먹은 마르지 않는다</span>
+      <span>불은 태우고, 소금은 지키고, 쇠는 기억한다</span>
+    </p>
+  </header>
+
+  <!-- ═══ 불 ═══ -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="idx">제 1 부</span>
+      <h2>불의 삼부작</h2>
+      <span class="line"></span>
+      <span class="en">THE FIRE TRILOGY</span>
+    </div>
+    <div class="grid">
+      <a class="ch" href="#">
+        <figure><img src="covers/ch1.jpg" alt="피와 안개 앨범 커버"></figure>
+        <p class="no">제 1 장</p>
+        <h3>피와 안개</h3>
+        <p class="sub">BLOOD AND FOG</p>
+        <p>기록에서 지워진 여자와, 그 여자를 잃은 왕.</p>
+        <span class="go">읽기 →</span>
+      </a>
+      <a class="ch" href="#">
+        <figure><img src="covers/ch2.jpg" alt="먹과 불씨 앨범 커버"></figure>
+        <p class="no">제 2 장</p>
+        <h3>먹과 불씨</h3>
+        <p class="sub">INK AND EMBERS</p>
+        <p>한 줄의 글이 노래가 되고, 노래가 함성이 되던 밤.</p>
+        <span class="go">읽기 →</span>
+      </a>
+      <a class="ch" href="#">
+        <figure><img src="covers/ch3.jpg" alt="재와 씨앗 앨범 커버"></figure>
+        <p class="no">제 3 장</p>
+        <h3>재와 씨앗</h3>
+        <p class="sub">ASH AND SEED</p>
+        <p>불이 꺼진 자리, 그리고 마루 밑의 한 장.</p>
+        <span class="go">읽기 →</span>
+      </a>
+    </div>
+  </section>
+
+  <div class="divider">
+    <img src="art/divider.jpg" alt="">
+  </div>
+
+  <!-- ═══ 바다 ═══ -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="idx">제 2 부</span>
+      <h2>바다 삼부작</h2>
+      <span class="line"></span>
+      <span class="en">THE SEA TRILOGY</span>
+    </div>
+    <div class="grid">
+      <a class="ch" href="#">
+        <figure><img src="covers/ch4.jpg" alt="소금과 파도 앨범 커버"></figure>
+        <p class="no">제 4 장</p>
+        <h3>소금과 파도</h3>
+        <p class="sub">SALT AND WAVES</p>
+        <p>육지가 끝나는 곳에서 네 사람이 모인다.</p>
+        <span class="go">읽기 →</span>
+      </a>
+      <a class="ch" href="#">
+        <figure><img src="covers/ch5.jpg" alt="바다와 뼈 앨범 커버"></figure>
+        <p class="no">제 5 장</p>
+        <h3>바다와 뼈</h3>
+        <p class="sub">SEA AND BONES</p>
+        <p>폭풍이 바닥을 뒤집고, 가라앉은 진실이 떠오른다.</p>
+        <span class="go">읽기 →</span>
+      </a>
+      <a class="ch" href="#">
+        <figure><img src="covers/ch6.jpg" alt="섬과 별 앨범 커버"></figure>
+        <p class="no">제 6 장</p>
+        <h3>섬과 별</h3>
+        <p class="sub">ISLAND AND STARS</p>
+        <p>각자가 자기의 답을 찾는다.</p>
+        <span class="go">읽기 →</span>
+      </a>
+    </div>
+  </section>
+
+  <div class="divider">
+    <img src="art/divider.jpg" alt="">
+  </div>
+
+  <!-- ═══ 쇠 ═══ -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="idx">제 3 부</span>
+      <h2>쇠 삼부작</h2>
+      <span class="line"></span>
+      <span class="en">THE IRON TRILOGY · 연재 중</span>
+    </div>
+    <div class="grid">
+      <a class="ch" href="#">
+        <figure><img src="covers/ch7.jpg" alt="눈과 쇠 앨범 커버"></figure>
+        <p class="no">제 7 장</p>
+        <h3>눈과 쇠</h3>
+        <p class="sub">SNOW AND IRON</p>
+        <p>북쪽이 뚫린다. 궁궐과 반란군이 같은 편에 선다.</p>
+        <span class="go">연재 중 →</span>
+      </a>
+      <span class="ch soon">
+        <figure><img src="art/divider.jpg" alt=""></figure>
+        <p class="no">제 8 장</p>
+        <h3>쇠와 피</h3>
+        <p class="sub">IRON AND BLOOD</p>
+        <p>동맹은 버티고 또 무너진다.</p>
+        <span class="go">준비 중</span>
+      </span>
+      <span class="ch soon">
+        <figure><img src="art/divider.jpg" alt=""></figure>
+        <p class="no">제 9 장</p>
+        <h3>봄과 녹</h3>
+        <p class="sub">SPRING AND RUST</p>
+        <p>쇠가 녹슬고, 봄이 돌아온다.</p>
+        <span class="go">준비 중</span>
+      </span>
+    </div>
+  </section>
+
+  <!-- ═══ listen ═══ -->
+  <div class="listen">
+    <img class="bg" src="art/waves.jpg" alt="">
+    <div class="inner">
+      <div>
+        <h2>먼저 음악이 있었습니다</h2>
+        <p>거문고 · 가야금 · 해금 · 대금 · 장구 · 북 · 태평소가 붐뱁 위에 만납니다.<br>전곡 한국어 가사.</p>
+      </div>
+      <a class="btn" href="https://soundcloud.com/demosaii" target="_blank" rel="noopener">전곡 듣기 — SoundCloud</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="seal" aria-hidden="true">朝鮮<br>物語</div>
+    <p>demosaii</p>
+    <p>조선시대를 배경으로 국악과 힙합을 섞어 이야기를 만듭니다.</p>
+    <p><a href="https://soundcloud.com/demosaii" target="_blank" rel="noopener">SoundCloud</a></p>
+  </footer>
+
+</div>
+
+</body>
+</html>
