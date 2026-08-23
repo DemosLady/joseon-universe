@@ -431,6 +431,7 @@
     mix-blend-mode:screen;
   }
   body > *:not(.panorama){ position:relative; z-index:1; }
+  body > .topbar{ z-index:60; }   /* the language menu must sit above everything below it */
   @media (max-width:760px){ .panorama{ opacity:.06; background-position:center 50%; } }
 
 </style>

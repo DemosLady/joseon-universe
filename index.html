@@ -433,6 +433,7 @@
   }
   /* keep all real content above it */
   body > *:not(.panorama){ position:relative; z-index:1; }
+  body > .topbar{ z-index:60; }   /* the language menu must sit above everything below it */
 
   @media (max-width:760px){
     .panorama{ opacity:.07; background-position:center 50%; }
