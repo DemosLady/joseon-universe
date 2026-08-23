@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z5RGZRN1YF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Z5RGZRN1YF');
+  gtag('config', 'G-FS3RY08FBH');
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>조선힙합 웹소설 | 섬과 별 — 제6장 · 조선 힙합 유니버스</title>
+<meta name="description" content="조선힙합 국악 힙합. 제6장 「섬과 별」 — 흰 돛을 올리고 북으로 간다. 그러나 바다 한가운데서 해녀는 섬을 돌아본다. 바다 삼부작의 마지막 장.">
+<meta name="keywords" content="조선힙합, 국악힙합, 웹소설, 사극, 단편소설, 한국힙합, 퓨전국악, demosaii">
+<meta name="author" content="demosaii">
+
+<!-- 카카오톡·페이스북 공유용 (Open Graph) -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="섬과 별 — 제6장 | 조선 힙합 유니버스">
+<meta property="og:description" content="재 밑에 씨앗이 있었듯, 물 아래 이름이 있었소.">
+<meta property="og:site_name" content="조선 힙합 유니버스 · demosaii">
+<meta property="og:locale" content="ko_KR">
+<!-- ↓ 티스토리에 앨범 커버를 올린 뒤 그 이미지 주소를 여기에 넣으세요 -->
+<meta property="og:image" content="COVER_IMAGE_URL_HERE">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Song+Myung&family=Nanum+Myeongjo:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0d1220;          /* night ground */
+    --ink-deep:#070b14;
+    --hanji:#efe8d8;        /* paper */
+    --hanji-edge:#e2d8c2;
+    --brush:#1a1a1a;        /* body text */
+    --brush-soft:#4a4640;
+    --seal:#8c2f2a;         /* the one red: seal / blood */
+    --moon:#cfd6e4;
+  }
+
+  *{box-sizing:border-box;}
+
+  body{
+    margin:0;
+    background:var(--ink);
+    background-image:
+      radial-gradient(120% 80% at 50% -10%, #1b2436 0%, var(--ink) 55%, var(--ink-deep) 100%);
+    color:var(--moon);
+    font-family:"Nanum Myeongjo", serif;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    max-width:760px;
+    margin:0 auto;
+    padding:96px 24px 72px;
+    text-align:center;
+  }
+  .eyebrow{
+    font-family:"Gowun Dodum", sans-serif;
+    font-size:12px;
+    letter-spacing:.42em;
+    text-indent:.42em;
+    color:#7d8ba6;
+    margin:0 0 34px;
+  }
+  .hero h1{
+    font-family:"Song Myung", serif;
+    font-size:clamp(46px,10vw,84px);
+    font-weight:400;
+    letter-spacing:.12em;
+    text-indent:.12em;
+    margin:0;
+    color:#f2f4f8;
+    line-height:1.15;
+  }
+  .hero .en{
+    font-family:"Gowun Dodum", sans-serif;
+    font-size:12px;
+    letter-spacing:.3em;
+    text-indent:.3em;
+    color:#6f7d96;
+    margin:22px 0 0;
+  }
+  .chapter-mark{
+    margin:44px auto 0;
+    width:1px;
+    height:64px;
+    background:linear-gradient(to bottom, transparent, #6f7d96 30%, transparent);
+  }
+  .chapter-no{
+    font-family:"Song Myung", serif;
+    font-size:15px;
+    letter-spacing:.3em;
+    text-indent:.3em;
+    color:#8e9ab1;
+    margin:18px 0 0;
+  }
+
+  /* ---------- paper ---------- */
+  .paper{
+    max-width:660px;
+    margin:0 auto 88px;
+    background:var(--hanji);
+    background-image:
+      repeating-linear-gradient(0deg, rgba(0,0,0,.012) 0 1px, transparent 1px 3px),
+      radial-gradient(90% 60% at 30% 10%, #f5efe1 0%, var(--hanji) 60%),
+      radial-gradient(70% 50% at 80% 90%, #e8dfcb 0%, transparent 70%);
+    color:var(--brush);
+    padding:76px 62px 84px;
+    box-shadow:0 40px 90px rgba(0,0,0,.55);
+    position:relative;
+  }
+  .paper::before,
+  .paper::after{
+    content:"";
+    position:absolute;
+    left:0; right:0;
+    height:10px;
+    background:var(--hanji-edge);
+    -webkit-mask-image:repeating-linear-gradient(90deg,#000 0 7px,transparent 7px 9px);
+            mask-image:repeating-linear-gradient(90deg,#000 0 7px,transparent 7px 9px);
+    opacity:.55;
+  }
+  .paper::before{top:-6px;}
+  .paper::after{bottom:-6px;}
+
+  .paper p{
+    font-size:17.5px;
+    line-height:2.15;
+    letter-spacing:.005em;
+    margin:0 0 1.55em;
+    word-break:keep-all;
+  }
+  .paper p.lead{
+    font-size:20px;
+    line-height:2;
+  }
+  .paper .quiet{ color:var(--brush-soft); }
+
+  /* dialogue lines sit slightly apart */
+  .paper p.say{
+    margin-left:.2em;
+    color:#26262a;
+  }
+
+  /* ---------- section marks ---------- */
+  .mark{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    margin:56px 0 40px;
+  }
+  .mark span{
+    font-family:"Song Myung", serif;
+    font-size:14px;
+    letter-spacing:.34em;
+    text-indent:.34em;
+    color:#8a8070;
+    white-space:nowrap;
+  }
+  .mark i{
+    display:block;
+    height:1px;
+    flex:1;
+    background:linear-gradient(to right, rgba(60,52,40,.42), rgba(60,52,40,0));
+  }
+  .mark.first{ margin-top:0; }
+
+  /* ---------- the one red ---------- */
+  .seal-line{
+    margin:64px 0 0;
+    text-align:center;
+    font-family:"Song Myung", serif;
+    font-size:19px;
+    line-height:2.1;
+    color:var(--seal);
+    letter-spacing:.06em;
+  }
+
+  /* ---------- listen block ---------- */
+  .listen{
+    max-width:660px;
+    margin:0 auto;
+    padding:0 24px 110px;
+    text-align:center;
+  }
+  .listen h2{
+    font-family:"Song Myung", serif;
+    font-weight:400;
+    font-size:22px;
+    letter-spacing:.14em;
+    text-indent:.14em;
+    color:#dfe4ee;
+    margin:0 0 12px;
+  }
+  .listen .note{
+    font-family:"Gowun Dodum", sans-serif;
+    font-size:13.5px;
+    line-height:2;
+    color:#8492ab;
+    margin:0 0 34px;
+  }
+  .player{
+    border-radius:2px;
+    overflow:hidden;
+    box-shadow:0 24px 60px rgba(0,0,0,.5);
+  }
+  .player iframe{ display:block; }
+  .credit{
+    font-family:"Gowun Dodum", sans-serif;
+    font-size:11px;
+    color:#5d6a80;
+    margin:14px 0 0;
+    letter-spacing:.04em;
+  }
+  .credit a{ color:#7b89a2; text-decoration:none; }
+  .credit a:hover, .credit a:focus{ color:#cfd6e4; text-decoration:underline; }
+
+  .next{
+    max-width:660px;
+    margin:0 auto;
+    padding:0 24px 120px;
+    text-align:center;
+    font-family:"Song Myung", serif;
+    font-size:15px;
+    letter-spacing:.22em;
+    text-indent:.22em;
+    color:#6f7d96;
+  }
+  .next b{ font-weight:400; color:#aab6cb; }
+
+  /* ---------- intro ---------- */
+  .intro{
+    max-width:620px;
+    margin:0 auto 56px;
+    padding:0 24px;
+    text-align:center;
+    font-family:"Gowun Dodum", sans-serif;
+    font-size:14.5px;
+    line-height:2.1;
+    color:#8b98b0;
+    word-break:keep-all;
+  }
+  .intro p{ margin:0 0 12px; }
+  .intro b{ color:#dfe4ee; font-weight:400; }
+
+  /* ---------- chapter map ---------- */
+  .map{
+    max-width:660px;
+    margin:0 auto;
+    padding:0 24px 90px;
+  }
+  .map h2{
+    font-family:"Song Myung", serif;
+    font-weight:400;
+    font-size:20px;
+    letter-spacing:.16em;
+    text-indent:.16em;
+    color:#dfe4ee;
+    text-align:center;
+    margin:0 0 40px;
+  }
+  .map-part{
+    font-family:"Gowun Dodum", sans-serif;
+    font-size:11.5px;
+    letter-spacing:.34em;
+    text-indent:.34em;
+    color:#6f7d96;
+    margin:30px 0 14px;
+  }
+  .map ol{
+    list-style:none;
+    margin:0;
+    padding:0;
+    border-top:1px solid rgba(143,158,186,.16);
+  }
+  .map li{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    padding:15px 4px;
+    border-bottom:1px solid rgba(143,158,186,.16);
+    font-family:"Nanum Myeongjo", serif;
+    font-size:16px;
+    color:#aab6cb;
+    word-break:keep-all;
+  }
+  .map li span{
+    font-family:"Gowun Dodum", sans-serif;
+    font-size:11px;
+    letter-spacing:.18em;
+    color:#66748c;
+    white-space:nowrap;
+  }
+  .map li em{
+    font-style:normal;
+    font-size:13.5px;
+    color:#6f7d96;
+  }
+  .map li.here{ color:#f2f4f8; }
+  .map li.here span{ color:var(--seal); }
+  .map li.here::after{
+    content:"지금 읽는 중";
+    margin-left:auto;
+    font-family:"Gowun Dodum", sans-serif;
+    font-size:10.5px;
+    letter-spacing:.16em;
+    color:var(--seal);
+    white-space:nowrap;
+  }
+  .next-line{
+    margin:36px 0 0;
+    text-align:center;
+    font-family:"Song Myung", serif;
+    font-size:15px;
+    letter-spacing:.22em;
+    text-indent:.22em;
+    color:#6f7d96;
+  }
+  .next-line b{ font-weight:400; color:#aab6cb; }
+
+  /* ---------- about ---------- */
+  .about{
+    max-width:660px;
+    margin:0 auto;
+    padding:44px 24px 120px;
+    border-top:1px solid rgba(143,158,186,.16);
+    font-family:"Gowun Dodum", sans-serif;
+    font-size:13.5px;
+    line-height:2.05;
+    color:#8492ab;
+    text-align:center;
+    word-break:keep-all;
+  }
+  .about p{ margin:0 0 16px; }
+  .about-name{
+    font-family:"Song Myung", serif;
+    font-size:19px;
+    letter-spacing:.2em;
+    text-indent:.2em;
+    color:#dfe4ee;
+  }
+  .about-links a{
+    color:#cfd6e4;
+    text-decoration:none;
+    border-bottom:1px solid rgba(207,214,228,.35);
+    padding-bottom:2px;
+  }
+  .about-links a:hover, .about-links a:focus{ color:#fff; border-color:#fff; }
+  .about-tags{
+    font-size:11.5px;
+    color:#5d6a80;
+    letter-spacing:.04em;
+  }
+
+  a:focus-visible{ outline:2px solid var(--moon); outline-offset:3px; }
+
+  @media (max-width:640px){
+    .hero{ padding:64px 20px 52px; }
+    .paper{ padding:52px 26px 60px; margin-bottom:64px; }
+    .paper p{ font-size:16.5px; line-height:2.05; }
+    .paper p.lead{ font-size:18px; }
+  }
+
+  @media (prefers-reduced-motion:no-preference){
+    .paper, .hero{ animation:rise .9s ease-out both; }
+    .paper{ animation-delay:.15s; }
+    @keyframes rise{
+      from{ opacity:0; transform:translateY(14px); }
+      to{ opacity:1; transform:none; }
+    }
+  }
+
+  /* ---------- top bar: language switch ---------- */
+  .topbar{
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+    max-width:660px; margin:0 auto; padding:24px 24px 0;
+    font-family:"Gowun Dodum", sans-serif; font-size:12px;
+  }
+  .topbar .home{ color:#8492ab; text-decoration:none; letter-spacing:.1em; }
+  .topbar .home:hover{ color:#cfd6e4; }
+  .langwrap{ position:relative; }
+  .langbtn{
+    background:none; border:1px solid rgba(143,158,186,.3); color:#aab6cb;
+    font-family:"Gowun Dodum", sans-serif; font-size:11.5px; letter-spacing:.12em;
+    padding:7px 14px; cursor:pointer; display:flex; align-items:center; gap:8px;
+    transition:border-color .2s ease, color .2s ease;
+  }
+  .langbtn:hover{ border-color:rgba(207,214,228,.6); color:#e6ebf4; }
+  .langbtn .caret{ font-size:9px; opacity:.7; }
+  .langmenu{
+    position:absolute; top:calc(100% + 6px); inset-inline-end:0; min-width:132px;
+    background:#141b2a; border:1px solid rgba(143,158,186,.24);
+    display:none; z-index:20;
+  }
+  .langmenu.open{ display:block; }
+  .langmenu a{
+    display:block; padding:11px 16px; color:#aab6cb; text-decoration:none;
+    font-family:"Gowun Dodum", sans-serif; font-size:12px; letter-spacing:.06em;
+    border-bottom:1px solid rgba(143,158,186,.14);
+  }
+  .langmenu a:last-child{ border-bottom:none; }
+  .langmenu a:hover, .langmenu a:focus{ background:rgba(207,214,228,.08); color:#fff; }
+  .langmenu a[aria-current="true"]{ color:#fff; }
+  .langmenu a[aria-current="true"]::before{ content:"· "; color:var(--seal); }
+
+  /* ---------- lyrics link inside the listen block ---------- */
+  .lyrics-link{
+    display:inline-block; margin:24px 0 0;
+    font-family:"Gowun Dodum", sans-serif; font-size:13px; letter-spacing:.1em;
+    color:#cfd6e4; text-decoration:none;
+    border-bottom:1px solid rgba(207,214,228,.32); padding-bottom:3px;
+  }
+  .lyrics-link:hover, .lyrics-link:focus{ color:#fff; border-color:#fff; }
+
+  /* ---------- next chapter button ---------- */
+  .nextnav{
+    max-width:660px; margin:0 auto; padding:0 24px 30px;
+  }
+  .nextnav a{
+    display:flex; align-items:center; justify-content:space-between; gap:20px;
+    text-decoration:none; color:inherit;
+    border:1px solid rgba(143,158,186,.24);
+    padding:26px 28px;
+    transition:border-color .25s ease, background .25s ease;
+  }
+  .nextnav a:hover, .nextnav a:focus{
+    border-color:rgba(207,214,228,.55);
+    background:rgba(207,214,228,.05);
+  }
+  .nextnav .lbl{
+    font-family:"Gowun Dodum", sans-serif; font-size:10.5px; letter-spacing:.34em;
+    color:#66748c; display:block; margin-bottom:9px;
+  }
+  .nextnav .ttl{
+    font-family:"Song Myung", serif; font-size:23px; letter-spacing:.05em; color:#e6ebf4;
+    display:block;
+  }
+  .nextnav .dsc{
+    font-family:"Nanum Myeongjo", serif; font-size:13.5px; color:#7f8da5;
+    display:block; margin-top:8px;
+  }
+  .nextnav .arrow{
+    font-family:"Gowun Dodum", sans-serif; font-size:20px; color:#8f9db5; flex:0 0 auto;
+  }
+  .nextnav a:hover .arrow{ color:#cfd6e4; }
+  .nextnav.done a{ border-style:dashed; }
+
+  @media (max-width:640px){
+    .nextnav a{ padding:20px; }
+    .nextnav .ttl{ font-size:20px; }
+    .nextnav .arrow{ display:none; }
+  }
+
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="home" href="index.html">← 목차</a>
+  <div class="langwrap">
+    <button class="langbtn" type="button" aria-haspopup="true" aria-expanded="false">한국어<span class="caret">▾</span></button>
+    <div class="langmenu" role="menu">
+      <a href="tistory_ch6_island_and_stars.html" role="menuitem" aria-current="true">한국어</a>
+      <a href="en/ch6.html" role="menuitem" aria-current="false">English</a>
+    </div>
+  </div>
+</div>
+
+
+<header class="hero">
+  <p class="eyebrow">조선 힙합 유니버스</p>
+  <h1>섬과 별</h1>
+  <p class="en">ISLAND AND STARS</p>
+  <div class="chapter-mark" aria-hidden="true"></div>
+  <p class="chapter-no">제 6 장</p>
+</header>
+
+<section class="intro">
+  <p>이것은 <b>스물네 곡으로 먼저 만들어진 이야기</b>입니다.</p>
+  <p>조선을 배경으로 한 국악 힙합 두 개의 삼부작 — 붓과 불의 이야기, 그리고 소금과 바다의 이야기. 여섯 장의 앨범이 하나의 이야기를 이룹니다. 여기서부터 시작합니다.</p>
+</section>
+
+<article class="paper">
+
+  <div class="mark first"><span>하나</span><i></i></div>
+
+  <p class="lead">떠나기로 한 것은 그 겨울이었다.</p>
+
+  <p>수겸이 사본을 다 옮겨 적는 데 열이레가 걸렸다. 소금이 지운 자리는 비워두었다. 비워둔 자리가 스물세 군데였고, 그중 열한 군데는 이름이 있던 자리였다.</p>
+
+  <p>배쇠가 물었다. 그 빈 곳은 어찌하오.</p>
+
+  <p class="say">"비워둔 채로 가져가오."</p>
+  <p class="say">"비면 증거가 안 되지 않소."</p>
+  <p class="say">"비어 있는 것도 증거요. 누군가 지웠다는 증거요."</p>
+
+  <p>배쇠는 그 말을 이해하지 못했으나 더 묻지 않았다.</p>
+
+  <p>원본은 궤짝째로 두고 가기로 하였다. 한 벌은 증거고 한 벌은 목숨이니, 두 벌이 같은 배에 타서는 안 된다는 것이 배쇠의 뜻이었다. 평생 밀수를 한 자의 셈법이었고, 아무도 반박하지 않았다.</p>
+
+  <div class="mark"><span>둘</span><i></i></div>
+
+  <p>돛을 올리던 날 밤은 맑았다.</p>
+
+  <p>배쇠가 흰 천을 꺼냈다. 검게 물들이지 않은 돛이었다. 평생 처음이었다.</p>
+
+  <p class="say">"보이지 않겠소?"</p>
+  <p class="say">"보이라고 올리는 것이오."</p>
+
+  <p>북두칠성이 낮게 걸려 있었다. 다른 별은 다 돌아도 그 일곱만은 자리를 바꾸지 않는다. 그래서 뱃사람은 그것만 믿는다.</p>
+
+  <p>갑수도 배에 올랐다. 아무도 말리지 않았다. 그가 왜 가는지는 모두가 알았다.</p>
+
+  <p>그리고 옥이가 왔다.</p>
+
+  <p>아무도 그 여자에게 오라 하지 않았다. 스스로 배에 올랐다. 문서를 건진 손이었으니, 끝까지 보고 싶었을 것이다. 그렇게들 생각했다.</p>
+
+  <div class="mark"><span>셋</span><i></i></div>
+
+  <p>반나절을 저었다.</p>
+
+  <p>섬이 수평선 아래로 내려가고 있었다. 그때 옥이가 일어섰다.</p>
+
+  <p>뱃머리에 서서 앞이 아니라 뒤를 보고 있었다. 멀어지는 섬을 보고 있었다.</p>
+
+  <p>수겸이 물었다. 무슨 일이오.</p>
+
+  <p>옥이가 웃으며 말했다.</p>
+
+  <p class="say">"뭍에 가면 나는 무엇이오."</p>
+  <p class="say">"글도 모르고 이름도 없는 아낙이오."</p>
+  <p class="say">"여기서는 내가 주인인데, 저기서는 고개를 숙여야 하오."</p>
+
+  <p>아무도 반박하지 못했다. 그것이 사실이었기 때문이다.</p>
+
+  <p class="say">"그대들의 싸움은 뭍의 싸움이오."</p>
+  <p class="say">"나는 이미 내 싸움을 마쳤소. 뼈들을 만났고 이름을 건졌으니."</p>
+  <p class="say">"내 몫은 여기까지요."</p>
+
+  <div class="mark"><span>넷</span><i></i></div>
+
+  <p>태왁을 내려놓았다. 빗창도 두고 갔다. 가져갈 것이 없는 사람처럼.</p>
+
+  <p>저고리 끈을 다시 묶고, 셋을 한 번씩 보았다.</p>
+
+  <p>늙은 어부에게는 고개를 숙였다. 아들의 이름을 아는 사람이었으니.</p>
+
+  <p>선비에게는 아무 말도 하지 않았다. 할 말은 이미 다 적혀 있었으니.</p>
+
+  <p>그리고 물로 들어갔다.</p>
+
+  <p><span class="quiet">소리도 나지 않았다.</span></p>
+
+  <p>한참 뒤에 멀리서 숨비소리가 한 번 들렸다.</p>
+
+  <p>살아 있다는 뜻이었다.</p>
+
+  <p>세 사람은 다시 노를 잡았다.</p>
+
+  <div class="mark"><span>다섯</span><i></i></div>
+
+  <p>뭍에 닿은 곳은 작은 포구였다.</p>
+
+  <p>거기서부터는 걸었다. 사흘을 걸어 산길로 들었다.</p>
+
+  <p>속리산 어딘가에 암자가 하나 있다 하였다. 불을 들고 궁궐 앞에 섰던 여인이 거기서 목탁을 친다 하였다. 그 이야기를 배쇠는 어느 주막에서 들었고, 수겸은 그 이야기가 자기가 아는 이야기의 뒷부분이라는 것을 알았다.</p>
+
+  <p>산문 앞에 사내 셋이 섰다.</p>
+
+  <p>바다 냄새가 나는 사람들이었다.</p>
+
+  <div class="mark"><span>여섯</span><i></i></div>
+
+  <p>정안은 그들을 안으로 들이지 않았다. 마당에 자리를 폈다.</p>
+
+  <p>수겸이 품에서 사본을 꺼내 상 위에 놓았다.</p>
+
+  <p>정안이 한 장을 넘겼다. 두 장을 넘겼다.</p>
+
+  <p>그리고 손이 멈췄다.</p>
+
+  <p class="say">"이 이름을 아시오."</p>
+
+  <p>정안이 고개를 들었다.</p>
+
+  <p class="say">"알다마다요."</p>
+
+  <p class="seal-line">"내 아버지를 끌고 간 손이오."</p>
+
+  <div class="mark"><span>일곱</span><i></i></div>
+
+  <p>그날 밤 정안은 이름들을 하나씩 짚어갔다.</p>
+
+  <p class="say">"이 사람은 대비마마 곁에 있었소."</p>
+  <p class="say">"이 사람은 아버지 장례에 왔었소."</p>
+  <p class="say">"이 사람은 내 손을 잡고 울었소."</p>
+
+  <p>수겸이 물었다. 어찌 그리 아시오.</p>
+
+  <p class="say">"어릴 적 궁궐에서 다 본 얼굴이오."</p>
+
+  <p>그리고 정안이 말했다.</p>
+
+  <p class="say">"글은 누가 썼는지 모르오. 그러나 누가 시켰는지는 내가 아오."</p>
+  <p class="say">"장부에는 이름만 있으나, 내 안에는 얼굴이 있소."</p>
+
+  <p>배쇠가 그때 처음으로 입을 열었다.</p>
+
+  <p class="say">"같이 가시겠소."</p>
+
+  <p>정안은 한참 말이 없었다. 십 년을 산에서 산 사람에게 다시 내려오라 한 것이었다.</p>
+
+  <div class="mark"><span>여덟</span><i></i></div>
+
+  <p>새벽에 정안이 답했다.</p>
+
+  <p class="say">"젊어서는 횃불을 들었소."</p>
+  <p class="say">"그 불로 아무것도 못 살렸소. 다 태우고 빈 손으로 돌아왔소."</p>
+  <p class="say">"그때 알았소 — 분노는 오래 못 가오."</p>
+  <p class="say">"그러나 기억은 오래 가오."</p>
+
+  <p>그리고 말했다.</p>
+
+  <p class="seal-line">"나는 이제 불이 아니오. 나는 증인이오."</p>
+
+  <p>같이 가겠다는 뜻인지 아닌지 셋은 알지 못했다.</p>
+
+  <p>새벽에 산을 내려왔다. 돌아보니 암자 문이 열려 있었다.</p>
+
+  <p><span class="quiet">안에는 아무도 없었다.</span></p>
+
+  <div class="mark"><span>아홉</span><i></i></div>
+
+  <p>그 뒤의 일은 이 이야기가 알지 못한다.</p>
+
+  <p>한양에 닿았는지, 그 장부를 누구에게 내밀었는지, 이름이 불렸는지 다시 지워졌는지 — 아무 기록에도 없다.</p>
+
+  <p>다만 그해 겨울, 북쪽 국경이 뚫렸다는 것만은 기록에 있다.</p>
+
+  <p>여진이 강을 건넜고 성 셋이 사흘에 무너졌고 나라가 죄인을 사면하였다.</p>
+
+  <p>그리고 그 무렵 남녘의 어느 포구에서 흰 돛을 단 배 한 척이 짐만 부리고 사람 없이 남았다는 이야기가 잠깐 돌았다.</p>
+
+  <p>그것이 그 배였는지는 아무도 확인하지 않았다.</p>
+
+  <div class="mark"><span>열</span><i></i></div>
+
+  <p>섬에서는 그 여자가 계속 물에 들어갔다.</p>
+
+  <p>새벽 물때에 태왁을 안고 걸어 들어갔고, 저녁에 나왔다. 전복을 캤고 미역을 말렸다. 전과 같았다.</p>
+
+  <p>다만 한 가지가 달라졌다.</p>
+
+  <p>가끔 그녀는 북쪽 여울로 내려갔다. 캐러 가는 것이 아니었다. 갈라진 뱃전 사이에 앉아 잠시 있다 올라왔다.</p>
+
+  <p>열두 사람의 이름을 그녀는 다 외웠다. 관의 문서에는 없던 이름들이었다. 그 어미들이 알고 있던 이름들이었다.</p>
+
+  <p>물 아래에서 그 이름을 하나씩 불렀다. 소리는 나지 않았다. 물속에서는 입을 열 수 없으니.</p>
+
+  <p><span class="quiet">그래도 불렀다.</span></p>
+
+  <div class="mark"><span>열하나</span><i></i></div>
+
+  <p>밤이 맑은 날에는 북쪽 수평선이 붉었다.</p>
+
+  <p>봉화인지 노을인지 그녀는 몰랐다.</p>
+
+  <p>그들이 닿았는지도 몰랐다.</p>
+
+  <p>바다는 말하지 않는다. 다 알면서 말하지 않는다.</p>
+
+  <p>그래서 그녀가 말하기로 했다.</p>
+
+  <p>노를 저어 나가며 어머니가 부르던 노래를 불렀다. 이어도 사나, 이어도 사나. 가서 돌아오지 않는 섬의 이름이었다.</p>
+
+  <p>그 노래에 그녀는 이름을 넣어 불렀다. 열두 사람의 이름을. 그리고 만난 적 없는 사람들의 이름도.</p>
+
+  <p>붓을 놓고 형장으로 간 사람. 탈을 버리고 길을 걷던 사람. 불을 들고 산을 내려온 사람. 마루 밑에서 글을 찾은 아이.</p>
+
+  <p>그들을 그녀는 본 적이 없었다. 그러나 그 이야기가 이 섬까지 왔다.</p>
+
+  <p class="seal-line">재 밑에 씨앗이 있었듯<br>물 아래 이름이 있었소</p>
+
+  <p>바다는 여전히 말하지 않았다.</p>
+
+  <p><span class="quiet">그녀는 여기서 기다리기로 했다.</span></p>
+
+</article>
+
+<section class="listen">
+  <h2>이 장의 음악</h2>
+  <p class="note">이 이야기는 음악으로 먼저 만들어졌습니다.<br>제6장 「섬과 별」의 네 곡을 들으며 읽어 보세요.</p>
+
+  <div class="player">
+    <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" title="섬과 별 플레이리스트"
+      src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2285171265&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+  </div>
+
+  <p class="credit">
+    <a href="https://soundcloud.com/demosaii" title="demosaii" target="_blank" rel="noopener">demosaii</a> ·
+    <a href="https://soundcloud.com/demosaii/sets/island-and-stars-full-album" title="섬과 별 | Island and Stars — Full Album" target="_blank" rel="noopener">섬과 별 | Island and Stars</a>
+  </p>
+
+  <p><a class="lyrics-link" href="lyrics-ch6.html">이 앨범의 가사 전문 보기 →</a></p>
+</section>
+
+<nav class="nextnav done">
+  <a href="index.html">
+    <span>
+      <span class="lbl">다음 이야기</span>
+      <span class="ttl">쇠 삼부작 — 눈과 쇠</span>
+      <span class="dsc">북쪽이 뚫린다. 궁궐과 반란군이 같은 편에 선다 · 준비 중</span>
+    </span>
+    <span class="arrow">→</span>
+  </a>
+</nav>
+
+<nav class="map" aria-label="전체 장 목록">
+  <h2>전체 이야기</h2>
+
+  <p class="map-part">불의 삼부작</p>
+  <ol>
+    <li><span>제1장</span> 피와 안개 <em>— 궁궐, 그리고 지워진 이름</em></li>
+    <li><span>제2장</span> 먹과 불씨 <em>— 네 개의 목소리, 하나의 봉기</em></li>
+    <li><span>제3장</span> 재와 씨앗 <em>— 불이 꺼진 자리</em></li>
+  </ol>
+
+  <p class="map-part">바다 삼부작</p>
+  <ol start="4">
+    <li><span>제4장</span> 소금과 파도 <em>— 네 사람이 모이다</em></li>
+    <li><span>제5장</span> 바다와 뼈 <em>— 가라앉은 진실이 떠오르다</em></li>
+    <li class="here"><span>제6장</span> 섬과 별 <em>— 각자의 답을 찾다</em></li>
+  </ol>
+
+  <p class="next-line">다음 이야기 — <b>쇠 삼부작</b></p>
+</nav>
+
+<section class="about">
+  <p class="about-name">demosaii</p>
+  <p>조선 시대를 배경으로 국악과 힙합을 섞어 이야기를 만듭니다. 거문고, 가야금, 해금, 대금, 장구가 붐뱁 비트 위에 만나고, 가사는 전곡 한국어입니다. 두 개의 삼부작, 여섯 장의 앨범, 스물네 곡.</p>
+  <p class="about-links">
+    <a href="https://soundcloud.com/demosaii" target="_blank" rel="noopener">전곡 듣기 — SoundCloud →</a>
+  </p>
+  <p class="about-tags">#조선힙합 #국악힙합 #웹소설 #사극 #한국힙합 #퓨전국악 #demosaii</p>
+</section>
+
+
+<script>
+  (function(){
+    var btn = document.querySelector('.langbtn');
+    var menu = document.querySelector('.langmenu');
+    if(!btn || !menu) return;
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.addEventListener('click', function(){
+      menu.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape'){
+        menu.classList.remove('open');
+        btn.setAttribute('aria-expanded','false');
+      }
+    });
+  })();
+</script>
+
+</body>
+</html>
