@@ -14,17 +14,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>섬과 별 가사 · Lyrics | 조선 힙합 유니버스</title>
 <meta name="description" content="조선힙합 섬과 별 (Island and Stars) 전곡 가사와 영어 번역. Full Korean lyrics with English translation.">
-
-<meta property="og:type" content="article">
-<meta property="og:title" content="섬과 별 가사 · Lyrics">
-<meta property="og:description" content="조선힙합 섬과 별 (Island and Stars) 전곡 가사와 영어 번역. Full Korean lyrics with English translation.">
-<meta property="og:site_name" content="조선 이야기 · demosaii">
-<meta property="og:locale" content="ko_KR">
-<meta property="og:url" content="https://joseon-universe.vercel.app/lyrics-ch6.html">
-<meta property="og:image" content="https://joseon-universe.vercel.app/covers/ch6.jpg">
-<meta name="twitter:card" content="summary_large_image">
-
-<link rel="canonical" href="https://joseon-universe.vercel.app/lyrics-ch6.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Song+Myung&family=Nanum+Myeongjo:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
@@ -40,7 +29,7 @@
     margin:0; background:var(--ink);
     background-image:radial-gradient(120% 80% at 50% -10%, #1b2436 0%, var(--ink) 55%, var(--ink-deep) 100%);
     color:var(--moon); font-family:"Nanum Myeongjo", serif; -webkit-font-smoothing:antialiased;
-    position:relative;
+      position:relative;
   }
   .topbar{
     display:flex; align-items:center; justify-content:space-between; gap:16px;
@@ -111,62 +100,9 @@
     filter:grayscale(.35) contrast(.9);
     mix-blend-mode:screen;
   }
-  body > *:not(.panorama){ position:relative; z-index:1; }
-  body > .topbar{ z-index:60; }   /* the language menu must sit above everything below it */
+  body > *:not(.panorama):not(.markmoon){ position:relative; z-index:1; }
+  body > .topbar{ z-index:60; }
   @media (max-width:760px){ .panorama{ opacity:.06; background-position:center 50%; } }
-
-
-  /* ---------- top bar, made visible ---------- */
-  .topbar{
-    max-width:760px; padding:22px 24px 0;
-    font-size:13.5px; gap:10px;
-  }
-  .topbar a.home{
-    color:#c3ccdc; letter-spacing:.14em;
-    border-bottom:1px solid transparent; padding-bottom:3px;
-    transition:color .25s ease, border-color .25s ease;
-  }
-  .topbar a.home:hover{ color:#fff; border-bottom-color:#fff; }
-  .topbar .navgroup{ display:flex; align-items:center; gap:8px; margin-inline-start:auto; }
-  .topbar a.tostory, .topbar a.tocast{
-    color:#c3ccdc !important;
-    border:1px solid rgba(143,158,186,.34);
-    padding:8px 15px;
-    letter-spacing:.14em;
-    white-space:nowrap;
-    transition:color .25s ease, border-color .25s ease, background .25s ease;
-  }
-  .topbar a.tostory:hover, .topbar a.tocast:hover,
-  .topbar a.tostory:focus-visible, .topbar a.tocast:focus-visible{
-    color:#fff !important; border-color:#fff; background:rgba(255,255,255,.06);
-  }
-  .langbtn{ font-size:12.5px !important; padding:8px 15px !important; color:#c3ccdc !important; }
-  @media (max-width:620px){
-    .topbar{ flex-wrap:wrap; gap:8px; font-size:12.5px; }
-    .topbar .navgroup{ width:100%; margin-inline-start:0; justify-content:flex-start; }
-    .topbar a.tostory, .topbar a.tocast{ padding:7px 12px; }
-  }
-
-  /* ---------- character links, made obvious ---------- */
-  a.cast-link{
-    color:#cfd6e4 !important;
-    text-decoration:none;
-    border-bottom:1px solid rgba(180,196,222,.55);
-    padding-bottom:1px;
-    transition:color .25s ease, border-color .25s ease, background .25s ease;
-  }
-  a.cast-link:hover, a.cast-link:focus-visible{
-    color:#fff !important; border-bottom-color:#fff;
-    background:rgba(255,255,255,.07);
-  }
-
-
-  .castinfo{
-    max-width:680px; margin:0 auto 26px; padding:0 24px;
-    font-family:"Gowun Dodum", sans-serif; font-size:12px;
-    letter-spacing:.05em; color:#7d8ba6; text-align:center;
-  }
-
 
   /* ---------- seal mark behind the title ---------- */
   .markmoon{
