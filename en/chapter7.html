@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><!-- Google tag (gtag.js) -->
+<meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z5RGZRN1YF"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -9,26 +10,33 @@
   gtag('js', new Date());
   gtag('config', 'G-Z5RGZRN1YF');
   gtag('config', 'G-FS3RY08FBH');
-</script><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Snow and Iron — Chapter Seven | The Joseon Hip-Hop Universe</title>
-<meta name="description" content="Chapter Seven of the Joseon Hip-Hop Universe. Snow and Iron — the north is breached, and the palace and the rebels stand on the same side. The first chapter of the Iron Trilogy, in progress.">
-<link rel="canonical" href="https://joseon-universe.vercel.app/en/chapter7.html">
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Snow and Iron — Chapter Seven | Joseon Stories</title>
+<meta name="description" content="Chapter Seven of Joseon Stories. Snow and Iron — the north is breached, the state pardons its criminals, a blacksmith melts down a temple bell, and a woman who can write walks north carrying paper and ink.">
+<meta name="keywords" content="Joseon hip-hop, gugak hip-hop, Korean traditional music, historical fiction, Korean history, demosaii">
+<meta name="author" content="demosaii">
+
+<!-- Link previews (Open Graph) -->
 <meta property="og:type" content="article">
-<meta property="og:title" content="Snow and Iron — Chapter Seven">
-<meta property="og:description" content="Chapter Seven of the Joseon Hip-Hop Universe. Snow and Iron — the north is breached, and the palace and the rebels stand on the same side. The first chapter of the Iron Trilogy, in progress.">
-<meta property="og:site_name" content="조선 이야기 · demosaii">
+<meta property="og:title" content="Snow and Iron — Chapter Seven | Joseon Stories">
+<meta property="og:description" content="Those with something to carry went south. Those with nothing went north.">
+<meta property="og:site_name" content="The Joseon Hip-Hop Universe · demosaii">
 <meta property="og:locale" content="en_US">
+<!-- Album cover image URL goes here -->
 <meta property="og:url" content="https://joseon-universe.vercel.app/en/chapter7.html">
 <meta property="og:image" content="https://joseon-universe.vercel.app/covers/ch7.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://joseon-universe.vercel.app/en/chapter7.html">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "CreativeWork",
-  "name": "Snow and Iron",
+  "name": "Island and Stars",
   "url": "https://joseon-universe.vercel.app/en/chapter7.html",
-  "position": 7,
+  "position": 6,
   "inLanguage": "en",
   "isPartOf": {
     "@type": "CreativeWorkSeries",
@@ -39,7 +47,7 @@
     "@type": "Person",
     "name": "demosaii"
   },
-  "description": "Chapter Seven of the Joseon Hip-Hop Universe. Snow and Iron — the north is breached, and the palace and the rebels stand on the same side. The first chapter of the Iron Trilogy, in progress.",
+  "description": "Chapter Six of the Joseon Hip-Hop Universe. Island and Stars — they raise a white sail and head north, but halfway across, the diver looks back at the island.",
   "image": "https://joseon-universe.vercel.app/covers/ch7.jpg"
 }
 </script>
@@ -48,270 +56,306 @@
 <link href="https://fonts.googleapis.com/css2?family=Song+Myung&family=Nanum+Myeongjo:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#0d1220;
+    --ink:#0d1220;          /* night ground */
     --ink-deep:#070b14;
-    --hanji:#efe8d8;
+    --hanji:#efe8d8;        /* paper */
+    --hanji-edge:#e2d8c2;
+    --brush:#1a1a1a;        /* body text */
+    --brush-soft:#4a4640;
+    --seal:#8c2f2a;         /* the one red: seal / blood */
     --moon:#cfd6e4;
-    --seal:#8c2f2a;
-    --fire:#a8402f;      /* trilogy one */
-    --sea:#2f7d8c;       /* trilogy two */
   }
+
   *{box-sizing:border-box;}
+
   body{
     margin:0;
     background:var(--ink);
     background-image:
-      radial-gradient(circle at 50% 300px, rgba(214,224,240,.10) 0 190px, rgba(214,224,240,.035) 191px 230px, transparent 231px),
       radial-gradient(120% 80% at 50% -10%, #1b2436 0%, var(--ink) 55%, var(--ink-deep) 100%);
-    position:relative;
     color:var(--moon);
     font-family:"Nanum Myeongjo", serif;
     -webkit-font-smoothing:antialiased;
-    min-height:100vh;
+    position:relative;
   }
 
   /* ---------- hero ---------- */
   .hero{
-    max-width:780px;
+    max-width:760px;
     margin:0 auto;
-    padding:110px 24px 0;
+    padding:96px 24px 72px;
     text-align:center;
   }
   .eyebrow{
     font-family:"Gowun Dodum", sans-serif;
-    font-size:11.5px;
-    letter-spacing:.44em;
-    text-indent:.44em;
+    font-size:12px;
+    letter-spacing:.42em;
+    text-indent:.42em;
     color:#7d8ba6;
-    margin:0 0 38px;
+    margin:0 0 34px;
   }
   .hero h1{
     font-family:"Song Myung", serif;
-    font-size:clamp(38px,8vw,68px);
+    font-size:clamp(46px,10vw,84px);
     font-weight:400;
-    letter-spacing:.1em;
-    text-indent:.1em;
-    line-height:1.3;
+    letter-spacing:.12em;
+    text-indent:.12em;
     margin:0;
     color:#f2f4f8;
+    line-height:1.15;
   }
-  .hero .sub{
+  .hero .en{
     font-family:"Gowun Dodum", sans-serif;
     font-size:12px;
-    letter-spacing:.28em;
-    text-indent:.28em;
+    letter-spacing:.3em;
+    text-indent:.3em;
     color:#6f7d96;
-    margin:26px 0 0;
+    margin:22px 0 0;
   }
-
-  /* ---------- motto ---------- */
-  .motto{
-    max-width:620px;
-    margin:64px auto 0;
-    padding:0 24px;
-    text-align:center;
+  .chapter-mark{
+    margin:44px auto 0;
+    width:1px;
+    height:64px;
+    background:linear-gradient(to bottom, transparent, #6f7d96 30%, transparent);
+  }
+  .chapter-no{
     font-family:"Song Myung", serif;
-    font-size:clamp(16px,3.4vw,19px);
-    line-height:2.3;
-    color:#aab6cb;
-    letter-spacing:.05em;
-    word-break:keep-all;
+    font-size:15px;
+    letter-spacing:.3em;
+    text-indent:.3em;
+    color:#8e9ab1;
+    margin:18px 0 0;
   }
-  .motto span{ display:block; }
-  .motto span + span{ color:#7d8ba6; }
 
-  /* ---------- intro ---------- */
-  .intro{
-    max-width:600px;
-    margin:60px auto 0;
-    padding:0 24px;
-    text-align:center;
-    font-family:"Gowun Dodum", sans-serif;
-    font-size:14.5px;
+  /* ---------- paper ---------- */
+  .paper{
+    max-width:660px;
+    margin:0 auto 88px;
+    background:var(--hanji);
+    background-image:
+      repeating-linear-gradient(0deg, rgba(0,0,0,.012) 0 1px, transparent 1px 3px),
+      radial-gradient(90% 60% at 30% 10%, #f5efe1 0%, var(--hanji) 60%),
+      radial-gradient(70% 50% at 80% 90%, #e8dfcb 0%, transparent 70%);
+    color:var(--brush);
+    padding:76px 62px 84px;
+    box-shadow:0 40px 90px rgba(0,0,0,.55);
+    position:relative;
+  }
+  .paper::before,
+  .paper::after{
+    content:"";
+    position:absolute;
+    left:0; right:0;
+    height:10px;
+    background:var(--hanji-edge);
+    -webkit-mask-image:repeating-linear-gradient(90deg,#000 0 7px,transparent 7px 9px);
+            mask-image:repeating-linear-gradient(90deg,#000 0 7px,transparent 7px 9px);
+    opacity:.55;
+  }
+  .paper::before{top:-6px;}
+  .paper::after{bottom:-6px;}
+
+  .paper p{
+    font-size:17.5px;
     line-height:2.15;
-    color:#8b98b0;
+    letter-spacing:.005em;
+    margin:0 0 1.55em;
     word-break:keep-all;
   }
-  .intro p{ margin:0 0 14px; }
-  .intro b{ color:#dfe4ee; font-weight:400; }
+  .paper p.lead{
+    font-size:20px;
+    line-height:2;
+  }
+  .paper .quiet{ color:var(--brush-soft); }
 
-  /* ---------- chapters ---------- */
-  .chapters{
-    max-width:700px;
-    margin:86px auto 0;
-    padding:0 24px;
+  /* dialogue lines sit slightly apart */
+  .paper p.say{
+    margin-left:.2em;
+    color:#26262a;
   }
-  .part{
-    font-family:"Gowun Dodum", sans-serif;
-    font-size:11px;
-    letter-spacing:.4em;
-    text-indent:.4em;
-    color:#66748c;
-    margin:0 0 6px;
-    text-align:center;
-  }
-  .part-kr{
-    font-family:"Song Myung", serif;
-    font-size:17px;
-    letter-spacing:.24em;
-    text-indent:.24em;
-    color:#c3ccdc;
-    text-align:center;
-    margin:0 0 26px;
-  }
-  .part-kr + ol{ margin-bottom:64px; }
 
-  ol.list{
-    list-style:none;
-    margin:0;
-    padding:0;
-    border-top:1px solid rgba(143,158,186,.14);
-  }
-  ol.list li{ border-bottom:1px solid rgba(143,158,186,.14); }
-
-  ol.list a,
-  ol.list .soon{
+  /* ---------- section marks ---------- */
+  .mark{
     display:flex;
     align-items:center;
-    gap:20px;
-    padding:18px 6px;
-    text-decoration:none;
-    color:inherit;
-    transition:background .25s ease, padding-left .25s ease;
+    gap:16px;
+    margin:56px 0 40px;
   }
-
-  /* cover thumbnail */
-  .cover{
-    width:78px;
-    height:78px;
-    flex:0 0 78px;
-    object-fit:cover;
-    background:#161d2c;
-    filter:saturate(.55) brightness(.82);
-    transition:filter .35s ease, transform .35s ease;
-  }
-  ol.list a:hover .cover,
-  ol.list a:focus .cover{
-    filter:saturate(1) brightness(1);
-    transform:scale(1.03);
-  }
-  .soon .cover{ filter:saturate(.15) brightness(.6); }
-
-  /* the two trilogies carry their own colour */
-  .fire .part{ color:#a8695c; }
-  .fire .part-kr{ color:#dcbcb2; }
-  .fire ol.list a:hover, .fire ol.list a:focus{ background:rgba(168,64,47,.10); }
-  .fire .no{ color:#9c6559; }
-  .fire ol.list li{ border-bottom-color:rgba(168,64,47,.20); }
-  .fire ol.list{ border-top-color:rgba(168,64,47,.20); }
-
-  .sea .part{ color:#6fa3ad; }
-  .sea .part-kr{ color:#b3d2d8; }
-  .sea ol.list a:hover, .sea ol.list a:focus{ background:rgba(47,125,140,.10); }
-  .sea .no{ color:#5e8f99; }
-  .sea ol.list li{ border-bottom-color:rgba(47,125,140,.20); }
-  .sea ol.list{ border-top-color:rgba(47,125,140,.20); }
-
-  /* thin rule under each trilogy heading */
-  .part-kr::after{
-    content:"";
-    display:block;
-    width:34px;
-    height:1px;
-    margin:16px auto 0;
-    background:currentColor;
-    opacity:.5;
-  }
-  ol.list a:hover,
-  ol.list a:focus{
-    background:rgba(207,214,228,.05);
-    padding-left:16px;
-  }
-  .no{
-    font-family:"Gowun Dodum", sans-serif;
-    font-size:10.5px;
-    letter-spacing:.2em;
-    color:#5d6a80;
-    white-space:nowrap;
-    padding-top:4px;
-  }
-  .t{ flex:1; min-width:0; }
-  .t .kr{
+  .mark span{
     font-family:"Song Myung", serif;
-    font-size:21px;
-    letter-spacing:.06em;
-    color:#e6ebf4;
-    display:block;
-    margin-bottom:7px;
-  }
-  .t .desc{
-    font-family:"Nanum Myeongjo", serif;
     font-size:14px;
-    line-height:1.85;
-    color:#7f8da5;
-    display:block;
-    word-break:keep-all;
-  }
-  .go{
-    font-family:"Gowun Dodum", sans-serif;
-    font-size:11px;
-    letter-spacing:.16em;
-    color:#8f9db5;
+    letter-spacing:.34em;
+    text-indent:.34em;
+    color:#8a8070;
     white-space:nowrap;
-    padding-top:6px;
   }
-  ol.list a:hover .go{ color:var(--moon); }
+  .mark i{
+    display:block;
+    height:1px;
+    flex:1;
+    background:linear-gradient(to right, rgba(60,52,40,.42), rgba(60,52,40,0));
+  }
+  .mark.first{ margin-top:0; }
 
-  .soon{ opacity:.4; cursor:default; }
-  .soon .go{ color:#66748c; }
+  /* ---------- the one red ---------- */
+  .seal-line{
+    margin:64px 0 0;
+    text-align:center;
+    font-family:"Song Myung", serif;
+    font-size:19px;
+    line-height:2.1;
+    color:var(--seal);
+    letter-spacing:.06em;
+  }
 
-  /* ---------- listen ---------- */
+  /* ---------- listen block ---------- */
   .listen{
-    max-width:700px;
-    margin:34px auto 0;
-    padding:52px 24px 0;
-    border-top:1px solid rgba(143,158,186,.14);
+    max-width:660px;
+    margin:0 auto;
+    padding:0 24px 110px;
     text-align:center;
   }
   .listen h2{
     font-family:"Song Myung", serif;
     font-weight:400;
-    font-size:19px;
-    letter-spacing:.18em;
-    text-indent:.18em;
+    font-size:22px;
+    letter-spacing:.14em;
+    text-indent:.14em;
     color:#dfe4ee;
-    margin:0 0 14px;
+    margin:0 0 12px;
   }
-  .listen p{
+  .listen .note{
     font-family:"Gowun Dodum", sans-serif;
     font-size:13.5px;
     line-height:2;
     color:#8492ab;
-    margin:0 0 26px;
+    margin:0 0 34px;
+  }
+  .player{
+    border-radius:2px;
+    overflow:hidden;
+    box-shadow:0 24px 60px rgba(0,0,0,.5);
+  }
+  .player iframe{ display:block; }
+  .credit{
+    font-family:"Gowun Dodum", sans-serif;
+    font-size:11px;
+    color:#5d6a80;
+    margin:14px 0 0;
+    letter-spacing:.04em;
+  }
+  .credit a{ color:#7b89a2; text-decoration:none; }
+  .credit a:hover, .credit a:focus{ color:#cfd6e4; text-decoration:underline; }
+
+  .next{
+    max-width:660px;
+    margin:0 auto;
+    padding:0 24px 120px;
+    text-align:center;
+    font-family:"Song Myung", serif;
+    font-size:15px;
+    letter-spacing:.22em;
+    text-indent:.22em;
+    color:#6f7d96;
+  }
+  .next b{ font-weight:400; color:#aab6cb; }
+
+  /* ---------- intro ---------- */
+  .intro{
+    max-width:620px;
+    margin:0 auto 56px;
+    padding:0 24px;
+    text-align:center;
+    font-family:"Gowun Dodum", sans-serif;
+    font-size:14.5px;
+    line-height:2.1;
+    color:#8b98b0;
     word-break:keep-all;
   }
-  .btn{
-    display:inline-block;
+  .intro p{ margin:0 0 12px; }
+  .intro b{ color:#dfe4ee; font-weight:400; }
+
+  /* ---------- chapter map ---------- */
+  .map{
+    max-width:660px;
+    margin:0 auto;
+    padding:0 24px 90px;
+  }
+  .map h2{
+    font-family:"Song Myung", serif;
+    font-weight:400;
+    font-size:20px;
+    letter-spacing:.16em;
+    text-indent:.16em;
+    color:#dfe4ee;
+    text-align:center;
+    margin:0 0 40px;
+  }
+  .map-part{
     font-family:"Gowun Dodum", sans-serif;
-    font-size:13px;
-    letter-spacing:.14em;
-    color:#e6ebf4;
-    text-decoration:none;
-    border:1px solid rgba(207,214,228,.32);
-    padding:14px 30px;
-    transition:border-color .25s ease, background .25s ease;
+    font-size:11.5px;
+    letter-spacing:.34em;
+    text-indent:.34em;
+    color:#6f7d96;
+    margin:30px 0 14px;
   }
-  .btn:hover, .btn:focus{
-    border-color:var(--moon);
-    background:rgba(207,214,228,.06);
+  .map ol{
+    list-style:none;
+    margin:0;
+    padding:0;
+    border-top:1px solid rgba(143,158,186,.16);
   }
+  .map li{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    padding:15px 4px;
+    border-bottom:1px solid rgba(143,158,186,.16);
+    font-family:"Nanum Myeongjo", serif;
+    font-size:16px;
+    color:#aab6cb;
+    word-break:keep-all;
+  }
+  .map li span{
+    font-family:"Gowun Dodum", sans-serif;
+    font-size:11px;
+    letter-spacing:.18em;
+    color:#66748c;
+    white-space:nowrap;
+  }
+  .map li em{
+    font-style:normal;
+    font-size:13.5px;
+    color:#6f7d96;
+  }
+  .map li.here{ color:#f2f4f8; }
+  .map li.here span{ color:var(--seal); }
+  .map li.here::after{
+    content:"READING NOW";
+    margin-left:auto;
+    font-family:"Gowun Dodum", sans-serif;
+    font-size:10.5px;
+    letter-spacing:.16em;
+    color:var(--seal);
+    white-space:nowrap;
+  }
+  .next-line{
+    margin:36px 0 0;
+    text-align:center;
+    font-family:"Song Myung", serif;
+    font-size:15px;
+    letter-spacing:.22em;
+    text-indent:.22em;
+    color:#6f7d96;
+  }
+  .next-line b{ font-weight:400; color:#aab6cb; }
 
   /* ---------- about ---------- */
   .about{
-    max-width:640px;
-    margin:90px auto 0;
-    padding:44px 24px 130px;
-    border-top:1px solid rgba(143,158,186,.14);
+    max-width:660px;
+    margin:0 auto;
+    padding:44px 24px 120px;
+    border-top:1px solid rgba(143,158,186,.16);
     font-family:"Gowun Dodum", sans-serif;
     font-size:13.5px;
     line-height:2.05;
@@ -327,6 +371,13 @@
     text-indent:.2em;
     color:#dfe4ee;
   }
+  .about-links a{
+    color:#cfd6e4;
+    text-decoration:none;
+    border-bottom:1px solid rgba(207,214,228,.35);
+    padding-bottom:2px;
+  }
+  .about-links a:hover, .about-links a:focus{ color:#fff; border-color:#fff; }
   .about-tags{
     font-size:11.5px;
     color:#5d6a80;
@@ -336,19 +387,15 @@
   a:focus-visible{ outline:2px solid var(--moon); outline-offset:3px; }
 
   @media (max-width:640px){
-    .hero{ padding-top:76px; }
-    .chapters{ margin-top:64px; }
-    .t .kr{ font-size:19px; }
-    .go{ display:none; }
-    ol.list a, ol.list .soon{ gap:14px; padding:16px 4px; }
-    .cover{ width:62px; height:62px; flex-basis:62px; }
+    .hero{ padding:64px 20px 52px; }
+    .paper{ padding:52px 26px 60px; margin-bottom:64px; }
+    .paper p{ font-size:16.5px; line-height:2.05; }
+    .paper p.lead{ font-size:18px; }
   }
 
   @media (prefers-reduced-motion:no-preference){
-    .hero, .motto, .intro, .chapters{ animation:rise .9s ease-out both; }
-    .motto{ animation-delay:.1s; }
-    .intro{ animation-delay:.18s; }
-    .chapters{ animation-delay:.26s; }
+    .paper, .hero{ animation:rise .9s ease-out both; }
+    .paper{ animation-delay:.15s; }
     @keyframes rise{
       from{ opacity:0; transform:translateY(14px); }
       to{ opacity:1; transform:none; }
@@ -440,72 +487,19 @@
   /* ---------- faint panorama behind everything ---------- */
   .panorama{
     position:fixed; inset:0; z-index:0; pointer-events:none;
-    background-image:url("art/hero.jpg");
+    background-image:url("../art/hero.jpg");
     background-size:cover;
     background-position:center 42%;
     background-repeat:no-repeat;
-    opacity:.10;
+    opacity:.09;
     filter:grayscale(.35) contrast(.9);
     mix-blend-mode:screen;
   }
-  /* keep all real content above it */
   body > *:not(.panorama){ position:relative; z-index:1; }
   body > .topbar{ z-index:60; }   /* the language menu must sit above everything below it */
+  @media (max-width:760px){ .panorama{ opacity:.06; background-position:center 50%; } }
 
-  @media (max-width:760px){
-    .panorama{ opacity:.07; background-position:center 50%; }
-  }
-
-
-  /* ---------- story summary page ---------- */
-  .sum{ max-width:680px; margin:0 auto; padding:0 24px; }
-  .sum .part{ margin:78px 0 0; }
-  .sum .part-label{
-    font-family:"Gowun Dodum", sans-serif; font-size:11px;
-    letter-spacing:.4em; text-indent:.4em; color:#66748c;
-    margin:0 0 6px; text-align:center;
-  }
-  .sum .part-name{
-    font-family:"Song Myung", serif; font-size:20px;
-    letter-spacing:.22em; text-indent:.22em; color:#c3ccdc;
-    text-align:center; margin:0 0 34px;
-  }
-  .sum article{
-    border-top:1px solid rgba(143,158,186,.14);
-    padding:30px 0 0; margin:0 0 34px;
-  }
-  .sum h3{
-    font-family:"Song Myung", serif; font-weight:400; font-size:19px;
-    letter-spacing:.05em; color:#e6ebf4; margin:0 0 4px;
-  }
-  .sum .ch-no{
-    font-family:"Gowun Dodum", sans-serif; font-size:10.5px;
-    letter-spacing:.3em; color:#66748c; margin:0 0 10px;
-  }
-  .sum p.body{
-    font-family:"Nanum Myeongjo", serif; font-size:15.5px; line-height:2.05;
-    color:#9aa7bd; margin:0 0 14px; word-break:keep-all;
-  }
-  .sum p.body b{ color:#cfd6e4; font-weight:400; }
-  .sum .read{
-    display:inline-block; font-family:"Gowun Dodum", sans-serif;
-    font-size:11.5px; letter-spacing:.14em; color:#aab6cb;
-    text-decoration:none; border-bottom:1px solid rgba(143,158,186,.28);
-    padding-bottom:2px;
-  }
-  .sum .read:hover{ color:#fff; border-color:#fff; }
-  .sum .wip{
-    font-family:"Gowun Dodum", sans-serif; font-size:11.5px;
-    letter-spacing:.14em; color:#66748c;
-  }
-  .sum .spoiler{
-    margin:40px 0 0; padding:18px 20px;
-    border:1px solid rgba(143,158,186,.16);
-    font-family:"Gowun Dodum", sans-serif; font-size:12.5px;
-    line-height:1.9; color:#7d8ba6; text-align:center;
-  }
-
-  /* ---------- previously box on chapter pages ---------- */
+/* ---------- previously box on chapter pages ---------- */
   details.prev{
     max-width:680px; margin:0 auto 34px; padding:0 24px;
     font-family:"Gowun Dodum", sans-serif;
@@ -530,100 +524,18 @@
   }
   details.prev .inner a:hover{ color:#fff; }
 
-  .panorama{ background-image:url("art/hero.jpg"); }
 
-  /* ---------- characters ---------- */
-  .cast{ max-width:700px; margin:0 auto; padding:0 24px; }
-  .cast .gen{ margin:74px 0 0; }
-  .cast .gen-label{
-    font-family:"Gowun Dodum", sans-serif; font-size:11px;
-    letter-spacing:.4em; text-indent:.4em; color:#66748c;
-    margin:0 0 6px; text-align:center;
+  /* ---------- character links ---------- */
+  a.cast-link{
+    color:inherit; text-decoration:none;
+    border-bottom:1px dotted rgba(143,158,186,.45);
+    padding-bottom:1px;
+    transition:border-color .25s ease, color .25s ease;
   }
-  .cast .gen-name{
-    font-family:"Song Myung", serif; font-size:19px;
-    letter-spacing:.22em; text-indent:.22em; color:#c3ccdc;
-    text-align:center; margin:0 0 32px;
-  }
-  .cast figure{
-    margin:0 0 30px; padding:26px 0 0;
-    border-top:1px solid rgba(143,158,186,.14);
-  }
-  .cast h3{
-    font-family:"Song Myung", serif; font-weight:400; font-size:21px;
-    letter-spacing:.05em; color:#e6ebf4; margin:0 0 3px;
-  }
-  .cast .role{
-    font-family:"Gowun Dodum", sans-serif; font-size:11px;
-    letter-spacing:.24em; color:#7d8ba6; margin:0 0 14px;
-  }
-  .cast p.bio{
-    font-family:"Nanum Myeongjo", serif; font-size:15px; line-height:2.05;
-    color:#9aa7bd; margin:0 0 12px; word-break:keep-all;
-  }
-  .cast p.bio b{ color:#cfd6e4; font-weight:400; }
-  .cast .appears{
-    font-family:"Gowun Dodum", sans-serif; font-size:11.5px;
-    letter-spacing:.06em; color:#66748c; line-height:1.9;
-  }
-  .cast .appears a{
-    color:#8fa0bb; text-decoration:none;
-    border-bottom:1px solid rgba(143,158,186,.22);
-  }
-  .cast .appears a:hover{ color:#fff; }
-  .cast .quote{
-    font-family:"Song Myung", serif; font-size:14.5px; line-height:2;
-    color:#aab6cb; margin:0 0 12px; padding-inline-start:16px;
-    border-inline-start:1px solid rgba(143,158,186,.24);
-    word-break:keep-all;
+  a.cast-link:hover, a.cast-link:focus-visible{
+    color:#e6ebf4; border-bottom-color:#e6ebf4;
   }
 
-  /* ---------- coming-soon chapter page ---------- */
-  .soonpage{ max-width:680px; margin:0 auto; padding:0 24px; }
-  .soonpage .badge{
-    display:inline-block; font-family:"Gowun Dodum", sans-serif;
-    font-size:10.5px; letter-spacing:.3em; color:#66748c;
-    border:1px solid rgba(143,158,186,.22); padding:7px 14px; margin:0 0 26px;
-  }
-  .soonpage .coverwrap{ margin:0 0 34px; }
-  .soonpage .coverwrap img{ width:100%; height:auto; display:block; }
-  .soonpage p.body{
-    font-family:"Nanum Myeongjo", serif; font-size:16px; line-height:2.1;
-    color:#9aa7bd; margin:0 0 18px; word-break:keep-all;
-  }
-  .soonpage p.body b{ color:#cfd6e4; font-weight:400; }
-  .soonpage .tracks{
-    margin:34px 0 0; padding:26px 0 0;
-    border-top:1px solid rgba(143,158,186,.14);
-    list-style:none;
-  }
-  .soonpage .tracks li{
-    font-family:"Nanum Myeongjo", serif; font-size:15px;
-    color:#9aa7bd; line-height:2.2; display:flex; gap:14px;
-  }
-  .soonpage .tracks .tn{
-    font-family:"Gowun Dodum", sans-serif; font-size:11px;
-    letter-spacing:.2em; color:#66748c; min-width:34px;
-  }
-
-  /* ---------- video embed on chapter pages ---------- */
-  .filmwrap{
-    max-width:680px; margin:0 auto 40px; padding:0 24px;
-  }
-  .filmwrap .label{
-    font-family:"Gowun Dodum", sans-serif; font-size:11px;
-    letter-spacing:.28em; color:#7d8ba6; margin:0 0 14px; text-align:center;
-  }
-  .filmwrap .frame{
-    position:relative; width:100%; max-width:340px; margin:0 auto;
-    aspect-ratio:9/16; background:#0b1018;
-    border:1px solid rgba(143,158,186,.16);
-  }
-  .filmwrap .frame iframe{
-    position:absolute; inset:0; width:100%; height:100%; border:0;
-  }
-
-  .panorama{ background-image:url("../art/hero.jpg"); }
 
   /* ---------- top bar, made visible ---------- */
   .topbar{
@@ -677,23 +589,37 @@
   }
 
 
-  /* ---------- seal mark inside the moon circle ---------- */
+  /* ---------- video embed ---------- */
+  .filmwrap{ max-width:680px; margin:0 auto 40px; padding:0 24px; }
+  .filmwrap .label{
+    font-family:"Gowun Dodum", sans-serif; font-size:11px;
+    letter-spacing:.28em; color:#7d8ba6; margin:0 0 14px; text-align:center;
+  }
+  .filmwrap .frame{
+    position:relative; width:100%; max-width:330px; margin:0 auto;
+    aspect-ratio:9/16; background:#0b1018;
+    border:1px solid rgba(143,158,186,.16);
+  }
+  .filmwrap .frame iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+
+
+  /* ---------- seal mark behind the title ---------- */
   .markmoon{
     position:absolute;
-    top:300px; left:50%;
-    width:300px; height:300px;
+    top:220px; left:50%;
+    width:250px; height:250px;
     transform:translate(-50%, -50%);
     border-radius:50%;
     background-image:url("../art/mark.png");
     background-size:cover;
     background-position:center;
-    opacity:.34;
+    opacity:.30;
     mix-blend-mode:screen;
     pointer-events:none;
     z-index:0;
   }
   @media (max-width:620px){
-    .markmoon{ width:210px; height:210px; top:250px; opacity:.28; }
+    .markmoon{ width:180px; height:180px; top:186px; opacity:.24; }
   }
 
 </style>
@@ -706,7 +632,7 @@
 <div class="topbar">
   <a class="home" href="index.html">← Contents</a>
   <div class="navgroup">
-    <a class="tostory" href="story.html">Story</a>
+    <a class="tostory" href="story.html">Story so far</a>
     <a class="tocast" href="characters.html">Characters</a>
   </div>
   <div class="langwrap">
@@ -718,54 +644,312 @@
   </div>
 </div>
 
+
 <header class="hero">
-  <p class="eyebrow">DEMOSAII</p>
+  <p class="eyebrow">THE JOSEON HIP-HOP UNIVERSE</p>
   <h1>Snow<br>and Iron</h1>
-  <p class="sub">눈과 쇠</p>
+  <p class="en">눈과 쇠</p>
+  <div class="chapter-mark" aria-hidden="true"></div>
+  <p class="chapter-no">CHAPTER SEVEN</p>
 </header>
 
 <section class="intro">
-  <p>The first chapter of the Iron Trilogy. Fire burns, salt preserves, and iron remembers.</p>
+  <p>This is <b>a story that was written as twenty-four songs first.</b></p>
+  <p>Two trilogies of Korean gugak hip-hop set in the Joseon era — one of brush and fire, one of salt and sea. Six albums, one story.</p>
 </section>
 
-<div class="soonpage">
-  <p class="badge">IN PROGRESS</p>
-
-  <div class="coverwrap">
-    <img src="../covers/ch7.jpg" alt="Snow and Iron album cover" loading="lazy">
+<details class="prev">
+  <summary>PREVIOUSLY · Chapter Five, Sea and Bones</summary>
+  <div class="inner">
+    <p>A storm turned the sea floor over. <a class="cast-link" href="characters.html#oki">Ok-i</a> brought up a chest holding the names of those who bought false testimony, and <a class="cast-link" href="characters.html#sugyeom">Su-gyeom</a> understood at last that he had been sent to the place where the truth was buried.</p>
+    <p><a href="ch5.html">Read Chapter Five, Sea and Bones →</a></p>
   </div>
+</details>
 
-  <p class="body">The truth raised from the sea was on its way to the capital. Three days' sailing. <b>That was when the Jurchen crossed the river.</b></p>
+<p class="castinfo">Tap any character's name to read about them →</p>
 
-  <p class="body">Three fortresses fall in three days, refugees come over the passes, and the state pardons its criminals. Anyone who can fight will not be asked about his past — the men who spent their whole lives running are called on now.</p>
-
-  <p class="body">Anchored in a harbour for supplies, the smuggler hears the news and lowers his sail. The writing has waited ten years, he says; it can wait one more day. But the people coming over that pass cannot wait for tonight.</p>
-
-  <p class="body">The blacksmith melts down everything the villages bring him. A bell from a temple, a prisoner's chains, a pot that cooked rice, the iron from the handle of some scholar's brush. <b>He does not ask what it was. If it is iron, it will do.</b></p>
-
-  <p class="body">And to a woman past forty, that winter, the ledger from the sea and the war arrive in the same week. She walks north carrying paper and ink — to write the names of the dying on the day they die.</p>
-
-  <p class="body">The palace killed the people, and the people hated the palace. <b>But what came from the north does not tell them apart.</b></p>
-
-  <ul class="tracks">
-    <li><span class="tn">01</span><span>Lowering the Sail <span style="color:#66748c;font-size:13px;">돛을 내리다</span></span></li>
-    <li><span class="tn">02</span><span>Gather <span style="color:#66748c;font-size:13px;">모여라</span></span></li>
-    <li><span class="tn">03</span><span>The Anvil <span style="color:#66748c;font-size:13px;">모루</span></span></li>
-    <li><span class="tn">04</span><span>The Empty Line <span style="color:#66748c;font-size:13px;">빈 줄</span></span></li>
-  </ul>
-
-  <p class="body" style="text-align:center;margin-top:34px;"><a href="../lyrics-ch7.html" style="color:#aab6cb;text-decoration:none;border-bottom:1px solid rgba(143,158,186,.28);padding-bottom:2px;font-family:'Gowun Dodum',sans-serif;font-size:13px;letter-spacing:.08em;">Read the full lyrics →</a></p>
-
-  <p class="body" style="margin-top:36px;color:#7d8ba6;font-size:14px;">The prose for this chapter has not been written yet. The music comes first, and the writing follows it.</p>
+<div class="filmwrap">
+  <p class="label">FILM · Ieodo</p>
+  <div class="frame">
+    <iframe src="https://www.youtube.com/embed/gmhFUQVahjw" title="Ieodo"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen loading="lazy"></iframe>
+  </div>
 </div>
 
+<details class="prev">
+  <summary>PREVIOUSLY · Chapter Six, Island and Stars</summary>
+  <div class="inner">
+    <p>Three men raised a white sail and went north. Halfway across, the diver went back into the water. On Songni Mountain an old woman read faces where the ledger had only names. At dawn the hermitage door stood open and there was no one inside.</p>
+    <p><a href="ch6.html">Read Chapter Six, Island and Stars →</a></p>
+  </div>
+</details>
+
+<article class="paper">
+
+  <div class="mark first"><span>ONE</span><i></i></div>
+
+  <p class="lead">That morning was just a morning.</p>
+
+  <p>The tide was wrong, so they anchored in the harbour. Two sacks of rice and one barrel of water was all they needed. Three days' sailing to the capital.</p>
+
+  <p>Bae-swe put a hand inside his coat, checked once, and went ashore. It was there — wrapped in oiled cloth and wrapped again in hemp over that. Names the sea had kept for ten years.</p>
+
+  <p>The scholar stayed with the boat. So did the old fisherman. Bae-swe alone was enough for going ashore.</p>
+
+  <p>He haggled over a price and counted the load. The merchant asked twice what rice was worth. Bae-swe laughed and offered half, and the merchant did not laugh.</p>
+
+  <p class="say">"Rice is scarce these days."</p>
+  <p class="say">"Was it scarce yesterday?"</p>
+  <p class="say">"Not yesterday."</p>
+
+  <p><span class="quiet">He should have understood then.</span></p>
+
+  <div class="mark"><span>TWO</span><i></i></div>
+
+  <p>At the far end of the dock, people gathered.</p>
+
+  <p>The way they gathered was not good. Nobody was laughing, the gestures were too large, and no one was standing where they belonged. Bae-swe had spent thirty years reading exactly that. Knowing when to run from the shape of a crowd was his trade.</p>
+
+  <p>The news came in pieces.</p>
+
+  <p>The north had been breached, they said.</p>
+
+  <p>The Jurchen had crossed the Amnok. The river had frozen, someone said afterwards, so it should have been obvious they would cross.</p>
+
+  <p>Three fortresses had fallen in three days.</p>
+
+  <p>Refugees were already coming over the passes. The man who said it claimed he had seen them himself. Walking with nothing, he said.</p>
+
+  <p>And there was one more thing.</p>
+
+  <div class="mark"><span>THREE</span><i></i></div>
+
+  <p>The state was pardoning its criminals.</p>
+
+  <p>The dock went quiet for a moment.</p>
+
+  <p>Any man who could fight would not be asked about his past, they said. Let the exiles come, and the slaves, and the thieves. Come, and the crime is struck out.</p>
+
+  <p>Someone laughed. The laugh did not last.</p>
+
+  <p class="say">"So now they call the men they spent a lifetime hunting."</p>
+  <p class="say">"They call because there is nobody left to call."</p>
+
+  <p>Bae-swe said nothing. He was what they were calling.</p>
+
+  <p><span class="quiet">That a piece of paper existed telling a man who had run for thirty years to come — he learned that for the first time that day.</span></p>
+
+  <div class="mark"><span>FOUR</span><i></i></div>
+
+  <p>When he got back to the boat the scholar saw his face and asked first.</p>
+
+  <p class="say">"What is it?"</p>
+
+  <p>Bae-swe repeated what he had heard, exactly. He kept it short. It did not take long to say.</p>
+
+  <p>The scholar was silent a while, then asked.</p>
+
+  <p class="say">"What do we do with this writing?"</p>
+
+  <p>Bae-swe did not think long about the answer.</p>
+
+  <p class="say">"This writing has waited ten years."</p>
+  <p class="say">"What has waited ten years can wait one more day."</p>
+  <p class="say">"But the people coming over that pass cannot wait for tonight."</p>
+
+  <p>The scholar said nothing.</p>
+
+  <p>The old fisherman said nothing either.</p>
+
+  <p><span class="quiet">That was the last time he saw the two of them.</span></p>
+
+  <div class="mark"><span>FIVE</span><i></i></div>
+
+  <p>He untied the halyard.</p>
+
+  <p>The white sail came down slowly. It was the sail he had kept dyed black all his life. It was the sail he had raised white in order to be seen. Today he simply folded it.</p>
+
+  <p>He left the boat. The north was a place you walked to.</p>
+
+  <p>From the dock he turned up the northern road. He had lived his whole life on water, and his feet on the ground felt strange.</p>
+
+  <p>He walked anyway.</p>
+
+  <p>There were two lines on that road: one coming south and one going north. The people coming down were carrying loads. The people going up were carrying nothing.</p>
+
+  <p><span class="quiet">Those with something to carry went south. Those with nothing went north.</span></p>
+
+  <div class="mark"><span>SIX</span><i></i></div>
+
+  <p>In a village on the third day he watched a decree being read.</p>
+
+  <p>An official climbed onto a table. His voice was young. People gathered, and nobody stood at the front.</p>
+
+  <p class="say">"The king's command."</p>
+
+  <p>The descendants of traitors, exiles, slaves, thieves. Any man who can fight will not be asked about his crime. The state strikes it out.</p>
+
+  <p>When the reading ended nobody moved for a long moment.</p>
+
+  <p>Then one man walked out from the back. One of the older ones. Then two more. After that he stopped counting.</p>
+
+  <p>Bae-swe came out last. When he did, the official asked his name.</p>
+
+  <p class="say">"I have none."</p>
+
+  <p>The official picked up his brush and set it down again, and simply nodded. There were a good many men without names that day.</p>
+
+  <div class="mark"><span>SEVEN</span><i></i></div>
+
+  <p>In a village on the northern border there was a forge.</p>
+
+  <p>The blacksmith who had stood in that spot for forty years had not let the fire out in three days. The bellows breathed in a man's place.</p>
+
+  <p>What they carted in from the villages was piled in the yard.</p>
+
+  <p>He did not ask what it was. If it was iron, it would do.</p>
+
+  <p>Chains came from the magistrate's office. Who they had bound, he did not know. A pot that had cooked rice came from somebody's house. Iron came from the handle of some scholar's brush, and it was small, so it became an arrowhead.</p>
+
+  <p>There had been three of them. Two assistants and a boy who worked the bellows. All three had gone north first.</p>
+
+  <p><span class="quiet">So he struck alone.</span></p>
+
+  <div class="mark"><span>EIGHT</span><i></i></div>
+
+  <p>On the fourth day a bell came from the temple.</p>
+
+  <p>A bell that had rung for a hundred years. It filled a whole cart. It had not arrived broken — it had been broken to arrive. Someone had already cut it into pieces up on the mountain.</p>
+
+  <p>A monk came with it. He set it down and left without a word. The blacksmith did not ask.</p>
+
+  <p>On one piece, half of a flying apsara survived. A figure in flight, cut off at the waist.</p>
+
+  <p>When he went to put that piece into the hearth, the blacksmith stopped his hand for a moment.</p>
+
+  <p>Then he put it in.</p>
+
+  <p class="seal-line">Iron remembers. Melt it and it still remembers.<br>Even as a sword, there is a bell inside it.</p>
+
+  <div class="mark"><span>NINE</span><i></i></div>
+
+  <p>That same winter, a stranger came to a village in Jeolla.</p>
+
+  <p>He said he had come from the sea. He said a woman on a mountain had sent him. That woman had said there was a woman in this village who knew letters.</p>
+
+  <p>Bun-i was forty-four then. She had taught children their letters since she was thirty, and past forty she had become the village teacher. It was twenty-eight years since she had found paper beneath the floorboards.</p>
+
+  <p>The stranger left a soaked ledger behind. Half of it eaten by salt, he said. The names of those who bought false testimony, he said.</p>
+
+  <p>And the next day he went north.</p>
+
+  <p>Bun-i read it for three days.</p>
+
+  <div class="mark"><span>TEN</span><i></i></div>
+
+  <p>On the night of the third day she closed the ledger.</p>
+
+  <p>She had read every name. She had counted the places the salt had eaten. Twenty-three of them, and eleven were where a name had been.</p>
+
+  <p>And then she understood.</p>
+
+  <p class="seal-line">These names are already too late.</p>
+
+  <p>What happens if this goes out into the world now. The world was calling other names. What had come from the north had brought down three fortresses in three days, and people were coming down over every pass.</p>
+
+  <p>Who bought what ten years ago is a thing nobody asks today.</p>
+
+  <p>She wrapped the ledger in oiled cloth again and put it under the floorboards. The same place the paper had been, twenty-eight years before.</p>
+
+  <p><span class="quiet">Someday somebody will find it again.</span></p>
+
+  <div class="mark"><span>ELEVEN</span><i></i></div>
+
+  <p>The next morning she gathered paper and ink.</p>
+
+  <p>The villagers asked what a woman near fifty was going to a battlefield for.</p>
+
+  <p class="say">"I am going to write."</p>
+
+  <p class="say">"Write what?"</p>
+
+  <p class="say">"The name of a man who is dying, on the day he dies."</p>
+
+  <p>Nobody asked anything more.</p>
+
+  <p>There were two things she knew. One was how to care for people — twenty years of delivering babies in that village, binding wounds, sitting beside the dying. The other was letters.</p>
+
+  <p>The north needed both. And people who had both were rare.</p>
+
+  <p>She thought about what to put on the first page, and in the end she just wrote the date. Beneath it she left one line empty.</p>
+
+  <p class="seal-line">The empty line is the place for someone still alive.</p>
+
+  <p>Snow was falling. She carried the ink inside her coat so it would not freeze, and walked.</p>
+
+  <p><span class="quiet">That winter, fires went up on every pass. Not beacons. People.</span></p>
+
+</article>
+
 <section class="listen">
-  <a class="btn" href="https://soundcloud.com/demosaii" target="_blank" rel="noopener">Listen to everything — SoundCloud →</a>
+  <h2>The music of this chapter</h2>
+  <p class="note">This story was music before it was prose.<br>Four songs from Chapter Seven — listen while you read.</p>
+
+  <div class="player">
+    <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" title="Snow and Iron playlist"
+      src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2287674615&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+  </div>
+
+  <p class="credit">
+    <a href="https://soundcloud.com/demosaii" title="demosaii" target="_blank" rel="noopener">demosaii</a> ·
+    <a href="https://soundcloud.com/demosaii/sets/snow-and-iron-full-album" title="눈과 쇠 | Snow and Iron — Full Album" target="_blank" rel="noopener">눈과 쇠 | Snow and Iron</a>
+  </p>
+
+  <p><a class="lyrics-link" href="../lyrics-ch7.html">Read the full lyrics of this album →</a></p>
 </section>
 
-<footer class="about">
+<nav class="nextnav done">
+  <a href="index.html">
+    <span>
+      <span class="lbl">NEXT STORY</span>
+      <span class="ttl">Iron and Blood</span>
+      <span class="dsc">the alliance holds, and breaks · coming soon</span>
+    </span>
+    <span class="arrow">→</span>
+  </a>
+</nav>
+
+<nav class="map" aria-label="All chapters">
+  <h2>The whole story</h2>
+
+  <p class="map-part">THE FIRE TRILOGY</p>
+  <ol>
+    <li><span>CH. 1</span> Blood and Fog <em>— the palace, and a name erased</em></li>
+    <li><span>CH. 2</span> Ink and Embers <em>— four voices, one uprising</em></li>
+    <li><span>CH. 3</span> Ash and Seed <em>— what remains when the fire goes out</em></li>
+    <li class="here"><span>CH. 7</span> Snow and Iron <em>— the north is breached</em></li>
+  </ol>
+
+  <p class="map-part">THE SEA TRILOGY</p>
+  <ol start="4">
+    <li><span>CH. 4</span> Salt and Waves <em>— four people gather</em></li>
+    <li><span>CH. 5</span> Sea and Bones <em>— the sunken truth rises</em></li>
+    <li><span>CH. 6</span> Island and Stars <em>— each finds their own answer</em></li>
+  </ol>
+
+  <p class="next-line">NEXT — <b>The Iron Trilogy</b></p>
+</nav>
+
+<section class="about">
   <p class="about-name">demosaii</p>
-</footer>
+  <p>I write Joseon-era stories as hip-hop songs. Geomungo, gayageum, haegeum, daegeum and janggu over boom bap beats, every lyric in Korean. Two trilogies, six albums, twenty-four songs.</p>
+  <p class="about-links">
+    <a href="https://soundcloud.com/demosaii" target="_blank" rel="noopener">Listen to everything — SoundCloud →</a>
+  </p>
+  <p class="about-tags">#JoseonHipHop #GugakHipHop #KoreanTraditional #HistoricalFiction #demosaii</p>
+</section>
+
 
 <script>
   (function(){
