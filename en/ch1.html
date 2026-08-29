@@ -25,8 +25,32 @@
 <meta property="og:site_name" content="The Joseon Hip-Hop Universe · demosaii">
 <meta property="og:locale" content="en_US">
 <!-- Album cover image URL goes here -->
-<meta property="og:image" content="COVER_IMAGE_URL_HERE">
+<meta property="og:url" content="https://joseon-universe.vercel.app/en/ch1.html">
+<meta property="og:image" content="https://joseon-universe.vercel.app/covers/ch1.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://joseon-universe.vercel.app/en/ch1.html">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Blood and Fog",
+  "url": "https://joseon-universe.vercel.app/en/ch1.html",
+  "position": 1,
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "CreativeWorkSeries",
+    "name": "조선 이야기 · Joseon Stories",
+    "url": "https://joseon-universe.vercel.app"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "demosaii"
+  },
+  "description": "Chapter One of the Joseon Hip-Hop Universe. Blood and Fog — the woman erased from the records, and the king who lost her.",
+  "image": "https://joseon-universe.vercel.app/covers/ch1.jpg"
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Song+Myung&family=Nanum+Myeongjo:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
@@ -474,6 +498,18 @@
   body > .topbar{ z-index:60; }   /* the language menu must sit above everything below it */
   @media (max-width:760px){ .panorama{ opacity:.06; background-position:center 50%; } }
 
+
+  /* ---------- character links ---------- */
+  a.cast-link{
+    color:inherit; text-decoration:none;
+    border-bottom:1px dotted rgba(143,158,186,.45);
+    padding-bottom:1px;
+    transition:border-color .25s ease, color .25s ease;
+  }
+  a.cast-link:hover, a.cast-link:focus-visible{
+    color:#e6ebf4; border-bottom-color:#e6ebf4;
+  }
+
 </style>
 </head>
 <body>
@@ -483,6 +519,7 @@
 <div class="topbar">
   <a class="home" href="index.html">← Contents</a>
   <a class="tostory" href="../story.html" style="color:#8492ab;text-decoration:none;letter-spacing:.08em;">Story so far</a>
+  <a class="tocast" href="characters.html" style="color:#8492ab;text-decoration:none;letter-spacing:.08em;">Characters</a>
   <div class="langwrap">
     <button class="langbtn" type="button" aria-haspopup="true" aria-expanded="false">English<span class="caret">▾</span></button>
     <div class="langmenu" role="menu">
@@ -536,7 +573,7 @@
 
   <p>He stood there a long time.</p>
 
-  <p>Her name was Yeon-i. She had no father, and her mother had been a government slave in Asan. There is only one way a person like that enters the palace, and the positions she can rise to are already decided. Yeon-i was a woman who would carry dishes until she grew old and was sent away.</p>
+  <p>Her name was <a class="cast-link" href="../characters.html#yeoni">Yeon-i</a>. She had no father, and her mother had been a government slave in Asan. There is only one way a person like that enters the palace, and the positions she can rise to are already decided. Yeon-i was a woman who would carry dishes until she grew old and was sent away.</p>
 
   <p>The crown prince sent for her that autumn.</p>
 

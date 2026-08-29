@@ -25,8 +25,32 @@
 <meta property="og:site_name" content="조선 힙합 유니버스 · demosaii">
 <meta property="og:locale" content="ko_KR">
 <!-- ↓ 티스토리에 앨범 커버를 올린 뒤 그 이미지 주소를 여기에 넣으세요 -->
-<meta property="og:image" content="COVER_IMAGE_URL_HERE">
+<meta property="og:url" content="https://joseon-universe.vercel.app/tistory_ch1_blood_and_fog.html">
+<meta property="og:image" content="https://joseon-universe.vercel.app/covers/ch1.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://joseon-universe.vercel.app/tistory_ch1_blood_and_fog.html">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "피와 안개",
+  "url": "https://joseon-universe.vercel.app/tistory_ch1_blood_and_fog.html",
+  "position": 1,
+  "inLanguage": "ko",
+  "isPartOf": {
+    "@type": "CreativeWorkSeries",
+    "name": "조선 이야기 · Joseon Stories",
+    "url": "https://joseon-universe.vercel.app"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "demosaii"
+  },
+  "description": "조선힙합 국악 힙합 두 삼부작, 스물네 곡으로 먼저 만들어진 이야기. 제1장 「피와 안개」 — 기록에서 지워진 여자와, 그 여자를 잃은 왕의 이야기.",
+  "image": "https://joseon-universe.vercel.app/covers/ch1.jpg"
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Song+Myung&family=Nanum+Myeongjo:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
@@ -474,6 +498,18 @@
   body > .topbar{ z-index:60; }   /* the language menu must sit above everything below it */
   @media (max-width:760px){ .panorama{ opacity:.06; background-position:center 50%; } }
 
+
+  /* ---------- character links ---------- */
+  a.cast-link{
+    color:inherit; text-decoration:none;
+    border-bottom:1px dotted rgba(143,158,186,.45);
+    padding-bottom:1px;
+    transition:border-color .25s ease, color .25s ease;
+  }
+  a.cast-link:hover, a.cast-link:focus-visible{
+    color:#e6ebf4; border-bottom-color:#e6ebf4;
+  }
+
 </style>
 </head>
 <body>
@@ -483,6 +519,7 @@
 <div class="topbar">
   <a class="home" href="index.html">← 목차</a>
   <a class="tostory" href="story.html" style="color:#8492ab;text-decoration:none;letter-spacing:.08em;">줄거리</a>
+  <a class="tocast" href="characters.html" style="color:#8492ab;text-decoration:none;letter-spacing:.08em;">인물</a>
   <div class="langwrap">
     <button class="langbtn" type="button" aria-haspopup="true" aria-expanded="false">한국어<span class="caret">▾</span></button>
     <div class="langmenu" role="menu">
@@ -536,7 +573,7 @@
 
   <p>왕은 그 자리에 한참 서 있었다.</p>
 
-  <p>여자의 이름은 연이라 했다. 아비는 없고 어미는 아산의 관비였다. 그런 사람이 궁에 들어오는 길은 하나뿐이고, 궁에서 올라갈 수 있는 자리도 정해져 있다. 연이는 평생 그릇을 나르다 늙어 나갈 사람이었다.</p>
+  <p>여자의 이름은 <a class="cast-link" href="characters.html#yeoni">연이</a>라 했다. 아비는 없고 어미는 아산의 관비였다. 그런 사람이 궁에 들어오는 길은 하나뿐이고, 궁에서 올라갈 수 있는 자리도 정해져 있다. 연이는 평생 그릇을 나르다 늙어 나갈 사람이었다.</p>
 
   <p>세자가 그 여자를 부른 것은 그해 가을이었다.</p>
 

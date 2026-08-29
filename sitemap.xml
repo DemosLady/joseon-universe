@@ -13,6 +13,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://joseon-universe.vercel.app/characters.html</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://joseon-universe.vercel.app/tistory_ch1_blood_and_fog.html</loc>
     <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
@@ -46,6 +52,12 @@
     <loc>https://joseon-universe.vercel.app/tistory_ch6_island_and_stars.html</loc>
     <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://joseon-universe.vercel.app/chapter7.html</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
@@ -97,6 +109,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://joseon-universe.vercel.app/en/characters.html</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://joseon-universe.vercel.app/en/ch1.html</loc>
     <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
@@ -130,6 +148,12 @@
     <loc>https://joseon-universe.vercel.app/en/ch6.html</loc>
     <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://joseon-universe.vercel.app/en/chapter7.html</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 </urlset>
