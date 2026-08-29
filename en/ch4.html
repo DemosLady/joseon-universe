@@ -474,6 +474,31 @@
   body > .topbar{ z-index:60; }   /* the language menu must sit above everything below it */
   @media (max-width:760px){ .panorama{ opacity:.06; background-position:center 50%; } }
 
+/* ---------- previously box on chapter pages ---------- */
+  details.prev{
+    max-width:680px; margin:0 auto 34px; padding:0 24px;
+    font-family:"Gowun Dodum", sans-serif;
+  }
+  details.prev summary{
+    cursor:pointer; list-style:none;
+    font-size:11.5px; letter-spacing:.22em; color:#7d8ba6;
+    padding:12px 0; border-top:1px solid rgba(143,158,186,.14);
+    border-bottom:1px solid rgba(143,158,186,.14);
+  }
+  details.prev summary::-webkit-details-marker{ display:none; }
+  details.prev summary::after{ content:" ▾"; color:#66748c; }
+  details.prev[open] summary::after{ content:" ▴"; }
+  details.prev .inner{
+    padding:20px 0 4px;
+    font-family:"Nanum Myeongjo", serif; font-size:14.5px;
+    line-height:2.0; color:#8b98b0; word-break:keep-all;
+  }
+  details.prev .inner a{
+    color:#aab6cb; text-decoration:none;
+    border-bottom:1px solid rgba(143,158,186,.28);
+  }
+  details.prev .inner a:hover{ color:#fff; }
+
 </style>
 </head>
 <body>
@@ -482,6 +507,7 @@
 
 <div class="topbar">
   <a class="home" href="index.html">← Contents</a>
+  <a class="tostory" href="../story.html" style="color:#8492ab;text-decoration:none;letter-spacing:.08em;">Story so far</a>
   <div class="langwrap">
     <button class="langbtn" type="button" aria-haspopup="true" aria-expanded="false">English<span class="caret">▾</span></button>
     <div class="langmenu" role="menu">
@@ -504,6 +530,14 @@
   <p>This is <b>a story that was written as twenty-four songs first.</b></p>
   <p>Two trilogies of Korean gugak hip-hop set in the Joseon era — one of brush and fire, one of salt and sea. Six albums, one story.</p>
 </section>
+
+<details class="prev">
+  <summary>PREVIOUSLY · Chapter Three, Ash and Seed</summary>
+  <div class="inner">
+    <p>The uprising did not last half a day. Yun-je died at the execution ground, Tal-swe took to the roads, Jeong-an returned to her mountain empty-handed. Forty years later a girl of sixteen named Bun-i found a sheet of paper beneath the floorboards.</p>
+    <p><a href="ch3.html">Read Chapter Three, Ash and Seed →</a></p>
+  </div>
+</details>
 
 <article class="paper">
 

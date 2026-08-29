@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<!-- Google tag (gtag.js) -->
+<meta charset="utf-8"><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z5RGZRN1YF"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -10,22 +9,9 @@
   gtag('js', new Date());
   gtag('config', 'G-Z5RGZRN1YF');
   gtag('config', 'G-FS3RY08FBH');
-</script>
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Joseon Hip-Hop Universe | Two Trilogies, Twenty-Four Songs</title>
-<meta name="description" content="Two trilogies of Korean gugak hip-hop set in the Joseon era. A story written as twenty-four songs first — one of brush and fire, one of salt and sea.">
-<meta name="keywords" content="Joseon hip-hop, gugak hip-hop, Korean traditional music, historical fiction, Korean history, demosaii">
-<meta name="author" content="demosaii">
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="The Joseon Hip-Hop Universe | Two Trilogies">
-<meta property="og:description" content="A story written as twenty-four songs first. Six albums, one story.">
-<meta property="og:site_name" content="The Joseon Hip-Hop Universe · demosaii">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="COVER_IMAGE_URL_HERE">
-<meta name="twitter:card" content="summary_large_image">
-
+</script><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Story So Far | The Joseon Hip-Hop Universe</title>
+<meta name="description" content="Three trilogies, twenty-eight songs, one continuous story — a full plot summary of the Joseon Hip-Hop Universe.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Song+Myung&family=Nanum+Myeongjo:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
@@ -46,6 +32,7 @@
     background-image:
       radial-gradient(circle at 50% 300px, rgba(214,224,240,.10) 0 190px, rgba(214,224,240,.035) 191px 230px, transparent 231px),
       radial-gradient(120% 80% at 50% -10%, #1b2436 0%, var(--ink) 55%, var(--ink-deep) 100%);
+    position:relative;
     color:var(--moon);
     font-family:"Nanum Myeongjo", serif;
     -webkit-font-smoothing:antialiased;
@@ -422,18 +409,97 @@
   /* ---------- faint panorama behind everything ---------- */
   .panorama{
     position:fixed; inset:0; z-index:0; pointer-events:none;
-    background-image:url("../art/hero.jpg");
+    background-image:url("art/hero.jpg");
     background-size:cover;
     background-position:center 42%;
     background-repeat:no-repeat;
-    opacity:.09;
+    opacity:.10;
     filter:grayscale(.35) contrast(.9);
     mix-blend-mode:screen;
   }
+  /* keep all real content above it */
   body > *:not(.panorama){ position:relative; z-index:1; }
   body > .topbar{ z-index:60; }   /* the language menu must sit above everything below it */
-  @media (max-width:760px){ .panorama{ opacity:.06; background-position:center 50%; } }
 
+  @media (max-width:760px){
+    .panorama{ opacity:.07; background-position:center 50%; }
+  }
+
+
+  /* ---------- story summary page ---------- */
+  .sum{ max-width:680px; margin:0 auto; padding:0 24px; }
+  .sum .part{ margin:78px 0 0; }
+  .sum .part-label{
+    font-family:"Gowun Dodum", sans-serif; font-size:11px;
+    letter-spacing:.4em; text-indent:.4em; color:#66748c;
+    margin:0 0 6px; text-align:center;
+  }
+  .sum .part-name{
+    font-family:"Song Myung", serif; font-size:20px;
+    letter-spacing:.22em; text-indent:.22em; color:#c3ccdc;
+    text-align:center; margin:0 0 34px;
+  }
+  .sum article{
+    border-top:1px solid rgba(143,158,186,.14);
+    padding:30px 0 0; margin:0 0 34px;
+  }
+  .sum h3{
+    font-family:"Song Myung", serif; font-weight:400; font-size:19px;
+    letter-spacing:.05em; color:#e6ebf4; margin:0 0 4px;
+  }
+  .sum .ch-no{
+    font-family:"Gowun Dodum", sans-serif; font-size:10.5px;
+    letter-spacing:.3em; color:#66748c; margin:0 0 10px;
+  }
+  .sum p.body{
+    font-family:"Nanum Myeongjo", serif; font-size:15.5px; line-height:2.05;
+    color:#9aa7bd; margin:0 0 14px; word-break:keep-all;
+  }
+  .sum p.body b{ color:#cfd6e4; font-weight:400; }
+  .sum .read{
+    display:inline-block; font-family:"Gowun Dodum", sans-serif;
+    font-size:11.5px; letter-spacing:.14em; color:#aab6cb;
+    text-decoration:none; border-bottom:1px solid rgba(143,158,186,.28);
+    padding-bottom:2px;
+  }
+  .sum .read:hover{ color:#fff; border-color:#fff; }
+  .sum .wip{
+    font-family:"Gowun Dodum", sans-serif; font-size:11.5px;
+    letter-spacing:.14em; color:#66748c;
+  }
+  .sum .spoiler{
+    margin:40px 0 0; padding:18px 20px;
+    border:1px solid rgba(143,158,186,.16);
+    font-family:"Gowun Dodum", sans-serif; font-size:12.5px;
+    line-height:1.9; color:#7d8ba6; text-align:center;
+  }
+
+  /* ---------- previously box on chapter pages ---------- */
+  details.prev{
+    max-width:680px; margin:0 auto 34px; padding:0 24px;
+    font-family:"Gowun Dodum", sans-serif;
+  }
+  details.prev summary{
+    cursor:pointer; list-style:none;
+    font-size:11.5px; letter-spacing:.22em; color:#7d8ba6;
+    padding:12px 0; border-top:1px solid rgba(143,158,186,.14);
+    border-bottom:1px solid rgba(143,158,186,.14);
+  }
+  details.prev summary::-webkit-details-marker{ display:none; }
+  details.prev summary::after{ content:" ▾"; color:#66748c; }
+  details.prev[open] summary::after{ content:" ▴"; }
+  details.prev .inner{
+    padding:20px 0 4px;
+    font-family:"Nanum Myeongjo", serif; font-size:14.5px;
+    line-height:2.0; color:#8b98b0; word-break:keep-all;
+  }
+  details.prev .inner a{
+    color:#aab6cb; text-decoration:none;
+    border-bottom:1px solid rgba(143,158,186,.28);
+  }
+  details.prev .inner a:hover{ color:#fff; }
+
+  .panorama{ background-image:url("../art/hero.jpg"); }
 </style>
 </head>
 <body>
@@ -441,134 +507,94 @@
 <div class="panorama" aria-hidden="true"></div>
 
 <div class="topbar">
-  <a class="home" href="https://soundcloud.com/demosaii">demosaii</a>
+  <a class="home" href="index.html">← Contents</a>
   <div class="langwrap">
     <button class="langbtn" type="button" aria-haspopup="true" aria-expanded="false">English<span class="caret">▾</span></button>
     <div class="langmenu" role="menu">
-      <a href="../index.html" role="menuitem" aria-current="false">한국어</a>
-      <a href="index.html" role="menuitem" aria-current="true">English</a>
+      <a href="../story.html" role="menuitem" aria-current="false">한국어</a>
+      <a href="story.html" role="menuitem" aria-current="true">English</a>
     </div>
   </div>
 </div>
 
-
 <header class="hero">
   <p class="eyebrow">DEMOSAII</p>
-  <h1>The Joseon<br>Hip-Hop Universe</h1>
-  <p class="sub">조선 힙합 유니버스</p>
+  <h1>The Story<br>So Far</h1>
+  <p class="sub">줄거리</p>
 </header>
 
-<p class="motto">
-  <span>Though the brush breaks, the ink does not dry</span>
-  <span>Fire burns. Salt preserves.</span>
-</p>
-
 <section class="intro">
-  <p>This is <b>a story that was written as twenty-four songs first.</b></p>
-  <p>Two trilogies of Korean gugak hip-hop set in the Joseon era — one of brush and fire, one of salt and sea. Six albums, one story.</p>
+  <p>Three trilogies, twenty-eight songs, one continuous story — beginning in a palace, crossing the sea, and continuing at the northern border.</p>
 </section>
 
-<p class="summary-link" style="max-width:700px;margin:34px auto 0;padding:0 24px;text-align:center;">
-  <a href="story.html" style="font-family:'Gowun Dodum',sans-serif;font-size:12.5px;letter-spacing:.14em;color:#aab6cb;text-decoration:none;border-bottom:1px solid rgba(143,158,186,.28);padding-bottom:3px;">The story so far, in one page →</a>
-</p>
-
-<nav class="chapters" aria-label="All chapters">
-
-  <div class="fire">
-  <p class="part">TRILOGY ONE</p>
-  <p class="part-kr">The Fire Trilogy</p>
-  <ol class="list">
-    <li>
-      <a href="ch1.html">
-        <img class="cover" src="../covers/ch1.jpg" alt="Blood and Fog album cover" loading="lazy">
-        <span class="no">CH. 1</span>
-        <span class="t">
-          <span class="kr">Blood and Fog</span>
-          <span class="desc">A woman dies in the palace with no name and no grave. The king who loved her finds the hand that poisoned her, and from that day signs his decrees in blood instead of ink.</span>
-        </span>
-        <span class="go">READ →</span>
-      </a>
-    </li>
-    <li>
-      <a href="ch2.html">
-        <img class="cover" src="../covers/ch2.jpg" alt="Ink and Embers album cover" loading="lazy">
-        <span class="no">CH. 2</span>
-        <span class="t">
-          <span class="kr">Ink and Embers</span>
-          <span class="desc">A scholar exiled to Jeju for writing the truth sends his words back as a clown's song. A woman comes down from the mountain with a torch, and that night beacons rise on every pass.</span>
-        </span>
-        <span class="go">READ →</span>
-      </a>
-    </li>
-    <li>
-      <a href="ch3.html">
-        <img class="cover" src="../covers/ch3.jpg" alt="Ash and Seed album cover" loading="lazy">
-        <span class="no">CH. 3</span>
-        <span class="t">
-          <span class="kr">Ash and Seed</span>
-          <span class="desc">The uprising did not last half a day. The scholar to the execution ground, the clown to the road, the woman back to the mountain empty-handed. Forty years later a girl of sixteen finds a sheet of paper beneath the floorboards.</span>
-        </span>
-        <span class="go">READ →</span>
-      </a>
-    </li>
-  </ol>
-
+<div class="sum">
+  <div class="part fire">
+    <p class="part-label">TRILOGY ONE</p>
+    <p class="part-name">The Fire Trilogy</p>
+    <article>
+      <p class="ch-no">CHAPTER ONE</p>
+      <h3>Blood and Fog</h3>
+      <p class="body">A woman dies in the palace. Her name is in no record and her grave is unmarked. The king who loved her discovers that the hand which poisoned her belonged to his own court.<br><br>From that day he signs his decrees in blood instead of ink. <b>The gentle king became a tyrant.</b></p>
+      <a class="read" href="../tistory_ch1_blood_and_fog.html">Read this chapter →</a>
+    </article>
+    <article>
+      <p class="ch-no">CHAPTER TWO</p>
+      <h3>Ink and Embers</h3>
+      <p class="body">A scholar named Yun-je submits a petition and is exiled to Jeju. He keeps writing there, and his words cross back to the mainland as the songs of a market clown named Tal-swe.<br><br>Jeong-an, a woman who lost her family in a purge and took vows on a mountain, comes down carrying a torch. That night beacons rose on every pass. <b>The uprising did not last half a day.</b></p>
+      <a class="read" href="../tistory_ch2_ink_and_embers.html">Read this chapter →</a>
+    </article>
+    <article>
+      <p class="ch-no">CHAPTER THREE</p>
+      <h3>Ash and Seed</h3>
+      <p class="body">Yun-je dies at the execution ground. Tal-swe throws away his mask and walks the roads as a storyteller. Jeong-an returns to her mountain empty-handed.<br><br>Forty years later, a sixteen-year-old girl named Bun-i finds a sheet of paper beneath the floorboards of her grandmother's room. <b>She cannot read. She sits at the teacher's door for three days asking to be taught.</b></p>
+      <a class="read" href="../tistory_ch3_ash_and_seed.html">Read this chapter →</a>
+    </article>
   </div>
 
-  <div class="sea">
-  <p class="part">TRILOGY TWO</p>
-  <p class="part-kr">The Sea Trilogy</p>
-  <ol class="list">
-    <li>
-      <a href="ch4.html">
-        <img class="cover" src="../covers/ch4.jpg" alt="Salt and Waves album cover" loading="lazy">
-        <span class="no">CH. 4</span>
-        <span class="t">
-          <span class="kr">Salt and Waves</span>
-          <span class="desc">Four people meet on a southern island: another exiled scholar, a smuggler with a black sail, an old fisherman the sea has emptied, and a diver who is master only underwater. That summer she sees a sunken ship on the northern shoal.</span>
-        </span>
-        <span class="go">READ →</span>
-      </a>
-    </li>
-    <li>
-      <a href="ch5.html">
-        <img class="cover" src="../covers/ch5.jpg" alt="Sea and Bones album cover" loading="lazy">
-        <span class="no">CH. 5</span>
-        <span class="t">
-          <span class="kr">Sea and Bones</span>
-          <span class="desc">A storm turns the sea floor over. The diver brings up a chest, and inside it are the names of those who bought false testimony. Only now does the scholar understand why he was sent to this island.</span>
-        </span>
-        <span class="go">READ →</span>
-      </a>
-    </li>
-    <li>
-      <a href="ch6.html">
-        <img class="cover" src="../covers/ch6.jpg" alt="Island and Stars album cover" loading="lazy">
-        <span class="no">CH. 6</span>
-        <span class="t">
-          <span class="kr">Island and Stars</span>
-          <span class="desc">Three men raise a white sail and head north. Halfway across, the diver goes back into the water. On a mountain, an old woman remembers faces where the ledger has only names. What happened after that is in no record.</span>
-        </span>
-        <span class="go">READ →</span>
-      </a>
-    </li>
-  </ol>
+  <div class="part sea">
+    <p class="part-label">TRILOGY TWO</p>
+    <p class="part-name">The Sea Trilogy</p>
+    <article>
+      <p class="ch-no">CHAPTER FOUR</p>
+      <h3>Salt and Waves</h3>
+      <p class="body">A generation later, four people are on a small southern island: Su-gyeom, another scholar exiled for writing the truth; Bae-swe, a smuggler who raises a black sail only when the moon hides; Gap-su, an old fisherman the sea has taken everything from; and Ok-i, a diver who lowers her head on land and is master beneath the water.<br><br>That summer Ok-i sees a sunken black ship on the northern shoal. <b>And tells no one.</b></p>
+      <a class="read" href="../tistory_ch4_salt_and_waves.html">Read this chapter →</a>
+    </article>
+    <article>
+      <p class="ch-no">CHAPTER FIVE</p>
+      <h3>Sea and Bones</h3>
+      <p class="body">A storm turns the sea floor over. In the middle of it Gap-su speaks quietly to the sea — if you have something to take, take me; and if you have something to give back, give it back now.<br><br>The next day Bae-swe finds the bow, and Ok-i brings up a chest. Inside are the names of those who bought false testimony. <b>Only now does Su-gyeom understand that he was not exiled for writing the truth — he was sent to the place where the truth was buried.</b></p>
+      <a class="read" href="../tistory_ch5_sea_and_bones.html">Read this chapter →</a>
+    </article>
+    <article>
+      <p class="ch-no">CHAPTER SIX</p>
+      <h3>Island and Stars</h3>
+      <p class="body">Three men raise a white sail and head north. But halfway across, Ok-i stands up — on the mainland, she says, she is a woman with no letters and no name. <b>And she goes into the water without a sound.</b><br><br>The three find Jeong-an on Songni Mountain, and she reads faces where the ledger has only names. At dawn the hermitage door stood open and there was no one inside. <b>What happened after that is in no record.</b></p>
+      <a class="read" href="../tistory_ch6_island_and_stars.html">Read this chapter →</a>
+    </article>
   </div>
 
-</nav>
+  <div class="part iron">
+    <p class="part-label">TRILOGY THREE</p>
+    <p class="part-name">The Iron Trilogy</p>
+    <article>
+      <p class="ch-no">CHAPTER SEVEN</p>
+      <h3>Snow and Iron</h3>
+      <p class="body">That winter the north is breached. The Jurchen cross the river and three fortresses fall in three days.<br><br>Anchored in a harbour for supplies, Bae-swe hears the news and lowers his sail — the writing has waited ten years, he says, it can wait one more day. The state pardons its criminals and calls on the men who spent their lives running. A blacksmith melts down a temple bell.<br><br>And that winter, to Bun-i, now past forty, <b>the ledger from the sea and the war arrive in the same week.</b> She walks north carrying paper and ink — to write the names of the dying on the day they die.</p>
+      <span class="wip">IN PROGRESS</span>
+    </article>
+  </div>
+
+  <p class="spoiler">The Iron Trilogy is still being written. This is the story as far as it has been told.</p>
+</div>
 
 <section class="listen">
-  <h2>The music came first</h2>
-  <p>Six albums, twenty-four songs.<br>Gugak hip-hop — geomungo, gayageum, haegeum, daegeum and janggu over boom bap.</p>
   <a class="btn" href="https://soundcloud.com/demosaii" target="_blank" rel="noopener">Listen to everything — SoundCloud →</a>
 </section>
 
 <footer class="about">
   <p class="about-name">demosaii</p>
-  <p>I write Joseon-era stories as hip-hop songs. Every lyric is in Korean, and the story was born in the music before it was ever prose.</p>
-  <p class="about-tags">#JoseonHipHop #GugakHipHop #KoreanTraditional #HistoricalFiction #demosaii</p>
 </footer>
-
 
 <script>
   (function(){
