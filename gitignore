@@ -1,0 +1,55 @@
+# ── build and generation tools ───────────────────────────────
+# scripts live in the folder but never belong on the site
+*.py
+*.bat
+*.sh
+__pycache__/
+.env
+
+# ── generated assets ─────────────────────────────────────────
+playlist_frames/
+portraits_raw/
+frames/
+frames_old/
+videos/
+anchors/
+refs/
+
+# ── working files ────────────────────────────────────────────
+tracklist.txt
+*.mp3
+*.wav
+*.mp4
+*.mov
+shots.json
+_concat.txt
+_audio.txt
+
+# ── source text, notes and drafts ────────────────────────────
+*.txt
+!robots.txt
+*.md
+*.json
+!sitemap.xml
+
+# ── project folders that live alongside the site ─────────────
+BIN_GUNGGWOL/
+IEODO/
+MORU/
+MUL_ARAE/
+WANGUI_GILMOK/
+
+# ── working versions of pages ────────────────────────────────
+*_HEBREW.html
+story_women_of_joseon.png
+
+# ── previews and backups ─────────────────────────────────────
+PREVIEW_*.html
+*_backup.*
+*_old.*
+*.bak
+
+# ── os junk ──────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini

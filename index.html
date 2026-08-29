@@ -589,6 +589,23 @@
     .markmoon{ width:210px; height:210px; top:250px; opacity:.28; }
   }
 
+
+  /* ---------- full playlist video ---------- */
+  .fullplay{ max-width:560px; margin:44px auto 0; padding:0 24px; }
+  .fullplay .lbl{
+    font-family:"Gowun Dodum", sans-serif; font-size:11.5px;
+    letter-spacing:.26em; color:#7d8ba6; text-align:center; margin:0 0 16px;
+  }
+  .fullplay .frame{
+    position:relative; width:100%; aspect-ratio:16/9;
+    background:#0b1018; border:1px solid rgba(143,158,186,.16);
+  }
+  .fullplay .frame iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+  .fullplay .note{
+    font-family:"Gowun Dodum", sans-serif; font-size:12px;
+    letter-spacing:.05em; color:#66748c; text-align:center; margin:14px 0 0;
+  }
+
 </style>
 </head>
 <body>
@@ -626,6 +643,16 @@
 <section class="intro">
   <p>이것은 <b>스물여덟 곡으로 먼저 만들어진 이야기</b>입니다.</p>
   <p>조선을 배경으로 한 국악 힙합 두 개의 삼부작 — 붓과 불의 이야기, 소금과 바다의 이야기, 그리고 눈과 쇠의 이야기. 일곱 장의 앨범이 하나의 이야기를 이룹니다.</p>
+</section>
+
+<section class="fullplay">
+  <p class="lbl">전곡 연속 재생 · 1시간 57분</p>
+  <div class="frame">
+    <iframe src="https://www.youtube.com/embed/yHdCZca0pvY"
+      title="조선 힙합 32곡 연속 재생" loading="lazy" allowfullscreen
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+  </div>
+  <p class="note">작업할 때, 공부할 때, 운동할 때 — 배경으로 틀어두셔도 좋습니다.</p>
 </section>
 
 <p class="summary-link" style="max-width:700px;margin:34px auto 0;padding:0 24px;text-align:center;">
