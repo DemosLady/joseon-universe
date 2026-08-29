@@ -511,15 +511,100 @@
   details.prev .inner a:hover{ color:#fff; }
 
   .panorama{ background-image:url("../art/hero.jpg"); }
+
+  /* ---------- character links ---------- */
+  a.cast-link{
+    color:inherit; text-decoration:none;
+    border-bottom:1px dotted rgba(143,158,186,.45);
+    padding-bottom:1px;
+    transition:border-color .25s ease, color .25s ease;
+  }
+  a.cast-link:hover, a.cast-link:focus-visible{
+    color:#e6ebf4; border-bottom-color:#e6ebf4;
+  }
+
+
+  /* ---------- top bar, made visible ---------- */
+  .topbar{
+    max-width:760px; padding:22px 24px 0;
+    font-size:13.5px; gap:10px;
+  }
+  .topbar a.home{
+    color:#c3ccdc; letter-spacing:.14em;
+    border-bottom:1px solid transparent; padding-bottom:3px;
+    transition:color .25s ease, border-color .25s ease;
+  }
+  .topbar a.home:hover{ color:#fff; border-bottom-color:#fff; }
+  .topbar .navgroup{ display:flex; align-items:center; gap:8px; margin-inline-start:auto; }
+  .topbar a.tostory, .topbar a.tocast{
+    color:#c3ccdc !important;
+    border:1px solid rgba(143,158,186,.34);
+    padding:8px 15px;
+    letter-spacing:.14em;
+    white-space:nowrap;
+    transition:color .25s ease, border-color .25s ease, background .25s ease;
+  }
+  .topbar a.tostory:hover, .topbar a.tocast:hover,
+  .topbar a.tostory:focus-visible, .topbar a.tocast:focus-visible{
+    color:#fff !important; border-color:#fff; background:rgba(255,255,255,.06);
+  }
+  .langbtn{ font-size:12.5px !important; padding:8px 15px !important; color:#c3ccdc !important; }
+  @media (max-width:620px){
+    .topbar{ flex-wrap:wrap; gap:8px; font-size:12.5px; }
+    .topbar .navgroup{ width:100%; margin-inline-start:0; justify-content:flex-start; }
+    .topbar a.tostory, .topbar a.tocast{ padding:7px 12px; }
+  }
+
+  /* ---------- character links, made obvious ---------- */
+  a.cast-link{
+    color:#cfd6e4 !important;
+    text-decoration:none;
+    border-bottom:1px solid rgba(180,196,222,.55);
+    padding-bottom:1px;
+    transition:color .25s ease, border-color .25s ease, background .25s ease;
+  }
+  a.cast-link:hover, a.cast-link:focus-visible{
+    color:#fff !important; border-bottom-color:#fff;
+    background:rgba(255,255,255,.07);
+  }
+
+
+  .castinfo{
+    max-width:680px; margin:0 auto 26px; padding:0 24px;
+    font-family:"Gowun Dodum", sans-serif; font-size:12px;
+    letter-spacing:.05em; color:#7d8ba6; text-align:center;
+  }
+
+
+  /* ---------- seal mark inside the moon circle ---------- */
+  .markmoon{
+    position:absolute;
+    top:300px; left:50%;
+    width:300px; height:300px;
+    transform:translate(-50%, -50%);
+    border-radius:50%;
+    background-image:url("../art/mark.png");
+    background-size:cover;
+    background-position:center;
+    opacity:.34;
+    mix-blend-mode:screen;
+    pointer-events:none;
+    z-index:0;
+  }
+  @media (max-width:620px){
+    .markmoon{ width:210px; height:210px; top:250px; opacity:.28; }
+  }
+
 </style>
 </head>
 <body>
 
 <div class="panorama" aria-hidden="true"></div>
+<div class="markmoon" aria-hidden="true"></div>
 
 <div class="topbar">
   <a class="home" href="index.html">← Contents</a>
-  <a class="tocast" href="characters.html" style="color:#8492ab;text-decoration:none;letter-spacing:.08em;">Characters</a>
+  <a class="tocast" href="characters.html">Characters</a>
   <div class="langwrap">
     <button class="langbtn" type="button" aria-haspopup="true" aria-expanded="false">English<span class="caret">▾</span></button>
     <div class="langmenu" role="menu">
@@ -539,6 +624,8 @@
   <p>Three trilogies, twenty-eight songs, one continuous story — beginning in a palace, crossing the sea, and continuing at the northern border.</p>
 </section>
 
+<p class="castinfo">Tap any character's name to read about them →</p>
+
 <div class="sum">
   <div class="part fire">
     <p class="part-label">TRILOGY ONE</p>
@@ -552,13 +639,13 @@
     <article>
       <p class="ch-no">CHAPTER TWO</p>
       <h3>Ink and Embers</h3>
-      <p class="body">A scholar named Yun-je submits a petition and is exiled to Jeju. He keeps writing there, and his words cross back to the mainland as the songs of a market clown named Tal-swe.<br><br>Jeong-an, a woman who lost her family in a purge and took vows on a mountain, comes down carrying a torch. That night beacons rose on every pass. <b>The uprising did not last half a day.</b></p>
+      <p class="body">A scholar named <a class="cast-link" href="characters.html#yunje">Yun-je</a> submits a petition and is exiled to Jeju. He keeps writing there, and his words cross back to the mainland as the songs of a market clown named <a class="cast-link" href="characters.html#talswe">Tal-swe</a>.<br><br><a class="cast-link" href="characters.html#jeongan">Jeong-an</a>, a woman who lost her family in a purge and took vows on a mountain, comes down carrying a torch. That night beacons rose on every pass. <b>The uprising did not last half a day.</b></p>
       <a class="read" href="../tistory_ch2_ink_and_embers.html">Read this chapter →</a>
     </article>
     <article>
       <p class="ch-no">CHAPTER THREE</p>
       <h3>Ash and Seed</h3>
-      <p class="body">Yun-je dies at the execution ground. Tal-swe throws away his mask and walks the roads as a storyteller. Jeong-an returns to her mountain empty-handed.<br><br>Forty years later, a sixteen-year-old girl named Bun-i finds a sheet of paper beneath the floorboards of her grandmother's room. <b>She cannot read. She sits at the teacher's door for three days asking to be taught.</b></p>
+      <p class="body">Yun-je dies at the execution ground. Tal-swe throws away his mask and walks the roads as a storyteller. Jeong-an returns to her mountain empty-handed.<br><br>Forty years later, a sixteen-year-old girl named <a class="cast-link" href="characters.html#buni">Bun-i</a> finds a sheet of paper beneath the floorboards of her grandmother's room. <b>She cannot read. She sits at the teacher's door for three days asking to be taught.</b></p>
       <a class="read" href="../tistory_ch3_ash_and_seed.html">Read this chapter →</a>
     </article>
   </div>
@@ -569,7 +656,7 @@
     <article>
       <p class="ch-no">CHAPTER FOUR</p>
       <h3>Salt and Waves</h3>
-      <p class="body">A generation later, four people are on a small southern island: Su-gyeom, another scholar exiled for writing the truth; Bae-swe, a smuggler who raises a black sail only when the moon hides; Gap-su, an old fisherman the sea has taken everything from; and Ok-i, a diver who lowers her head on land and is master beneath the water.<br><br>That summer Ok-i sees a sunken black ship on the northern shoal. <b>And tells no one.</b></p>
+      <p class="body">A generation later, four people are on a small southern island: <a class="cast-link" href="characters.html#sugyeom">Su-gyeom</a>, another scholar exiled for writing the truth; <a class="cast-link" href="characters.html#baeswe">Bae-swe</a>, a smuggler who raises a black sail only when the moon hides; <a class="cast-link" href="characters.html#gapsu">Gap-su</a>, an old fisherman the sea has taken everything from; and <a class="cast-link" href="characters.html#oki">Ok-i</a>, a diver who lowers her head on land and is master beneath the water.<br><br>That summer Ok-i sees a sunken black ship on the northern shoal. <b>And tells no one.</b></p>
       <a class="read" href="../tistory_ch4_salt_and_waves.html">Read this chapter →</a>
     </article>
     <article>

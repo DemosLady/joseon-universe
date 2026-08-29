@@ -76,6 +76,7 @@
     color:var(--moon);
     font-family:"Nanum Myeongjo", serif;
     -webkit-font-smoothing:antialiased;
+    position:relative;
   }
 
   /* ---------- hero ---------- */
@@ -588,11 +589,32 @@
     .filmpair{ grid-template-columns:1fr; gap:26px; }
   }
 
+
+  /* ---------- seal mark behind the title ---------- */
+  .markmoon{
+    position:absolute;
+    top:220px; left:50%;
+    width:250px; height:250px;
+    transform:translate(-50%, -50%);
+    border-radius:50%;
+    background-image:url("art/mark.png");
+    background-size:cover;
+    background-position:center;
+    opacity:.30;
+    mix-blend-mode:screen;
+    pointer-events:none;
+    z-index:0;
+  }
+  @media (max-width:620px){
+    .markmoon{ width:180px; height:180px; top:186px; opacity:.24; }
+  }
+
 </style>
 </head>
 <body>
 
 <div class="panorama" aria-hidden="true"></div>
+<div class="markmoon" aria-hidden="true"></div>
 
 <div class="topbar">
   <a class="home" href="index.html">← 목차</a>

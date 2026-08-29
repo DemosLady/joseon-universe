@@ -76,6 +76,7 @@
     color:var(--moon);
     font-family:"Nanum Myeongjo", serif;
     -webkit-font-smoothing:antialiased;
+    position:relative;
   }
 
   /* ---------- hero ---------- */
@@ -587,16 +588,37 @@
     letter-spacing:.05em; color:#7d8ba6; text-align:center;
   }
 
+
+  /* ---------- seal mark behind the title ---------- */
+  .markmoon{
+    position:absolute;
+    top:220px; left:50%;
+    width:250px; height:250px;
+    transform:translate(-50%, -50%);
+    border-radius:50%;
+    background-image:url("../art/mark.png");
+    background-size:cover;
+    background-position:center;
+    opacity:.30;
+    mix-blend-mode:screen;
+    pointer-events:none;
+    z-index:0;
+  }
+  @media (max-width:620px){
+    .markmoon{ width:180px; height:180px; top:186px; opacity:.24; }
+  }
+
 </style>
 </head>
 <body>
 
 <div class="panorama" aria-hidden="true"></div>
+<div class="markmoon" aria-hidden="true"></div>
 
 <div class="topbar">
   <a class="home" href="index.html">← Contents</a>
   <div class="navgroup">
-    <a class="tostory" href="../story.html">Story so far</a>
+    <a class="tostory" href="story.html">Story so far</a>
     <a class="tocast" href="characters.html">Characters</a>
   </div>
   <div class="langwrap">
@@ -636,7 +658,7 @@
 
   <div class="mark first"><span>ONE</span><i></i></div>
 
-  <p class="lead"><a class="cast-link" href="../characters.html#yunje">Yun-je</a> submitted his petition in the third month of the year he turned twenty-nine.</p>
+  <p class="lead"><a class="cast-link" href="characters.html#yunje">Yun-je</a> submitted his petition in the third month of the year he turned twenty-nine.</p>
 
   <p>The night before, he rewrote it three times. After the third draft he sat for a long while without putting out the candle — not from hesitation, but because he liked the sentence. He had a habit of staring at a sentence for a long time when it pleased him.</p>
 
@@ -698,7 +720,7 @@
 
   <div class="mark"><span>FOUR</span><i></i></div>
 
-  <p><a class="cast-link" href="../characters.html#talswe">Tal-swe</a> had no family name.</p>
+  <p><a class="cast-link" href="characters.html#talswe">Tal-swe</a> had no family name.</p>
 
   <p>It was not the custom to give family names to the lowborn, so he lived his whole life with a single childhood name, and even that people shortened as they pleased. In the marketplace they called him Tal-swe — because he came out in a mask.</p>
 
@@ -737,7 +759,7 @@
 
   <div class="mark"><span>SIX</span><i></i></div>
 
-  <p>The nun at the hermitage on Songni Mountain had the dharma name <a class="cast-link" href="../characters.html#jeongan">Jeong-an</a>.</p>
+  <p>The nun at the hermitage on Songni Mountain had the dharma name <a class="cast-link" href="characters.html#jeongan">Jeong-an</a>.</p>
 
   <p>Jeong for stillness, An for peace. The old monk who gave her that name died two years later, and so <span class="quiet">the only person who knew the name was wrong was Jeong-an herself.</span></p>
 

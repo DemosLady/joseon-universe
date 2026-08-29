@@ -76,6 +76,7 @@
     color:var(--moon);
     font-family:"Nanum Myeongjo", serif;
     -webkit-font-smoothing:antialiased;
+    position:relative;
   }
 
   /* ---------- hero ---------- */
@@ -587,16 +588,37 @@
     letter-spacing:.05em; color:#7d8ba6; text-align:center;
   }
 
+
+  /* ---------- seal mark behind the title ---------- */
+  .markmoon{
+    position:absolute;
+    top:220px; left:50%;
+    width:250px; height:250px;
+    transform:translate(-50%, -50%);
+    border-radius:50%;
+    background-image:url("../art/mark.png");
+    background-size:cover;
+    background-position:center;
+    opacity:.30;
+    mix-blend-mode:screen;
+    pointer-events:none;
+    z-index:0;
+  }
+  @media (max-width:620px){
+    .markmoon{ width:180px; height:180px; top:186px; opacity:.24; }
+  }
+
 </style>
 </head>
 <body>
 
 <div class="panorama" aria-hidden="true"></div>
+<div class="markmoon" aria-hidden="true"></div>
 
 <div class="topbar">
   <a class="home" href="index.html">← Contents</a>
   <div class="navgroup">
-    <a class="tostory" href="../story.html">Story so far</a>
+    <a class="tostory" href="story.html">Story so far</a>
     <a class="tocast" href="characters.html">Characters</a>
   </div>
   <div class="langwrap">
@@ -625,7 +647,7 @@
 <details class="prev">
   <summary>PREVIOUSLY · Chapter Three, Ash and Seed</summary>
   <div class="inner">
-    <p>The uprising did not last half a day. <a class="cast-link" href="../characters.html#yunje">Yun-je</a> died at the execution ground, <a class="cast-link" href="../characters.html#talswe">Tal-swe</a> took to the roads, <a class="cast-link" href="../characters.html#jeongan">Jeong-an</a> returned to her mountain empty-handed. Forty years later a girl of sixteen named <a class="cast-link" href="../characters.html#buni">Bun-i</a> found a sheet of paper beneath the floorboards.</p>
+    <p>The uprising did not last half a day. <a class="cast-link" href="characters.html#yunje">Yun-je</a> died at the execution ground, <a class="cast-link" href="characters.html#talswe">Tal-swe</a> took to the roads, <a class="cast-link" href="characters.html#jeongan">Jeong-an</a> returned to her mountain empty-handed. Forty years later a girl of sixteen named <a class="cast-link" href="characters.html#buni">Bun-i</a> found a sheet of paper beneath the floorboards.</p>
     <p><a href="ch3.html">Read Chapter Three, Ash and Seed →</a></p>
   </div>
 </details>
@@ -640,7 +662,7 @@
 
   <p>Let the criminal hear. For the crime of troubling the realm with a brush, he is sentenced to exile on an island at the southern edge.</p>
 
-  <p><a class="cast-link" href="../characters.html#sugyeom">Su-gyeom</a> knelt and listened. The official's voice shook. It was the cold. That morning was unusually cold, and the official was young, and this was probably the first time he had been given such a duty. Listening to that tremor, Su-gyeom had a strange thought — what will this man say to his wife tonight when he gets home.</p>
+  <p><a class="cast-link" href="characters.html#sugyeom">Su-gyeom</a> knelt and listened. The official's voice shook. It was the cold. That morning was unusually cold, and the official was young, and this was probably the first time he had been given such a duty. Listening to that tremor, Su-gyeom had a strange thought — what will this man say to his wife tonight when he gets home.</p>
 
   <p>The gat was taken off his head. The robe was torn. What remained was only fingers stained with ink.</p>
 
@@ -666,7 +688,7 @@
 
   <p>The man who ferried him to the island was an old fisherman.</p>
 
-  <p>His name was <a class="cast-link" href="../characters.html#gapsu">Gap-su</a>. He had come because the office paid a fee, though he never asked how much. He did not tell Su-gyeom to get in the boat. He simply sat holding the oar, so Su-gyeom worked out that he should climb aboard.</p>
+  <p>His name was <a class="cast-link" href="characters.html#gapsu">Gap-su</a>. He had come because the office paid a fee, though he never asked how much. He did not tell Su-gyeom to get in the boat. He simply sat holding the oar, so Su-gyeom worked out that he should climb aboard.</p>
 
   <p>There was no sound but the oar.</p>
 
@@ -705,7 +727,7 @@
 
   <div class="mark"><span>FIVE</span><i></i></div>
 
-  <p><a class="cast-link" href="../characters.html#baeswe">Bae-swe</a> first came to that island in the autumn.</p>
+  <p><a class="cast-link" href="characters.html#baeswe">Bae-swe</a> first came to that island in the autumn.</p>
 
   <p>A smuggler could hardly have a family name. People called him Bae-swe — the boat man — because he sailed.</p>
 
@@ -767,7 +789,7 @@
 
   <p>On land they are wives. They lower their heads, they speak little, and instead of names they are called somebody's mother. But in the water it is different. Underwater there are no noblemen and no lowborn. Whoever holds her breath longest is above; whoever cannot is below. That is all.</p>
 
-  <p>Among them, the first diver was <a class="cast-link" href="../characters.html#oki">Ok-i</a>.</p>
+  <p>Among them, the first diver was <a class="cast-link" href="characters.html#oki">Ok-i</a>.</p>
 
   <p>Ok-i learned from her mother, and her mother from hers. The song they sing while rowing out, she learned the same way. Ieodo sana, ieodo sana. The name of an island you go to and do not come back from.</p>
 

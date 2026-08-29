@@ -40,6 +40,7 @@
     margin:0; background:var(--ink);
     background-image:radial-gradient(120% 80% at 50% -10%, #1b2436 0%, var(--ink) 55%, var(--ink-deep) 100%);
     color:var(--moon); font-family:"Nanum Myeongjo", serif; -webkit-font-smoothing:antialiased;
+    position:relative;
   }
   .topbar{
     display:flex; align-items:center; justify-content:space-between; gap:16px;
@@ -166,11 +167,32 @@
     letter-spacing:.05em; color:#7d8ba6; text-align:center;
   }
 
+
+  /* ---------- seal mark behind the title ---------- */
+  .markmoon{
+    position:absolute;
+    top:220px; left:50%;
+    width:250px; height:250px;
+    transform:translate(-50%, -50%);
+    border-radius:50%;
+    background-image:url("art/mark.png");
+    background-size:cover;
+    background-position:center;
+    opacity:.30;
+    mix-blend-mode:screen;
+    pointer-events:none;
+    z-index:0;
+  }
+  @media (max-width:620px){
+    .markmoon{ width:180px; height:180px; top:186px; opacity:.24; }
+  }
+
 </style>
 </head>
 <body>
 
 <div class="panorama" aria-hidden="true"></div>
+<div class="markmoon" aria-hidden="true"></div>
 
 <div class="topbar">
   <a href="tistory_ch2_ink_and_embers.html">← 이야기로 · Back to the story</a>

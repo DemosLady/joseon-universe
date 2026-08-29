@@ -569,11 +569,32 @@
     letter-spacing:.05em; color:#7d8ba6; text-align:center;
   }
 
+
+  /* ---------- seal mark inside the moon circle ---------- */
+  .markmoon{
+    position:absolute;
+    top:300px; left:50%;
+    width:300px; height:300px;
+    transform:translate(-50%, -50%);
+    border-radius:50%;
+    background-image:url("art/mark.png");
+    background-size:cover;
+    background-position:center;
+    opacity:.34;
+    mix-blend-mode:screen;
+    pointer-events:none;
+    z-index:0;
+  }
+  @media (max-width:620px){
+    .markmoon{ width:210px; height:210px; top:250px; opacity:.28; }
+  }
+
 </style>
 </head>
 <body>
 
 <div class="panorama" aria-hidden="true"></div>
+<div class="markmoon" aria-hidden="true"></div>
 
 <div class="topbar">
   <a class="home" href="https://soundcloud.com/demosaii">demosaii</a>
