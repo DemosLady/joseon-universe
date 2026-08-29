@@ -523,6 +523,70 @@
   }
   details.prev .inner a:hover{ color:#fff; }
 
+
+  /* ---------- character links ---------- */
+  a.cast-link{
+    color:inherit; text-decoration:none;
+    border-bottom:1px dotted rgba(143,158,186,.45);
+    padding-bottom:1px;
+    transition:border-color .25s ease, color .25s ease;
+  }
+  a.cast-link:hover, a.cast-link:focus-visible{
+    color:#e6ebf4; border-bottom-color:#e6ebf4;
+  }
+
+
+  /* ---------- top bar, made visible ---------- */
+  .topbar{
+    max-width:760px; padding:22px 24px 0;
+    font-size:13.5px; gap:10px;
+  }
+  .topbar a.home{
+    color:#c3ccdc; letter-spacing:.14em;
+    border-bottom:1px solid transparent; padding-bottom:3px;
+    transition:color .25s ease, border-color .25s ease;
+  }
+  .topbar a.home:hover{ color:#fff; border-bottom-color:#fff; }
+  .topbar .navgroup{ display:flex; align-items:center; gap:8px; margin-inline-start:auto; }
+  .topbar a.tostory, .topbar a.tocast{
+    color:#c3ccdc !important;
+    border:1px solid rgba(143,158,186,.34);
+    padding:8px 15px;
+    letter-spacing:.14em;
+    white-space:nowrap;
+    transition:color .25s ease, border-color .25s ease, background .25s ease;
+  }
+  .topbar a.tostory:hover, .topbar a.tocast:hover,
+  .topbar a.tostory:focus-visible, .topbar a.tocast:focus-visible{
+    color:#fff !important; border-color:#fff; background:rgba(255,255,255,.06);
+  }
+  .langbtn{ font-size:12.5px !important; padding:8px 15px !important; color:#c3ccdc !important; }
+  @media (max-width:620px){
+    .topbar{ flex-wrap:wrap; gap:8px; font-size:12.5px; }
+    .topbar .navgroup{ width:100%; margin-inline-start:0; justify-content:flex-start; }
+    .topbar a.tostory, .topbar a.tocast{ padding:7px 12px; }
+  }
+
+  /* ---------- character links, made obvious ---------- */
+  a.cast-link{
+    color:#cfd6e4 !important;
+    text-decoration:none;
+    border-bottom:1px solid rgba(180,196,222,.55);
+    padding-bottom:1px;
+    transition:color .25s ease, border-color .25s ease, background .25s ease;
+  }
+  a.cast-link:hover, a.cast-link:focus-visible{
+    color:#fff !important; border-bottom-color:#fff;
+    background:rgba(255,255,255,.07);
+  }
+
+
+  .castinfo{
+    max-width:680px; margin:0 auto 26px; padding:0 24px;
+    font-family:"Gowun Dodum", sans-serif; font-size:12px;
+    letter-spacing:.05em; color:#7d8ba6; text-align:center;
+  }
+
 </style>
 </head>
 <body>
@@ -531,8 +595,10 @@
 
 <div class="topbar">
   <a class="home" href="index.html">← Contents</a>
-  <a class="tostory" href="../story.html" style="color:#8492ab;text-decoration:none;letter-spacing:.08em;">Story so far</a>
-  <a class="tocast" href="characters.html" style="color:#8492ab;text-decoration:none;letter-spacing:.08em;">Characters</a>
+  <div class="navgroup">
+    <a class="tostory" href="../story.html">Story so far</a>
+    <a class="tocast" href="characters.html">Characters</a>
+  </div>
   <div class="langwrap">
     <button class="langbtn" type="button" aria-haspopup="true" aria-expanded="false">English<span class="caret">▾</span></button>
     <div class="langmenu" role="menu">
@@ -559,10 +625,12 @@
 <details class="prev">
   <summary>PREVIOUSLY · Chapter Five, Sea and Bones</summary>
   <div class="inner">
-    <p>A storm turned the sea floor over. Ok-i brought up a chest holding the names of those who bought false testimony, and Su-gyeom understood at last that he had been sent to the place where the truth was buried.</p>
+    <p>A storm turned the sea floor over. <a class="cast-link" href="../characters.html#oki">Ok-i</a> brought up a chest holding the names of those who bought false testimony, and <a class="cast-link" href="../characters.html#sugyeom">Su-gyeom</a> understood at last that he had been sent to the place where the truth was buried.</p>
     <p><a href="ch5.html">Read Chapter Five, Sea and Bones →</a></p>
   </div>
 </details>
+
+<p class="castinfo">Tap any character's name to read about them →</p>
 
 <article class="paper">
 
@@ -572,7 +640,7 @@
 
   <p>It took Su-gyeom seventeen days to copy it out. Where the salt had eaten the paper he left the space blank. There were twenty-three blank spaces, and eleven of them were where a name had been.</p>
 
-  <p>Bae-swe asked. What do we do about the blanks.</p>
+  <p><a class="cast-link" href="../characters.html#baeswe">Bae-swe</a> asked. What do we do about the blanks.</p>
 
   <p class="say">"We take them as they are."</p>
   <p class="say">"A blank isn't evidence."</p>
@@ -593,7 +661,7 @@
 
   <p>The Big Dipper hung low. Every other star turns, but those seven never change their place. That is why sailors trust only them.</p>
 
-  <p>Gap-su boarded too. No one tried to stop him. Everyone knew why he was going.</p>
+  <p><a class="cast-link" href="../characters.html#gapsu">Gap-su</a> boarded too. No one tried to stop him. Everyone knew why he was going.</p>
 
   <p>And then Ok-i came.</p>
 
@@ -655,7 +723,7 @@
 
   <div class="mark"><span>SIX</span><i></i></div>
 
-  <p>Jeong-an did not bring them inside. She laid out a mat in the yard.</p>
+  <p><a class="cast-link" href="../characters.html#jeongan">Jeong-an</a> did not bring them inside. She laid out a mat in the yard.</p>
 
   <p>Su-gyeom took the copy from inside his coat and set it on the table.</p>
 

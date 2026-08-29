@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
 <meta charset="utf-8"><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z5RGZRN1YF"></script>
@@ -10,17 +10,39 @@
   gtag('config', 'G-Z5RGZRN1YF');
   gtag('config', 'G-FS3RY08FBH');
 </script><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>조선힙합 웹소설 | 인물 — 조선 이야기</title>
-<meta name="description" content="조선 힙합 유니버스의 인물들. 세 세대에 걸쳐 이어지는 여덟 사람 — 선비, 광대, 여인, 해녀, 밀수꾼, 어부.">
-<link rel="canonical" href="https://joseon-universe.vercel.app/characters.html">
+<title>Snow and Iron — Chapter Seven | The Joseon Hip-Hop Universe</title>
+<meta name="description" content="Chapter Seven of the Joseon Hip-Hop Universe. Snow and Iron — the north is breached, and the palace and the rebels stand on the same side. The first chapter of the Iron Trilogy, in progress.">
+<link rel="canonical" href="https://joseon-universe.vercel.app/en/chapter7.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="조선힙합 웹소설">
-<meta property="og:description" content="조선 힙합 유니버스의 인물들. 세 세대에 걸쳐 이어지는 여덟 사람 — 선비, 광대, 여인, 해녀, 밀수꾼, 어부.">
+<meta property="og:title" content="Snow and Iron — Chapter Seven">
+<meta property="og:description" content="Chapter Seven of the Joseon Hip-Hop Universe. Snow and Iron — the north is breached, and the palace and the rebels stand on the same side. The first chapter of the Iron Trilogy, in progress.">
 <meta property="og:site_name" content="조선 이야기 · demosaii">
-<meta property="og:locale" content="ko_KR">
-<meta property="og:url" content="https://joseon-universe.vercel.app/characters.html">
-<meta property="og:image" content="https://joseon-universe.vercel.app/covers/ch1.jpg">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://joseon-universe.vercel.app/en/chapter7.html">
+<meta property="og:image" content="https://joseon-universe.vercel.app/covers/ch7.jpg">
 <meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Snow and Iron",
+  "url": "https://joseon-universe.vercel.app/en/chapter7.html",
+  "position": 7,
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "CreativeWorkSeries",
+    "name": "조선 이야기 · Joseon Stories",
+    "url": "https://joseon-universe.vercel.app"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "demosaii"
+  },
+  "description": "Chapter Seven of the Joseon Hip-Hop Universe. Snow and Iron — the north is breached, and the palace and the rebels stand on the same side. The first chapter of the Iron Trilogy, in progress.",
+  "image": "https://joseon-universe.vercel.app/covers/ch7.jpg"
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Song+Myung&family=Nanum+Myeongjo:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
@@ -601,47 +623,7 @@
     position:absolute; inset:0; width:100%; height:100%; border:0;
   }
 
-  .panorama{ background-image:url("art/hero.jpg"); }
-
-  /* ---------- back button on the characters page ---------- */
-  .backwrap{ max-width:700px; margin:0 auto; padding:0 24px 8px; }
-  .backbtn{
-    display:none; align-items:center; gap:8px;
-    background:none; border:1px solid rgba(143,158,186,.28);
-    color:#aab6cb; font-family:"Gowun Dodum", sans-serif;
-    font-size:12px; letter-spacing:.12em;
-    padding:9px 16px; cursor:pointer;
-    transition:border-color .25s ease, color .25s ease;
-  }
-  .backbtn:hover, .backbtn:focus-visible{ color:#fff; border-color:#fff; }
-  .backbtn.show{ display:inline-flex; }
-
-
-  /* ---------- portraits ---------- */
-  .cast figure{
-    display:grid;
-    grid-template-columns:132px 1fr;
-    gap:24px;
-    align-items:start;
-  }
-  .cast .portrait{
-    width:100%; aspect-ratio:4/5; object-fit:cover; display:block;
-    background:#141b2a; border:1px solid rgba(143,158,186,.16);
-    filter:saturate(.88) contrast(1.02);
-    transition:filter .4s ease;
-  }
-  .cast figure:hover .portrait{ filter:saturate(1) contrast(1.02); }
-  .cast .pair{ display:grid; grid-template-columns:1fr 1fr; gap:8px; }
-  .cast .pair .cap{
-    grid-column:1 / -1;
-    font-family:"Gowun Dodum", sans-serif; font-size:10px;
-    letter-spacing:.14em; color:#66748c; text-align:center; margin:2px 0 0;
-  }
-  .cast .txt{ min-width:0; }
-  @media (max-width:620px){
-    .cast figure{ grid-template-columns:96px 1fr; gap:16px; }
-  }
-
+  .panorama{ background-image:url("../art/hero.jpg"); }
 
   /* ---------- top bar, made visible ---------- */
   .topbar{
@@ -701,137 +683,61 @@
 <div class="panorama" aria-hidden="true"></div>
 
 <div class="topbar">
-  <a class="home" href="index.html">← 목차</a>
+  <a class="home" href="../index.html">← Contents</a>
   <div class="navgroup">
-    <a class="tostory" href="story.html">줄거리</a>
-    
-  </div><div class="langwrap">
-    <button class="langbtn" type="button" aria-haspopup="true" aria-expanded="false">한국어<span class="caret">▾</span></button>
+    <a class="tostory" href="../story.html">Story</a>
+    <a class="tocast" href="characters.html">Characters</a>
+  </div>
+  <div class="langwrap">
+    <button class="langbtn" type="button" aria-haspopup="true" aria-expanded="false">English<span class="caret">▾</span></button>
     <div class="langmenu" role="menu">
-      <a href="characters.html" role="menuitem" aria-current="true">한국어</a>
-      <a href="en/characters.html" role="menuitem" aria-current="false">English</a>
+      <a href="../chapter7.html" role="menuitem" aria-current="false">한국어</a>
+      <a href="chapter7.html" role="menuitem" aria-current="true">English</a>
     </div>
   </div>
 </div>
 
 <header class="hero">
   <p class="eyebrow">DEMOSAII</p>
-  <h1>인물</h1>
-  <p class="sub">THE CHARACTERS</p>
+  <h1>Snow<br>and Iron</h1>
+  <p class="sub">눈과 쇠</p>
 </header>
 
 <section class="intro">
-  <p>세 세대에 걸쳐 이어지는 이야기입니다. 한 삼부작에서 사라진 사람이 다른 삼부작에서 돌아오고, 먼저 묻힌 것이 나중에 발견됩니다.</p>
+  <p>The first chapter of the Iron Trilogy. Fire burns, salt preserves, and iron remembers.</p>
 </section>
 
-<div class="backwrap"><button class="backbtn" type="button">← 읽던 곳으로 돌아가기</button></div>
+<div class="soonpage">
+  <p class="badge">IN PROGRESS</p>
 
-<div class="cast">
-  <div class="gen">
-    <p class="gen-label">GENERATION ONE</p>
-    <p class="gen-name">불의 삼부작</p>
-        <figure id="king">
-      <img class="portrait" src="portraits/king.png" alt="왕" loading="lazy">
-      <div class="txt">
-      <h3>왕</h3>
-      <p class="role">임금 · 제1장</p>
-      <p class="bio">이름은 이야기에 나오지 않는다. 온화하다는 말을 듣던 젊은 임금이었다. 사랑한 여인이 궁 안에서 독으로 죽고, 그 손이 자기 조정 안에 있었다는 것을 알아낸 날부터 달라졌다.<br><br>그날 이후 상소에 먹 대신 피를 찍었다. <b>온화하던 임금이 폭군이 되었다.</b> 그가 시작한 일이 세 세대를 건너간다.</p>
-      <p class="appears">등장: <a href="tistory_ch1_blood_and_fog.html">제1장</a><br>곡: 왕의 길목 · 빈 궁궐 메아리 · 피의 옥새</p>
-    </div>
-    </figure>
-
-    <figure id="yeoni">
-      <img class="portrait" src="portraits/yeoni.png" alt="연이" loading="lazy">
-      <div class="txt">
-      <h3>연이</h3>
-      <p class="role">기록에서 지워진 여자 · 제1장</p>
-      <p class="bio">실록에 한 줄도 남지 않았다. 이름은 지워졌고 무덤에는 표가 없다. 궁 안에서 독을 마시고 죽었으나, 그것이 누구의 손이었는지는 오래 밝혀지지 않았다.<br><br><b>이 이야기 전체가 이 여자에게서 시작된다.</b> 스물여덟 곡 가운데 그녀의 목소리로 부르는 곡은 하나뿐이다.</p>
-      <p class="appears">등장: <a href="tistory_ch1_blood_and_fog.html">제1장</a><br>곡: 빈 궁궐 메아리 · 안개 속 그림자</p>
-    </div>
-    </figure>
-
-<figure id="yunje">
-      <img class="portrait" src="portraits/yunje.png" alt="윤제" loading="lazy">
-      <div class="txt">
-      <h3>윤제</h3>
-      <p class="role">선비 · 제1~3장</p>
-      <p class="bio">과거에 급제하고 사간원에 섰던 문신. 있었던 일을 있는 그대로 적었다는 죄로 제주에 유배된다. 유배지에서도 쓰기를 멈추지 않았고, 그 글은 뭍으로 건너가 노래가 되었다.<br><br><b>봉기가 실패한 뒤 형장에서 죽는다.</b> 마지막까지 후회는 없다고 했다.</p>
-      <p class="appears">등장: <a href="tistory_ch1_blood_and_fog.html">제1장</a> · <a href="tistory_ch2_ink_and_embers.html">제2장</a> · <a href="tistory_ch3_ash_and_seed.html">제3장</a><br>곡: 붓끝에 칼 · 마지막 붓</p>
-    </div>
-    </figure>
-    <figure id="talswe">
-      <img class="portrait" src="portraits/talswe.png" alt="탈쇠" loading="lazy">
-      <div class="txt">
-      <h3>탈쇠</h3>
-      <p class="role">광대 · 제2~3장</p>
-      <p class="bio">저잣거리의 광대. 성이 없다. 낮에는 줄을 타고 밤에는 소식을 날랐고, 유배지에서 온 글을 자기 노래에 숨겨 한양까지 옮겼다.<br><br>봉기의 밤에 탈을 쓰고 궁궐 앞에 섰다. <b>살아남은 것은 그 하나뿐이었다.</b> 탈을 버리고 이야기꾼이 되어 남쪽으로 걸었다.</p>
-      <p class="appears">등장: <a href="tistory_ch2_ink_and_embers.html">제2장</a> · <a href="tistory_ch3_ash_and_seed.html">제3장</a><br>곡: 저잣거리 · 길 위의 그림자</p>
-    </div>
-    </figure>
-    <figure id="jeongan">
-      <img class="portrait" src="portraits/jeongan.png" alt="정안" loading="lazy">
-      <div class="txt">
-      <h3>정안</h3>
-      <p class="role">여인 · 제2~3장, 제6장</p>
-      <p class="bio">사화로 아버지를 잃고 어머니를 노비로 빼앗긴 뒤 스물셋에 머리를 깎았다. 산에서 십 년, 그리고 횃불을 들고 내려왔다.<br><br>다 태우고 빈 손으로 돌아갔다. <b>한 세대 뒤, 바다에서 올라온 장부를 들고 세 사람이 그 여인을 찾아온다.</b></p>
-      <p class="appears">등장: <a href="tistory_ch2_ink_and_embers.html">제2장</a> · <a href="tistory_ch3_ash_and_seed.html">제3장</a> · <a href="tistory_ch6_island_and_stars.html">제6장</a><br>곡: 산사의 여인 · 빈 산 · 산문 앞에서</p>
-    </div>
-    </figure>
-    <figure id="buni">
-      <div class="pair"><img class="portrait" src="portraits/buni_young.png" alt="분이 16" loading="lazy"><img class="portrait" src="portraits/buni.png" alt="분이 44" loading="lazy"><span class="cap">16세 &nbsp;·&nbsp; 44세</span></div>
-      <div class="txt">
-      <h3>분이</h3>
-      <p class="role">소녀 · 제3장, 제7장</p>
-      <p class="bio">전라도의 작은 마을에서 자랐다. 여자라서 글을 배우지 못했다. 열여섯에 할머니 방 마루 밑에서 종이 한 장을 찾아냈고, 사흘을 훈장 문 앞에 앉아 가르쳐 달라 했다.<br><br>사십 년 뒤, <b>마을의 훈장이 된 그 여자에게 바다에서 온 장부와 전쟁이 같은 주에 도착한다.</b></p>
-      <p class="appears">등장: <a href="tistory_ch3_ash_and_seed.html">제3장</a> · <a href="chapter7.html">제7장</a><br>곡: 첫 번째 새싹 · 빈 줄</p>
-    </div>
-    </figure>
+  <div class="coverwrap">
+    <img src="../covers/ch7.jpg" alt="Snow and Iron album cover" loading="lazy">
   </div>
 
-  <div class="gen">
-    <p class="gen-label">GENERATION TWO</p>
-    <p class="gen-name">바다 삼부작</p>
-    <figure id="sugyeom">
-      <img class="portrait" src="portraits/sugyeom.png" alt="수겸" loading="lazy">
-      <div class="txt">
-      <h3>수겸</h3>
-      <p class="role">선비 · 제4~6장</p>
-      <p class="bio">윤제와 같은 죄로 같은 바다에 유배되었다. 섬에서 아이들에게 모래 위에 글자를 가르쳤다 — 파도가 지우는 곳에 쓴 글은 증거가 되지 않으니.<br><br><b>궤짝이 열렸을 때 그는 알았다.</b> 진실을 써서 유배된 것이 아니라, 진실이 묻힌 곳으로 보내졌다는 것을.</p>
-      <p class="appears">등장: <a href="tistory_ch4_salt_and_waves.html">제4장</a> · <a href="tistory_ch5_sea_and_bones.html">제5장</a> · <a href="tistory_ch6_island_and_stars.html">제6장</a><br>곡: 유배길 · 소금 편지</p>
-    </div>
-    </figure>
-    <figure id="baeswe">
-      <img class="portrait" src="portraits/baeswe.png" alt="배쇠" loading="lazy">
-      <div class="txt">
-      <h3>배쇠</h3>
-      <p class="role">밀수꾼 · 제4~7장</p>
-      <p class="bio">성이 없다. 배를 타기 때문에 배쇠라 불렸다. 달이 구름에 숨는 밤에만 검게 물들인 돛을 올렸고, 삼십 년을 모르는 척하며 살아남았다.<br><br>가라앉은 배를 찾아낸 것도, 흰 돛을 처음 올린 것도 그였다. <b>그리고 북쪽이 뚫린 날, 그 돛을 스스로 내렸다.</b></p>
-      <p class="appears">등장: <a href="tistory_ch4_salt_and_waves.html">제4장</a> · <a href="tistory_ch5_sea_and_bones.html">제5장</a> · <a href="tistory_ch6_island_and_stars.html">제6장</a> · <a href="chapter7.html">제7장</a><br>곡: 검은 돛 · 가라앉은 배 · 돛을 내리다</p>
-    </div>
-    </figure>
-    <figure id="gapsu">
-      <img class="portrait" src="portraits/gapsu.png" alt="갑수" loading="lazy">
-      <div class="txt">
-      <h3>갑수</h3>
-      <p class="role">늙은 어부 · 제4~6장</p>
-      <p class="bio">사십 년을 그 바다에서 살았다. 큰아들은 풍랑에, 작은아들은 열병에, 아내는 기다리다 먼저 갔다.<br><br>폭풍 속에서 바다에게 조용히 빌었다 — 가져갈 것이 있으면 나를 가져가고, 돌려줄 것이 있으면 이제는 돌려달라고. <b>다음 날 바다가 대답했다.</b></p>
-      <p class="appears">등장: <a href="tistory_ch4_salt_and_waves.html">제4장</a> · <a href="tistory_ch5_sea_and_bones.html">제5장</a> · <a href="tistory_ch6_island_and_stars.html">제6장</a><br>곡: 늙은 그물 · 폭풍 · 북두칠성</p>
-    </div>
-    </figure>
-    <figure id="oki">
-      <img class="portrait" src="portraits/oki.png" alt="옥이" loading="lazy">
-      <div class="txt">
-      <h3>옥이</h3>
-      <p class="role">해녀 · 제4~6장</p>
-      <p class="bio">뭍에서는 고개를 숙이는 아낙이고 물속에서는 주인이다. 숨을 오래 참는 사람이 위고 못 참는 사람이 아래인 곳, 그것이 전부인 세계.<br><br>가라앉은 배를 처음 본 것도, 열두 사람의 이름을 데리고 올라온 것도 그녀다. <b>뭍으로 가는 배 위에서 그녀는 일어섰다 — 저기서 나는 이름도 글도 없는 아낙이오.</b></p>
-      <p class="appears">등장: <a href="tistory_ch4_salt_and_waves.html">제4장</a> · <a href="tistory_ch5_sea_and_bones.html">제5장</a> · <a href="tistory_ch6_island_and_stars.html">제6장</a><br>곡: 숨비소리 · 물 아래 · 이어도</p>
-    </div>
-    </figure>
-  </div>
+  <p class="body">The truth raised from the sea was on its way to the capital. Three days' sailing. <b>That was when the Jurchen crossed the river.</b></p>
+
+  <p class="body">Three fortresses fall in three days, refugees come over the passes, and the state pardons its criminals. Anyone who can fight will not be asked about his past — the men who spent their whole lives running are called on now.</p>
+
+  <p class="body">Anchored in a harbour for supplies, the smuggler hears the news and lowers his sail. The writing has waited ten years, he says; it can wait one more day. But the people coming over that pass cannot wait for tonight.</p>
+
+  <p class="body">The blacksmith melts down everything the villages bring him. A bell from a temple, a prisoner's chains, a pot that cooked rice, the iron from the handle of some scholar's brush. <b>He does not ask what it was. If it is iron, it will do.</b></p>
+
+  <p class="body">And to a woman past forty, that winter, the ledger from the sea and the war arrive in the same week. She walks north carrying paper and ink — to write the names of the dying on the day they die.</p>
+
+  <p class="body">The palace killed the people, and the people hated the palace. <b>But what came from the north does not tell them apart.</b></p>
+
+  <ul class="tracks">
+    <li><span class="tn">01</span><span>Lowering the Sail <span style="color:#66748c;font-size:13px;">돛을 내리다</span></span></li>
+    <li><span class="tn">02</span><span>Gather <span style="color:#66748c;font-size:13px;">모여라</span></span></li>
+    <li><span class="tn">03</span><span>The Anvil <span style="color:#66748c;font-size:13px;">모루</span></span></li>
+    <li><span class="tn">04</span><span>The Empty Line <span style="color:#66748c;font-size:13px;">빈 줄</span></span></li>
+  </ul>
+
+  <p class="body" style="margin-top:36px;color:#7d8ba6;font-size:14px;">The prose for this chapter has not been written yet. The music comes first, and the writing follows it.</p>
 </div>
 
 <section class="listen">
-  <a class="btn" href="https://soundcloud.com/demosaii" target="_blank" rel="noopener">전곡 듣기 — SoundCloud →</a>
+  <a class="btn" href="https://soundcloud.com/demosaii" target="_blank" rel="noopener">Listen to everything — SoundCloud →</a>
 </section>
 
 <footer class="about">
@@ -858,19 +764,6 @@
         btn.setAttribute('aria-expanded','false');
       }
     });
-  })();
-</script>
-
-<script>
-  (function(){
-    var b = document.querySelector('.backbtn');
-    if(!b) return;
-    var ref = document.referrer;
-    // only offer "back" when the visitor actually came from a page on this site
-    if(ref && ref.indexOf(location.host) !== -1 && ref.indexOf('characters.html') === -1){
-      b.classList.add('show');
-      b.addEventListener('click', function(){ history.back(); });
-    }
   })();
 </script>
 

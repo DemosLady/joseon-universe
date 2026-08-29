@@ -523,6 +523,70 @@
   }
   details.prev .inner a:hover{ color:#fff; }
 
+
+  /* ---------- character links ---------- */
+  a.cast-link{
+    color:inherit; text-decoration:none;
+    border-bottom:1px dotted rgba(143,158,186,.45);
+    padding-bottom:1px;
+    transition:border-color .25s ease, color .25s ease;
+  }
+  a.cast-link:hover, a.cast-link:focus-visible{
+    color:#e6ebf4; border-bottom-color:#e6ebf4;
+  }
+
+
+  /* ---------- top bar, made visible ---------- */
+  .topbar{
+    max-width:760px; padding:22px 24px 0;
+    font-size:13.5px; gap:10px;
+  }
+  .topbar a.home{
+    color:#c3ccdc; letter-spacing:.14em;
+    border-bottom:1px solid transparent; padding-bottom:3px;
+    transition:color .25s ease, border-color .25s ease;
+  }
+  .topbar a.home:hover{ color:#fff; border-bottom-color:#fff; }
+  .topbar .navgroup{ display:flex; align-items:center; gap:8px; margin-inline-start:auto; }
+  .topbar a.tostory, .topbar a.tocast{
+    color:#c3ccdc !important;
+    border:1px solid rgba(143,158,186,.34);
+    padding:8px 15px;
+    letter-spacing:.14em;
+    white-space:nowrap;
+    transition:color .25s ease, border-color .25s ease, background .25s ease;
+  }
+  .topbar a.tostory:hover, .topbar a.tocast:hover,
+  .topbar a.tostory:focus-visible, .topbar a.tocast:focus-visible{
+    color:#fff !important; border-color:#fff; background:rgba(255,255,255,.06);
+  }
+  .langbtn{ font-size:12.5px !important; padding:8px 15px !important; color:#c3ccdc !important; }
+  @media (max-width:620px){
+    .topbar{ flex-wrap:wrap; gap:8px; font-size:12.5px; }
+    .topbar .navgroup{ width:100%; margin-inline-start:0; justify-content:flex-start; }
+    .topbar a.tostory, .topbar a.tocast{ padding:7px 12px; }
+  }
+
+  /* ---------- character links, made obvious ---------- */
+  a.cast-link{
+    color:#cfd6e4 !important;
+    text-decoration:none;
+    border-bottom:1px solid rgba(180,196,222,.55);
+    padding-bottom:1px;
+    transition:color .25s ease, border-color .25s ease, background .25s ease;
+  }
+  a.cast-link:hover, a.cast-link:focus-visible{
+    color:#fff !important; border-bottom-color:#fff;
+    background:rgba(255,255,255,.07);
+  }
+
+
+  .castinfo{
+    max-width:680px; margin:0 auto 26px; padding:0 24px;
+    font-family:"Gowun Dodum", sans-serif; font-size:12px;
+    letter-spacing:.05em; color:#7d8ba6; text-align:center;
+  }
+
 </style>
 </head>
 <body>
@@ -531,8 +595,10 @@
 
 <div class="topbar">
   <a class="home" href="index.html">← 목차</a>
-  <a class="tostory" href="story.html" style="color:#8492ab;text-decoration:none;letter-spacing:.08em;">줄거리</a>
-  <a class="tocast" href="characters.html" style="color:#8492ab;text-decoration:none;letter-spacing:.08em;">인물</a>
+  <div class="navgroup">
+    <a class="tostory" href="story.html">줄거리</a>
+    <a class="tocast" href="characters.html">인물</a>
+  </div>
   <div class="langwrap">
     <button class="langbtn" type="button" aria-haspopup="true" aria-expanded="false">한국어<span class="caret">▾</span></button>
     <div class="langmenu" role="menu">
@@ -559,10 +625,12 @@
 <details class="prev">
   <summary>이전 이야기 · 제5장 「바다와 뼈」</summary>
   <div class="inner">
-    <p>폭풍이 바닥을 뒤집었다. 옥이가 궤짝을 안고 올라왔고, 그 안에는 거짓 증언을 산 자들의 이름이 있었다. 수겸은 자기가 진실이 묻힌 곳으로 보내졌다는 것을 알았다.</p>
+    <p>폭풍이 바닥을 뒤집었다. <a class="cast-link" href="characters.html#oki">옥이</a>가 궤짝을 안고 올라왔고, 그 안에는 거짓 증언을 산 자들의 이름이 있었다. <a class="cast-link" href="characters.html#sugyeom">수겸</a>은 자기가 진실이 묻힌 곳으로 보내졌다는 것을 알았다.</p>
     <p><a href="tistory_ch5_sea_and_bones.html">제5장 「바다와 뼈」 다시 읽기 →</a></p>
   </div>
 </details>
+
+<p class="castinfo">등장인물 이름을 누르면 그 인물의 이야기로 이동합니다 →</p>
 
 <article class="paper">
 
@@ -572,7 +640,7 @@
 
   <p>수겸이 사본을 다 옮겨 적는 데 열이레가 걸렸다. 소금이 지운 자리는 비워두었다. 비워둔 자리가 스물세 군데였고, 그중 열한 군데는 이름이 있던 자리였다.</p>
 
-  <p>배쇠가 물었다. 그 빈 곳은 어찌하오.</p>
+  <p><a class="cast-link" href="characters.html#baeswe">배쇠</a>가 물었다. 그 빈 곳은 어찌하오.</p>
 
   <p class="say">"비워둔 채로 가져가오."</p>
   <p class="say">"비면 증거가 안 되지 않소."</p>
@@ -593,7 +661,7 @@
 
   <p>북두칠성이 낮게 걸려 있었다. 다른 별은 다 돌아도 그 일곱만은 자리를 바꾸지 않는다. 그래서 뱃사람은 그것만 믿는다.</p>
 
-  <p>갑수도 배에 올랐다. 아무도 말리지 않았다. 그가 왜 가는지는 모두가 알았다.</p>
+  <p><a class="cast-link" href="characters.html#gapsu">갑수</a>도 배에 올랐다. 아무도 말리지 않았다. 그가 왜 가는지는 모두가 알았다.</p>
 
   <p>그리고 옥이가 왔다.</p>
 
@@ -655,7 +723,7 @@
 
   <div class="mark"><span>여섯</span><i></i></div>
 
-  <p>정안은 그들을 안으로 들이지 않았다. 마당에 자리를 폈다.</p>
+  <p><a class="cast-link" href="characters.html#jeongan">정안</a>은 그들을 안으로 들이지 않았다. 마당에 자리를 폈다.</p>
 
   <p>수겸이 품에서 사본을 꺼내 상 위에 놓았다.</p>
 

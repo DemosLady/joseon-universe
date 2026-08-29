@@ -523,6 +523,70 @@
   }
   details.prev .inner a:hover{ color:#fff; }
 
+
+  /* ---------- character links ---------- */
+  a.cast-link{
+    color:inherit; text-decoration:none;
+    border-bottom:1px dotted rgba(143,158,186,.45);
+    padding-bottom:1px;
+    transition:border-color .25s ease, color .25s ease;
+  }
+  a.cast-link:hover, a.cast-link:focus-visible{
+    color:#e6ebf4; border-bottom-color:#e6ebf4;
+  }
+
+
+  /* ---------- top bar, made visible ---------- */
+  .topbar{
+    max-width:760px; padding:22px 24px 0;
+    font-size:13.5px; gap:10px;
+  }
+  .topbar a.home{
+    color:#c3ccdc; letter-spacing:.14em;
+    border-bottom:1px solid transparent; padding-bottom:3px;
+    transition:color .25s ease, border-color .25s ease;
+  }
+  .topbar a.home:hover{ color:#fff; border-bottom-color:#fff; }
+  .topbar .navgroup{ display:flex; align-items:center; gap:8px; margin-inline-start:auto; }
+  .topbar a.tostory, .topbar a.tocast{
+    color:#c3ccdc !important;
+    border:1px solid rgba(143,158,186,.34);
+    padding:8px 15px;
+    letter-spacing:.14em;
+    white-space:nowrap;
+    transition:color .25s ease, border-color .25s ease, background .25s ease;
+  }
+  .topbar a.tostory:hover, .topbar a.tocast:hover,
+  .topbar a.tostory:focus-visible, .topbar a.tocast:focus-visible{
+    color:#fff !important; border-color:#fff; background:rgba(255,255,255,.06);
+  }
+  .langbtn{ font-size:12.5px !important; padding:8px 15px !important; color:#c3ccdc !important; }
+  @media (max-width:620px){
+    .topbar{ flex-wrap:wrap; gap:8px; font-size:12.5px; }
+    .topbar .navgroup{ width:100%; margin-inline-start:0; justify-content:flex-start; }
+    .topbar a.tostory, .topbar a.tocast{ padding:7px 12px; }
+  }
+
+  /* ---------- character links, made obvious ---------- */
+  a.cast-link{
+    color:#cfd6e4 !important;
+    text-decoration:none;
+    border-bottom:1px solid rgba(180,196,222,.55);
+    padding-bottom:1px;
+    transition:color .25s ease, border-color .25s ease, background .25s ease;
+  }
+  a.cast-link:hover, a.cast-link:focus-visible{
+    color:#fff !important; border-bottom-color:#fff;
+    background:rgba(255,255,255,.07);
+  }
+
+
+  .castinfo{
+    max-width:680px; margin:0 auto 26px; padding:0 24px;
+    font-family:"Gowun Dodum", sans-serif; font-size:12px;
+    letter-spacing:.05em; color:#7d8ba6; text-align:center;
+  }
+
 </style>
 </head>
 <body>
@@ -531,8 +595,10 @@
 
 <div class="topbar">
   <a class="home" href="index.html">← 목차</a>
-  <a class="tostory" href="story.html" style="color:#8492ab;text-decoration:none;letter-spacing:.08em;">줄거리</a>
-  <a class="tocast" href="characters.html" style="color:#8492ab;text-decoration:none;letter-spacing:.08em;">인물</a>
+  <div class="navgroup">
+    <a class="tostory" href="story.html">줄거리</a>
+    <a class="tocast" href="characters.html">인물</a>
+  </div>
   <div class="langwrap">
     <button class="langbtn" type="button" aria-haspopup="true" aria-expanded="false">한국어<span class="caret">▾</span></button>
     <div class="langmenu" role="menu">
@@ -564,11 +630,13 @@
   </div>
 </details>
 
+<p class="castinfo">등장인물 이름을 누르면 그 인물의 이야기로 이동합니다 →</p>
+
 <article class="paper">
 
   <div class="mark first"><span>하나</span><i></i></div>
 
-  <p class="lead">윤제가 상소를 올린 것은 스물아홉 살 되던 해 삼월이었다.</p>
+  <p class="lead"><a class="cast-link" href="characters.html#yunje">윤제</a>가 상소를 올린 것은 스물아홉 살 되던 해 삼월이었다.</p>
 
   <p>전날 밤 그는 그것을 세 번 고쳐 썼다. 세 번째 원고를 다 쓰고 나서 초를 끄지 않고 한참을 앉아 있었는데, 그것은 망설여서가 아니라 문장이 마음에 들어서였다. 그는 자기가 쓴 문장이 마음에 들면 오래 들여다보는 버릇이 있었다.</p>
 
@@ -630,7 +698,7 @@
 
   <div class="mark"><span>넷</span><i></i></div>
 
-  <p>탈쇠에게는 성이 없었다.</p>
+  <p><a class="cast-link" href="characters.html#talswe">탈쇠</a>에게는 성이 없었다.</p>
 
   <p>천민에게 성을 주는 관례가 없었으므로 그는 아명 하나로 평생을 살았고, 그 아명도 사람들이 편한 대로 불렀다. 장터에서는 그를 탈쇠라 했다. 탈을 쓰고 나오기 때문이었다.</p>
 
@@ -669,7 +737,7 @@
 
   <div class="mark"><span>여섯</span><i></i></div>
 
-  <p>속리산 암자의 여승은 법명을 정안이라 했다.</p>
+  <p>속리산 암자의 여승은 법명을 <a class="cast-link" href="characters.html#jeongan">정안</a>이라 했다.</p>
 
   <p>고요할 정, 편안할 안. 그 이름을 지어준 노스님은 이 년 뒤에 입적했고, 그러므로 <span class="quiet">그 이름이 잘못 지어졌다는 것을 아는 사람은 정안 자신뿐이었다.</span></p>
 

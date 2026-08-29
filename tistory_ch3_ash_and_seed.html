@@ -523,6 +523,70 @@
   }
   details.prev .inner a:hover{ color:#fff; }
 
+
+  /* ---------- character links ---------- */
+  a.cast-link{
+    color:inherit; text-decoration:none;
+    border-bottom:1px dotted rgba(143,158,186,.45);
+    padding-bottom:1px;
+    transition:border-color .25s ease, color .25s ease;
+  }
+  a.cast-link:hover, a.cast-link:focus-visible{
+    color:#e6ebf4; border-bottom-color:#e6ebf4;
+  }
+
+
+  /* ---------- top bar, made visible ---------- */
+  .topbar{
+    max-width:760px; padding:22px 24px 0;
+    font-size:13.5px; gap:10px;
+  }
+  .topbar a.home{
+    color:#c3ccdc; letter-spacing:.14em;
+    border-bottom:1px solid transparent; padding-bottom:3px;
+    transition:color .25s ease, border-color .25s ease;
+  }
+  .topbar a.home:hover{ color:#fff; border-bottom-color:#fff; }
+  .topbar .navgroup{ display:flex; align-items:center; gap:8px; margin-inline-start:auto; }
+  .topbar a.tostory, .topbar a.tocast{
+    color:#c3ccdc !important;
+    border:1px solid rgba(143,158,186,.34);
+    padding:8px 15px;
+    letter-spacing:.14em;
+    white-space:nowrap;
+    transition:color .25s ease, border-color .25s ease, background .25s ease;
+  }
+  .topbar a.tostory:hover, .topbar a.tocast:hover,
+  .topbar a.tostory:focus-visible, .topbar a.tocast:focus-visible{
+    color:#fff !important; border-color:#fff; background:rgba(255,255,255,.06);
+  }
+  .langbtn{ font-size:12.5px !important; padding:8px 15px !important; color:#c3ccdc !important; }
+  @media (max-width:620px){
+    .topbar{ flex-wrap:wrap; gap:8px; font-size:12.5px; }
+    .topbar .navgroup{ width:100%; margin-inline-start:0; justify-content:flex-start; }
+    .topbar a.tostory, .topbar a.tocast{ padding:7px 12px; }
+  }
+
+  /* ---------- character links, made obvious ---------- */
+  a.cast-link{
+    color:#cfd6e4 !important;
+    text-decoration:none;
+    border-bottom:1px solid rgba(180,196,222,.55);
+    padding-bottom:1px;
+    transition:color .25s ease, border-color .25s ease, background .25s ease;
+  }
+  a.cast-link:hover, a.cast-link:focus-visible{
+    color:#fff !important; border-bottom-color:#fff;
+    background:rgba(255,255,255,.07);
+  }
+
+
+  .castinfo{
+    max-width:680px; margin:0 auto 26px; padding:0 24px;
+    font-family:"Gowun Dodum", sans-serif; font-size:12px;
+    letter-spacing:.05em; color:#7d8ba6; text-align:center;
+  }
+
 </style>
 </head>
 <body>
@@ -531,8 +595,10 @@
 
 <div class="topbar">
   <a class="home" href="index.html">← 목차</a>
-  <a class="tostory" href="story.html" style="color:#8492ab;text-decoration:none;letter-spacing:.08em;">줄거리</a>
-  <a class="tocast" href="characters.html" style="color:#8492ab;text-decoration:none;letter-spacing:.08em;">인물</a>
+  <div class="navgroup">
+    <a class="tostory" href="story.html">줄거리</a>
+    <a class="tocast" href="characters.html">인물</a>
+  </div>
   <div class="langwrap">
     <button class="langbtn" type="button" aria-haspopup="true" aria-expanded="false">한국어<span class="caret">▾</span></button>
     <div class="langmenu" role="menu">
@@ -559,10 +625,12 @@
 <details class="prev">
   <summary>이전 이야기 · 제2장 「먹과 불씨」</summary>
   <div class="inner">
-    <p>선비 윤제가 제주로 유배되고, 그의 글은 광대 탈쇠의 노래가 되어 뭍으로 건너왔다. 산에서 내려온 여인 정안이 횃불을 들었고, 그 밤 고개마다 불이 올랐다.</p>
+    <p>선비 <a class="cast-link" href="characters.html#yunje">윤제</a>가 제주로 유배되고, 그의 글은 광대 <a class="cast-link" href="characters.html#talswe">탈쇠</a>의 노래가 되어 뭍으로 건너왔다. 산에서 내려온 여인 <a class="cast-link" href="characters.html#jeongan">정안</a>이 횃불을 들었고, 그 밤 고개마다 불이 올랐다.</p>
     <p><a href="tistory_ch2_ink_and_embers.html">제2장 「먹과 불씨」 다시 읽기 →</a></p>
   </div>
 </details>
+
+<p class="castinfo">등장인물 이름을 누르면 그 인물의 이야기로 이동합니다 →</p>
 
 <article class="paper">
 
@@ -747,7 +815,7 @@
 
   <div class="mark"><span>열</span><i></i></div>
 
-  <p>분이는 전라도 논밭 사이에서 자랐다.</p>
+  <p><a class="cast-link" href="characters.html#buni">분이</a>는 전라도 논밭 사이에서 자랐다.</p>
 
   <p>글을 배운 적이 없었다. 여자였기 때문이다. 아버지는 쟁기를 쥐어줬지 붓을 주지 않았다. 그러나 귀는 막을 수 없었다. 어릴 적 장터에서 들은 이야기 하나가 분이 안에 남아 있었다. 궁궐과 선비와 불과 먹에 대한 이야기. 다른 아이들은 옛이야기인 줄 알았지만 분이는 알았다. <span class="quiet">그건 진짜였다.</span></p>
 

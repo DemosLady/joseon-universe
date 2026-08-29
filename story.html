@@ -511,6 +511,70 @@
   details.prev .inner a:hover{ color:#fff; }
 
   .panorama{ background-image:url("art/hero.jpg"); }
+
+  /* ---------- character links ---------- */
+  a.cast-link{
+    color:inherit; text-decoration:none;
+    border-bottom:1px dotted rgba(143,158,186,.45);
+    padding-bottom:1px;
+    transition:border-color .25s ease, color .25s ease;
+  }
+  a.cast-link:hover, a.cast-link:focus-visible{
+    color:#e6ebf4; border-bottom-color:#e6ebf4;
+  }
+
+
+  /* ---------- top bar, made visible ---------- */
+  .topbar{
+    max-width:760px; padding:22px 24px 0;
+    font-size:13.5px; gap:10px;
+  }
+  .topbar a.home{
+    color:#c3ccdc; letter-spacing:.14em;
+    border-bottom:1px solid transparent; padding-bottom:3px;
+    transition:color .25s ease, border-color .25s ease;
+  }
+  .topbar a.home:hover{ color:#fff; border-bottom-color:#fff; }
+  .topbar .navgroup{ display:flex; align-items:center; gap:8px; margin-inline-start:auto; }
+  .topbar a.tostory, .topbar a.tocast{
+    color:#c3ccdc !important;
+    border:1px solid rgba(143,158,186,.34);
+    padding:8px 15px;
+    letter-spacing:.14em;
+    white-space:nowrap;
+    transition:color .25s ease, border-color .25s ease, background .25s ease;
+  }
+  .topbar a.tostory:hover, .topbar a.tocast:hover,
+  .topbar a.tostory:focus-visible, .topbar a.tocast:focus-visible{
+    color:#fff !important; border-color:#fff; background:rgba(255,255,255,.06);
+  }
+  .langbtn{ font-size:12.5px !important; padding:8px 15px !important; color:#c3ccdc !important; }
+  @media (max-width:620px){
+    .topbar{ flex-wrap:wrap; gap:8px; font-size:12.5px; }
+    .topbar .navgroup{ width:100%; margin-inline-start:0; justify-content:flex-start; }
+    .topbar a.tostory, .topbar a.tocast{ padding:7px 12px; }
+  }
+
+  /* ---------- character links, made obvious ---------- */
+  a.cast-link{
+    color:#cfd6e4 !important;
+    text-decoration:none;
+    border-bottom:1px solid rgba(180,196,222,.55);
+    padding-bottom:1px;
+    transition:color .25s ease, border-color .25s ease, background .25s ease;
+  }
+  a.cast-link:hover, a.cast-link:focus-visible{
+    color:#fff !important; border-bottom-color:#fff;
+    background:rgba(255,255,255,.07);
+  }
+
+
+  .castinfo{
+    max-width:680px; margin:0 auto 26px; padding:0 24px;
+    font-family:"Gowun Dodum", sans-serif; font-size:12px;
+    letter-spacing:.05em; color:#7d8ba6; text-align:center;
+  }
+
 </style>
 </head>
 <body>
@@ -519,7 +583,7 @@
 
 <div class="topbar">
   <a class="home" href="index.html">← 목차</a>
-  <a class="tocast" href="characters.html" style="color:#8492ab;text-decoration:none;letter-spacing:.08em;">인물</a>
+  <a class="tocast" href="characters.html">인물</a>
   <div class="langwrap">
     <button class="langbtn" type="button" aria-haspopup="true" aria-expanded="false">한국어<span class="caret">▾</span></button>
     <div class="langmenu" role="menu">
@@ -539,6 +603,8 @@
   <p>세 개의 삼부작, 스물여덟 곡, 하나의 이야기. 궁궐에서 시작해 바다를 건너 북쪽 국경에서 이어집니다.</p>
 </section>
 
+<p class="castinfo">등장인물 이름을 누르면 그 인물의 이야기로 이동합니다 →</p>
+
 <div class="sum">
   <div class="part fire">
     <p class="part-label">TRILOGY ONE</p>
@@ -552,13 +618,13 @@
     <article>
       <p class="ch-no">제 2 장</p>
       <h3>먹과 불씨</h3>
-      <p class="body">선비 윤제가 상소를 올리고 제주로 유배된다. 그는 그곳에서 계속 쓰고, 그 글은 저잣거리 광대 탈쇠의 노래가 되어 뭍으로 건너온다.<br><br>사화로 집안을 잃고 산에 들어갔던 여인 정안이 횃불을 들고 내려온다. 그 밤 고개마다 불이 올랐다. <b>봉기는 반나절을 넘기지 못했다.</b></p>
+      <p class="body">선비 <a class="cast-link" href="characters.html#yunje">윤제</a>가 상소를 올리고 제주로 유배된다. 그는 그곳에서 계속 쓰고, 그 글은 저잣거리 광대 <a class="cast-link" href="characters.html#talswe">탈쇠</a>의 노래가 되어 뭍으로 건너온다.<br><br>사화로 집안을 잃고 산에 들어갔던 여인 <a class="cast-link" href="characters.html#jeongan">정안</a>이 횃불을 들고 내려온다. 그 밤 고개마다 불이 올랐다. <b>봉기는 반나절을 넘기지 못했다.</b></p>
       <a class="read" href="tistory_ch2_ink_and_embers.html">이 장 읽기 →</a>
     </article>
     <article>
       <p class="ch-no">제 3 장</p>
       <h3>재와 씨앗</h3>
-      <p class="body">윤제는 형장에서 죽는다. 탈쇠는 탈을 버리고 이야기꾼이 되어 길을 걷는다. 정안은 빈 손으로 산으로 돌아간다.<br><br>사십 년 뒤, 전라도의 열여섯 살 소녀 분이가 할머니 방 마루 밑에서 종이 한 장을 찾는다. <b>글을 읽을 줄 모르는 그 아이는, 가르쳐 달라고 사흘을 문 앞에 앉는다.</b></p>
+      <p class="body">윤제는 형장에서 죽는다. 탈쇠는 탈을 버리고 이야기꾼이 되어 길을 걷는다. 정안은 빈 손으로 산으로 돌아간다.<br><br>사십 년 뒤, 전라도의 열여섯 살 소녀 <a class="cast-link" href="characters.html#buni">분이</a>가 할머니 방 마루 밑에서 종이 한 장을 찾는다. <b>글을 읽을 줄 모르는 그 아이는, 가르쳐 달라고 사흘을 문 앞에 앉는다.</b></p>
       <a class="read" href="tistory_ch3_ash_and_seed.html">이 장 읽기 →</a>
     </article>
   </div>
@@ -569,7 +635,7 @@
     <article>
       <p class="ch-no">제 4 장</p>
       <h3>소금과 파도</h3>
-      <p class="body">한 세대 뒤, 남녘의 작은 섬에 네 사람이 있다. 또 진실을 쓴 죄로 유배 온 선비 수겸, 달이 숨는 밤에만 검은 돛을 올리는 밀수꾼 배쇠, 아들도 아내도 바다에 잃은 늙은 어부 갑수, 그리고 뭍에서는 고개를 숙이나 물속에서는 주인인 해녀 옥이.<br><br>그해 여름 옥이는 북쪽 여울에서 가라앉은 검은 배를 본다. <b>그리고 아무에게도 말하지 않는다.</b></p>
+      <p class="body">한 세대 뒤, 남녘의 작은 섬에 네 사람이 있다. 또 진실을 쓴 죄로 유배 온 선비 <a class="cast-link" href="characters.html#sugyeom">수겸</a>, 달이 숨는 밤에만 검은 돛을 올리는 밀수꾼 <a class="cast-link" href="characters.html#baeswe">배쇠</a>, 아들도 아내도 바다에 잃은 늙은 어부 <a class="cast-link" href="characters.html#gapsu">갑수</a>, 그리고 뭍에서는 고개를 숙이나 물속에서는 주인인 해녀 <a class="cast-link" href="characters.html#oki">옥이</a>.<br><br>그해 여름 옥이는 북쪽 여울에서 가라앉은 검은 배를 본다. <b>그리고 아무에게도 말하지 않는다.</b></p>
       <a class="read" href="tistory_ch4_salt_and_waves.html">이 장 읽기 →</a>
     </article>
     <article>

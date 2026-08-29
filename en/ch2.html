@@ -523,6 +523,70 @@
   }
   details.prev .inner a:hover{ color:#fff; }
 
+
+  /* ---------- character links ---------- */
+  a.cast-link{
+    color:inherit; text-decoration:none;
+    border-bottom:1px dotted rgba(143,158,186,.45);
+    padding-bottom:1px;
+    transition:border-color .25s ease, color .25s ease;
+  }
+  a.cast-link:hover, a.cast-link:focus-visible{
+    color:#e6ebf4; border-bottom-color:#e6ebf4;
+  }
+
+
+  /* ---------- top bar, made visible ---------- */
+  .topbar{
+    max-width:760px; padding:22px 24px 0;
+    font-size:13.5px; gap:10px;
+  }
+  .topbar a.home{
+    color:#c3ccdc; letter-spacing:.14em;
+    border-bottom:1px solid transparent; padding-bottom:3px;
+    transition:color .25s ease, border-color .25s ease;
+  }
+  .topbar a.home:hover{ color:#fff; border-bottom-color:#fff; }
+  .topbar .navgroup{ display:flex; align-items:center; gap:8px; margin-inline-start:auto; }
+  .topbar a.tostory, .topbar a.tocast{
+    color:#c3ccdc !important;
+    border:1px solid rgba(143,158,186,.34);
+    padding:8px 15px;
+    letter-spacing:.14em;
+    white-space:nowrap;
+    transition:color .25s ease, border-color .25s ease, background .25s ease;
+  }
+  .topbar a.tostory:hover, .topbar a.tocast:hover,
+  .topbar a.tostory:focus-visible, .topbar a.tocast:focus-visible{
+    color:#fff !important; border-color:#fff; background:rgba(255,255,255,.06);
+  }
+  .langbtn{ font-size:12.5px !important; padding:8px 15px !important; color:#c3ccdc !important; }
+  @media (max-width:620px){
+    .topbar{ flex-wrap:wrap; gap:8px; font-size:12.5px; }
+    .topbar .navgroup{ width:100%; margin-inline-start:0; justify-content:flex-start; }
+    .topbar a.tostory, .topbar a.tocast{ padding:7px 12px; }
+  }
+
+  /* ---------- character links, made obvious ---------- */
+  a.cast-link{
+    color:#cfd6e4 !important;
+    text-decoration:none;
+    border-bottom:1px solid rgba(180,196,222,.55);
+    padding-bottom:1px;
+    transition:color .25s ease, border-color .25s ease, background .25s ease;
+  }
+  a.cast-link:hover, a.cast-link:focus-visible{
+    color:#fff !important; border-bottom-color:#fff;
+    background:rgba(255,255,255,.07);
+  }
+
+
+  .castinfo{
+    max-width:680px; margin:0 auto 26px; padding:0 24px;
+    font-family:"Gowun Dodum", sans-serif; font-size:12px;
+    letter-spacing:.05em; color:#7d8ba6; text-align:center;
+  }
+
 </style>
 </head>
 <body>
@@ -531,8 +595,10 @@
 
 <div class="topbar">
   <a class="home" href="index.html">← Contents</a>
-  <a class="tostory" href="../story.html" style="color:#8492ab;text-decoration:none;letter-spacing:.08em;">Story so far</a>
-  <a class="tocast" href="characters.html" style="color:#8492ab;text-decoration:none;letter-spacing:.08em;">Characters</a>
+  <div class="navgroup">
+    <a class="tostory" href="../story.html">Story so far</a>
+    <a class="tocast" href="characters.html">Characters</a>
+  </div>
   <div class="langwrap">
     <button class="langbtn" type="button" aria-haspopup="true" aria-expanded="false">English<span class="caret">▾</span></button>
     <div class="langmenu" role="menu">
@@ -564,11 +630,13 @@
   </div>
 </details>
 
+<p class="castinfo">Tap any character's name to read about them →</p>
+
 <article class="paper">
 
   <div class="mark first"><span>ONE</span><i></i></div>
 
-  <p class="lead">Yun-je submitted his petition in the third month of the year he turned twenty-nine.</p>
+  <p class="lead"><a class="cast-link" href="../characters.html#yunje">Yun-je</a> submitted his petition in the third month of the year he turned twenty-nine.</p>
 
   <p>The night before, he rewrote it three times. After the third draft he sat for a long while without putting out the candle — not from hesitation, but because he liked the sentence. He had a habit of staring at a sentence for a long time when it pleased him.</p>
 
@@ -630,7 +698,7 @@
 
   <div class="mark"><span>FOUR</span><i></i></div>
 
-  <p>Tal-swe had no family name.</p>
+  <p><a class="cast-link" href="../characters.html#talswe">Tal-swe</a> had no family name.</p>
 
   <p>It was not the custom to give family names to the lowborn, so he lived his whole life with a single childhood name, and even that people shortened as they pleased. In the marketplace they called him Tal-swe — because he came out in a mask.</p>
 
@@ -669,7 +737,7 @@
 
   <div class="mark"><span>SIX</span><i></i></div>
 
-  <p>The nun at the hermitage on Songni Mountain had the dharma name Jeong-an.</p>
+  <p>The nun at the hermitage on Songni Mountain had the dharma name <a class="cast-link" href="../characters.html#jeongan">Jeong-an</a>.</p>
 
   <p>Jeong for stillness, An for peace. The old monk who gave her that name died two years later, and so <span class="quiet">the only person who knew the name was wrong was Jeong-an herself.</span></p>
 

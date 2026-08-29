@@ -523,6 +523,70 @@
   }
   details.prev .inner a:hover{ color:#fff; }
 
+
+  /* ---------- character links ---------- */
+  a.cast-link{
+    color:inherit; text-decoration:none;
+    border-bottom:1px dotted rgba(143,158,186,.45);
+    padding-bottom:1px;
+    transition:border-color .25s ease, color .25s ease;
+  }
+  a.cast-link:hover, a.cast-link:focus-visible{
+    color:#e6ebf4; border-bottom-color:#e6ebf4;
+  }
+
+
+  /* ---------- top bar, made visible ---------- */
+  .topbar{
+    max-width:760px; padding:22px 24px 0;
+    font-size:13.5px; gap:10px;
+  }
+  .topbar a.home{
+    color:#c3ccdc; letter-spacing:.14em;
+    border-bottom:1px solid transparent; padding-bottom:3px;
+    transition:color .25s ease, border-color .25s ease;
+  }
+  .topbar a.home:hover{ color:#fff; border-bottom-color:#fff; }
+  .topbar .navgroup{ display:flex; align-items:center; gap:8px; margin-inline-start:auto; }
+  .topbar a.tostory, .topbar a.tocast{
+    color:#c3ccdc !important;
+    border:1px solid rgba(143,158,186,.34);
+    padding:8px 15px;
+    letter-spacing:.14em;
+    white-space:nowrap;
+    transition:color .25s ease, border-color .25s ease, background .25s ease;
+  }
+  .topbar a.tostory:hover, .topbar a.tocast:hover,
+  .topbar a.tostory:focus-visible, .topbar a.tocast:focus-visible{
+    color:#fff !important; border-color:#fff; background:rgba(255,255,255,.06);
+  }
+  .langbtn{ font-size:12.5px !important; padding:8px 15px !important; color:#c3ccdc !important; }
+  @media (max-width:620px){
+    .topbar{ flex-wrap:wrap; gap:8px; font-size:12.5px; }
+    .topbar .navgroup{ width:100%; margin-inline-start:0; justify-content:flex-start; }
+    .topbar a.tostory, .topbar a.tocast{ padding:7px 12px; }
+  }
+
+  /* ---------- character links, made obvious ---------- */
+  a.cast-link{
+    color:#cfd6e4 !important;
+    text-decoration:none;
+    border-bottom:1px solid rgba(180,196,222,.55);
+    padding-bottom:1px;
+    transition:color .25s ease, border-color .25s ease, background .25s ease;
+  }
+  a.cast-link:hover, a.cast-link:focus-visible{
+    color:#fff !important; border-bottom-color:#fff;
+    background:rgba(255,255,255,.07);
+  }
+
+
+  .castinfo{
+    max-width:680px; margin:0 auto 26px; padding:0 24px;
+    font-family:"Gowun Dodum", sans-serif; font-size:12px;
+    letter-spacing:.05em; color:#7d8ba6; text-align:center;
+  }
+
 </style>
 </head>
 <body>
@@ -531,8 +595,10 @@
 
 <div class="topbar">
   <a class="home" href="index.html">← Contents</a>
-  <a class="tostory" href="../story.html" style="color:#8492ab;text-decoration:none;letter-spacing:.08em;">Story so far</a>
-  <a class="tocast" href="characters.html" style="color:#8492ab;text-decoration:none;letter-spacing:.08em;">Characters</a>
+  <div class="navgroup">
+    <a class="tostory" href="../story.html">Story so far</a>
+    <a class="tocast" href="characters.html">Characters</a>
+  </div>
   <div class="langwrap">
     <button class="langbtn" type="button" aria-haspopup="true" aria-expanded="false">English<span class="caret">▾</span></button>
     <div class="langmenu" role="menu">
@@ -559,10 +625,12 @@
 <details class="prev">
   <summary>PREVIOUSLY · Chapter Three, Ash and Seed</summary>
   <div class="inner">
-    <p>The uprising did not last half a day. Yun-je died at the execution ground, Tal-swe took to the roads, Jeong-an returned to her mountain empty-handed. Forty years later a girl of sixteen named Bun-i found a sheet of paper beneath the floorboards.</p>
+    <p>The uprising did not last half a day. <a class="cast-link" href="../characters.html#yunje">Yun-je</a> died at the execution ground, <a class="cast-link" href="../characters.html#talswe">Tal-swe</a> took to the roads, <a class="cast-link" href="../characters.html#jeongan">Jeong-an</a> returned to her mountain empty-handed. Forty years later a girl of sixteen named <a class="cast-link" href="../characters.html#buni">Bun-i</a> found a sheet of paper beneath the floorboards.</p>
     <p><a href="ch3.html">Read Chapter Three, Ash and Seed →</a></p>
   </div>
 </details>
+
+<p class="castinfo">Tap any character's name to read about them →</p>
 
 <article class="paper">
 
@@ -572,7 +640,7 @@
 
   <p>Let the criminal hear. For the crime of troubling the realm with a brush, he is sentenced to exile on an island at the southern edge.</p>
 
-  <p>Su-gyeom knelt and listened. The official's voice shook. It was the cold. That morning was unusually cold, and the official was young, and this was probably the first time he had been given such a duty. Listening to that tremor, Su-gyeom had a strange thought — what will this man say to his wife tonight when he gets home.</p>
+  <p><a class="cast-link" href="../characters.html#sugyeom">Su-gyeom</a> knelt and listened. The official's voice shook. It was the cold. That morning was unusually cold, and the official was young, and this was probably the first time he had been given such a duty. Listening to that tremor, Su-gyeom had a strange thought — what will this man say to his wife tonight when he gets home.</p>
 
   <p>The gat was taken off his head. The robe was torn. What remained was only fingers stained with ink.</p>
 
@@ -598,7 +666,7 @@
 
   <p>The man who ferried him to the island was an old fisherman.</p>
 
-  <p>His name was Gap-su. He had come because the office paid a fee, though he never asked how much. He did not tell Su-gyeom to get in the boat. He simply sat holding the oar, so Su-gyeom worked out that he should climb aboard.</p>
+  <p>His name was <a class="cast-link" href="../characters.html#gapsu">Gap-su</a>. He had come because the office paid a fee, though he never asked how much. He did not tell Su-gyeom to get in the boat. He simply sat holding the oar, so Su-gyeom worked out that he should climb aboard.</p>
 
   <p>There was no sound but the oar.</p>
 
@@ -637,7 +705,7 @@
 
   <div class="mark"><span>FIVE</span><i></i></div>
 
-  <p>Bae-swe first came to that island in the autumn.</p>
+  <p><a class="cast-link" href="../characters.html#baeswe">Bae-swe</a> first came to that island in the autumn.</p>
 
   <p>A smuggler could hardly have a family name. People called him Bae-swe — the boat man — because he sailed.</p>
 
@@ -699,7 +767,7 @@
 
   <p>On land they are wives. They lower their heads, they speak little, and instead of names they are called somebody's mother. But in the water it is different. Underwater there are no noblemen and no lowborn. Whoever holds her breath longest is above; whoever cannot is below. That is all.</p>
 
-  <p>Among them, the first diver was Ok-i.</p>
+  <p>Among them, the first diver was <a class="cast-link" href="../characters.html#oki">Ok-i</a>.</p>
 
   <p>Ok-i learned from her mother, and her mother from hers. The song they sing while rowing out, she learned the same way. Ieodo sana, ieodo sana. The name of an island you go to and do not come back from.</p>
 
