@@ -616,6 +616,32 @@
   .backbtn:hover, .backbtn:focus-visible{ color:#fff; border-color:#fff; }
   .backbtn.show{ display:inline-flex; }
 
+
+  /* ---------- portraits ---------- */
+  .cast figure{
+    display:grid;
+    grid-template-columns:132px 1fr;
+    gap:24px;
+    align-items:start;
+  }
+  .cast .portrait{
+    width:100%; aspect-ratio:4/5; object-fit:cover; display:block;
+    background:#141b2a; border:1px solid rgba(143,158,186,.16);
+    filter:saturate(.88) contrast(1.02);
+    transition:filter .4s ease;
+  }
+  .cast figure:hover .portrait{ filter:saturate(1) contrast(1.02); }
+  .cast .pair{ display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  .cast .pair .cap{
+    grid-column:1 / -1;
+    font-family:"Gowun Dodum", sans-serif; font-size:10px;
+    letter-spacing:.14em; color:#66748c; text-align:center; margin:2px 0 0;
+  }
+  .cast .txt{ min-width:0; }
+  @media (max-width:620px){
+    .cast figure{ grid-template-columns:96px 1fr; gap:16px; }
+  }
+
 </style>
 </head>
 <body>
@@ -651,42 +677,60 @@
     <p class="gen-label">GENERATION ONE</p>
     <p class="gen-name">The Fire Trilogy</p>
         <figure id="king">
+      <img class="portrait" src="../portraits/king.png" alt="The King" loading="lazy">
+      <div class="txt">
       <h3>The King</h3>
       <p class="role">the sovereign · chapter 1</p>
       <p class="bio">His name never appears in the story. He was a young king people called gentle. The woman he loved was poisoned inside his own palace, and the day he learned whose hand had done it, he changed.<br><br>From then on he signed his decrees in blood instead of ink. <b>The gentle king became a tyrant.</b> What he set in motion runs on for three generations.</p>
       <p class="appears">Appears in: <a href="ch1.html">Ch.1</a><br>Songs: The King's Path · Echoes of the Empty Palace · The Blood Seal</p>
+    </div>
     </figure>
 
     <figure id="yeoni">
+      <img class="portrait" src="../portraits/yeoni.png" alt="Yeon-i" loading="lazy">
+      <div class="txt">
       <h3>Yeon-i</h3>
       <p class="role">the woman erased from the records · chapter 1</p>
       <p class="bio">Not one line of her survives in the annals. Her name was struck out and her grave left unmarked. She died of poison inside the palace, and whose hand it was went unnamed for a long time.<br><br><b>The entire story begins with this woman.</b> Of twenty-eight songs, only one is sung in her voice.</p>
       <p class="appears">Appears in: <a href="ch1.html">Ch.1</a><br>Songs: Echoes of the Empty Palace · Shadow in the Fog</p>
+    </div>
     </figure>
 
 <figure id="yunje">
+      <img class="portrait" src="../portraits/yunje.png" alt="Yun-je" loading="lazy">
+      <div class="txt">
       <h3>Yun-je</h3>
       <p class="role">the scholar · chapters 1–3</p>
       <p class="bio">Top of the state examination, and a censor at court. Exiled to Jeju for the crime of writing down what actually happened. He did not stop writing in exile, and his words crossed back to the mainland as songs.<br><br><b>After the uprising failed he died at the execution ground.</b> To the last he said he had no regrets.</p>
       <p class="appears">Appears in: <a href="ch1.html">Ch.1</a> · <a href="ch2.html">Ch.2</a> · <a href="ch3.html">Ch.3</a><br>Songs: A Blade at the Brush Tip · The Last Brush</p>
+    </div>
     </figure>
     <figure id="talswe">
+      <img class="portrait" src="../portraits/talswe.png" alt="Tal-swe" loading="lazy">
+      <div class="txt">
       <h3>Tal-swe</h3>
       <p class="role">the clown · chapters 2–3</p>
       <p class="bio">A market clown with no family name. He walked the tightrope by day and carried news by night, hiding a scholar's writing inside his own songs all the way to the capital.<br><br>On the night of the uprising he stood before the palace in his mask. <b>He was the only one who got out.</b> He threw away the mask and walked south as a storyteller.</p>
       <p class="appears">Appears in: <a href="ch2.html">Ch.2</a> · <a href="ch3.html">Ch.3</a><br>Songs: The Market Street · Shadow on the Road</p>
+    </div>
     </figure>
     <figure id="jeongan">
+      <img class="portrait" src="../portraits/jeongan.png" alt="Jeong-an" loading="lazy">
+      <div class="txt">
       <h3>Jeong-an</h3>
       <p class="role">the woman · chapters 2–3, 6</p>
       <p class="bio">She lost her father to a purge and her mother to slavery, and shaved her head at twenty-three. Ten years on a mountain, and then she came down carrying a torch.<br><br>She burned everything and went back empty-handed. <b>A generation later, three men climb that mountain carrying a ledger raised from the sea.</b></p>
       <p class="appears">Appears in: <a href="ch2.html">Ch.2</a> · <a href="ch3.html">Ch.3</a> · <a href="ch6.html">Ch.6</a><br>Songs: The Woman at the Mountain Temple · The Empty Mountain · At the Temple Gate</p>
+    </div>
     </figure>
     <figure id="buni">
+      <div class="pair"><img class="portrait" src="../portraits/buni_young.png" alt="Bun-i 16" loading="lazy"><img class="portrait" src="../portraits/buni.png" alt="Bun-i 44" loading="lazy"><span class="cap">age 16 &nbsp;·&nbsp; age 44</span></div>
+      <div class="txt">
       <h3>Bun-i</h3>
       <p class="role">the girl · chapters 3, 7</p>
       <p class="bio">She grew up between rice fields in a small village in Jeolla. She was never taught to read, because she was a girl. At sixteen she found a sheet of paper beneath the floorboards and sat at the teacher's door for three days asking to be taught.<br><br>Forty years later, now the village teacher, <b>the ledger from the sea and the war reach her in the same week.</b></p>
       <p class="appears">Appears in: <a href="ch3.html">Ch.3</a> · <a href="chapter7.html">Ch.7</a><br>Songs: The First Sprout · The Empty Line</p>
+    </div>
     </figure>
   </div>
 
@@ -694,28 +738,40 @@
     <p class="gen-label">GENERATION TWO</p>
     <p class="gen-name">The Sea Trilogy</p>
     <figure id="sugyeom">
+      <img class="portrait" src="../portraits/sugyeom.png" alt="Su-gyeom" loading="lazy">
+      <div class="txt">
       <h3>Su-gyeom</h3>
       <p class="role">the scholar · chapters 4–6</p>
       <p class="bio">Exiled for the same crime to the same sea. On the island he taught children to write in the sand — writing done where the waves erase it can be used by no one as evidence.<br><br><b>When the chest was opened, he understood.</b> He had not been exiled for writing the truth. He had been sent to the place where the truth was buried.</p>
       <p class="appears">Appears in: <a href="ch4.html">Ch.4</a> · <a href="ch5.html">Ch.5</a> · <a href="ch6.html">Ch.6</a><br>Songs: Road of Exile · Salt Letter</p>
+    </div>
     </figure>
     <figure id="baeswe">
+      <img class="portrait" src="../portraits/baeswe.png" alt="Bae-swe" loading="lazy">
+      <div class="txt">
       <h3>Bae-swe</h3>
       <p class="role">the smuggler · chapters 4–7</p>
       <p class="bio">No family name. They called him Bae-swe, the boat man, because he sailed. He raised a black-dyed sail only on nights when the moon hid, and survived thirty years by never asking what he was carrying.<br><br>He found the sunken ship, and he raised the first white sail of his life. <b>And on the day the north was breached, he lowered it himself.</b></p>
       <p class="appears">Appears in: <a href="ch4.html">Ch.4</a> · <a href="ch5.html">Ch.5</a> · <a href="ch6.html">Ch.6</a> · <a href="chapter7.html">Ch.7</a><br>Songs: Black Sail · The Sunken Ship · Lowering the Sail</p>
+    </div>
     </figure>
     <figure id="gapsu">
+      <img class="portrait" src="../portraits/gapsu.png" alt="Gap-su" loading="lazy">
+      <div class="txt">
       <h3>Gap-su</h3>
       <p class="role">the old fisherman · chapters 4–6</p>
       <p class="bio">Forty years on that sea. The storm took his elder son, the fever the younger, and his wife went first, waiting.<br><br>In the middle of a storm he spoke quietly to the sea — if you have something to take, take me; if you have something to give back, give it back now. <b>The next day the sea answered.</b></p>
       <p class="appears">Appears in: <a href="ch4.html">Ch.4</a> · <a href="ch5.html">Ch.5</a> · <a href="ch6.html">Ch.6</a><br>Songs: Old Net · The Storm · Big Dipper</p>
+    </div>
     </figure>
     <figure id="oki">
+      <img class="portrait" src="../portraits/oki.png" alt="Ok-i" loading="lazy">
+      <div class="txt">
       <h3>Ok-i</h3>
       <p class="role">the diver · chapters 4–6</p>
       <p class="bio">On land a woman who lowers her head; underwater, the master. A world where whoever holds her breath longest is above and whoever cannot is below, and that is all there is to it.<br><br>She was the first to see the wreck, and she brought up the names of twelve people. <b>Halfway to the mainland she stood up in the boat — over there I am a woman with no letters and no name.</b></p>
       <p class="appears">Appears in: <a href="ch4.html">Ch.4</a> · <a href="ch5.html">Ch.5</a> · <a href="ch6.html">Ch.6</a><br>Songs: Sumbisori · Beneath the Water · Ieodo</p>
+    </div>
     </figure>
   </div>
 </div>
