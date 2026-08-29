@@ -4,11 +4,13 @@ from pathlib import Path
 # ── fill in the YouTube IDs here and re-run ──
 # the ID is the part after /shorts/ or after v= in the URL
 VIDEOS = {
- 1: {'id': 'PUT_ID_HERE', 'kr': '왕의 길목', 'en': "The King's Path",
-     'kr_file': 'tistory_ch1_blood_and_fog.html',  'en_file': 'en/ch1.html'},
- 4: {'id': 'PUT_ID_HERE', 'kr': '물 아래',   'en': 'Beneath the Water',
-     'kr_file': 'tistory_ch5_sea_and_bones.html',  'en_file': 'en/ch5.html'},
- 6: {'id': 'PUT_ID_HERE', 'kr': '이어도',    'en': 'Ieodo',
+ 1: {'id': 'tZBHkAxyzyk', 'kr': '왕의 길목', 'en': "The King's Path",
+     'kr_file': 'tistory_ch1_blood_and_fog.html',   'en_file': 'en/ch1.html'},
+ 2: {'id': 'fxDQwgJ70cs', 'kr': '빈 궁궐 메아리', 'en': 'Echoes of the Empty Palace',
+     'kr_file': 'tistory_ch1_blood_and_fog.html',   'en_file': 'en/ch1.html'},
+ 5: {'id': 'sykcHKBa0NM', 'kr': '물 아래',   'en': 'Beneath the Water',
+     'kr_file': 'tistory_ch5_sea_and_bones.html',   'en_file': 'en/ch5.html'},
+ 6: {'id': 'gmhFUQVahjw', 'kr': '이어도',    'en': 'Ieodo',
      'kr_file': 'tistory_ch6_island_and_stars.html','en_file': 'en/ch6.html'},
  7: {'id': 'PUT_ID_HERE', 'kr': '모루',      'en': 'The Anvil',
      'kr_file': 'chapter7.html',                    'en_file': 'en/chapter7.html'},
@@ -52,8 +54,8 @@ for n, v in VIDEOS.items():
         if not p.exists():
             print('missing', path); continue
         s = p.read_text(encoding='utf-8')
-        if 'filmwrap' in s:
-            print(path, 'already has a film'); continue
+        if f'/embed/{v["id"]}' in s:
+            print(path, 'already has this film'); continue
         if '.filmwrap{' not in s:
             s = s.replace('</style>', FILM_CSS + '\n</style>', 1)
         blk = block(v['id'], label, kr)

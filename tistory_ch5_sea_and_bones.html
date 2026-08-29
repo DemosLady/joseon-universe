@@ -587,6 +587,20 @@
     letter-spacing:.05em; color:#7d8ba6; text-align:center;
   }
 
+
+  /* ---------- video embed ---------- */
+  .filmwrap{ max-width:680px; margin:0 auto 40px; padding:0 24px; }
+  .filmwrap .label{
+    font-family:"Gowun Dodum", sans-serif; font-size:11px;
+    letter-spacing:.28em; color:#7d8ba6; margin:0 0 14px; text-align:center;
+  }
+  .filmwrap .frame{
+    position:relative; width:100%; max-width:330px; margin:0 auto;
+    aspect-ratio:9/16; background:#0b1018;
+    border:1px solid rgba(143,158,186,.16);
+  }
+  .filmwrap .frame iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+
 </style>
 </head>
 <body>
@@ -631,6 +645,15 @@
 </details>
 
 <p class="castinfo">등장인물 이름을 누르면 그 인물의 이야기로 이동합니다 →</p>
+
+<div class="filmwrap">
+  <p class="label">영상 · 물 아래</p>
+  <div class="frame">
+    <iframe src="https://www.youtube.com/embed/sykcHKBa0NM" title="물 아래"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen loading="lazy"></iframe>
+  </div>
+</div>
 
 <article class="paper">
 
