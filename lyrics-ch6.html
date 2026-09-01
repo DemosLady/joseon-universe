@@ -18,7 +18,7 @@
 <link rel="canonical" href="https://joseon-universe.vercel.app/lyrics-ch6.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="섬과 별 가사 · Lyrics">
-<meta property="og:description" content="섬과 별 (Island and Stars) 전곡 가사와 영어 번역. Full Korean lyrics with English translation.">
+<meta property="og:description" content="섬과 별 (Island and Stars) 전곡 가사와 영어 번역.">
 <meta property="og:site_name" content="조선 이야기 · demosaii">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:url" content="https://joseon-universe.vercel.app/lyrics-ch6.html">
@@ -104,12 +104,8 @@
   .panorama{
     position:fixed; inset:0; z-index:0; pointer-events:none;
     background-image:url("art/hero.jpg");
-    background-size:cover;
-    background-position:center 42%;
-    background-repeat:no-repeat;
-    opacity:.09;
-    filter:grayscale(.35) contrast(.9);
-    mix-blend-mode:screen;
+    background-size:cover; background-position:center 42%; background-repeat:no-repeat;
+    opacity:.09; filter:grayscale(.35) contrast(.9); mix-blend-mode:screen;
   }
   body > *:not(.panorama):not(.markmoon){ position:relative; z-index:1; }
   body > .topbar{ z-index:60; }
@@ -117,22 +113,14 @@
 
   /* ---------- seal mark behind the title ---------- */
   .markmoon{
-    position:absolute;
-    top:220px; left:50%;
-    width:250px; height:250px;
-    transform:translate(-50%, -50%);
+    position:absolute; top:220px; left:50%;
+    width:250px; height:250px; transform:translate(-50%,-50%);
     border-radius:50%;
     background-image:url("art/mark.png");
-    background-size:cover;
-    background-position:center;
-    opacity:.30;
-    mix-blend-mode:screen;
-    pointer-events:none;
-    z-index:0;
+    background-size:cover; background-position:center;
+    opacity:.30; mix-blend-mode:screen; pointer-events:none; z-index:0;
   }
-  @media (max-width:620px){
-    .markmoon{ width:180px; height:180px; top:186px; opacity:.24; }
-  }
+  @media (max-width:620px){ .markmoon{ width:180px; height:180px; top:186px; opacity:.24; } }
 
 </style>
 </head>
