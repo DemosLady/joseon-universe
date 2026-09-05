@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Search the lyrics | Joseon Stories · 36 songs</title>
 <meta name="description" content="Search every line of all 36 songs in Joseon Stories, in Korean and in English.">
+<link rel="alternate" hreflang="ko" href="https://joseon-universe.vercel.app/search.html">
+<link rel="alternate" hreflang="en" href="https://joseon-universe.vercel.app/en/search.html">
+<link rel="alternate" hreflang="x-default" href="https://joseon-universe.vercel.app/search.html">
 <link rel="canonical" href="https://joseon-universe.vercel.app/en/search.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Search the lyrics | Joseon Stories">
@@ -14,6 +17,40 @@
 <meta property="og:url" content="https://joseon-universe.vercel.app/en/search.html">
 <meta property="og:image" content="https://joseon-universe.vercel.app/covers/ch1.jpg">
 <meta name="twitter:card" content="summary_large_image">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Search the lyrics — Joseon Stories",
+  "url": "https://joseon-universe.vercel.app/en/search.html",
+  "inLanguage": "en",
+  "description": "Search every line of all 36 songs.",
+  "author": {
+    "@type": "Person",
+    "name": "demosaii"
+  },
+  "isPartOf": {
+    "@type": "CreativeWorkSeries",
+    "name": "조선 이야기 · Joseon Stories",
+    "url": "https://joseon-universe.vercel.app"
+  },
+  "image": "https://joseon-universe.vercel.app/covers/ch1.jpg",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://joseon-universe.vercel.app/en/search.html?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<link rel="icon" href="../art/mark.png" type="image/png">
+<link rel="apple-touch-icon" href="../art/mark.png">
+<meta name="theme-color" content="#0d1220">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -146,6 +183,23 @@
     header.hero h1{ font-size:26px; }
     .searchbox input{ font-size:16px; }
   }
+
+  /* ---------- language switch ---------- */
+  .langswitch{
+    display:inline-flex; align-items:center; gap:9px;
+    font-family:"Gowun Dodum", sans-serif; font-size:11.5px; letter-spacing:.1em;
+  }
+  .langswitch .globe{ width:13px; height:13px; opacity:.5; flex:none; color:#8492ab; }
+  .langswitch a{
+    color:#7d8ba6; text-decoration:none; padding:2px 1px;
+    border-bottom:1px solid transparent; transition:color .18s, border-color .18s;
+  }
+  .langswitch a:hover{ color:#e6ecf6; }
+  .langswitch a[aria-current="true"]{
+    color:#e6ecf6; border-bottom-color:rgba(143,158,186,.45); cursor:default;
+  }
+  .langswitch .sep{ color:#4d5870; }
+
 </style>
 </head>
 <body>
@@ -160,7 +214,7 @@
   <a href="timeline.html">Timeline</a>
   <a href="ledger.html">Ledger</a>
   <span class="sp"></span>
-  <a href="../search.html">한국어</a>
+  <span class="langswitch"><svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg><a href="../search.html" hreflang="ko" lang="ko">한국어</a><span class="sep">/</span><a href="search.html" aria-current="true" hreflang="en" lang="en">EN</a></span>
 </nav>
 
 <header class="hero">

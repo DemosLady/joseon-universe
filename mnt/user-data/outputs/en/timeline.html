@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Timeline | Joseon Stories</title>
 <meta name="description" content="The whole story on one line — six hundred years, nine chapters, and one ledger passing from hand to hand.">
+<link rel="alternate" hreflang="ko" href="https://joseon-universe.vercel.app/timeline.html">
+<link rel="alternate" hreflang="en" href="https://joseon-universe.vercel.app/en/timeline.html">
+<link rel="alternate" hreflang="x-default" href="https://joseon-universe.vercel.app/timeline.html">
 <link rel="canonical" href="https://joseon-universe.vercel.app/en/timeline.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Timeline | Joseon Stories">
@@ -14,6 +17,32 @@
 <meta property="og:url" content="https://joseon-universe.vercel.app/en/timeline.html">
 <meta property="og:image" content="https://joseon-universe.vercel.app/covers/ch1.jpg">
 <meta name="twitter:card" content="summary_large_image">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "name": "Timeline — Joseon Stories",
+  "url": "https://joseon-universe.vercel.app/en/timeline.html",
+  "inLanguage": "en",
+  "description": "Six hundred years, nine chapters, one ledger.",
+  "author": {
+    "@type": "Person",
+    "name": "demosaii"
+  },
+  "isPartOf": {
+    "@type": "CreativeWorkSeries",
+    "name": "조선 이야기 · Joseon Stories",
+    "url": "https://joseon-universe.vercel.app"
+  },
+  "image": "https://joseon-universe.vercel.app/covers/ch1.jpg"
+}
+</script>
+<link rel="icon" href="../art/mark.png" type="image/png">
+<link rel="apple-touch-icon" href="../art/mark.png">
+<meta name="theme-color" content="#0d1220">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -144,6 +173,23 @@
     li.ev h3{ font-size:17px; }
     li.ev .body{ font-size:14.5px; }
   }
+
+  /* ---------- language switch ---------- */
+  .langswitch{
+    display:inline-flex; align-items:center; gap:9px;
+    font-family:"Gowun Dodum", sans-serif; font-size:11.5px; letter-spacing:.1em;
+  }
+  .langswitch .globe{ width:13px; height:13px; opacity:.5; flex:none; color:#8492ab; }
+  .langswitch a{
+    color:#7d8ba6; text-decoration:none; padding:2px 1px;
+    border-bottom:1px solid transparent; transition:color .18s, border-color .18s;
+  }
+  .langswitch a:hover{ color:#e6ecf6; }
+  .langswitch a[aria-current="true"]{
+    color:#e6ecf6; border-bottom-color:rgba(143,158,186,.45); cursor:default;
+  }
+  .langswitch .sep{ color:#4d5870; }
+
 </style>
 </head>
 <body>
@@ -158,7 +204,7 @@
   <a href="search.html">Search</a>
   <a href="ledger.html">Ledger</a>
   <span class="sp"></span>
-  <a href="../timeline.html">한국어</a>
+  <span class="langswitch"><svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg><a href="../timeline.html" hreflang="ko" lang="ko">한국어</a><span class="sep">/</span><a href="timeline.html" aria-current="true" hreflang="en" lang="en">EN</a></span>
 </nav>
 
 <header class="hero">

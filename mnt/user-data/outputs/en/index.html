@@ -13,20 +13,23 @@
 </script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Joseon Hip-Hop Universe | Two Trilogies, Twenty-Four Songs</title>
+<title>Joseon Stories | Nine Albums, One Continuous Story</title>
 <meta name="description" content="Three trilogies of Korean gugak hip-hop set in the Joseon era. A story written as thirty-six songs first — one of brush and fire, one of salt and sea.">
 <meta name="keywords" content="Joseon hip-hop, gugak hip-hop, Korean traditional music, historical fiction, Korean history, demosaii">
 <meta name="author" content="demosaii">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="The Joseon Hip-Hop Universe | Two Trilogies">
-<meta property="og:description" content="A story written as thirty-six songs first. Seven albums, one story.">
+<meta property="og:title" content="Joseon Stories | Nine Albums, One Continuous Story">
+<meta property="og:description" content="A story written as thirty-six songs first. Nine albums, one story.">
 <meta property="og:site_name" content="The Joseon Hip-Hop Universe · demosaii">
 <meta property="og:locale" content="en_US">
 <meta property="og:url" content="https://joseon-universe.vercel.app/en/">
 <meta property="og:image" content="https://joseon-universe.vercel.app/covers/ch1.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
+<link rel="alternate" hreflang="ko" href="https://joseon-universe.vercel.app/">
+<link rel="alternate" hreflang="en" href="https://joseon-universe.vercel.app/en/">
+<link rel="alternate" hreflang="x-default" href="https://joseon-universe.vercel.app/">
 <link rel="canonical" href="https://joseon-universe.vercel.app/en/">
 
 
@@ -115,6 +118,11 @@
   ]
 }
 </script>
+<link rel="icon" href="../art/mark.png" type="image/png">
+<link rel="apple-touch-icon" href="../art/mark.png">
+<meta name="theme-color" content="#0d1220">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Song+Myung&family=Nanum+Myeongjo:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
@@ -439,29 +447,6 @@
   .topbar .home{ color:#8492ab; text-decoration:none; letter-spacing:.1em; }
   .topbar .home:hover{ color:#cfd6e4; }
   .langwrap{ position:relative; }
-  .langbtn{
-    background:none; border:1px solid rgba(143,158,186,.3); color:#aab6cb;
-    font-family:"Gowun Dodum", sans-serif; font-size:11.5px; letter-spacing:.12em;
-    padding:7px 14px; cursor:pointer; display:flex; align-items:center; gap:8px;
-    transition:border-color .2s ease, color .2s ease;
-  }
-  .langbtn:hover{ border-color:rgba(207,214,228,.6); color:#e6ebf4; }
-  .langbtn .caret{ font-size:9px; opacity:.7; }
-  .langmenu{
-    position:absolute; top:calc(100% + 6px); inset-inline-end:0; min-width:132px;
-    background:#141b2a; border:1px solid rgba(143,158,186,.24);
-    display:none; z-index:20;
-  }
-  .langmenu.open{ display:block; }
-  .langmenu a{
-    display:block; padding:11px 16px; color:#aab6cb; text-decoration:none;
-    font-family:"Gowun Dodum", sans-serif; font-size:12px; letter-spacing:.06em;
-    border-bottom:1px solid rgba(143,158,186,.14);
-  }
-  .langmenu a:last-child{ border-bottom:none; }
-  .langmenu a:hover, .langmenu a:focus{ background:rgba(207,214,228,.08); color:#fff; }
-  .langmenu a[aria-current="true"]{ color:#fff; }
-  .langmenu a[aria-current="true"]::before{ content:"· "; color:var(--seal); }
 
   /* ---------- lyrics link inside the listen block ---------- */
   .lyrics-link{
@@ -552,7 +537,6 @@
   .topbar a.tostory:focus-visible, .topbar a.tocast:focus-visible{
     color:#fff !important; border-color:#fff; background:rgba(255,255,255,.06);
   }
-  .langbtn{ font-size:12.5px !important; padding:8px 15px !important; color:#c3ccdc !important; }
   @media (max-width:620px){
     .topbar{ flex-wrap:wrap; gap:8px; font-size:12.5px; }
     .topbar .navgroup{ width:100%; margin-inline-start:0; justify-content:flex-start; }
@@ -616,6 +600,26 @@
     letter-spacing:.05em; color:#66748c; text-align:center; margin:14px 0 0;
   }
 
+
+  /* ---------- language switch ---------- */
+  .langswitch{
+    display:inline-flex; align-items:center; gap:9px;
+    font-family:"Gowun Dodum", sans-serif; font-size:11.5px; letter-spacing:.1em;
+  }
+  .langswitch .globe{
+    width:13px; height:13px; opacity:.5; flex:none;
+    color:#8492ab;
+  }
+  .langswitch a{
+    color:#7d8ba6; text-decoration:none; padding:2px 1px;
+    border-bottom:1px solid transparent; transition:color .18s, border-color .18s;
+  }
+  .langswitch a:hover{ color:#e6ecf6; }
+  .langswitch a[aria-current="true"]{
+    color:#e6ecf6; border-bottom-color:rgba(143,158,186,.45); cursor:default;
+  }
+  .langswitch .sep{ color:#4d5870; }
+
 </style>
 </head>
 <body>
@@ -633,12 +637,8 @@
     <a class="toledger" href="ledger.html" style="color:#8492ab;text-decoration:none;letter-spacing:.08em;">Ledger</a>
   </div>
   <div class="langwrap">
-    <button class="langbtn" type="button" aria-haspopup="true" aria-expanded="false">English<span class="caret">▾</span></button>
-    <div class="langmenu" role="menu">
-      <a href="../index.html" role="menuitem" aria-current="false">한국어</a>
-      <a href="index.html" role="menuitem" aria-current="true">English</a>
-    </div>
-  </div>
+    <span class="langswitch"><svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg><a href="../index.html" hreflang="ko" lang="ko">한국어</a><span class="sep">/</span><a href="index.html" aria-current="true" hreflang="en" lang="en">EN</a></span>
+</div>
 </div>
 
 
@@ -655,7 +655,7 @@
 
 <section class="intro">
   <p>This is <b>a story that was written as thirty-six songs first.</b></p>
-  <p>Three trilogies of Korean gugak hip-hop set in the Joseon era — one of brush and fire, one of salt and sea. Seven albums, one story.</p>
+  <p>Three trilogies of Korean gugak hip-hop set in the Joseon era — one of brush and fire, one of salt and sea. Nine albums, one story.</p>
 </section>
 
 <section class="fullplay">
@@ -809,29 +809,6 @@
   <p class="about-tags">#JoseonHipHop #GugakHipHop #KoreanTraditional #HistoricalFiction #demosaii</p>
 </footer>
 
-
-<script>
-  (function(){
-    var btn = document.querySelector('.langbtn');
-    var menu = document.querySelector('.langmenu');
-    if(!btn || !menu) return;
-    btn.addEventListener('click', function(e){
-      e.stopPropagation();
-      var open = menu.classList.toggle('open');
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    document.addEventListener('click', function(){
-      menu.classList.remove('open');
-      btn.setAttribute('aria-expanded','false');
-    });
-    document.addEventListener('keydown', function(e){
-      if(e.key === 'Escape'){
-        menu.classList.remove('open');
-        btn.setAttribute('aria-expanded','false');
-      }
-    });
-  })();
-</script>
 
 </body>
 </html>
