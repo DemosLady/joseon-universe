@@ -1,64 +1,33 @@
-# tracklist.txt — 조선 이야기, all 32 tracks in order
+# tracklist.txt — 조선의 여자들 · WOMEN OF JOSEON
+# 14 tracks with female leads, drawn from across all eight EPs.
 #
-# Only the times are missing. Replace each 00:00 with the time that track
-# STARTS in your two-hour file, as mm:ss or h:mm:ss.
+# start | korean title | english title | album no. | romanised title
 #
-# Everything else is already correct: titles, order, album numbers.
-# The last line is the total length of the audio.
+# The times are placeholders and are ignored — there is no audio in this
+# project, so the script renders 14 stills and stops.  Assemble in CapCut.
+#
+# Order rule: no two tracks from the same EP sit within three places of each
+# other, so the carousel never shows the same cover twice side by side.
+# Flow is fire -> sea -> iron.
 
 # ── 불의 삼부작 · THE FIRE TRILOGY ─────────────────────────────
-
-# 1 · 피와 안개 (Blood and Fog)
-00:00 | 왕의 길목 | The King's Path | 1
-00:00 | 빈 궁궐 메아리 | Echoes of the Empty Palace | 1
-00:00 | 피의 옥새 | The Blood Seal | 1
-00:00 | 안개 속 그림자 | Shadow in the Fog | 1
-
-# 2 · 먹과 불씨 (Ink and Embers)
-00:00 | 붓끝에 칼 | A Blade at the Brush Tip | 2
-00:00 | 저잣거리 | The Market Street | 2
-00:00 | 산사의 여인 | The Woman at the Mountain Temple | 2
-00:00 | 마지막 봉화 | The Last Signal Fire | 2
-
-# 3 · 재와 씨앗 (Ash and Seed)
-00:00 | 마지막 붓 | The Last Brush | 3
-00:00 | 길 위의 그림자 | Shadow on the Road | 3
-00:00 | 빈 산 | The Empty Mountain | 3
-00:00 | 첫 번째 새싹 | The First Sprout | 3
+00:00 | 도깨비불 | Ghost Fire | 1 | Dokkaebibul
+00:00 | 산사의 여인 | The Woman at the Mountain Temple | 2 | Sansaui Yeoin
+00:00 | 빈 산 | The Empty Mountain | 3 | Bin San
+00:00 | 빈 궁궐 메아리 | Echoes of the Empty Palace | 1 | Bin Gunggwol Meari
+00:00 | 마지막 봉화 | The Last Signal Fire | 2 | Majimak Bonghwa
+00:00 | 첫 번째 새싹 | The First Sprout | 3 | Cheot Beonjjae Saessak
 
 # ── 바다 삼부작 · THE SEA TRILOGY ──────────────────────────────
-
-# 4 · 소금과 파도 (Salt and Waves)
-00:00 | 유배길 | Road of Exile | 4
-00:00 | 검은 돛 | Black Sail | 4
-00:00 | 늙은 그물 | Old Net | 4
-00:00 | 숨비소리 | Sumbisori | 4
-
-# 5 · 바다와 뼈 (Sea and Bones)
-00:00 | 폭풍 | The Storm | 5
-00:00 | 가라앉은 배 | The Sunken Ship | 5
-00:00 | 소금 편지 | Salt Letter | 5
-00:00 | 물 아래 | Beneath the Water | 5
-
-# 6 · 섬과 별 (Island and Stars)
-00:00 | 북두칠성 | Big Dipper | 6
-00:00 | 물로 돌아간 여자 | The Woman Who Returned to the Water | 6
-00:00 | 산문 앞에서 | At the Temple Gate | 6
-00:00 | 이어도 | Ieodo | 6
+00:00 | 소금 편지 | Salt Letter | 5 | Sogeum Pyeonji
+00:00 | 산문 앞에서 | At the Temple Gate | 6 | Sanmun Apeseo
+00:00 | 숨비소리 | Sumbisori | 4 | Sumbisori
+00:00 | 물 아래 | Beneath the Water | 5 | Mul Arae
+00:00 | 이어도 | Ieodo | 6 | Ieodo
 
 # ── 쇠 삼부작 · THE IRON TRILOGY ───────────────────────────────
+00:00 | 이름을 듣소 | I Listen for the Name | 8 | Ireumeul Deutso
+00:00 | 빈 줄 | The Empty Line | 7 | Bin Jul
+00:00 | 봉인 | The Seal | 8 | Bongin
 
-# 7 · 눈과 쇠 (Snow and Iron)
-00:00 | 돛을 내리다 | Lowering the Sail | 7
-00:00 | 모여라 | Gather | 7
-00:00 | 모루 | The Anvil | 7
-00:00 | 빈 줄 | The Empty Line | 7
-
-# 8 · 쇠와 피 (Iron and Blood)
-00:00 | 첫 줄 | The First Line | 8
-00:00 | 두 걸음 | Two Steps | 8
-00:00 | 이름을 듣소 | I Listen for the Name | 8
-00:00 | 봉인 | The Seal | 8
-
-# total length of the audio file
 00:00 | END

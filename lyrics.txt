@@ -1,0 +1,17 @@
+# lyrics.txt — 조선의 여자들
+# track no. | korean | romanised | english
+
+01 | 도깨비불처럼 떠돌고 있어 | Dokkaebibulcheoreom tteodolgo isseo | I drift like a dokkaebi fire
+02 | 산이 대답하지 않아도 나는 묻는다 | Sani daedaphaji anado naneun munneunda | Even if the mountain does not answer, I keep asking
+03 | 산이 나를 다시 받아주었다 | Sani nareul dasi badajueotda | The mountain took me back
+04 | 전하, 놓아주소서 | Jeonha, noajusoseo | Your Majesty, let me go
+05 | 글자가 불씨가 되는 밤이 왔다 | Geuljaga bulssiga doeneun bami watda | The night has come when letters become embers
+06 | 나만 알았다 이건 진짜라는 걸 | Naman aratda igeon jinjjaraneun geol | Only I knew it was real
+07 | 불은 태워도 소금은 지킨다 | Bureun taewodo sogeumeun jikinda | Fire burns, but salt preserves
+08 | 그러나 이름은 타지 않았소 | Geureona ireumeun taji anatso | But the names did not burn
+09 | 물속에서는 내가 주인이다 | Mulsogeseoneun naega juinida | Underwater, I am the master
+10 | 나는 도둑이 아니오, 나는 손님이오 | Naneun dodugi anio, naneun sonnimio | I am not a thief. I am a guest.
+11 | 이름을 두고 간 사람들 — 내가 다 외웠소 | Ireumeul dugo gan saramdeul — naega da oewotso | Those who left their names behind. I know them all by heart.
+12 | 이름을 듣소, 이름을 적소 | Ireumeul deutso, ireumeul jeokso | I listen for the name. I write the name.
+13 | 비워둔 줄은 아직 살아 있는 사람의 자리요 | Biwodun jureun ajik sara inneun saramui jariyo | The empty line is the place for someone still alive
+14 | 봉인은 그대로 있소 | Bongineun geudaero itso | The seal is still whole

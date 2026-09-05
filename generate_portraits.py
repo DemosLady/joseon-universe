@@ -137,6 +137,42 @@ CHARACTERS = [
   "sea, enormous thick-knuckled hands. Lit by soft grey overcast daylight, a fishing net out "
   "of focus behind him."),
 
+ ("soldier", "병졸 · The Soldier",
+  "A Korean man of EXACTLY twenty years old, lean and not yet filled out, wearing a plain "
+  "undyed hemp tunic with a piece of ill-fitting infantry armour still hooked over one shoulder "
+  "and sliding off it, black hair pulled back roughly under a cloth headband with strands come "
+  "loose. A young face, sun-darkened but smooth, with no lines yet, and a healing wound across "
+  "one shoulder. His expression is blank and far away, the look of someone who has not slept "
+  "properly in weeks and is not entirely present. Cold flat overcast daylight from above, no "
+  "warmth in it, a bare winter field far behind him and out of focus."),
+
+ ("farmer", "농부 · The Farmer",
+  "A Korean man of EXACTLY fifty-five years old, wiry and weather-beaten from a life outdoors, "
+  "wearing patched undyed hemp with the sleeves bound at the forearm and a cloth wrapped over "
+  "grey-streaked hair. A narrow sun-darkened face with deep vertical lines, cracked lips, and "
+  "hands visible at the edge of frame that are thick-knuckled and split from cold. His "
+  "expression is level and closed, neither grieving nor calm — a man carrying something he has "
+  "not put down. Cold flat overcast light of early spring, a ploughed field with patches of "
+  "unmelted snow behind him and out of focus."),
+
+ ("granddaughter", "손녀 · The Granddaughter",
+  "A Korean girl of EXACTLY fifteen years old, slight and not yet grown, wearing a faded indigo "
+  "skirt and a short undyed hemp jacket, her black hair in a single thick braid down her back "
+  "tied with a plain cloth. A round young face with clear skin and no hardship in it yet, "
+  "eyebrows slightly raised, her expression open and curious and mid-question — she is about to "
+  "say something. Soft warm late-afternoon light, the wall of a thatched farmhouse behind her "
+  "and out of focus."),
+
+ ("smith", "대장장이 · The Blacksmith",
+  "A Korean man of EXACTLY fifty-eight years old, thickset and heavy through the shoulders and "
+  "forearms from a lifetime at an anvil, wearing soot-stained undyed off-white hemp with the "
+  "sleeves pushed up above the elbows and a plain cloth headband over grey-streaked hair in a low "
+  "topknot. A broad weathered face darkened by soot and heat, a short greying beard, an old shiny "
+  "burn scar across one cheekbone and more small burn marks on the backs of his hands. His "
+  "expression is closed and tired, the look of a man who has not slept in three days. Lit warm and "
+  "low from one side by forge fire just out of frame and cold from the other, deep black between "
+  "them, with fine ash drifting in the air."),
+
  ("oki", "옥이 · Ok-i",
   "A Korean woman of EXACTLY thirty-five years old, unmistakably Korean in facial structure, "
   "wearing a sleeveless undyed off-white cotton haenyeo diving top with bare shoulders and "

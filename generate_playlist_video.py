@@ -1,25 +1,32 @@
 """
-generate_playlist_video.py
-A 16:9 playlist video in the visual language of the albums: the panorama behind
-everything, the cover of whatever album is playing on the left, the full
-tracklist on the right coloured by trilogy, and the current track lit up.
+generate_playlist_video.py  —  cover-flow edition, with rotating transitions
+
+Renders one still per track, and optionally the in-between frames where the
+carousel rotates from one track to the next.
 
 SETUP
-  1. tracklist.txt      start | korean | english | album number
-  2. playlist.mp3       the audio, next to this script
-  3. covers/ch1.jpg ... covers/ch8.jpg
-  4. art/hero.jpg       the panorama
-  5. art/mark.png       optional, the seal
+  1. tracklist.txt   start | korean | english | album no. | romanised title
+  2. lyrics.txt      track no. | korean line | romanised line | english line
+  3. covers/         01.jpg 02.jpg ...   (per track — preferred)
+                     ch1.jpg ch2.jpg ... (per album — fallback, auto-cropped)
+  4. art/mark.png    the seal, transparent PNG
+  5. art/hero.jpg    optional, laid over the backdrop
   6. python generate_playlist_video.py
 
-    --check          validate the tracklist and print it
-    --preview 20     render one track so you can look at it
-    --frames-only    render every still, skip the assembly
+    --check              print the tracklist, render nothing
+    --preview 3          one still, to check the layout
+    --transitions        also render the rotation between every pair
+    --fps 30             frames per second for the transitions
+    --dur 0.5            seconds per transition
+    --text fade|cut      how the lyric line and player bar change over
+    --ease ease|smooth|linear
 
-Needs pillow, and ffmpeg on PATH for the assembly step.
+Needs pillow.  ffmpeg on PATH lets --transitions also write one short mp4
+per transition, which is far easier to drop into an editor than a folder
+of numbered stills.
 """
 
-import argparse, subprocess, sys, shutil
+import argparse, subprocess, sys, shutil, math, random
 from pathlib import Path
 
 try:
@@ -29,26 +36,74 @@ except ImportError:
 
 BASE = Path(__file__).parent
 FRAMES = BASE / "playlist_frames"
+TRANS = BASE / "transitions"
 TRACKLIST = BASE / "tracklist.txt"
+LYRICS = BASE / "lyrics.txt"
 BG_IMAGE = BASE / "art" / "hero.jpg"
 MARK = BASE / "art" / "mark.png"
 COVERS = BASE / "covers"
 
 W, H = 1920, 1080
 
-INK_TOP = (27, 36, 54)
-INK_BOTTOM = (7, 11, 20)
-BRIGHT = (240, 245, 252)
-DIM = (128, 142, 168)
-FAINT = (88, 100, 124)
-RULE = (52, 64, 86)
+BRIGHT = (245, 248, 252)
+DIM = (176, 190, 206)
+BAR_FILL = (26, 26, 28)
+
+# The backdrop follows the trilogy the current track belongs to, and cross
+# fades when a transition crosses from one trilogy into the next.
+BG_PALETTE = {
+    "fire": ((112, 62, 48), (30, 14, 13)),
+    "sea":  ((42, 106, 152), (14, 34, 56)),
+    "iron": ((116, 128, 142), (26, 32, 42)),
+}
+
+# --- the artwork laid over the backdrop -------------------------------------
+HERO_OPACITY = 0.55
+HERO_BLUR = 0
+HERO_SATURATION = 0.7
+HERO_CLEAR_CENTRE = 0.55
+
+# --- the compilation header -------------------------------------------------
+COMP_TITLE_KR = "조선의 여자들"
+COMP_TITLE_EN = "WOMEN OF JOSEON"
+COMP_TAGLINE = ("Fourteen songs led by women, drawn from all eight EPs  ·  "
+                "the ghost, the nun, the diver, the scribe")
+BRUSH_WIDTH = 620
+
+# --- youtube thumbnail ------------------------------------------------------
+THUMB_LINE = "14 SONGS  ·  8 EPs  ·  ONE STORY"
+THUMB_IMAGE = BASE / "art" / "thumb.jpg"   # falls back to covers/ch1
+
+# --- transitions ------------------------------------------------------------
+FPS = 30
+TRANSITION_SECONDS = 0.5
+EASING = "ease"        # ease | smooth | linear
+TEXT_MODE = "fade"     # fade | cut
+
+# Two tracks from the same EP would otherwise show the same picture; each
+# repeat gets a different crop: (zoom, horizontal anchor, vertical anchor).
+COVER_VARIANTS = [
+    (1.00, 0.50, 0.50),
+    (0.66, 0.22, 0.30),
+    (0.66, 0.80, 0.66),
+    (0.78, 0.50, 0.18),
+]
+
+# The colour a card takes on as it moves off centre.  Fixed per track, so a
+# card keeps its identity while it rotates instead of changing hue mid-move.
+SIDE_TINTS = [
+    (150, 178, 190),
+    (140, 96, 132),
+    (198, 172, 140),
+    (168, 178, 190),
+]
 
 TRILOGY = {
-    "fire": {"albums": (1, 2, 3), "accent": (168, 105, 92),
+    "fire": {"albums": (1, 2, 3), "accent": (198, 118, 100),
              "kr": "불의 삼부작", "en": "THE FIRE TRILOGY"},
-    "sea": {"albums": (4, 5, 6), "accent": (111, 163, 173),
+    "sea": {"albums": (4, 5, 6), "accent": (118, 176, 186),
             "kr": "바다 삼부작", "en": "THE SEA TRILOGY"},
-    "iron": {"albums": (7, 8, 9), "accent": (150, 164, 184),
+    "iron": {"albums": (7, 8, 9), "accent": (166, 180, 198),
              "kr": "쇠 삼부작", "en": "THE IRON TRILOGY"},
 }
 
@@ -64,7 +119,7 @@ ALBUM_NAMES = {
     9: ("봄과 녹", "Spring and Rust"),
 }
 
-FONT_CANDIDATES = [
+FONT_REG = [
     r"C:\Windows\Fonts\malgun.ttf",
     r"C:\Windows\Fonts\NanumMyeongjo.ttf",
     r"C:\Windows\Fonts\batang.ttc",
@@ -72,18 +127,23 @@ FONT_CANDIDATES = [
     "/usr/share/fonts/truetype/nanum/NanumGothic.ttf",
     "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
 ]
-FONT_BOLD = [r"C:\Windows\Fonts\malgunbd.ttf",
-             r"C:\Windows\Fonts\NanumMyeongjoBold.ttf"] + FONT_CANDIDATES
+FONT_BLD = [r"C:\Windows\Fonts\malgunbd.ttf",
+            r"C:\Windows\Fonts\NanumMyeongjoBold.ttf",
+            "/usr/share/fonts/truetype/nanum/NanumGothicBold.ttf"] + FONT_REG
+FONT_ITA = [r"C:\Windows\Fonts\segoeuii.ttf",
+            r"C:\Windows\Fonts\ariali.ttf",
+            "/usr/share/fonts/truetype/dejavu/DejaVuSans-Oblique.ttf"] + FONT_REG
 
 
-def load_font(size, bold=False):
-    for path in (FONT_BOLD if bold else FONT_CANDIDATES):
+def load_font(size, kind="reg"):
+    table = {"reg": FONT_REG, "bold": FONT_BLD, "italic": FONT_ITA}[kind]
+    for path in table:
         if Path(path).exists():
             try:
                 return ImageFont.truetype(path, size)
             except Exception:
                 continue
-    print("[warn] no Korean font found - text will render as boxes.")
+    print("[warn] no suitable font found - text may render as boxes.")
     return ImageFont.load_default()
 
 
@@ -94,16 +154,127 @@ def trilogy_of(album):
     return "iron", TRILOGY["iron"]
 
 
-SAMPLE = """# tracklist.txt
-# One track per line:   start | korean title | english title | album number
-# Times are where the track STARTS, as mm:ss or h:mm:ss.
-# The album number picks the cover and the trilogy colour.
-# End with a line giving the finish time and the word END.
+# ---- easing ----------------------------------------------------------------
+def ease(t, mode=None):
+    mode = mode or EASING
+    t = max(0.0, min(1.0, t))
+    if mode == "linear":
+        return t
+    if mode == "smooth":
+        return t * t * (3 - 2 * t)
+    return 4 * t ** 3 if t < 0.5 else 1 - (-2 * t + 2) ** 3 / 2
 
-00:00 | 왕의 길목 | The King's Path | 1
-03:12 | 빈 궁궐 메아리 | Echoes of the Empty Palace | 1
 
-1:47:00 | END
+# ---- perspective -----------------------------------------------------------
+def _solve(A, B):
+    n = len(B)
+    M = [row[:] + [B[i]] for i, row in enumerate(A)]
+    for c in range(n):
+        p = max(range(c, n), key=lambda r: abs(M[r][c]))
+        if abs(M[p][c]) < 1e-12:
+            raise ValueError("degenerate quad")
+        M[c], M[p] = M[p], M[c]
+        pv = M[c][c]
+        M[c] = [v / pv for v in M[c]]
+        for r in range(n):
+            if r != c and M[r][c]:
+                f = M[r][c]
+                M[r] = [v - f * w for v, w in zip(M[r], M[c])]
+    return [M[i][n] for i in range(n)]
+
+
+def perspective_coeffs(dest, src):
+    A, B = [], []
+    for (dx, dy), (sx, sy) in zip(dest, src):
+        A.append([dx, dy, 1, 0, 0, 0, -dx * sx, -dy * sx]); B.append(sx)
+        A.append([0, 0, 0, dx, dy, 1, -dx * sy, -dy * sy]); B.append(sy)
+    return _solve(A, B)
+
+
+def warp_region(card, quad, pad=0):
+    """Project a card onto just the bounding box of its quad rather than the
+    whole canvas.  Much faster, which matters once there are hundreds of
+    frames instead of fourteen."""
+    xs = [p[0] for p in quad]
+    ys = [p[1] for p in quad]
+    x0 = int(math.floor(min(xs))) - pad
+    y0 = int(math.floor(min(ys))) - pad
+    x1 = int(math.ceil(max(xs))) + pad
+    y1 = int(math.ceil(max(ys))) + pad
+    w, h = max(1, x1 - x0), max(1, y1 - y0)
+    local = [(x - x0, y - y0) for x, y in quad]
+    cw, ch = card.size
+    co = perspective_coeffs(local, [(0, 0), (cw, 0), (cw, ch), (0, ch)])
+    out = card.transform((w, h), Image.PERSPECTIVE, co,
+                         resample=Image.BICUBIC, fillcolor=(0, 0, 0, 0))
+    return out, (x0, y0)
+
+
+def paste_layer(dst, layer, pos):
+    """alpha_composite that tolerates a layer hanging off the canvas edge."""
+    x, y = pos
+    cx0, cy0 = max(0, x), max(0, y)
+    lx0, ly0 = cx0 - x, cy0 - y
+    lx1 = min(layer.width, W - x)
+    ly1 = min(layer.height, H - y)
+    if lx1 <= lx0 or ly1 <= ly0:
+        return
+    dst.alpha_composite(layer.crop((lx0, ly0, lx1, ly1)), (cx0, cy0))
+
+
+# ---- ink -------------------------------------------------------------------
+def brush_stroke(width, thickness=10, seed=7, color=(240, 244, 250)):
+    """A tapered stroke with dry-brush breaks.  Deterministic, so it does not
+    flicker between frames."""
+    h = thickness * 6
+    layer = Image.new("RGBA", (width, h), (0, 0, 0, 0))
+    d = ImageDraw.Draw(layer)
+    rnd = random.Random(seed)
+    gaps = [(rnd.uniform(0.18, 0.86), rnd.uniform(0.012, 0.045)) for _ in range(5)]
+
+    steps = width * 3
+    for i in range(steps):
+        t = i / (steps - 1)
+        taper = math.sin(math.pi * (t ** 0.72)) ** 0.5
+        th = thickness * taper
+        if th < 0.4:
+            continue
+        y = h / 2 + math.sin(t * 2.6 + 0.4) * thickness * 0.30
+        a = 236 * taper
+        for g, gw in gaps:
+            if abs(t - g) < gw:
+                a *= 0.10 + 0.9 * (abs(t - g) / gw)
+        a *= 0.86 + rnd.random() * 0.14
+        x = t * (width - 1)
+        d.ellipse([x - th * 0.5, y - th, x + th * 0.5, y + th],
+                  fill=color + (int(max(0, min(255, a))),))
+
+    for _ in range(3):
+        t0 = rnd.uniform(0.62, 0.80)
+        y = h / 2 + rnd.uniform(-1, 1) * thickness * 0.55
+        d.line([(t0 * width, y), (width - rnd.uniform(2, 26), y)],
+               fill=color + (rnd.randint(40, 95),), width=1)
+    return layer.filter(ImageFilter.GaussianBlur(0.6))
+
+
+def draw_tracked(draw, xy, text, font, fill, tracking=0):
+    """Pillow has no letter-spacing, so place each glyph by hand."""
+    widths = [draw.textlength(c, font=font) for c in text]
+    total = sum(widths) + tracking * (len(text) - 1)
+    x, y = xy
+    x -= total / 2
+    for c, w in zip(text, widths):
+        draw.text((x, y), c, font=font, fill=fill, anchor="lm")
+        x += w + tracking
+
+
+# ---- tracklist / lyrics ----------------------------------------------------
+SAMPLE_TRACKS = """# start | korean | english | album no. | romanised
+00:00 | 왕의 길목 | The King's Path | 1 | Wangui Gilmok
+00:00 | END
+"""
+SAMPLE_LYRICS = """# track no. | korean | romanised | english
+01 | 왕의 길목에 서서 | Wangui gilmoge seoseo | Standing at the king's crossing
 """
 
 
@@ -118,7 +289,7 @@ def parse_time(s):
 
 def read_tracklist():
     if not TRACKLIST.exists():
-        TRACKLIST.write_text(SAMPLE, encoding="utf-8")
+        TRACKLIST.write_text(SAMPLE_TRACKS, encoding="utf-8")
         print(f"[created] {TRACKLIST}\nFill it in and run again.")
         sys.exit(0)
 
@@ -131,267 +302,507 @@ def read_tracklist():
         rows.append((parse_time(p[0]),
                      p[1] if len(p) > 1 else "",
                      p[2] if len(p) > 2 else "",
-                     int(p[3]) if len(p) > 3 and p[3].isdigit() else 1))
+                     int(p[3]) if len(p) > 3 and p[3].isdigit() else 1,
+                     p[4] if len(p) > 4 else ""))
 
     tracks = []
-    for i, (t, kr, en, al) in enumerate(rows):
+    for i, (t, kr, en, al, rr) in enumerate(rows):
         if not kr or kr.upper() == "END":
             break
         if i + 1 >= len(rows):
             sys.exit("[ERROR] the last track has no end time - add a final END line")
         tracks.append({"n": i + 1, "start": t, "end": rows[i + 1][0],
-                       "kr": kr, "en": en, "album": al})
+                       "kr": kr, "en": en, "album": al, "rr": rr})
     if not tracks:
         sys.exit("[ERROR] no tracks found")
     return tracks
 
 
+def read_lyrics(tracks):
+    if not LYRICS.exists():
+        LYRICS.write_text(SAMPLE_LYRICS, encoding="utf-8")
+        print(f"[created] {LYRICS} - fill it in for the lyric lines")
+    table = {}
+    for ln in LYRICS.read_text(encoding="utf-8").splitlines():
+        ln = ln.strip()
+        if not ln or ln.startswith("#"):
+            continue
+        p = [x.strip() for x in ln.split("|")]
+        if p[0].isdigit():
+            table[int(p[0])] = (p[1] if len(p) > 1 else "",
+                                p[2] if len(p) > 2 else "",
+                                p[3] if len(p) > 3 else "")
+    for t in tracks:
+        t["lyric"] = table.get(t["n"], ("", "", ""))
+    missing = [t["n"] for t in tracks if not t["lyric"][0]]
+    if missing:
+        print(f"[note] no lyric line for track(s): {missing}")
+    return tracks
 
-def durations_from_folder(folder: Path):
-    """Read the length of every audio file in a folder, in filename order.
-    Needs ffprobe, which ships with ffmpeg."""
-    if not folder.exists():
-        return None
-    exts = (".mp3", ".wav", ".m4a", ".flac", ".aac", ".ogg")
-    files = sorted([f for f in folder.iterdir() if f.suffix.lower() in exts])
-    if not files:
-        return None
-    if not shutil.which("ffprobe"):
-        print("[note] ffprobe not on PATH — cannot read durations automatically")
-        return None
-    out = []
-    for f in files:
-        r = subprocess.run(
-            ["ffprobe", "-v", "error", "-show_entries", "format=duration",
-             "-of", "default=noprint_wrappers=1:nokey=1", str(f)],
-            capture_output=True, text=True)
-        try:
-            out.append((f.name, float(r.stdout.strip())))
-        except ValueError:
-            print(f"[note] could not read {f.name}")
-            return None
+
+# ---- artwork ---------------------------------------------------------------
+def make_background(palette="sea"):
+    BG_CORE, BG_EDGE = BG_PALETTE.get(palette, BG_PALETTE["sea"])
+    small = Image.new("RGB", (W // 8, H // 8))
+    px = small.load()
+    cx, cy = small.width / 2, small.height * 0.44
+    maxd = math.hypot(cx, cy)
+    for y in range(small.height):
+        for x in range(small.width):
+            dd = math.hypot((x - cx) * 0.82, y - cy) / maxd
+            f = min(1.0, dd ** 1.25)
+            px[x, y] = tuple(int(BG_CORE[i] + (BG_EDGE[i] - BG_CORE[i]) * f)
+                             for i in range(3))
+    bg = small.resize((W, H), Image.BICUBIC).filter(ImageFilter.GaussianBlur(24))
+
+    if BG_IMAGE.exists() and HERO_OPACITY > 0:
+        art = Image.open(BG_IMAGE).convert("RGB")
+        r = max(W / art.width, H / art.height)
+        art = art.resize((int(art.width * r), int(art.height * r)), Image.LANCZOS)
+        l = (art.width - W) // 2
+        t = int((art.height - H) * 0.42)
+        art = art.crop((l, t, l + W, t + H))
+        if HERO_BLUR:
+            art = art.filter(ImageFilter.GaussianBlur(HERO_BLUR))
+        art = ImageEnhance.Color(art).enhance(HERO_SATURATION)
+
+        m = Image.new("L", (W // 8, H // 8))
+        mp = m.load()
+        mcx, mcy = m.width / 2, m.height * 0.40
+        mmax = math.hypot(mcx, mcy)
+        for y in range(m.height):
+            for x in range(m.width):
+                dd = math.hypot((x - mcx) * 0.80, y - mcy) / mmax
+                v = min(1.0, dd ** 0.9)
+                v = v * HERO_CLEAR_CENTRE + (1 - HERO_CLEAR_CENTRE)
+                mp[x, y] = int(255 * HERO_OPACITY * v)
+        mask = m.resize((W, H), Image.BICUBIC).filter(ImageFilter.GaussianBlur(30))
+        bg = Image.composite(art, bg, mask)
+    elif HERO_OPACITY > 0:
+        print("[note] art/hero.jpg not found - plain backdrop")
+    return bg
+
+
+def rounded_mask(size, radius):
+    m = Image.new("L", (size, size), 0)
+    ImageDraw.Draw(m).rounded_rectangle([0, 0, size - 1, size - 1],
+                                        radius=radius, fill=255)
+    return m
+
+
+def load_cover(track, size, seal, variant=0):
+    candidates = [COVERS / f"{track['n']:02d}.{e}" for e in ("jpg", "jpeg", "png")]
+    per_track = any(p.exists() for p in candidates)
+    candidates += [COVERS / f"ch{track['album']}.{e}" for e in ("jpg", "jpeg", "png")]
+    im = None
+    for p in candidates:
+        if p.exists():
+            im = Image.open(p).convert("RGB")
+            break
+    if im is None:
+        im = Image.new("RGB", (size, size), (46, 62, 80))
+
+    zoom, ax, ay = COVER_VARIANTS[0] if per_track else \
+        COVER_VARIANTS[variant % len(COVER_VARIANTS)]
+    s = int(min(im.size) * zoom)
+    x = int((im.width - s) * ax)
+    y = int((im.height - s) * ay)
+    im = im.crop((x, y, x + s, y + s))
+    im = im.resize((size, size), Image.LANCZOS).convert("RGBA")
+
+    if seal is not None:
+        ss = int(size * 0.20)
+        st = seal.resize((ss, ss), Image.LANCZOS)
+        im.alpha_composite(st, (int(size * 0.045), int(size * 0.72)))
+
+    im.putalpha(rounded_mask(size, int(size * 0.045)))
+    return im
+
+
+def make_tinted(card, tint):
+    """The fully washed-out version of a card.  At render time the clean and
+    washed versions are blended, so the wash comes on gradually as the card
+    rotates away from the middle."""
+    rgb = ImageEnhance.Color(card.convert("RGB")).enhance(0.55)
+    rgb = Image.blend(rgb, Image.new("RGB", rgb.size, tint), 0.34)
+    rgb = ImageEnhance.Brightness(rgb).enhance(0.86)
+    out = rgb.convert("RGBA")
+    out.putalpha(card.split()[-1])
     return out
 
 
-def fill_times_from_audio(tracks, folder: Path):
-    """Overwrite the start/end times using the real file lengths."""
-    durs = durations_from_folder(folder)
-    if durs is None:
-        return False
-    if len(durs) != len(tracks):
-        print(f"[note] {len(durs)} audio files but {len(tracks)} tracks — "
-              f"leaving the times in tracklist.txt alone")
-        return False
-    t = 0
-    for track, (name, dur) in zip(tracks, durs):
-        track["start"] = int(round(t))
-        t += dur
-        track["end"] = int(round(t))
-        track["file"] = name
-    return True
+# ---- the carousel ----------------------------------------------------------
+CENTER_SIZE = 512
+CY = 500
+HALF = CENTER_SIZE // 2
+VISIBLE = 2.9        # cards fade out past this many places from the middle
 
 
-def make_background():
-    bg = Image.new("RGB", (W, H))
-    d = ImageDraw.Draw(bg)
-    for y in range(H):
-        f = (y / H) ** 0.85
-        d.line([(0, y), (W, y)],
-               fill=tuple(int(INK_TOP[i] + (INK_BOTTOM[i] - INK_TOP[i]) * f) for i in range(3)))
+def slot_geometry(u):
+    """Continuous form of the old five-slot table.  u is how many places the
+    card sits from the middle and may be fractional, which is what makes the
+    rotation possible."""
+    a = abs(u)
+    if a > VISIBLE:
+        return None
+    mid_x = 960 + (1 if u > 0 else -1) * 484 * (a ** 0.67) if u else 960
+    scale = 1.0 / (1 + 0.24 * a ** 1.5)          # overall size
+    fore = 1.0 / (1 + 0.52 * a ** 0.75)          # horizontal foreshortening
+    skew = 1 + 0.215 * (min(a, VISIBLE) ** 0.4)  # near edge taller than far
+    height = HALF * scale
+    h_near = height * math.sqrt(skew)
+    h_far = height / math.sqrt(skew)
+    half_w = max(2.0, HALF * scale * fore)
 
-    if BG_IMAGE.exists():
-        pano = Image.open(BG_IMAGE).convert("RGB")
-        r = max(W / pano.width, H / pano.height)
-        pano = pano.resize((int(pano.width * r), int(pano.height * r)), Image.LANCZOS)
-        l = (pano.width - W) // 2
-        t = int((pano.height - H) * 0.42)
-        pano = pano.crop((l, t, l + W, t + H)).filter(ImageFilter.GaussianBlur(3))
-        pano = ImageEnhance.Color(pano).enhance(0.5)
-        bg = Image.blend(bg, pano, 0.13)
+    if a <= 2:
+        alpha = 255 - 32 * (a ** 1.1)
     else:
-        print("[note] art/hero.jpg not found - plain gradient")
-
-    vig = Image.new("L", (W, H), 0)
-    ImageDraw.Draw(vig).ellipse([-W // 3, -H // 2, W + W // 3, H + H // 2], fill=255)
-    vig = vig.filter(ImageFilter.GaussianBlur(220))
-    return Image.composite(bg, ImageEnhance.Brightness(bg).enhance(0.62), vig)
+        alpha = 190 * max(0.0, (VISIBLE - a) / (VISIBLE - 2))
+    return mid_x, h_far, h_near, half_w, max(0.0, alpha)
 
 
-def load_cover(album, size):
-    for ext in ("jpg", "jpeg", "png"):
-        p = COVERS / f"ch{album}.{ext}"
-        if p.exists():
-            im = Image.open(p).convert("RGB")
-            s = min(im.size)
-            im = im.crop(((im.width - s) // 2, (im.height - s) // 2,
-                          (im.width + s) // 2, (im.height + s) // 2))
-            return im.resize((size, size), Image.LANCZOS)
-    return None
+def card_quad(u, mid_x, h_far, h_near, half_w):
+    xl, xr = mid_x - half_w, mid_x + half_w
+    if u < 0:                       # left of centre: the right edge is nearer
+        hl, hr = h_far, h_near
+    elif u > 0:
+        hl, hr = h_near, h_far
+    else:
+        hl = hr = h_far
+    return [(xl, CY - hl), (xr, CY - hr), (xr, CY + hr), (xl, CY + hl)]
 
 
-def render(tracks, cur, bg, fonts, covers):
-    f_tr, f_num, f_en, f_head, f_sub, f_alb, f_albsub, f_lbl = fonts
+def draw_carousel(base, tracks, pos, covers, tints):
+    n = len(tracks)
+    order = []
+    for k in range(int(math.floor(pos - VISIBLE)), int(math.ceil(pos + VISIBLE)) + 1):
+        u = k - pos
+        g = slot_geometry(u)
+        if g:
+            order.append((abs(u), u, tracks[k % n], g))
+    order.sort(key=lambda o: -o[0])          # far cards first, centre last
+
+    for a, u, t, (mid_x, h_far, h_near, half_w, alpha) in order:
+        card = covers[t["n"]]
+        wash = min(1.0, a)
+        if wash > 0.01:
+            card = Image.blend(card, tints[t["n"]], wash)
+
+        quad = card_quad(u, mid_x, h_far, h_near, half_w)
+
+        sil = Image.new("RGBA", card.size, (0, 0, 0, 255))
+        sil.putalpha(card.split()[-1])
+        blur = 26 if a < 0.5 else 14
+        sh, off = warp_region(sil, [(x, y + 16) for x, y in quad], pad=blur * 2)
+        sh = sh.filter(ImageFilter.GaussianBlur(blur))
+        k = (0.60 if a < 0.5 else 0.28) * (alpha / 255)
+        sh.putalpha(sh.split()[-1].point(lambda v: int(v * k)))
+        paste_layer(base, sh, off)
+
+        proj, off = warp_region(card, quad)
+        if alpha < 254:
+            proj.putalpha(proj.split()[-1].point(lambda v: int(v * alpha / 255)))
+        paste_layer(base, proj, off)
+
+
+# ---- the player bar --------------------------------------------------------
+BAR = (320, 932, 1600, 1032)
+
+
+def draw_bar_pill(img):
+    pill = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    x0, y0, x1, y1 = BAR
+    ImageDraw.Draw(pill).rounded_rectangle([x0, y0, x1, y1],
+                                           radius=(y1 - y0) // 2,
+                                           fill=BAR_FILL + (238,))
+    img.alpha_composite(pill)
+
+
+def draw_bar_contents(layer, tracks, t, covers, fonts):
+    f_bar_kr, f_bar_sub = fonts
+    d = ImageDraw.Draw(layer)
+    cy = (BAR[1] + BAR[3]) // 2
+    ic = BRIGHT
+
+    def bar(x, w=4, h=22):
+        d.rectangle([x, cy - h // 2, x + w, cy + h // 2], fill=ic)
+
+    d.polygon([(392, cy), (412, cy - 13), (412, cy + 13)], fill=ic); bar(386)
+    bar(430, 5, 26); bar(444, 5, 26)
+    d.polygon([(508, cy), (488, cy - 13), (488, cy + 13)], fill=ic); bar(510)
+
+    layer.alpha_composite(covers[t["n"]].resize((68, 68), Image.LANCZOS),
+                          (556, cy - 34))
+
+    d.text((648, cy - 14), t["kr"], font=f_bar_kr, fill=BRIGHT, anchor="lm")
+    album_en = ALBUM_NAMES.get(t["album"], ("", ""))[1].upper()
+    sub = f"{album_en}   ·   {t['rr']} : {t['en'].upper()}" if t["rr"] \
+        else f"{album_en}   ·   {t['en'].upper()}"
+    d.text((648, cy + 14), sub, font=f_bar_sub, fill=(150, 150, 155), anchor="lm")
+
+    rnd = random.Random(t["n"] * 977)
+    wx0, wx1 = 1330, 1568
+    bars = (wx1 - wx0) // 3
+    played = int(bars * (t["n"] - 0.5) / len(tracks))
+    for i in range(bars):
+        hgt = int(4 + abs(math.sin(i * 0.7)) * 10 + rnd.random() * 16)
+        x = wx0 + i * 3
+        col = (216, 210, 204) if i <= played else (104, 100, 98)
+        d.rectangle([x, cy - hgt // 2, x + 1, cy + hgt // 2], fill=col)
+
+
+# ---- frame -----------------------------------------------------------------
+def render(tracks, pos, backdrops, fonts, covers, tints, text_mode=None):
+    (f_title, f_big, f_ly_kr, f_ly_rr, f_ly_en, f_sub, f_bar_kr, f_bar_sub) = fonts
+    text_mode = text_mode or TEXT_MODE
+    n = len(tracks)
+
+    i0 = int(math.floor(pos + 1e-9))
+    frac = pos - i0
+    t_out = tracks[i0 % n]
+    t_in = tracks[(i0 + 1) % n]
+    t_now = t_out if frac < 0.5 else t_in
+
+    # the backdrop cross fades when a transition crosses into another trilogy
+    k_out = trilogy_of(t_out["album"])[0]
+    k_in = trilogy_of(t_in["album"])[0]
+    if frac < 1e-6 or k_out == k_in:
+        bg = backdrops[k_out if frac < 0.5 else k_in]
+    else:
+        f = frac * frac * (3 - 2 * frac)
+        bg = Image.blend(backdrops[k_out], backdrops[k_in], f)
+
     img = bg.copy().convert("RGBA")
-    over = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-    od = ImageDraw.Draw(over)
     d = ImageDraw.Draw(img)
 
-    track = next(t for t in tracks if t["n"] == cur)
-    _, tri = trilogy_of(track["album"])
-    accent = tri["accent"]
+    # the header does not change between tracks, so it never fades
+    if COMP_TITLE_KR or COMP_TITLE_EN:
+        d.text((W // 2, 62), COMP_TITLE_KR or COMP_TITLE_EN,
+               font=f_title, fill=BRIGHT, anchor="mm")
+        draw_tracked(d, (W // 2, 114), COMP_TITLE_EN, f_big, BRIGHT, tracking=11)
+        if BRUSH_WIDTH:
+            st = brush_stroke(BRUSH_WIDTH)
+            img.alpha_composite(st, ((W - st.width) // 2, 122))
+        if COMP_TAGLINE:
+            d.text((W // 2, 198), COMP_TAGLINE, font=f_sub,
+                   fill=(178, 194, 210), anchor="mm")
 
-    d.text((W // 2, 58), "조선 이야기", font=f_head, fill=BRIGHT, anchor="mm")
-    d.text((W // 2, 104), "J O S E O N   S T O R I E S   ·   d e m o s a i i",
-           font=f_sub, fill=FAINT, anchor="mm")
-    d.line([(W // 2 - 340, 138), (W // 2 + 340, 138)], fill=RULE, width=1)
+    draw_carousel(img, tracks, pos, covers, tints)
+    draw_bar_pill(img)
 
-    CS, cx, cy = 380, 128, 214
-    cov = covers.get(track["album"])
-    if cov is not None:
-        sh = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-        ImageDraw.Draw(sh).rectangle([cx + 8, cy + 14, cx + CS + 8, cy + CS + 14],
-                                     fill=(0, 0, 0, 150))
-        over.alpha_composite(sh.filter(ImageFilter.GaussianBlur(22)))
-        img.paste(cov, (cx, cy))
-        d.rectangle([cx, cy, cx + CS, cy + CS], outline=(255, 255, 255), width=1)
+    # everything that names the current track sits on its own layer, so it can
+    # drop out and come back while the cards are moving
+    if text_mode == "fade" and frac > 1e-6:
+        a = max(0.0, 1 - 2.5 * min(frac, 1 - frac))
     else:
-        d.rectangle([cx, cy, cx + CS, cy + CS], outline=RULE, width=1)
+        a = 1.0
 
-    ak, ae = ALBUM_NAMES.get(track["album"], ("", ""))
-    ty = cy + CS + 46
-    od.rectangle([cx, ty - 22, cx + 46, ty - 20], fill=accent + (230,))
-    d.text((cx, ty + 14), ak, font=f_alb, fill=BRIGHT, anchor="lm")
-    d.text((cx, ty + 52), ae.upper(), font=f_albsub, fill=DIM, anchor="lm")
-    d.text((cx, ty + 90), f"{tri['kr']}  ·  {tri['en']}", font=f_lbl, fill=accent, anchor="lm")
+    if a > 0.004:
+        layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+        ld = ImageDraw.Draw(layer)
+        tri = trilogy_of(t_now["album"])[1]
+        ld.text((1856, 66), f"{t_now['n']:02d} / {n:02d}",
+                font=f_sub, fill=tri["accent"], anchor="rm")
+        ld.text((1856, 94), tri["en"], font=f_sub, fill=tri["accent"], anchor="rm")
 
-    if MARK.exists():
-        m = Image.open(MARK).convert("RGBA").resize((92, 92), Image.LANCZOS)
-        m.putalpha(m.split()[-1].point(lambda v: int(v * 0.5)))
-        over.alpha_composite(m, (cx, H - 172))
+        kr, rr, en = t_now["lyric"]
+        if kr:
+            ld.text((W // 2, 790), kr, font=f_ly_kr, fill=BRIGHT, anchor="mm")
+        if rr:
+            ld.text((W // 2, 838), f"({rr})", font=f_ly_rr, fill=DIM, anchor="mm")
+        if en:
+            ld.text((W // 2, 882), en, font=f_ly_en,
+                    fill=(232, 238, 246), anchor="mm")
 
-    od.line([(578, 200), (578, H - 116)], fill=RULE + (150,), width=1)
+        draw_bar_contents(layer, tracks, t_now, covers, (f_bar_kr, f_bar_sub))
 
-    n = len(tracks)
-    cols = 2 if n > 15 else 1
-    per_col = (n + 1) // 2 if n > 15 else n
-    top, bottom = 196, H - 108
-    row_h = (bottom - top) // per_col
-    left = 648
-    col_w = (W - left - 90) // cols
+        if a < 0.999:
+            layer.putalpha(layer.split()[-1].point(lambda v: int(v * a)))
+        img.alpha_composite(layer)
 
-    for i, t in enumerate(tracks):
-        c, r = i // per_col, i % per_col
-        x = left + c * col_w
-        y = top + r * row_h + row_h // 2
-        _, ttri = trilogy_of(t["album"])
-        now = (t["n"] == cur)
-
-        if now:
-            od.rectangle([x - 40, y - row_h // 2 + 2, x + col_w - 66, y + row_h // 2 - 2],
-                         fill=(255, 255, 255, 15))
-            od.rectangle([x - 40, y - row_h // 2 + 2, x - 37, y + row_h // 2 - 2],
-                         fill=accent + (240,))
-            c_kr, c_en, c_no = BRIGHT, DIM, accent
-        else:
-            c_kr, c_en = DIM, FAINT
-            c_no = tuple(int(FAINT[k] * 0.6 + ttri["accent"][k] * 0.4) for k in range(3))
-
-        d.text((x, y - 9), f"{t['n']:02d}", font=f_num, fill=c_no, anchor="lm")
-        d.text((x + 52, y - 9), t["kr"], font=f_tr, fill=c_kr, anchor="lm")
-        if t["en"]:
-            d.text((x + 52, y + 16), t["en"], font=f_en, fill=c_en, anchor="lm")
-
-    img = Image.alpha_composite(img, over).convert("RGB")
-    ImageDraw.Draw(img).text((W // 2, H - 46), "joseon-universe.vercel.app",
-                             font=f_sub, fill=FAINT, anchor="mm")
-    return img
+    return img.convert("RGB")
 
 
+# ---- youtube thumbnail -----------------------------------------------------
+def render_thumbnail(seal):
+    """1280x720.  Built to survive being shrunk to a 320px strip: one picture,
+    two words of English at a size you can read from across the room."""
+    TW, TH = 1280, 720
+
+    # a warm-to-cold wash across the frame, the three trilogies in one image
+    small = Image.new("RGB", (TW // 8, TH // 8))
+    px = small.load()
+    keys = ["fire", "sea", "iron"]
+    for x in range(small.width):
+        t = x / (small.width - 1) * (len(keys) - 1)
+        i = min(int(t), len(keys) - 2)
+        f = t - i
+        a_core, a_edge = BG_PALETTE[keys[i]]
+        b_core, b_edge = BG_PALETTE[keys[i + 1]]
+        core = [a_core[c] + (b_core[c] - a_core[c]) * f for c in range(3)]
+        edge = [a_edge[c] + (b_edge[c] - a_edge[c]) * f for c in range(3)]
+        for y in range(small.height):
+            v = abs(y / (small.height - 1) - 0.42) * 1.9
+            px[x, y] = tuple(int(core[c] + (edge[c] - core[c]) * min(1, v ** 1.2))
+                             for c in range(3))
+    img = small.resize((TW, TH), Image.BICUBIC) \
+               .filter(ImageFilter.GaussianBlur(18)).convert("RGBA")
+
+    # the picture on the right, dissolving into the background on its left edge
+    src = THUMB_IMAGE
+    if not src.exists():
+        for e in ("jpg", "jpeg", "png"):
+            if (COVERS / f"ch1.{e}").exists():
+                src = COVERS / f"ch1.{e}"
+                break
+    if src.exists():
+        pic = Image.open(src).convert("RGB")
+        sq = min(pic.size)
+        pic = pic.crop(((pic.width - sq) // 2, (pic.height - sq) // 2,
+                        (pic.width + sq) // 2, (pic.height + sq) // 2))
+        pic = pic.resize((TH + 60, TH + 60), Image.LANCZOS).convert("RGBA")
+        fade = Image.new("L", pic.size, 255)
+        fd = ImageDraw.Draw(fade)
+        for i in range(300):
+            fd.line([(i, 0), (i, pic.height)], fill=int(255 * (i / 300) ** 0.8))
+        pic.putalpha(fade)
+        img.alpha_composite(pic, (TW - pic.width + 90, -30))
+    else:
+        print("[note] no art/thumb.jpg and no covers/ch1 - picture panel skipped")
+
+    d = ImageDraw.Draw(img)
+    f_kr = load_font(50, "bold")
+    f_en = load_font(96, "bold")
+    f_sm = load_font(25, "bold")
+
+    d.text((66, 236), COMP_TITLE_KR, font=f_kr, fill=BRIGHT, anchor="lm")
+
+    # two lines, not one word per line - "OF" alone on a row wastes the space
+    words = COMP_TITLE_EN.split()
+    rows = [" ".join(words[:-1]), words[-1]] if len(words) > 1 else words
+    rows = [r for r in rows if r]
+    y = 322
+    for r in rows:
+        while f_en.size > 40 and d.textlength(r, font=f_en) > 560:
+            f_en = load_font(f_en.size - 4, "bold")
+        d.text((60, y), r, font=f_en, fill=BRIGHT, anchor="lm")
+        y += int(f_en.size * 0.98)
+
+    if BRUSH_WIDTH:
+        st = brush_stroke(470, thickness=9)
+        img.alpha_composite(st, (58, y - 46))
+    if THUMB_LINE:
+        d.text((66, y + 22), THUMB_LINE, font=f_sm,
+               fill=(206, 218, 230), anchor="lm")
+
+    if seal is not None:
+        sz = 104
+        img.alpha_composite(seal.resize((sz, sz), Image.LANCZOS), (62, 66))
+    return img.convert("RGB")
+
+
+# ---- main ------------------------------------------------------------------
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--frames-only", action="store_true")
     ap.add_argument("--preview", type=int)
     ap.add_argument("--check", action="store_true")
-    ap.add_argument("--audio", default="playlist.mp3")
-    ap.add_argument("--out", default="playlist_video.mp4")
-    ap.add_argument("--tracks", default="tracks",
-                    help="folder of individual audio files; if present, "
-                         "durations are read from them and the times in "
-                         "tracklist.txt are ignored")
+    ap.add_argument("--thumb", action="store_true",
+                    help="render thumbnail.png (1280x720) and nothing else")
+    ap.add_argument("--transitions", action="store_true")
+    ap.add_argument("--fps", type=int, default=FPS)
+    ap.add_argument("--dur", type=float, default=TRANSITION_SECONDS)
+    ap.add_argument("--text", choices=["fade", "cut"], default=TEXT_MODE)
+    ap.add_argument("--ease", choices=["ease", "smooth", "linear"], default=EASING)
     args = ap.parse_args()
 
-    tracks = read_tracklist()
-
-    auto = fill_times_from_audio(tracks, BASE / args.tracks)
-    if auto:
-        print(f"\n[auto] times read from {args.tracks}/ — tracklist.txt times ignored")
-
-    total = tracks[-1]["end"]
-    print(f"\n{len(tracks)} tracks  ·  {total//3600}:{(total%3600)//60:02d}:{total%60:02d}\n")
+    tracks = read_lyrics(read_tracklist())
+    print(f"\n{len(tracks)} tracks\n")
     for t in tracks:
-        dur = t["end"] - t["start"]
-        print(f"  {t['n']:02d}  album {t['album']}  {t['start']//60:>3}:{t['start']%60:02d}"
-              f"  ({dur//60}:{dur%60:02d})  {t['kr']}")
+        print(f"  {t['n']:02d}  album {t['album']}  "
+              f"{trilogy_of(t['album'])[0]:<4}  {t['kr']}")
     if args.check:
         return
 
+    seal = None
+    if MARK.exists():
+        seal = Image.open(MARK).convert("RGBA")
+        seal.putalpha(seal.split()[-1].point(lambda v: int(v * 0.92)))
+    else:
+        print("[note] art/mark.png not found - cards will carry no seal")
+
+    if not args.thumb:
+        used = sorted({trilogy_of(t["album"])[0] for t in tracks})
+        print(f"\nbuilding {len(used)} backdrop(s): {', '.join(used)}...")
+        backdrops = {k: make_background(k) for k in used}
+
+    if args.thumb:
+        out = BASE / "thumbnail.png"
+        render_thumbnail(seal).save(out)
+        print(f"\n{out}")
+        return
+
+    seen, covers = {}, {}
+    for t in tracks:
+        v = seen.get(t["album"], 0)
+        seen[t["album"]] = v + 1
+        covers[t["n"]] = load_cover(t, CENTER_SIZE, seal, v)
+    if max(seen.values()) > 1:
+        print("[note] albums reused across tracks - repeats get a different crop")
+    tints = {t["n"]: make_tinted(covers[t["n"]], SIDE_TINTS[t["n"] % len(SIDE_TINTS)])
+             for t in tracks}
+
+    fonts = (load_font(38, "bold"), load_font(34, "bold"),
+             load_font(38), load_font(27, "italic"), load_font(29),
+             load_font(16), load_font(25, "bold"), load_font(15))
+
     FRAMES.mkdir(exist_ok=True)
-    bg = make_background()
-    covers = {a: load_cover(a, 380) for a in sorted({t["album"] for t in tracks})}
-    missing = [a for a, c in covers.items() if c is None]
-    if missing:
-        print(f"\n[note] no cover found for album(s): {missing}")
-
-    fonts = (load_font(25), load_font(17), load_font(14), load_font(42, bold=True),
-             load_font(15), load_font(31, bold=True), load_font(15), load_font(14))
-
-    todo = [t for t in tracks if (args.preview is None or t["n"] == args.preview)]
     print()
-    for t in todo:
-        render(tracks, t["n"], bg, fonts, covers).save(FRAMES / f"track_{t['n']:02d}.png")
+    for t in tracks:
+        if args.preview and t["n"] != args.preview:
+            continue
+        render(tracks, t["n"] - 1, backdrops, fonts, covers, tints,
+               args.text).save(FRAMES / f"track_{t['n']:02d}.png")
         print(f"  rendered track_{t['n']:02d}.png")
 
     if args.preview:
         print(f"\nopen {FRAMES}")
         return
-    if args.frames_only:
-        print(f"\n{len(todo)} frame(s) in {FRAMES}")
+
+    if not args.transitions:
+        print(f"\n{len(tracks)} stills in {FRAMES}")
+        print("run again with --transitions for the rotations between them")
         return
 
-    if not shutil.which("ffmpeg"):
-        print("\nffmpeg not on PATH - frames are ready, assemble them yourself.")
-        return
-    audio = BASE / args.audio
-    if not audio.exists() and auto:
-        print(f"\n{args.audio} not found — joining the files in {args.tracks}/ instead")
-        alist = BASE / "_audio.txt"
-        folder = BASE / args.tracks
-        exts = (".mp3", ".wav", ".m4a", ".flac", ".aac", ".ogg")
-        files = sorted([f for f in folder.iterdir() if f.suffix.lower() in exts])
-        alist.write_text("\n".join(f"file '{f.as_posix()}'" for f in files), encoding="utf-8")
-        subprocess.run(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(alist),
-                        "-c:a", "libmp3lame", "-b:a", "256k", str(audio)], check=False)
-        alist.unlink(missing_ok=True)
-    if not audio.exists():
-        print(f"\naudio not found: {audio}\nframes are ready.")
-        return
+    steps = max(2, int(round(args.dur * args.fps)))
+    TRANS.mkdir(exist_ok=True)
+    have_ffmpeg = bool(shutil.which("ffmpeg"))
+    print(f"\n{len(tracks)} transitions x {steps - 1} frames "
+          f"({args.dur}s at {args.fps}fps)\n")
 
-    concat = BASE / "_concat.txt"
-    lines = []
-    for t in tracks:
-        lines.append(f"file '{(FRAMES / ('track_%02d.png' % t['n'])).as_posix()}'")
-        lines.append(f"duration {t['end'] - t['start']}")
-    lines.append(f"file '{(FRAMES / ('track_%02d.png' % tracks[-1]['n'])).as_posix()}'")
-    concat.write_text("\n".join(lines), encoding="utf-8")
+    for i in range(len(tracks)):
+        a = tracks[i]["n"]
+        b = tracks[(i + 1) % len(tracks)]["n"]
+        out = TRANS / f"{a:02d}_to_{b:02d}"
+        out.mkdir(exist_ok=True)
+        for j in range(1, steps):
+            pos = i + ease(j / steps, args.ease)
+            render(tracks, pos, backdrops, fonts, covers, tints,
+                   args.text).save(out / f"f{j:04d}.png")
+        print(f"  {out.name}  ({steps - 1} frames)", end="")
+        if have_ffmpeg:
+            subprocess.run(
+                ["ffmpeg", "-y", "-loglevel", "error", "-framerate", str(args.fps),
+                 "-start_number", "1", "-i", str(out / "f%04d.png"),
+                 "-c:v", "libx264", "-crf", "16", "-preset", "medium",
+                 "-pix_fmt", "yuv420p", str(TRANS / f"{a:02d}_to_{b:02d}.mp4")],
+                check=False)
+            print("  -> mp4", end="")
+        print()
 
-    out = BASE / args.out
-    print(f"\nassembling {out.name} - this takes a while\n")
-    subprocess.run(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(concat),
-                    "-i", str(audio), "-c:v", "libx264", "-preset", "medium", "-crf", "20",
-                    "-pix_fmt", "yuv420p", "-r", "2", "-c:a", "aac", "-b:a", "256k",
-                    "-shortest", str(out)], check=False)
-    concat.unlink(missing_ok=True)
-    print(f"\ndone -> {out}")
+    print(f"\nstills in {FRAMES}\ntransitions in {TRANS}")
+    if not have_ffmpeg:
+        print("ffmpeg not on PATH - the mp4s were skipped, "
+              "import the numbered folders as image sequences instead")
 
 
 if __name__ == "__main__":
