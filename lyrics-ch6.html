@@ -122,6 +122,35 @@
   }
   @media (max-width:620px){ .markmoon{ width:180px; height:180px; top:186px; opacity:.24; } }
 
+
+  /* ---------- move between lyric pages ---------- */
+  .lyrnav{
+    max-width:680px; margin:70px auto 0; padding:26px 24px 0;
+    border-top:1px solid rgba(143,158,186,.14);
+    display:flex; gap:14px; align-items:stretch;
+  }
+  .lyrnav a{
+    flex:1; display:block; padding:16px 18px; text-decoration:none;
+    border:1px solid rgba(143,158,186,.14);
+    background:rgba(214,224,240,.03);
+    transition:border-color .2s, background .2s;
+  }
+  .lyrnav a:hover{ border-color:rgba(143,158,186,.34); background:rgba(214,224,240,.06); }
+  .lyrnav .lbl{
+    display:block; font-family:"Gowun Dodum", sans-serif; font-size:10.5px;
+    letter-spacing:.22em; color:#66748c; margin:0 0 7px;
+  }
+  .lyrnav .ttl{
+    display:block; font-family:"Nanum Myeongjo", serif; font-size:17px; color:#dbe3ef;
+  }
+  .lyrnav .prev{ text-align:left; }
+  .lyrnav .next{ text-align:right; }
+  .lyrnav .spacer{ flex:1; }
+  @media (max-width:620px){
+    .lyrnav{ flex-direction:column; margin-top:52px; }
+    .lyrnav .next{ text-align:left; }
+  }
+
 </style>
 </head>
 <body>
@@ -132,6 +161,11 @@
 <div class="topbar">
   <a href="tistory_ch6_island_and_stars.html">← 이야기로 · Back to the story</a>
   <a href="index.html">목차 · Contents</a>
+  <a href="story.html">줄거리 · Story</a>
+  <a href="characters.html">인물 · Characters</a>
+  <a class="tosearch" href="search.html">가사 검색 · Search</a>
+  <a class="totimeline" href="timeline.html">연표 · Timeline</a>
+  <a class="toledger" href="ledger.html">그 종이 · The ledger</a>
 </div>
 
 <header class="hero">
@@ -310,6 +344,17 @@
       </div>
     </section>
 </article>
+
+<nav class="lyrnav">
+  <a class="prev" href="lyrics-ch5.html">
+    <span class="lbl">이전 앨범</span>
+    <span class="ttl">바다와 뼈</span>
+  </a>
+  <a class="next" href="lyrics-ch7.html">
+    <span class="lbl">다음 앨범</span>
+    <span class="ttl">눈과 쇠</span>
+  </a>
+</nav>
 
 <footer class="foot">
   <p>전곡 한국어 가사 · Korean lyrics with English translation</p>
