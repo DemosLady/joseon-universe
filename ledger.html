@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>장부 | 조선 이야기</title>
+<meta name="description" content="종이 한 벌이 육백 년 동안 아홉 개의 손을 거친다. 그 경로입니다.">
+<link rel="canonical" href="https://joseon-universe.vercel.app/ledger.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="장부 | 조선 이야기">
+<meta property="og:description" content="종이 한 벌이 육백 년 동안 아홉 개의 손을 거친다. 그 경로입니다.">
+<meta property="og:site_name" content="조선 이야기 · demosaii">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:url" content="https://joseon-universe.vercel.app/ledger.html">
+<meta property="og:image" content="https://joseon-universe.vercel.app/covers/ch5.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
+
+<style>
+  *{ box-sizing:border-box; }
+  :root{
+    --ink:#0d1220; --ink-deep:#070b14; --moon:#c9d2e2;
+    --dim:#8492ab; --faint:#66748c; --rule:rgba(143,158,186,.14);
+    --fire:#a8695c; --sea:#6fa3ad; --iron:#7f8fa6;
+  }
+  body{
+    margin:0; background:var(--ink);
+    background-image:radial-gradient(120% 80% at 50% -10%, #1b2436 0%, var(--ink) 55%, var(--ink-deep) 100%);
+    color:var(--moon); font-family:"Nanum Myeongjo", serif;
+    -webkit-font-smoothing:antialiased; position:relative;
+  }
+  .panorama{
+    position:fixed; inset:0; z-index:0; pointer-events:none;
+    background-image:url("art/hero.jpg");
+    background-size:cover; background-position:center 42%; background-repeat:no-repeat;
+    opacity:.09; filter:grayscale(.35) contrast(.9); mix-blend-mode:screen;
+  }
+  body > *:not(.panorama):not(.markmoon){ position:relative; z-index:1; }
+  body > .topbar{ z-index:60; }
+  .markmoon{
+    position:absolute; top:190px; left:50%;
+    width:220px; height:220px; transform:translate(-50%,-50%);
+    border-radius:50%; background-image:url("art/mark.png");
+    background-size:cover; background-position:center;
+    opacity:.26; mix-blend-mode:screen; pointer-events:none; z-index:0;
+  }
+  @media (max-width:620px){ .markmoon{ width:150px; height:150px; top:160px; opacity:.2; } }
+
+  .topbar{
+    position:sticky; top:0; display:flex; gap:20px; align-items:center;
+    padding:14px 22px; font-family:"Gowun Dodum", sans-serif; font-size:12.5px;
+    background:rgba(9,13,22,.86); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--rule); flex-wrap:wrap;
+  }
+  .topbar a{ color:var(--dim); text-decoration:none; letter-spacing:.08em; }
+  .topbar a:hover{ color:#fff; }
+  .topbar .home{ color:#b6c2d6; }
+  .topbar .sp{ flex:1; }
+
+  header.hero{ text-align:center; padding:62px 24px 20px; }
+  header.hero h1{ font-size:33px; font-weight:400; letter-spacing:.05em; margin:0 0 10px; color:#eef2f8; }
+  header.hero .sub{ font-family:"Gowun Dodum", sans-serif; font-size:11.5px;
+    letter-spacing:.24em; color:var(--faint); margin:0 0 26px; }
+  header.hero .lede{ max-width:540px; margin:0 auto; font-size:16px; line-height:2.05;
+    color:var(--dim); word-break:keep-all; }
+
+  ol.hands{
+    list-style:none; max-width:620px; margin:56px auto 0;
+    padding:0 24px 20px; position:relative;
+  }
+  ol.hands::before{
+    content:""; position:absolute; left:calc(24px + 17px); top:14px; bottom:34px;
+    width:1px; background:linear-gradient(180deg,
+      var(--sea) 0%, var(--sea) 40%, var(--iron) 52%, var(--iron) 100%);
+    opacity:.42;
+  }
+
+  li.hand{ position:relative; padding-left:62px; margin:0 0 34px; }
+  li.hand .n{
+    position:absolute; left:0; top:0;
+    width:35px; height:35px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-family:"Gowun Dodum", sans-serif; font-size:11px; letter-spacing:.02em;
+    color:var(--faint); background:var(--ink);
+    border:1px solid var(--rule);
+  }
+  li.hand.sea  .n{ border-color:rgba(111,163,173,.5); color:var(--sea); }
+  li.hand.iron .n{ border-color:rgba(127,143,166,.5); color:var(--iron); }
+
+  li.hand .who{
+    margin:4px 0 10px; font-size:19px; color:#e6ecf6;
+    display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;
+  }
+  li.hand .dur{
+    font-family:"Gowun Dodum", sans-serif; font-size:11px;
+    letter-spacing:.16em; color:var(--faint);
+  }
+  li.hand .body{ margin:0 0 9px; font-size:15px; line-height:2.0;
+    color:var(--dim); word-break:keep-all; }
+  li.hand .ch{ margin:0; font-family:"Gowun Dodum", sans-serif;
+    font-size:10.5px; letter-spacing:.18em; }
+  li.hand .ch a{ color:var(--faint); text-decoration:none;
+    border-bottom:1px solid transparent; }
+  li.hand .ch a:hover{ color:#cfd6e4; border-bottom-color:rgba(143,158,186,.3); }
+
+  .seal{
+    max-width:620px; margin:20px auto 0; padding:34px 24px 0;
+    border-top:1px solid var(--rule);
+    text-align:center; font-size:16px; line-height:2.2; color:#b6c2d6;
+  }
+
+  footer{
+    max-width:620px; margin:0 auto; padding:34px 24px 70px;
+    text-align:center;
+    font-family:"Gowun Dodum", sans-serif; font-size:12px; color:var(--faint); line-height:2;
+  }
+  footer a{ color:var(--dim); text-decoration:none; }
+  footer a:hover{ color:#fff; }
+
+  @media (max-width:620px){
+    header.hero h1{ font-size:27px; }
+    ol.hands{ padding:0 20px 20px; }
+    ol.hands::before{ left:calc(20px + 17px); }
+    li.hand .who{ font-size:18px; }
+    li.hand .body{ font-size:14.5px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="panorama" aria-hidden="true"></div>
+<div class="markmoon" aria-hidden="true"></div>
+
+<nav class="topbar">
+  <a class="home" href="index.html">조선 이야기</a>
+  <a href="story.html">줄거리</a>
+  <a href="characters.html">인물</a>
+  <a href="timeline.html">연표</a>
+  <a href="search.html">가사 검색</a>
+  <span class="sp"></span>
+  <a href="en/ledger.html">EN</a>
+</nav>
+
+<header class="hero">
+  <h1>그 종이</h1>
+  <p class="sub">아홉 개의 손 · 육백 년</p>
+  <p class="lede">이 이야기에서 아무도 이것을 지키려고 나서지 않습니다. 저마다 잠시 들고 있다가 넘길 뿐이고, 가장 오래 안전했던 때는 소금에 묻혀 아무도 그 자리를 기억하지 못하던 때였습니다.</p>
+</header>
+
+<ol class="hands">
+  <li class="hand sea">
+    <span class="n">01</span>
+    <div class="card">
+      <p class="who">어느 서기의 손<span class="dur">한 해</span></p>
+      <p class="body">누군가 이 장부를 썼다. 거짓 증언을 산 자들의 이름과, 그들이 치른 값과, 관의 도장. 그 손이 누구의 손이었는지는 이야기 안에서 끝내 밝혀지지 않는다.</p>
+      <p class="ch"><a href="tistory_ch4_salt_and_waves.html">제4장</a></p>
+    </div>
+  </li>
+  <li class="hand sea">
+    <span class="n">02</span>
+    <div class="card">
+      <p class="who">바다<span class="dur">십 년</span></p>
+      <p class="body">배가 북쪽 여울에 가라앉는다. 장부는 갈라진 뱃전 안에서 소금물에 잠긴 채 십 년을 있는다. 소금이 종이의 절반을 먹고, 절반을 지켜낸다.</p>
+      <p class="ch"><a href="tistory_ch5_sea_and_bones.html">제5장</a></p>
+    </div>
+  </li>
+  <li class="hand sea">
+    <span class="n">03</span>
+    <div class="card">
+      <p class="who">옥이<span class="dur">반나절</span></p>
+      <p class="body">해녀가 빗창을 두고 내려간다. 오늘은 캐러 가는 것이 아니라 받으러 가는 것이니까. 그녀는 그것을 배 위로 올리고, 뭍으로는 가지 않는다.</p>
+      <p class="ch"><a href="tistory_ch5_sea_and_bones.html">제5장</a></p>
+    </div>
+  </li>
+  <li class="hand sea">
+    <span class="n">04</span>
+    <div class="card">
+      <p class="who">수겸<span class="dur">두 달</span></p>
+      <p class="body">글을 아는 사람이 필요했다. 유배 온 선비가 젖은 종이를 펴고 사흘을 읽는다. 그리고 자기가 왜 이 섬에 왔는지 알게 된다.</p>
+      <p class="ch"><a href="tistory_ch5_sea_and_bones.html">제5장</a></p>
+    </div>
+  </li>
+  <li class="hand iron">
+    <span class="n">05</span>
+    <div class="card">
+      <p class="who">배쇠<span class="dur">한 해 남짓</span></p>
+      <p class="body">밀수꾼이 그것을 품에 넣고 북으로 걷는다. 전장에서도 품에 있었다. 왕 앞에서도 품에 있었다. 두 걸음만 가면 되는데 — 손을 뺐고, 빈 손이었다.</p>
+      <p class="ch"><a href="chapter8.html">제8장</a></p>
+    </div>
+  </li>
+  <li class="hand iron">
+    <span class="n">06</span>
+    <div class="card">
+      <p class="who">분이<span class="dur">하루</span></p>
+      <p class="body">그가 그것을 그녀에게 준다. 언제까지 지키겠느냐 묻자, 물을 사람이 생길 때까지, 한다. 그리고 그녀는 하루 만에 그것을 넘긴다.</p>
+      <p class="ch"><a href="chapter8.html">제8장</a></p>
+    </div>
+  </li>
+  <li class="hand iron">
+    <span class="n">07</span>
+    <div class="card">
+      <p class="who">병졸<span class="dur">육십 년</span></p>
+      <p class="body">스무 살이라서. 오래 살 것 같아서. 무엇이냐 묻지 말라 하였다. 그는 글을 몰라 읽지 못했고 — 못 읽어서 지켰다.</p>
+      <p class="ch"><a href="chapter9.html">제9장</a></p>
+    </div>
+  </li>
+  <li class="hand iron">
+    <span class="n">08</span>
+    <div class="card">
+      <p class="who">소금 항아리<span class="dur">오백 년</span></p>
+      <p class="body">어머니의 부엌. 소금을 반쯤 덜어내고, 기름천을 밑에 놓고, 그 위에 소금을 다시 덮었다. 집이 사라지고 부엌이 사라지고 밭도 사라진 뒤에도, 항아리는 그 자리에 있었다.</p>
+      <p class="ch"><a href="chapter9.html">제9장</a></p>
+    </div>
+  </li>
+  <li class="hand iron">
+    <span class="n">09</span>
+    <div class="card">
+      <p class="who">장갑 낀 손<span class="dur">오늘</span></p>
+      <p class="body">누군가 그 부엌 자리를 판다. 손이 종이 위에서 멈춘다 — 오백 년 전에도 손이 멈춘 자리다. 그때는 빈 손으로 나왔고, 그것이 옳았다. 오늘은 다르다.</p>
+      <p class="ch"><a href="chapter9.html">제9장</a></p>
+    </div>
+  </li>
+</ol>
+
+<p class="seal">불은 태우고 · 소금은 지키고 · 쇠는 기억하고 · 사람은 적는다</p>
+
+<footer>
+  <a href="index.html">조선 이야기</a> · demosaii<br>
+  <a href="https://soundcloud.com/demosaii" target="_blank" rel="noopener">전곡 듣기</a>
+</footer>
+
+</body>
+</html>

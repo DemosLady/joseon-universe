@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The ledger | Joseon Stories</title>
+<meta name="description" content="One bundle of paper passes through nine pairs of hands across six hundred years. This is its route.">
+<link rel="canonical" href="https://joseon-universe.vercel.app/en/ledger.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The ledger | Joseon Stories">
+<meta property="og:description" content="One bundle of paper passes through nine pairs of hands across six hundred years. This is its route.">
+<meta property="og:site_name" content="조선 이야기 · demosaii">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://joseon-universe.vercel.app/en/ledger.html">
+<meta property="og:image" content="https://joseon-universe.vercel.app/covers/ch5.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
+
+<style>
+  *{ box-sizing:border-box; }
+  :root{
+    --ink:#0d1220; --ink-deep:#070b14; --moon:#c9d2e2;
+    --dim:#8492ab; --faint:#66748c; --rule:rgba(143,158,186,.14);
+    --fire:#a8695c; --sea:#6fa3ad; --iron:#7f8fa6;
+  }
+  body{
+    margin:0; background:var(--ink);
+    background-image:radial-gradient(120% 80% at 50% -10%, #1b2436 0%, var(--ink) 55%, var(--ink-deep) 100%);
+    color:var(--moon); font-family:"Nanum Myeongjo", serif;
+    -webkit-font-smoothing:antialiased; position:relative;
+  }
+  .panorama{
+    position:fixed; inset:0; z-index:0; pointer-events:none;
+    background-image:url("../art/hero.jpg");
+    background-size:cover; background-position:center 42%; background-repeat:no-repeat;
+    opacity:.09; filter:grayscale(.35) contrast(.9); mix-blend-mode:screen;
+  }
+  body > *:not(.panorama):not(.markmoon){ position:relative; z-index:1; }
+  body > .topbar{ z-index:60; }
+  .markmoon{
+    position:absolute; top:190px; left:50%;
+    width:220px; height:220px; transform:translate(-50%,-50%);
+    border-radius:50%; background-image:url("../art/mark.png");
+    background-size:cover; background-position:center;
+    opacity:.26; mix-blend-mode:screen; pointer-events:none; z-index:0;
+  }
+  @media (max-width:620px){ .markmoon{ width:150px; height:150px; top:160px; opacity:.2; } }
+
+  .topbar{
+    position:sticky; top:0; display:flex; gap:20px; align-items:center;
+    padding:14px 22px; font-family:"Gowun Dodum", sans-serif; font-size:12.5px;
+    background:rgba(9,13,22,.86); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--rule); flex-wrap:wrap;
+  }
+  .topbar a{ color:var(--dim); text-decoration:none; letter-spacing:.08em; }
+  .topbar a:hover{ color:#fff; }
+  .topbar .home{ color:#b6c2d6; }
+  .topbar .sp{ flex:1; }
+
+  header.hero{ text-align:center; padding:62px 24px 20px; }
+  header.hero h1{ font-size:33px; font-weight:400; letter-spacing:.05em; margin:0 0 10px; color:#eef2f8; }
+  header.hero .sub{ font-family:"Gowun Dodum", sans-serif; font-size:11.5px;
+    letter-spacing:.24em; color:var(--faint); margin:0 0 26px; }
+  header.hero .lede{ max-width:540px; margin:0 auto; font-size:16px; line-height:2.05;
+    color:var(--dim); word-break:keep-all; }
+
+  ol.hands{
+    list-style:none; max-width:620px; margin:56px auto 0;
+    padding:0 24px 20px; position:relative;
+  }
+  ol.hands::before{
+    content:""; position:absolute; left:calc(24px + 17px); top:14px; bottom:34px;
+    width:1px; background:linear-gradient(180deg,
+      var(--sea) 0%, var(--sea) 40%, var(--iron) 52%, var(--iron) 100%);
+    opacity:.42;
+  }
+
+  li.hand{ position:relative; padding-left:62px; margin:0 0 34px; }
+  li.hand .n{
+    position:absolute; left:0; top:0;
+    width:35px; height:35px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-family:"Gowun Dodum", sans-serif; font-size:11px; letter-spacing:.02em;
+    color:var(--faint); background:var(--ink);
+    border:1px solid var(--rule);
+  }
+  li.hand.sea  .n{ border-color:rgba(111,163,173,.5); color:var(--sea); }
+  li.hand.iron .n{ border-color:rgba(127,143,166,.5); color:var(--iron); }
+
+  li.hand .who{
+    margin:4px 0 10px; font-size:19px; color:#e6ecf6;
+    display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;
+  }
+  li.hand .dur{
+    font-family:"Gowun Dodum", sans-serif; font-size:11px;
+    letter-spacing:.16em; color:var(--faint);
+  }
+  li.hand .body{ margin:0 0 9px; font-size:15px; line-height:2.0;
+    color:var(--dim); word-break:keep-all; }
+  li.hand .ch{ margin:0; font-family:"Gowun Dodum", sans-serif;
+    font-size:10.5px; letter-spacing:.18em; }
+  li.hand .ch a{ color:var(--faint); text-decoration:none;
+    border-bottom:1px solid transparent; }
+  li.hand .ch a:hover{ color:#cfd6e4; border-bottom-color:rgba(143,158,186,.3); }
+
+  .seal{
+    max-width:620px; margin:20px auto 0; padding:34px 24px 0;
+    border-top:1px solid var(--rule);
+    text-align:center; font-size:16px; line-height:2.2; color:#b6c2d6;
+  }
+
+  footer{
+    max-width:620px; margin:0 auto; padding:34px 24px 70px;
+    text-align:center;
+    font-family:"Gowun Dodum", sans-serif; font-size:12px; color:var(--faint); line-height:2;
+  }
+  footer a{ color:var(--dim); text-decoration:none; }
+  footer a:hover{ color:#fff; }
+
+  @media (max-width:620px){
+    header.hero h1{ font-size:27px; }
+    ol.hands{ padding:0 20px 20px; }
+    ol.hands::before{ left:calc(20px + 17px); }
+    li.hand .who{ font-size:18px; }
+    li.hand .body{ font-size:14.5px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="panorama" aria-hidden="true"></div>
+<div class="markmoon" aria-hidden="true"></div>
+
+<nav class="topbar">
+  <a class="home" href="index.html">Joseon Stories</a>
+  <a href="story.html">Story</a>
+  <a href="characters.html">Characters</a>
+  <a href="timeline.html">Timeline</a>
+  <a href="search.html">Search</a>
+  <span class="sp"></span>
+  <a href="../ledger.html">한국어</a>
+</nav>
+
+<header class="hero">
+  <h1>The ledger</h1>
+  <p class="sub">NINE HANDS · SIX HUNDRED YEARS</p>
+  <p class="lede">Nobody in this story sets out to save it. Each person holds it for a while and hands it on, and the longest it is ever safe is when it is buried in salt and nobody remembers where.</p>
+</header>
+
+<ol class="hands">
+  <li class="hand sea">
+    <span class="n">01</span>
+    <div class="card">
+      <p class="who">A clerk's hand<span class="dur">one year</span></p>
+      <p class="body">Somebody wrote this ledger. The names of the men who bought false testimony, what they paid, and the state's seal on it. Whose hand that was is never revealed in the story.</p>
+      <p class="ch"><a href="ch4.html">CH. 4</a></p>
+    </div>
+  </li>
+  <li class="hand sea">
+    <span class="n">02</span>
+    <div class="card">
+      <p class="who">The sea<span class="dur">ten years</span></p>
+      <p class="body">The ship goes down on the northern shoal. The ledger sits inside the broken hull in salt water for ten years. The salt eats half the paper and preserves the other half.</p>
+      <p class="ch"><a href="ch5.html">CH. 5</a></p>
+    </div>
+  </li>
+  <li class="hand sea">
+    <span class="n">03</span>
+    <div class="card">
+      <p class="who">Ok-i<span class="dur">half a day</span></p>
+      <p class="body">The diver goes down without her abalone knife — today she is not going to take, but to receive. She brings it up onto the boat, and does not go ashore with it.</p>
+      <p class="ch"><a href="ch5.html">CH. 5</a></p>
+    </div>
+  </li>
+  <li class="hand sea">
+    <span class="n">04</span>
+    <div class="card">
+      <p class="who">Su-gyeom<span class="dur">two months</span></p>
+      <p class="body">They needed someone who could read. The exiled scholar spreads the soaked paper out and reads for three days. And he learns why he was sent to this island.</p>
+      <p class="ch"><a href="ch5.html">CH. 5</a></p>
+    </div>
+  </li>
+  <li class="hand iron">
+    <span class="n">05</span>
+    <div class="card">
+      <p class="who">Bae-swe<span class="dur">a little over a year</span></p>
+      <p class="body">The smuggler carries it north inside his coat. It is in his coat on the battlefield. It is in his coat in front of the king. Two steps would have been enough — and he took his hand out empty.</p>
+      <p class="ch"><a href="chapter8.html">CH. 8</a></p>
+    </div>
+  </li>
+  <li class="hand iron">
+    <span class="n">06</span>
+    <div class="card">
+      <p class="who">Bun-i<span class="dur">one day</span></p>
+      <p class="body">He gives it to her. Asked how long she will keep it, she says: until there is someone left to ask. And she passes it on within a day.</p>
+      <p class="ch"><a href="chapter8.html">CH. 8</a></p>
+    </div>
+  </li>
+  <li class="hand iron">
+    <span class="n">07</span>
+    <div class="card">
+      <p class="who">The soldier<span class="dur">sixty years</span></p>
+      <p class="body">Because he is twenty. Because it looks like he will live a long time. Do not ask what it is, she says. He could not read it — and because he could not read it, he kept it.</p>
+      <p class="ch"><a href="chapter9.html">CH. 9</a></p>
+    </div>
+  </li>
+  <li class="hand iron">
+    <span class="n">08</span>
+    <div class="card">
+      <p class="who">The salt jar<span class="dur">five hundred years</span></p>
+      <p class="body">His mother's kitchen. He takes out half the salt, lays the oiled cloth underneath, and covers it with salt again. Long after the house is gone, and the kitchen, and the field — the jar is still there.</p>
+      <p class="ch"><a href="chapter9.html">CH. 9</a></p>
+    </div>
+  </li>
+  <li class="hand iron">
+    <span class="n">09</span>
+    <div class="card">
+      <p class="who">A gloved hand<span class="dur">today</span></p>
+      <p class="body">Someone digs where that kitchen stood. A hand stops above the paper — five hundred years ago a hand stopped here too. That time it came out empty, and that was right. Today is different.</p>
+      <p class="ch"><a href="chapter9.html">CH. 9</a></p>
+    </div>
+  </li>
+</ol>
+
+<p class="seal">Fire burns · Salt preserves · Iron remembers · And a person writes</p>
+
+<footer>
+  <a href="index.html">Joseon Stories</a> · demosaii<br>
+  <a href="https://soundcloud.com/demosaii" target="_blank" rel="noopener">Listen to everything</a>
+</footer>
+
+</body>
+</html>
