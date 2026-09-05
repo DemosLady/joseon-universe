@@ -68,7 +68,7 @@
     background-size:cover; background-position:center 42%; background-repeat:no-repeat;
     opacity:.09; filter:grayscale(.35) contrast(.9); mix-blend-mode:screen;
   }
-  body > *:not(.panorama):not(.markmoon){ position:relative; z-index:1; }
+  body > *:not(.panorama):not(.markmoon):not(.topbar){ position:relative; z-index:1; }
   body > 
   .markmoon{
     position:absolute; top:250px; left:50%;
@@ -79,11 +79,7 @@
   }
   @media (max-width:620px){ .markmoon{ width:140px; height:140px; top:210px; opacity:.15; } }
 
-  
-  .topbar .home{ color:#b6c2d6; }
-  .topbar .sp{ display:none; }
-
-  header.hero{ text-align:center; padding:54px 24px 20px; }
+  header.hero{ text-align:center; padding:46px 24px 20px; }
   header.hero h1{ font-size:33px; font-weight:400; letter-spacing:.05em; margin:0 0 10px; color:#eef2f8; }
   header.hero .sub{ font-family:"Gowun Dodum", sans-serif; font-size:11.5px;
     letter-spacing:.24em; color:var(--faint); margin:0 0 26px; }
@@ -183,41 +179,43 @@
     color:#e6ecf6; border-bottom-color:rgba(143,158,186,.45); cursor:default;
   }
   .langswitch .sep{ color:#4d5870; }
+  
 
-  .topbar a:hover{ border-bottom-color:rgba(143,158,186,.55); }
-  .topbar .langswitch a{ border-bottom-color:transparent; }
-  .topbar .langswitch a:hover,
-  .topbar .langswitch a[aria-current="true"]{
-    border-bottom-color:rgba(143,158,186,.45);
+
+  /* ================= TOP BAR ================= */
+  .topbar{
+    position:fixed !important; top:0; left:0; right:0; z-index:1000;
+    display:flex; gap:16px; align-items:center; justify-content:center;
+    flex-wrap:wrap;
+    margin:0; padding:11px 20px;
+    max-width:none; width:100%;
+    font-family:"Gowun Dodum", sans-serif; font-size:12.5px;
+    background:#0b1018;
+    border-bottom:1px solid rgba(143,158,186,.16);
   }
-
-
-  /* ---------- nav links ---------- */
   .topbar a{
-    color:#8492ab;
-    text-decoration:none;
-    letter-spacing:.08em;
-    border-bottom:1px solid rgba(143,158,186,.22);
-    padding-bottom:2px;
+    color:#8492ab; text-decoration:none; letter-spacing:.08em;
+    border-bottom:1px solid rgba(143,158,186,.22); padding-bottom:2px;
     transition:color .18s, border-color .18s;
   }
-  .topbar a:hover{ color:#e6ecf6; border-bottom-color:rgba(143,158,186,.55); }
-  .topbar a.home{ color:#b6c2d6; }
+  .topbar a:hover{ color:#e6ecf6; border-bottom-color:rgba(143,158,186,.6); }
+  .topbar a.home{ color:#c3ccdc; border-bottom-color:transparent; }
+  .topbar a.home:hover{ border-bottom-color:#fff; color:#fff; }
+  .topbar .navgroup{
+    display:flex; align-items:center; gap:16px; flex-wrap:wrap; justify-content:center;
+    margin:0;
+  }
+  .topbar .langwrap{ display:flex; align-items:center; }
   .topbar .langswitch a{ border-bottom-color:transparent; }
   .topbar .langswitch a:hover,
-  .topbar .langswitch a[aria-current="true"]{ border-bottom-color:rgba(143,158,186,.45); }
+  .topbar .langswitch a[aria-current="true"]{ border-bottom-color:rgba(143,158,186,.5); }
+  .topbar .sp{ display:none; }
 
-
-  /* ---------- top bar ---------- */
-  .topbar{
-    position:sticky; top:0; z-index:60;
-    display:flex; gap:18px; align-items:center; justify-content:center;
-    flex-wrap:wrap;
-    padding:13px 22px;
-    font-family:"Gowun Dodum", sans-serif; font-size:12.5px;
-    background:rgba(9,13,22,.88); backdrop-filter:blur(8px);
-    border-bottom:1px solid rgba(143,158,186,.14);
-    text-shadow:none;
+  /* the fixed bar is out of flow, so push everything below it */
+  body{ padding-top:48px; }
+  @media (max-width:760px){
+    .topbar{ gap:12px; font-size:12px; padding:10px 16px; }
+    body{ padding-top:84px; }
   }
 
 </style>
