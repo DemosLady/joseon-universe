@@ -9,4 +9,4 @@ Allow: /
 User-agent: Daum
 Allow: /
 
-Sitemap: https://joseon-universe.vercel.app/sitemap.xml
+Sitemap: https://joseon-universe.com/sitemap.xml
