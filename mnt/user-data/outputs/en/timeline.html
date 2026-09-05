@@ -8,6 +8,7 @@
 <link rel="alternate" hreflang="ko" href="https://joseon-universe.vercel.app/timeline.html">
 <link rel="alternate" hreflang="en" href="https://joseon-universe.vercel.app/en/timeline.html">
 <link rel="alternate" hreflang="x-default" href="https://joseon-universe.vercel.app/timeline.html">
+<meta name="keywords" content="K-drama OST, Korean historical drama soundtrack, period drama music, sync licensing, film scoring, gugak, Korean traditional music, Korean hip hop, Joseon, sageuk, documentary music, historical score, 사극 OST, 국악 OST">
 <link rel="canonical" href="https://joseon-universe.vercel.app/en/timeline.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Timeline | Joseon Stories">
@@ -68,28 +69,21 @@
     opacity:.09; filter:grayscale(.35) contrast(.9); mix-blend-mode:screen;
   }
   body > *:not(.panorama):not(.markmoon){ position:relative; z-index:1; }
-  body > .topbar{ z-index:60;
-    text-shadow:0 1px 6px rgba(7,11,20,.85);
-  }
+  body > 
   .markmoon{
-    position:absolute; top:430px; left:50%;
-    width:220px; height:220px; transform:translate(-50%,-50%);
+    position:absolute; top:250px; left:50%;
+    width:190px; height:190px; transform:translate(-50%,-50%);
     border-radius:50%; background-image:url("../art/mark.png");
     background-size:cover; background-position:center;
-    opacity:.22; mix-blend-mode:screen; pointer-events:none; z-index:0;
+    opacity:.20; mix-blend-mode:screen; pointer-events:none; z-index:0;
   }
-  @media (max-width:620px){ .markmoon{ width:150px; height:150px; top:360px; opacity:.16; } }
+  @media (max-width:620px){ .markmoon{ width:140px; height:140px; top:210px; opacity:.15; } }
 
-  .topbar{
-    position:sticky; top:0; display:flex; gap:20px; align-items:center;
-    padding:14px 22px; font-family:"Gowun Dodum", sans-serif; font-size:12.5px;
-    background:rgba(9,13,22,.86); backdrop-filter:blur(8px);
-    border-bottom:1px solid var(--rule); flex-wrap:wrap;
-  }
+  
   .topbar .home{ color:#b6c2d6; }
-  .topbar .sp{ flex:1; }
+  .topbar .sp{ display:none; }
 
-  header.hero{ text-align:center; padding:62px 24px 20px; }
+  header.hero{ text-align:center; padding:54px 24px 20px; }
   header.hero h1{ font-size:33px; font-weight:400; letter-spacing:.05em; margin:0 0 10px; color:#eef2f8; }
   header.hero .sub{ font-family:"Gowun Dodum", sans-serif; font-size:11.5px;
     letter-spacing:.24em; color:var(--faint); margin:0 0 26px; }
@@ -213,6 +207,19 @@
   .topbar .langswitch a:hover,
   .topbar .langswitch a[aria-current="true"]{ border-bottom-color:rgba(143,158,186,.45); }
 
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    position:sticky; top:0; z-index:60;
+    display:flex; gap:18px; align-items:center; justify-content:center;
+    flex-wrap:wrap;
+    padding:13px 22px;
+    font-family:"Gowun Dodum", sans-serif; font-size:12.5px;
+    background:rgba(9,13,22,.88); backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(143,158,186,.14);
+    text-shadow:none;
+  }
+
 </style>
 </head>
 <body>
@@ -226,6 +233,7 @@
   <a href="characters.html">Characters · 인물</a>
   <a href="search.html">Search · 가사 검색</a>
   <a href="ledger.html">The ledger · 그 종이</a>
+    <a class="tocontact" href="mailto:demosaii2026@gmail.com?subject=%EB%AC%B8%EC%9D%98">Contact · 문의</a>
   <span class="sp"></span>
   <span class="langswitch"><svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg><a href="../timeline.html" hreflang="ko" lang="ko">한국어</a><span class="sep">/</span><a href="timeline.html" aria-current="true" hreflang="en" lang="en">EN</a></span>
 </nav>

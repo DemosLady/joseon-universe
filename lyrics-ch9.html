@@ -16,6 +16,7 @@
 <meta name="description" content="조선힙합 봄과 녹 (Spring and Rust) 전곡 가사와 영어 번역. Full Korean lyrics with English translation.">
 
 <link rel="alternate" hreflang="x-default" href="https://joseon-universe.vercel.app/lyrics-ch9.html">
+<meta name="keywords" content="사극 OST, 드라마 OST, 국악 OST, 사극 배경음악, 사극 브금, 시대극 음악, 국악 힙합, 조선힙합, 음원 사용 문의, 음악 라이선싱, Korean historical drama soundtrack, K-drama OST, sync licensing, period drama music, gugak">
 <link rel="canonical" href="https://joseon-universe.vercel.app/lyrics-ch9.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="봄과 녹 가사 · Lyrics">
@@ -72,13 +73,7 @@
     color:var(--moon); font-family:"Nanum Myeongjo", serif; -webkit-font-smoothing:antialiased;
       position:relative;
   }
-  .topbar{
-    position:relative; z-index:5;
-    display:flex; align-items:center; justify-content:space-between; gap:16px;
-    max-width:680px; margin:0 auto; padding:26px 24px 0;
-    font-family:"Gowun Dodum", sans-serif; font-size:12px;
-    text-shadow:0 1px 6px rgba(7,11,20,.85);
-  }
+  
   .hero{ max-width:760px; margin:0 auto; padding:54px 24px 56px; text-align:center; }
   .eyebrow{ font-family:"Gowun Dodum", sans-serif; font-size:11.5px; letter-spacing:.4em;
     text-indent:.4em; color:#7d8ba6; margin:0 0 28px; }
@@ -138,19 +133,19 @@
     opacity:.09; filter:grayscale(.35) contrast(.9); mix-blend-mode:screen;
   }
   body > *:not(.panorama):not(.markmoon){ position:relative; z-index:1; }
-  body > .topbar{ z-index:60; }
+  body > 
   @media (max-width:760px){ .panorama{ opacity:.06; background-position:center 50%; } }
 
   /* ---------- seal mark behind the title ---------- */
   .markmoon{
-    position:absolute; top:430px; left:50%;
-    width:250px; height:250px; transform:translate(-50%,-50%);
+    position:absolute; top:250px; left:50%;
+    width:190px; height:190px; transform:translate(-50%,-50%);
     border-radius:50%;
     background-image:url("art/mark.png");
     background-size:cover; background-position:center;
-    opacity:.22; mix-blend-mode:screen; pointer-events:none; z-index:0;
+    opacity:.20; mix-blend-mode:screen; pointer-events:none; z-index:0;
   }
-  @media (max-width:620px){ .markmoon{ width:180px; height:180px; top:360px; opacity:.16; } }
+  @media (max-width:620px){ .markmoon{ width:140px; height:140px; top:210px; opacity:.15; } }
 
 
   /* ---------- move between lyric pages ---------- */
@@ -221,6 +216,19 @@
   .topbar .langswitch a:hover,
   .topbar .langswitch a[aria-current="true"]{ border-bottom-color:rgba(143,158,186,.45); }
 
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    position:sticky; top:0; z-index:60;
+    display:flex; gap:18px; align-items:center; justify-content:center;
+    flex-wrap:wrap;
+    padding:13px 22px;
+    font-family:"Gowun Dodum", sans-serif; font-size:12.5px;
+    background:rgba(9,13,22,.88); backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(143,158,186,.14);
+    text-shadow:none;
+  }
+
 </style>
 </head>
 <body>
@@ -236,6 +244,7 @@
   <a class="tosearch" href="search.html">가사 검색 · Search</a>
   <a class="totimeline" href="timeline.html">연표 · Timeline</a>
   <a class="toledger" href="ledger.html">그 종이 · The ledger</a>
+    <a class="tocontact" href="mailto:demosaii2026@gmail.com?subject=%EB%AC%B8%EC%9D%98">문의 · Contact</a>
   <span class="langswitch"><svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg><span style="color:#7d8ba6;">한국어 &amp; English</span></span>
 </div>
 

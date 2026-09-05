@@ -15,6 +15,7 @@
 <link rel="alternate" hreflang="ko" href="https://joseon-universe.vercel.app/characters.html">
 <link rel="alternate" hreflang="en" href="https://joseon-universe.vercel.app/en/characters.html">
 <link rel="alternate" hreflang="x-default" href="https://joseon-universe.vercel.app/characters.html">
+<meta name="keywords" content="사극 OST, 드라마 OST, 국악 OST, 사극 배경음악, 시대극 음악, 국악 힙합, 조선힙합, 조선시대, 사극, 웹소설, 음원 사용 문의, Korean historical drama, K-drama OST, gugak, Joseon">
 <link rel="canonical" href="https://joseon-universe.vercel.app/characters.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="조선힙합 웹소설">
@@ -81,7 +82,7 @@
   .hero{
     max-width:780px;
     margin:0 auto;
-    padding:110px 24px 0;
+    padding:54px 24px 0;
     text-align:center;
   }
   .eyebrow{
@@ -363,16 +364,10 @@
   }
 
   /* ---------- top bar: language switch ---------- */
-  .topbar{
-    position:relative; z-index:5;
-    display:flex; align-items:center; justify-content:space-between; gap:16px;
-    max-width:660px; margin:0 auto; padding:24px 24px 0;
-    font-family:"Gowun Dodum", sans-serif; font-size:12px;
-    text-shadow:0 1px 6px rgba(7,11,20,.85);
-  }
+  
   .topbar .home{ color:#8492ab; text-decoration:none; letter-spacing:.1em; }
   .topbar .home:hover{ color:#cfd6e4; }
-  .langwrap{ position:relative; }
+  .langwrap{ display:flex; align-items:center; }
 
   /* ---------- lyrics link inside the listen block ---------- */
   .lyrics-link{
@@ -436,7 +431,7 @@
   }
   /* keep all real content above it */
   body > *:not(.panorama){ position:relative; z-index:1; }
-  body > .topbar{ z-index:60; }   /* the language menu must sit above everything below it */
+  body >    /* the language menu must sit above everything below it */
 
   @media (max-width:760px){
     .panorama{ opacity:.07; background-position:center 50%; }
@@ -652,17 +647,14 @@
 
 
   /* ---------- top bar, made visible ---------- */
-  .topbar{
-    max-width:760px; padding:22px 24px 0;
-    font-size:13.5px; gap:10px;
-  }
+  
   .topbar a.home{
     color:#c3ccdc; letter-spacing:.14em;
     border-bottom:1px solid transparent; padding-bottom:3px;
     transition:color .25s ease, border-color .25s ease;
   }
   .topbar a.home:hover{ color:#fff; border-bottom-color:#fff; }
-  .topbar .navgroup{ display:flex; align-items:center; gap:8px; margin-inline-start:auto; }
+  .topbar .navgroup{ display:flex; align-items:center; gap:18px; flex-wrap:wrap; justify-content:center; }
   .topbar a.tostory, .topbar a.tocast{
     color:#c3ccdc !important;
     border:1px solid rgba(143,158,186,.34);
@@ -676,8 +668,8 @@
     color:#fff !important; border-color:#fff; background:rgba(255,255,255,.06);
   }
   @media (max-width:620px){
-    .topbar{ flex-wrap:wrap; gap:8px; font-size:12.5px; }
-    .topbar .navgroup{ width:100%; margin-inline-start:0; justify-content:flex-start; }
+    
+    .topbar .navgroup{ display:flex; align-items:center; gap:18px; flex-wrap:wrap; justify-content:center; }
     .topbar a.tostory, .topbar a.tocast{ padding:7px 12px; }
   }
 
@@ -705,20 +697,20 @@
   /* ---------- seal mark inside the moon circle ---------- */
   .markmoon{
     position:absolute;
-    top:430px; left:50%;
-    width:300px; height:300px;
+    top:250px; left:50%;
+    width:190px; height:190px;
     transform:translate(-50%, -50%);
     border-radius:50%;
     background-image:url("art/mark.png");
     background-size:cover;
     background-position:center;
-    opacity:.22;
+    opacity:.20;
     mix-blend-mode:screen;
     pointer-events:none;
     z-index:0;
   }
   @media (max-width:620px){
-    .markmoon{ width:210px; height:210px; top:360px; opacity:.16; }
+    .markmoon{ width:140px; height:140px; top:210px; opacity:.15; }
   }
 
 
@@ -764,6 +756,19 @@
   .topbar .langswitch a:hover,
   .topbar .langswitch a[aria-current="true"]{ border-bottom-color:rgba(143,158,186,.45); }
 
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    position:sticky; top:0; z-index:60;
+    display:flex; gap:18px; align-items:center; justify-content:center;
+    flex-wrap:wrap;
+    padding:13px 22px;
+    font-family:"Gowun Dodum", sans-serif; font-size:12.5px;
+    background:rgba(9,13,22,.88); backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(143,158,186,.14);
+    text-shadow:none;
+  }
+
 </style>
 </head>
 <body>
@@ -778,6 +783,7 @@
     <a class="tosearch" href="search.html">가사 검색 · Search</a>
     <a class="totimeline" href="timeline.html">연표 · Timeline</a>
     <a class="toledger" href="ledger.html">그 종이 · The ledger</a>
+    <a class="tocontact" href="mailto:demosaii2026@gmail.com?subject=%EB%AC%B8%EC%9D%98">문의 · Contact</a>
     
   </div><div class="langwrap">
     <span class="langswitch"><svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg><a href="characters.html" aria-current="true" hreflang="ko" lang="ko">한국어</a><span class="sep">/</span><a href="en/characters.html" hreflang="en" lang="en">EN</a></span>
