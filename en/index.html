@@ -440,9 +440,11 @@
 
   /* ---------- top bar: language switch ---------- */
   .topbar{
+    position:relative; z-index:5;
     display:flex; align-items:center; justify-content:space-between; gap:16px;
     max-width:660px; margin:0 auto; padding:24px 24px 0;
     font-family:"Gowun Dodum", sans-serif; font-size:12px;
+    text-shadow:0 1px 6px rgba(7,11,20,.85);
   }
   .topbar .home{ color:#8492ab; text-decoration:none; letter-spacing:.1em; }
   .topbar .home:hover{ color:#cfd6e4; }
@@ -567,20 +569,20 @@
   /* ---------- seal mark inside the moon circle ---------- */
   .markmoon{
     position:absolute;
-    top:300px; left:50%;
+    top:430px; left:50%;
     width:300px; height:300px;
     transform:translate(-50%, -50%);
     border-radius:50%;
     background-image:url("../art/mark.png");
     background-size:cover;
     background-position:center;
-    opacity:.34;
+    opacity:.22;
     mix-blend-mode:screen;
     pointer-events:none;
     z-index:0;
   }
   @media (max-width:620px){
-    .markmoon{ width:210px; height:210px; top:250px; opacity:.28; }
+    .markmoon{ width:210px; height:210px; top:360px; opacity:.16; }
   }
 
 
@@ -620,6 +622,29 @@
   }
   .langswitch .sep{ color:#4d5870; }
 
+  .topbar a:hover{ border-bottom-color:rgba(143,158,186,.55); }
+  .topbar .langswitch a{ border-bottom-color:transparent; }
+  .topbar .langswitch a:hover,
+  .topbar .langswitch a[aria-current="true"]{
+    border-bottom-color:rgba(143,158,186,.45);
+  }
+
+
+  /* ---------- nav links ---------- */
+  .topbar a{
+    color:#8492ab;
+    text-decoration:none;
+    letter-spacing:.08em;
+    border-bottom:1px solid rgba(143,158,186,.22);
+    padding-bottom:2px;
+    transition:color .18s, border-color .18s;
+  }
+  .topbar a:hover{ color:#e6ecf6; border-bottom-color:rgba(143,158,186,.55); }
+  .topbar a.home{ color:#b6c2d6; }
+  .topbar .langswitch a{ border-bottom-color:transparent; }
+  .topbar .langswitch a:hover,
+  .topbar .langswitch a[aria-current="true"]{ border-bottom-color:rgba(143,158,186,.45); }
+
 </style>
 </head>
 <body>
@@ -630,11 +655,11 @@
 <div class="topbar">
   <a class="home" href="https://soundcloud.com/demosaii">demosaii</a>
   <div class="navgroup">
-    <a class="tostory" href="story.html">Story</a>
-    <a class="tocast" href="characters.html">Characters</a>
-    <a class="tosearch" href="search.html" style="color:#8492ab;text-decoration:none;letter-spacing:.08em;">Search</a>
-    <a class="totimeline" href="timeline.html" style="color:#8492ab;text-decoration:none;letter-spacing:.08em;">Timeline</a>
-    <a class="toledger" href="ledger.html" style="color:#8492ab;text-decoration:none;letter-spacing:.08em;">Ledger</a>
+    <a class="tostory" href="story.html">Story · 줄거리</a>
+    <a class="tocast" href="characters.html">Characters · 인물</a>
+    <a class="tosearch" href="search.html">Search · 가사 검색</a>
+    <a class="totimeline" href="timeline.html">Timeline · 연표</a>
+    <a class="toledger" href="ledger.html">The ledger · 그 종이</a>
   </div>
   <div class="langwrap">
     <span class="langswitch"><svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg><a href="../index.html" hreflang="ko" lang="ko">한국어</a><span class="sep">/</span><a href="index.html" aria-current="true" hreflang="en" lang="en">EN</a></span>

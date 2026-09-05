@@ -73,12 +73,12 @@
       position:relative;
   }
   .topbar{
+    position:relative; z-index:5;
     display:flex; align-items:center; justify-content:space-between; gap:16px;
     max-width:680px; margin:0 auto; padding:26px 24px 0;
     font-family:"Gowun Dodum", sans-serif; font-size:12px;
+    text-shadow:0 1px 6px rgba(7,11,20,.85);
   }
-  .topbar a{ color:#8492ab; text-decoration:none; letter-spacing:.08em; }
-  .topbar a:hover{ color:var(--moon); }
   .hero{ max-width:760px; margin:0 auto; padding:54px 24px 56px; text-align:center; }
   .eyebrow{ font-family:"Gowun Dodum", sans-serif; font-size:11.5px; letter-spacing:.4em;
     text-indent:.4em; color:#7d8ba6; margin:0 0 28px; }
@@ -143,14 +143,14 @@
 
   /* ---------- seal mark behind the title ---------- */
   .markmoon{
-    position:absolute; top:220px; left:50%;
+    position:absolute; top:430px; left:50%;
     width:250px; height:250px; transform:translate(-50%,-50%);
     border-radius:50%;
     background-image:url("art/mark.png");
     background-size:cover; background-position:center;
-    opacity:.30; mix-blend-mode:screen; pointer-events:none; z-index:0;
+    opacity:.22; mix-blend-mode:screen; pointer-events:none; z-index:0;
   }
-  @media (max-width:620px){ .markmoon{ width:180px; height:180px; top:186px; opacity:.24; } }
+  @media (max-width:620px){ .markmoon{ width:180px; height:180px; top:360px; opacity:.16; } }
 
 
   /* ---------- move between lyric pages ---------- */
@@ -197,6 +197,29 @@
     color:#e6ecf6; border-bottom-color:rgba(143,158,186,.45); cursor:default;
   }
   .langswitch .sep{ color:#4d5870; }
+
+  .topbar a:hover{ border-bottom-color:rgba(143,158,186,.55); }
+  .topbar .langswitch a{ border-bottom-color:transparent; }
+  .topbar .langswitch a:hover,
+  .topbar .langswitch a[aria-current="true"]{
+    border-bottom-color:rgba(143,158,186,.45);
+  }
+
+
+  /* ---------- nav links ---------- */
+  .topbar a{
+    color:#8492ab;
+    text-decoration:none;
+    letter-spacing:.08em;
+    border-bottom:1px solid rgba(143,158,186,.22);
+    padding-bottom:2px;
+    transition:color .18s, border-color .18s;
+  }
+  .topbar a:hover{ color:#e6ecf6; border-bottom-color:rgba(143,158,186,.55); }
+  .topbar a.home{ color:#b6c2d6; }
+  .topbar .langswitch a{ border-bottom-color:transparent; }
+  .topbar .langswitch a:hover,
+  .topbar .langswitch a[aria-current="true"]{ border-bottom-color:rgba(143,158,186,.45); }
 
 </style>
 </head>

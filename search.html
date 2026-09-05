@@ -78,17 +78,19 @@
     opacity:.09; filter:grayscale(.35) contrast(.9); mix-blend-mode:screen;
   }
   body > *:not(.panorama):not(.markmoon){ position:relative; z-index:1; }
-  body > .topbar{ z-index:60; }
+  body > .topbar{ z-index:60;
+    text-shadow:0 1px 6px rgba(7,11,20,.85);
+  }
   @media (max-width:760px){ .panorama{ opacity:.06; } }
 
   .markmoon{
-    position:absolute; top:190px; left:50%;
+    position:absolute; top:430px; left:50%;
     width:220px; height:220px; transform:translate(-50%,-50%);
     border-radius:50%; background-image:url("art/mark.png");
     background-size:cover; background-position:center;
-    opacity:.26; mix-blend-mode:screen; pointer-events:none; z-index:0;
+    opacity:.22; mix-blend-mode:screen; pointer-events:none; z-index:0;
   }
-  @media (max-width:620px){ .markmoon{ width:160px; height:160px; top:164px; opacity:.2; } }
+  @media (max-width:620px){ .markmoon{ width:160px; height:160px; top:360px; opacity:.16; } }
 
   .topbar{
     position:sticky; top:0; display:flex; gap:20px; align-items:center;
@@ -96,8 +98,6 @@
     background:rgba(9,13,22,.86); backdrop-filter:blur(8px);
     border-bottom:1px solid var(--rule);
   }
-  .topbar a{ color:var(--dim); text-decoration:none; letter-spacing:.08em; }
-  .topbar a:hover{ color:#fff; }
   .topbar .home{ color:#b6c2d6; }
   .topbar .sp{ flex:1; }
 
@@ -200,6 +200,29 @@
   }
   .langswitch .sep{ color:#4d5870; }
 
+  .topbar a:hover{ border-bottom-color:rgba(143,158,186,.55); }
+  .topbar .langswitch a{ border-bottom-color:transparent; }
+  .topbar .langswitch a:hover,
+  .topbar .langswitch a[aria-current="true"]{
+    border-bottom-color:rgba(143,158,186,.45);
+  }
+
+
+  /* ---------- nav links ---------- */
+  .topbar a{
+    color:#8492ab;
+    text-decoration:none;
+    letter-spacing:.08em;
+    border-bottom:1px solid rgba(143,158,186,.22);
+    padding-bottom:2px;
+    transition:color .18s, border-color .18s;
+  }
+  .topbar a:hover{ color:#e6ecf6; border-bottom-color:rgba(143,158,186,.55); }
+  .topbar a.home{ color:#b6c2d6; }
+  .topbar .langswitch a{ border-bottom-color:transparent; }
+  .topbar .langswitch a:hover,
+  .topbar .langswitch a[aria-current="true"]{ border-bottom-color:rgba(143,158,186,.45); }
+
 </style>
 </head>
 <body>
@@ -209,10 +232,10 @@
 
 <nav class="topbar">
   <a class="home" href="index.html">조선 이야기</a>
-  <a href="story.html">줄거리</a>
-  <a href="characters.html">인물</a>
-  <a href="timeline.html">연표</a>
-  <a href="ledger.html">그 종이</a>
+  <a href="story.html">줄거리 · Story</a>
+  <a href="characters.html">인물 · Characters</a>
+  <a href="timeline.html">연표 · Timeline</a>
+  <a href="ledger.html">그 종이 · The ledger</a>
   <span class="sp"></span>
   <span class="langswitch"><svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg><a href="search.html" aria-current="true" hreflang="ko" lang="ko">한국어</a><span class="sep">/</span><a href="en/search.html" hreflang="en" lang="en">EN</a></span>
 </nav>
