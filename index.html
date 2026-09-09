@@ -22,7 +22,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>조선 힙합 유니버스 | 세 개의 삼부작, 서른여섯 곡의 이야기</title>
-<meta name="description" content="조선을 배경으로 한 국악 힙합 세 삼부작. 서른여섯 곡으로 먼저 만들어진 이야기 — 붓과 불의 이야기, 소금과 바다의 이야기, 그리고 눈과 쇠의 이야기.">
+<meta name="description" content="조선을 배경으로 한 국악 힙합 세 삼부작. 서른여섯 곡으로 먼저 만들어진 이야기 — 붓과 불의 이야기, 소금과 바다의 이야기, 그리고 눈과 쇠의 이야기. 이야기 전문은 93쪽 전자책으로도 무료로 받으실 수 있습니다.">>
 <meta name="keywords" content="조선힙합, 국악힙합, 웹소설, 사극, 단편소설, 한국힙합, 퓨전국악, demosaii">
 <meta name="author" content="demosaii">
 
@@ -42,8 +42,7 @@
 
 
 
-<script type="application/ld+json">
-{
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "CreativeWorkSeries",
   "name": "조선 이야기",
@@ -125,9 +124,28 @@
       "position": 9,
       "url": "https://joseon-universe.com/chapter9.html"
     }
-  ]
-}
-</script>
+  ],
+  "workExample": {
+    "@type": "Book",
+    "name": "조선 이야기",
+    "alternateName": "Joseon Stories",
+    "bookFormat": "https://schema.org/EBook",
+    "numberOfPages": 93,
+    "inLanguage": "ko",
+    "author": {
+      "@type": "Person",
+      "name": "demosaii"
+    },
+    "url": "https://joseon-universe.com/book/joseon-stories-kr.pdf",
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "KRW",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+}</script>
 <link rel="icon" href="art/mark.png" type="image/png">
 <link rel="apple-touch-icon" href="art/mark.png">
 <meta name="theme-color" content="#0d1220">
@@ -629,6 +647,98 @@
     body{ padding-top:84px; }
   }
 
+
+  /* ---------- there is more below ---------- */
+  .scrollcue{
+    position:fixed; left:50%; bottom:22px; transform:translateX(-50%);
+    z-index:40; pointer-events:none;
+    display:flex; flex-direction:column; align-items:center; gap:7px;
+    font-family:"Gowun Dodum", sans-serif; font-size:10px;
+    letter-spacing:.24em; color:#7d8ba6;
+    opacity:0; transition:opacity .45s ease;
+  }
+  .scrollcue.on{ opacity:.85; }
+  .scrollcue .chev{
+    width:15px; height:15px; border-right:1px solid currentColor;
+    border-bottom:1px solid currentColor; transform:rotate(45deg);
+    animation:cuebob 2.1s ease-in-out infinite;
+  }
+  @keyframes cuebob{
+    0%,100%{ transform:rotate(45deg) translate(0,0); opacity:.5; }
+    50%    { transform:rotate(45deg) translate(3px,3px); opacity:1; }
+  }
+  @media (prefers-reduced-motion:reduce){
+    .scrollcue .chev{ animation:none; }
+  }
+  @media (max-width:620px){
+    .scrollcue{ bottom:16px; font-size:9.5px; letter-spacing:.2em; }
+  }
+
+
+  /* ---------- the book ---------- */
+  .book{
+    max-width:720px; margin:70px auto 0; padding:0 24px;
+  }
+  .book .inner{
+    position:relative;
+    border:1px solid rgba(143,158,186,.26);
+    background:linear-gradient(180deg, rgba(214,224,240,.055), rgba(214,224,240,.02));
+    padding:44px 40px 40px;
+    text-align:center;
+  }
+  .book .ribbon{
+    position:absolute; top:0; left:50%; transform:translate(-50%,-50%);
+    background:#0d1220; padding:0 16px;
+    font-family:"Gowun Dodum", sans-serif; font-size:10.5px;
+    letter-spacing:.3em; color:#8492ab;
+  }
+  .book h2{
+    margin:6px 0 6px; font-size:29px; font-weight:400; letter-spacing:.02em; color:#eef2f8;
+  }
+  .book .kr{
+    margin:0 0 22px; font-family:"Gowun Dodum", sans-serif;
+    font-size:12.5px; letter-spacing:.2em; color:#7d8ba6;
+  }
+  .book .blurb{
+    max-width:520px; margin:0 auto 12px; font-size:16px; line-height:2.05;
+    color:#8492ab; word-break:keep-all;
+  }
+  .book .blurb b{ color:#cfd6e4; font-weight:400; }
+  .book .facts{
+    display:flex; gap:26px; justify-content:center; flex-wrap:wrap;
+    margin:26px 0 30px;
+    font-family:"Gowun Dodum", sans-serif; font-size:11px;
+    letter-spacing:.16em; color:#66748c;
+  }
+  .book .facts span{ white-space:nowrap; }
+  .book .get{
+    display:inline-block; padding:15px 34px;
+    border:1px solid rgba(143,158,186,.5); color:#eef2f8; text-decoration:none;
+    font-family:"Gowun Dodum", sans-serif; font-size:13px; letter-spacing:.14em;
+    transition:border-color .2s, background .2s, color .2s;
+  }
+  .book .get:hover{
+    border-color:#eef2f8; background:rgba(214,224,240,.07); color:#fff;
+  }
+  .book .free{
+    margin:16px 0 0; font-family:"Gowun Dodum", sans-serif;
+    font-size:11.5px; letter-spacing:.1em; color:#66748c;
+  }
+  .book .count{
+    margin:18px 0 0; min-height:17px;
+    font-family:"Gowun Dodum", sans-serif; font-size:11.5px;
+    letter-spacing:.14em; color:#7d8ba6;
+    opacity:0; transition:opacity .5s ease;
+  }
+  .book .count.on{ opacity:1; }
+  .book .count b{ color:#cfd6e4; font-weight:400; font-size:13px; }
+  @media (max-width:620px){
+    .book{ margin-top:52px; }
+    .book .inner{ padding:38px 22px 32px; }
+    .book h2{ font-size:24px; }
+    .book .facts{ gap:16px; font-size:10.5px; }
+  }
+
 </style>
 </head>
 <body>
@@ -640,6 +750,7 @@
   <a class="home" href="https://soundcloud.com/demosaii">demosaii</a>
   <div class="navgroup">
     <a class="tostory" href="story.html">줄거리 · Story</a>
+    <a class="tobook" href="book/joseon-stories-kr.pdf" download>전자책 · Book</a>
     <a class="tocast" href="characters.html">인물 · Characters</a>
     <a class="tosearch" href="search.html">가사 검색 · Search</a>
     <a class="totimeline" href="timeline.html">연표 · Timeline</a>
@@ -666,6 +777,25 @@
 <section class="intro">
   <p>이것은 <b>서른여섯 곡으로 먼저 만들어진 이야기</b>입니다.</p>
   <p>조선을 배경으로 한 국악 힙합 세 개의 삼부작 — 붓과 불의 이야기, 소금과 바다의 이야기, 그리고 눈과 쇠의 이야기. 아홉 장의 앨범이 하나의 이야기를 이룹니다.</p>
+</section>
+
+<section class="book">
+  <div class="inner">
+    <p class="ribbon">이야기 전문</p>
+    <h2>조선 이야기</h2>
+    <p class="kr">한국어판 · 전자책</p>
+    <p class="blurb">아홉 장을 전부 글로 옮겼습니다. 기록에서 지워진 여자부터,
+    오백 년 뒤에 열린 소금 항아리까지 — <b>무료로 읽으시고, 무료로 가지셔도 됩니다.</b></p>
+    <div class="facts">
+      <span>93쪽</span>
+      <span>아홉 장</span>
+      <span>한국어</span>
+      <span>PDF</span>
+    </div>
+    <a class="get" href="book/joseon-stories-kr.pdf" download>전자책 받기 →</a>
+    <p class="free">가입도, 이메일도, 결제도 필요 없습니다. 그냥 파일 하나입니다.</p>
+    <p class="count" aria-live="polite"></p>
+  </div>
 </section>
 
 <section class="fullplay">
@@ -819,6 +949,75 @@
   <p class="about-tags">#조선힙합 #국악힙합 #웹소설 #사극 #한국힙합 #퓨전국악 #demosaii</p>
 </footer>
 
+
+<div class="scrollcue" aria-hidden="true"><span>아래로</span><span class="chev"></span></div>
+<script>
+(function(){
+  var cue = document.querySelector('.scrollcue');
+  if(!cue) return;
+  function update(){
+    var doc = document.documentElement;
+    var scrollable = doc.scrollHeight - window.innerHeight;
+    // show it only when there is real distance left to travel
+    var left = scrollable - window.scrollY;
+    cue.classList.toggle('on', scrollable > 240 && left > 160);
+  }
+  update();
+  window.addEventListener('scroll', update, { passive:true });
+  window.addEventListener('resize', update);
+  window.addEventListener('load', update);
+})();
+</script>
+
+<script>
+(function(){
+  // Real download counters. They start at zero and count actual downloads.
+  // If the counting service is unreachable the number simply never appears.
+  var API = 'https://countapi.mileshilliard.com/api/v1';
+  var KEYS = {
+    'joseon-stories.pdf'   : 'joseon_universe_book_downloads_v1',
+    'joseon-stories-kr.pdf': 'joseon_universe_book_kr_downloads_v1'
+  };
+  var ko = document.documentElement.lang === 'ko';
+
+  function label(n){
+    return ko
+      ? '지금까지 <b>' + n.toLocaleString() + '</b>번 받으셨습니다'
+      : '<b>' + n.toLocaleString() + '</b> ' + (n === 1 ? 'download' : 'downloads') + ' so far';
+  }
+  function show(n){
+    if(typeof n !== 'number' || !isFinite(n) || n < 1) return;
+    document.querySelectorAll('.book .count').forEach(function(el){
+      el.innerHTML = label(n);
+      el.classList.add('on');
+    });
+  }
+  function call(path, key){
+    return fetch(API + '/' + path + '/' + key)
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(d){ if(d) show(parseInt(d.value, 10)); })
+      .catch(function(){});
+  }
+
+  // which book is on this page?
+  var link = document.querySelector('.book a[href$=".pdf"]');
+  if(link){
+    var file = link.getAttribute('href').split('/').pop();
+    if(KEYS[file]) call('get', KEYS[file]);
+  }
+
+  document.querySelectorAll('a[href$=".pdf"]').forEach(function(a){
+    var file = a.getAttribute('href').split('/').pop();
+    if(!KEYS[file]) return;
+    a.addEventListener('click', function(){
+      call('hit', KEYS[file]);
+      if (typeof gtag === 'function') {
+        gtag('event', 'book_download', { file_name: file, file_extension: 'pdf' });
+      }
+    });
+  });
+})();
+</script>
 
 </body>
 </html>

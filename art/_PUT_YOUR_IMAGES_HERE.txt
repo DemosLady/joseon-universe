@@ -1,0 +1,8 @@
+This folder is empty in the zip on purpose.
+
+Copy these two files in from your own machine:
+
+    hero.jpg     the panorama behind every page
+    mark.png     the seal, also used as the favicon
+
+Once they are in, you can delete this note.

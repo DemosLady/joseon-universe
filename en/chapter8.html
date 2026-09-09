@@ -643,6 +643,33 @@
     body{ padding-top:84px; }
   }
 
+
+  /* ---------- there is more below ---------- */
+  .scrollcue{
+    position:fixed; left:50%; bottom:22px; transform:translateX(-50%);
+    z-index:40; pointer-events:none;
+    display:flex; flex-direction:column; align-items:center; gap:7px;
+    font-family:"Gowun Dodum", sans-serif; font-size:10px;
+    letter-spacing:.24em; color:#7d8ba6;
+    opacity:0; transition:opacity .45s ease;
+  }
+  .scrollcue.on{ opacity:.85; }
+  .scrollcue .chev{
+    width:15px; height:15px; border-right:1px solid currentColor;
+    border-bottom:1px solid currentColor; transform:rotate(45deg);
+    animation:cuebob 2.1s ease-in-out infinite;
+  }
+  @keyframes cuebob{
+    0%,100%{ transform:rotate(45deg) translate(0,0); opacity:.5; }
+    50%    { transform:rotate(45deg) translate(3px,3px); opacity:1; }
+  }
+  @media (prefers-reduced-motion:reduce){
+    .scrollcue .chev{ animation:none; }
+  }
+  @media (max-width:620px){
+    .scrollcue{ bottom:16px; font-size:9.5px; letter-spacing:.2em; }
+  }
+
 </style>
 </head>
 <body>
@@ -653,6 +680,7 @@
 <div class="topbar">
   <a class="home" href="index.html">← Contents</a>
   <div class="navgroup">
+    <a class="tobook" href="../book/joseon-stories.pdf" download>Book · 책</a>
     <a class="tostory" href="story.html">Story · 줄거리</a>
     <a class="tocast" href="characters.html">Characters · 인물</a>
     <a class="tosearch" href="search.html">Search · 가사 검색</a>
@@ -987,6 +1015,75 @@
   <p class="about-tags">#JoseonHipHop #GugakHipHop #KoreanTraditional #HistoricalFiction #demosaii</p>
 </section>
 
+
+<div class="scrollcue" aria-hidden="true"><span>SCROLL</span><span class="chev"></span></div>
+<script>
+(function(){
+  var cue = document.querySelector('.scrollcue');
+  if(!cue) return;
+  function update(){
+    var doc = document.documentElement;
+    var scrollable = doc.scrollHeight - window.innerHeight;
+    // show it only when there is real distance left to travel
+    var left = scrollable - window.scrollY;
+    cue.classList.toggle('on', scrollable > 240 && left > 160);
+  }
+  update();
+  window.addEventListener('scroll', update, { passive:true });
+  window.addEventListener('resize', update);
+  window.addEventListener('load', update);
+})();
+</script>
+
+<script>
+(function(){
+  // Real download counters. They start at zero and count actual downloads.
+  // If the counting service is unreachable the number simply never appears.
+  var API = 'https://countapi.mileshilliard.com/api/v1';
+  var KEYS = {
+    'joseon-stories.pdf'   : 'joseon_universe_book_downloads_v1',
+    'joseon-stories-kr.pdf': 'joseon_universe_book_kr_downloads_v1'
+  };
+  var ko = document.documentElement.lang === 'ko';
+
+  function label(n){
+    return ko
+      ? '지금까지 <b>' + n.toLocaleString() + '</b>번 받으셨습니다'
+      : '<b>' + n.toLocaleString() + '</b> ' + (n === 1 ? 'download' : 'downloads') + ' so far';
+  }
+  function show(n){
+    if(typeof n !== 'number' || !isFinite(n) || n < 1) return;
+    document.querySelectorAll('.book .count').forEach(function(el){
+      el.innerHTML = label(n);
+      el.classList.add('on');
+    });
+  }
+  function call(path, key){
+    return fetch(API + '/' + path + '/' + key)
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(d){ if(d) show(parseInt(d.value, 10)); })
+      .catch(function(){});
+  }
+
+  // which book is on this page?
+  var link = document.querySelector('.book a[href$=".pdf"]');
+  if(link){
+    var file = link.getAttribute('href').split('/').pop();
+    if(KEYS[file]) call('get', KEYS[file]);
+  }
+
+  document.querySelectorAll('a[href$=".pdf"]').forEach(function(a){
+    var file = a.getAttribute('href').split('/').pop();
+    if(!KEYS[file]) return;
+    a.addEventListener('click', function(){
+      call('hit', KEYS[file]);
+      if (typeof gtag === 'function') {
+        gtag('event', 'book_download', { file_name: file, file_extension: 'pdf' });
+      }
+    });
+  });
+})();
+</script>
 
 </body>
 </html>

@@ -1,0 +1,11 @@
+This folder is empty in the zip on purpose.
+
+Copy your fifteen portraits in from your own machine:
+
+    king.png          yeoni.png         yunje.png
+    talswe.png        jeongan.png       buni.png
+    buni_young.png    sugyeom.png       baeswe.png
+    gapsu.png         oki.png           smith.png
+    soldier.png       farmer.png        granddaughter.png
+
+Once they are in, you can delete this note.
