@@ -457,6 +457,24 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://joseon-universe.com/en/book.html</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://joseon-universe.com/contact.html</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://joseon-universe.com/en/contact.html</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
     <loc>https://joseon-universe.com/book/joseon-stories.pdf</loc>
     <lastmod>2026-09-10</lastmod>
     <changefreq>yearly</changefreq>
