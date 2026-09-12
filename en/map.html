@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <!-- Google tag (gtag.js) -->
@@ -20,22 +20,22 @@
   gtag('config', 'G-FS3RY08FBH');
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>문의 · 연락처 | 조선 이야기</title>
-<meta name="description" content="조선 이야기 · demosaii 연락처. 음원 사용, 협업, 인터뷰 문의를 받습니다.">
+<title>The story map · where thirty-six songs happened | Joseon Stories</title>
+<meta name="description" content="From the palace to five hundred years later. Eight places from the story, marked on the Korean section of the Kangnido map of 1402.">
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="문의 · 연락처">
-<meta property="og:description" content="조선 이야기 · demosaii 연락처. 음원 사용, 협업, 인터뷰 문의를 받습니다.">
+<meta property="og:title" content="The story map">
+<meta property="og:description" content="Where thirty-six songs happened.">
 <meta property="og:site_name" content="조선 이야기 · demosaii">
-<meta property="og:locale" content="ko_KR">
-<meta property="og:url" content="https://joseon-universe.com/contact.html">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://joseon-universe.com/en/map.html">
 <meta property="og:image" content="https://joseon-universe.com/covers/ch1.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
-<link rel="alternate" hreflang="ko" href="https://joseon-universe.com/contact.html">
-<link rel="alternate" hreflang="en" href="https://joseon-universe.com/en/contact.html">
-<link rel="alternate" hreflang="x-default" href="https://joseon-universe.com/contact.html">
-<link rel="canonical" href="https://joseon-universe.com/contact.html">
+<link rel="alternate" hreflang="ko" href="https://joseon-universe.com/map.html">
+<link rel="alternate" hreflang="en" href="https://joseon-universe.com/en/map.html">
+<link rel="alternate" hreflang="x-default" href="https://joseon-universe.com/map.html">
+<link rel="canonical" href="https://joseon-universe.com/en/map.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Song+Myung&family=Nanum+Myeongjo:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
@@ -109,7 +109,7 @@
   /* ---------- faint panorama behind everything ---------- */
   .panorama{
     position:fixed; inset:0; z-index:0; pointer-events:none;
-    background-image:url("art/hero.jpg");
+    background-image:url("../art/hero.jpg");
     background-size:cover;
     background-position:center 42%;
     background-repeat:no-repeat;
@@ -149,7 +149,7 @@
     width:190px; height:190px;
     transform:translate(-50%, -50%);
     border-radius:50%;
-    background-image:url("art/mark.png");
+    background-image:url("../art/mark.png");
     background-size:cover;
     background-position:center;
     opacity:.20;
@@ -339,82 +339,203 @@
   .bcard .count.on{ opacity:1; }
 </style>
 </head>
+
+
+<style>
+  .maplayout{ max-width:1240px; margin:0 auto 90px; padding:0 24px;
+    display:grid; grid-template-columns:minmax(300px,.92fr) minmax(300px,1.08fr);
+    gap:38px; align-items:start; }
+  @media (max-width:900px){ .maplayout{ grid-template-columns:1fr; gap:26px; } }
+  .mapwrap{ box-shadow:0 30px 70px rgba(0,0,0,.55); }
+  .mapwrap svg{ width:100%; height:auto; display:block; }
+  .cart{ cursor:pointer; }
+  .cart rect{ fill:#A8322C; stroke:#2A2118; stroke-width:2; transition:fill .18s ease; }
+  .cart text{ font-family:"Nanum Myeongjo",serif; font-size:30px; fill:#F5EBDA;
+    pointer-events:none; }
+  .cart .tick{ fill:none; stroke:#2A2118; stroke-width:2.4; }
+  .cart .dot{ fill:#2A2118; }
+  .cart:hover rect, .cart.on rect{ fill:#D9503A; }
+  .cart.on rect{ stroke-width:3.4; }
+  .cart:focus{ outline:none; }
+  .cart:focus-visible rect{ stroke:#F5EBDA; stroke-width:3.4; }
+  .route{ fill:none; stroke:#2A2118; stroke-width:3; stroke-dasharray:2 14;
+    stroke-linecap:round; opacity:.6; }
+  .panel{ background:var(--hanji); color:var(--brush); padding:34px 32px 30px;
+    box-shadow:0 26px 60px rgba(0,0,0,.5); min-height:340px; }
+  .panel .eyebrow2{ font-family:"Gowun Dodum",sans-serif; font-size:11px; letter-spacing:.26em;
+    color:#8a8070; margin:0 0 10px; }
+  .panel h2{ font-family:"Song Myung",serif; font-weight:400; font-size:30px; margin:0 0 4px; }
+  .panel .sub{ font-family:"Gowun Dodum",sans-serif; font-size:13px; color:#8a8070; margin:0 0 20px; }
+  .panel p.body{ font-size:16.5px; line-height:2; word-break:keep-all; margin:0 0 20px; }
+  .panel .lbl{ font-family:"Gowun Dodum",sans-serif; font-size:11px; letter-spacing:.2em;
+    color:#8a8070; margin:0 0 6px; }
+  .panel .songs{ border-top:1px solid rgba(60,52,40,.2); }
+  .panel .songs a{ display:flex; align-items:baseline; gap:12px; padding:9px 0;
+    text-decoration:none; color:#3a3128; border-bottom:1px solid rgba(60,52,40,.1); }
+  .panel .songs a:hover{ color:#000; }
+  .panel .songs .t{ font-size:17px; }
+  .panel .songs .go{ margin-inline-start:auto; font-family:"Gowun Dodum",sans-serif;
+    font-size:11.5px; color:#8a8070; }
+  .maphint{ max-width:1240px; margin:0 auto 22px; padding:0 24px; text-align:center;
+    font-family:"Gowun Dodum",sans-serif; font-size:12.5px; color:#7d8ba6; line-height:2; }
+  .mapcredit{ max-width:1240px; margin:-60px auto 70px; padding:0 24px; text-align:center;
+    font-family:"Gowun Dodum",sans-serif; font-size:11.5px; color:#6f7d96; line-height:2; }
+</style>
+
+</head>
 <body>
 
 <div class="panorama" aria-hidden="true"></div>
 <div class="markmoon" aria-hidden="true"></div>
 
+
 <div class="topbar">
-  <a href="index.html">목차 · Contents</a>
-  <a href="story.html">줄거리 · Story</a>
-  <a class="tosongs" href="songs.html">전곡 · All songs</a>
-  <a class="tobook" href="book.html">전자책 · Book</a>
-  <a href="map.html">지도 · Map</a>
-    <a class="tonotes" href="references.html">역사 노트 · History</a>
-  <a href="characters.html">인물 · Characters</a>
-  <a class="totimeline" href="timeline.html">연표 · Timeline</a>
+  <a href="index.html">← Contents</a>
+  <a href="story.html">Story · 줄거리</a>
+  <a class="tosongs" href="songs.html">All songs · 전곡</a>
+  <a href="map.html">Map · 지도</a>
+  <a class="tobook" href="book.html">Book · 책</a>
+  <a class="tonotes" href="references.html">History · 역사 노트</a>
+  <a href="characters.html">Characters · 인물</a>
+  <a href="contact.html">Contact · 문의</a>
   <div class="langwrap">
-    <span class="langswitch"><svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg><a href="contact.html" hreflang="ko" lang="ko" aria-current="true">한국어</a><span class="sep">/</span><a href="en/contact.html" hreflang="en" lang="en">EN</a></span>
+    <span class="langswitch"><svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg><a href="../map.html" hreflang="ko" lang="ko">한국어</a><span class="sep">/</span><a href="map.html" hreflang="en" lang="en" aria-current="true">EN</a></span>
   </div>
 </div>
 
-<style>
-  .contactcard{ max-width:560px; margin:0 auto 26px; background:var(--hanji); color:var(--brush);
-    padding:40px 34px 34px; text-align:center; box-shadow:0 26px 60px rgba(0,0,0,.5); }
-  .contactcard .lbl{ font-family:"Gowun Dodum",sans-serif; font-size:11px; letter-spacing:.26em;
-    color:#8a8070; margin:0 0 14px; }
-  .contactcard .addr{ font-family:"Gowun Dodum",sans-serif; font-size:19px; letter-spacing:.02em;
-    color:#1a1a1a; margin:0 0 22px; word-break:break-all; }
-  .contactcard button{ font-family:"Gowun Dodum",sans-serif; font-size:13px; letter-spacing:.12em;
-    color:#efe8d8; background:#1a1a1a; border:0; padding:13px 24px; cursor:pointer;
-    transition:background .2s ease; }
-  .contactcard button:hover{ background:#3a3128; }
-  .contactcard button.ok{ background:#2f5d4a; }
-  .contactcard .alt{ margin:20px 0 0; font-family:"Gowun Dodum",sans-serif; font-size:12.5px;
-    line-height:2; color:#6b6152; }
-  .contactcard .alt a{ color:#6b5f4a; }
-</style>
 
 <header class="hero">
-  <p class="eyebrow">문의 · CONTACT</p>
-  <h1>연락처</h1>
-  <p class="en">demosaii</p>
+  <p class="eyebrow">THE STORY MAP</p>
+  <h1>Where thirty-six songs happened</h1>
+  <p class="en">궁궐에서 오백 년 뒤까지</p>
 </header>
 
-<div class="contactcard">
-  <p class="lbl">EMAIL</p>
-  <p class="addr" id="addr">demosaii2026@gmail.com</p>
-  <button id="copy" type="button">주소 복사</button>
-  <p class="alt">
-    <a href="mailto:demosaii2026@gmail.com?subject=%EB%AC%B8%EC%9D%98">메일 앱으로 열기</a> &nbsp;·&nbsp;
-    <a href="https://mail.google.com/mail/?view=cm&amp;to=demosaii2026@gmail.com" target="_blank" rel="noopener">Gmail 로 쓰기</a>
-  </p>
+<p class="maphint">Tap a red marker to read what happened there, and hear the songs set in that place.</p>
+
+<div class="maplayout">
+  <div class="mapwrap">
+    <svg viewBox="0 0 1352 2176" role="img" aria-label="조선 이야기 지도">
+      <image href="../art/map-base.jpg" x="0" y="0" width="1352" height="2176"/>
+      <path class="route" d="M612 236 L742 604 L486 906 L772 1208 L860 1420 L560 1690 L216 1972 L610 2080"/>
+      <g class="cart" id="pin-amnok" tabindex="0" role="button"
+         aria-label="압록강" data-id="amnok">
+        <path class="tick" d="M612 236 L656 236"/>
+        <rect x="656" y="168" width="42" height="136" rx="3"/>
+        <text x="677" y="210" text-anchor="middle">압</text>
+        <text x="677" y="248" text-anchor="middle">록</text>
+        <text x="677" y="286" text-anchor="middle">강</text>
+        <circle class="dot" cx="612" cy="236" r="7"/>
+      </g>
+      <g class="cart" id="pin-daejanggan" tabindex="0" role="button"
+         aria-label="대장간" data-id="daejanggan">
+        <path class="tick" d="M742 604 L786 604"/>
+        <rect x="786" y="536" width="42" height="136" rx="3"/>
+        <text x="807" y="578" text-anchor="middle">대</text>
+        <text x="807" y="616" text-anchor="middle">장</text>
+        <text x="807" y="654" text-anchor="middle">간</text>
+        <circle class="dot" cx="742" cy="604" r="7"/>
+      </g>
+      <g class="cart" id="pin-hanyang" tabindex="0" role="button"
+         aria-label="한양" data-id="hanyang">
+        <path class="tick" d="M486 906 L442 906"/>
+        <rect x="400" y="857" width="42" height="98" rx="3"/>
+        <text x="421" y="899" text-anchor="middle">한</text>
+        <text x="421" y="937" text-anchor="middle">양</text>
+        <circle class="dot" cx="486" cy="906" r="7"/>
+      </g>
+      <g class="cart" id="pin-songni" tabindex="0" role="button"
+         aria-label="속리산" data-id="songni">
+        <path class="tick" d="M772 1208 L816 1208"/>
+        <rect x="816" y="1140" width="42" height="136" rx="3"/>
+        <text x="837" y="1182" text-anchor="middle">속</text>
+        <text x="837" y="1220" text-anchor="middle">리</text>
+        <text x="837" y="1258" text-anchor="middle">산</text>
+        <circle class="dot" cx="772" cy="1208" r="7"/>
+      </g>
+      <g class="cart" id="pin-bat" tabindex="0" role="button"
+         aria-label="언 밭" data-id="bat">
+        <path class="tick" d="M860 1420 L904 1420"/>
+        <rect x="904" y="1371" width="42" height="98" rx="3"/>
+        <text x="925" y="1413" text-anchor="middle">언</text>
+        <text x="925" y="1451" text-anchor="middle">밭</text>
+        <circle class="dot" cx="860" cy="1420" r="7"/>
+      </g>
+      <g class="cart" id="pin-pogu" tabindex="0" role="button"
+         aria-label="남녘 포구" data-id="pogu">
+        <path class="tick" d="M560 1690 L516 1690"/>
+        <rect x="474" y="1603" width="42" height="174" rx="3"/>
+        <text x="495" y="1645" text-anchor="middle">남</text>
+        <text x="495" y="1683" text-anchor="middle">녘</text>
+        <text x="495" y="1721" text-anchor="middle">포</text>
+        <text x="495" y="1759" text-anchor="middle">구</text>
+        <circle class="dot" cx="560" cy="1690" r="7"/>
+      </g>
+      <g class="cart" id="pin-jeju" tabindex="0" role="button"
+         aria-label="제주" data-id="jeju">
+        <path class="tick" d="M216 1972 L260 1972"/>
+        <rect x="260" y="1923" width="42" height="98" rx="3"/>
+        <text x="281" y="1965" text-anchor="middle">제</text>
+        <text x="281" y="2003" text-anchor="middle">주</text>
+        <circle class="dot" cx="216" cy="1972" r="7"/>
+      </g>
+      <g class="cart" id="pin-ieodo" tabindex="0" role="button"
+         aria-label="이어도" data-id="ieodo">
+        <path class="tick" d="M610 2080 L654 2080"/>
+        <rect x="654" y="2012" width="42" height="136" rx="3"/>
+        <text x="675" y="2054" text-anchor="middle">이</text>
+        <text x="675" y="2092" text-anchor="middle">어</text>
+        <text x="675" y="2130" text-anchor="middle">도</text>
+        <circle class="dot" cx="610" cy="2080" r="7"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="panel" id="panel" aria-live="polite">
+    <p class="eyebrow2" id="p-en"></p>
+    <h2 id="p-ko"></h2>
+    <p class="sub" id="p-sub"></p>
+    <p class="body" id="p-text"></p>
+    <p class="lbl">SONGS SET HERE</p>
+    <div class="songs" id="p-songs"></div>
+  </div>
 </div>
 
-<div class="songlinks" style="padding-bottom:40px;">
-  <p>음원 사용, 협업, 인터뷰, 오탈자 제보 — 무엇이든 편하게 보내 주세요.</p>
-  <p style="margin-top:20px;">
-    <a href="https://soundcloud.com/demosaii" target="_blank" rel="noopener">SoundCloud</a> &nbsp;·&nbsp;
-    <a href="book.html">전자책</a> &nbsp;·&nbsp;
-    <a href="songs.html">전곡</a>
-  </p>
-</div>
+<p class="mapcredit">Base image: the Korean section of the Kangnido map, 1402.<br>
+The markers are places in the story, not surveyed locations, and the map is not to scale.</p>
 
+<div class="songlinks">
+  <p><a href="timeline.html">Timeline</a> &nbsp;·&nbsp;
+     <a href="characters.html">Characters</a> &nbsp;·&nbsp;
+     <a href="songs.html">All thirty-six songs</a></p>
+  <p><a href="book.html">The complete story, free →</a></p>
+</div>
 <script>
-document.getElementById('copy').addEventListener('click', function(){
-  var b=this, t='demosaii2026@gmail.com';
-  function done(){ var o=b.textContent; b.textContent='복사됐습니다'; b.classList.add('ok');
-    setTimeout(function(){ b.textContent=o; b.classList.remove('ok'); },1600); }
-  if(navigator.clipboard && navigator.clipboard.writeText){
-    navigator.clipboard.writeText(t).then(done).catch(fallback);
-  } else { fallback(); }
-  function fallback(){
-    var r=document.createRange(); r.selectNode(document.getElementById('addr'));
-    var s=getSelection(); s.removeAllRanges(); s.addRange(r);
-    try{ document.execCommand('copy'); done(); }catch(e){}
-    s.removeAllRanges();
-  }
+const PLACES = {"amnok": {"ko": "THE YALU", "en": "THE NORTHERN BORDER", "sub": "The border · Snow and Iron", "text": "The night the beacons climb from one fire to five. The people who walked up from the south stop here, lower the sail, and gather.", "songs": [{"id": "ch7-1", "ko": "Lowering the Sail"}, {"id": "ch7-2", "ko": "Gather"}]}, "daejanggan": {"ko": "THE FORGE", "en": "THE FORGE", "sub": "A mountain village · Iron and Blood", "text": "Where names are cut into iron. People who worked out that paper burns and iron does not carve the first line here. This is where the seal is made.", "songs": [{"id": "ch7-3", "ko": "The Anvil"}, {"id": "ch7-4", "ko": "The Empty Line"}, {"id": "ch8-1", "ko": "The First Line"}, {"id": "ch8-2", "ko": "Two Steps"}, {"id": "ch8-3", "ko": "I Listen for the Name"}, {"id": "ch8-4", "ko": "The Seal"}]}, "hanyang": {"ko": "HANYANG", "en": "THE CAPITAL", "sub": "Palace and market street · Blood and Fog", "text": "Where it starts. A woman is erased from the record, and a scholar who writes that down is taken for it. A masked performer turns his words into a song and carries it out to the market street.", "songs": [{"id": "ch1-1", "ko": "The King's Path"}, {"id": "ch1-2", "ko": "Echoes of the Empty Palace"}, {"id": "ch1-3", "ko": "Ghost Fire"}, {"id": "ch1-4", "ko": "The Blood Seal"}, {"id": "ch2-1", "ko": "A Blade at the Brush Tip"}, {"id": "ch2-2", "ko": "The Market Street"}]}, "songni": {"ko": "SONGNISAN", "en": "THE MOUNTAIN", "sub": "A hermitage in the hills · Ash and Seed", "text": "The hermitage where Jeong-an lives. She hears a song come up the mountain and recognises whose writing it is. What survived the fire collects here.", "songs": [{"id": "ch2-3", "ko": "The Woman at the Mountain Temple"}, {"id": "ch2-4", "ko": "The Last Signal Fire"}, {"id": "ch3-1", "ko": "The Last Brush"}, {"id": "ch3-2", "ko": "Shadow on the Road"}, {"id": "ch3-3", "ko": "The Empty Mountain"}, {"id": "ch3-4", "ko": "The First Sprout"}]}, "bat": {"ko": "THE FROZEN FIELD", "en": "FIVE HUNDRED YEARS LATER", "sub": "Spring and Rust", "text": "Five hundred years pass, and a farmer pulls a jar out of his field. Inside the salt there is paper. A girl asks her grandfather about the old days, and the story moves into a person again.", "songs": [{"id": "ch9-1", "ko": "Frozen Field"}, {"id": "ch9-2", "ko": "The Salt Jar"}, {"id": "ch9-3", "ko": "My Grandfather, See"}, {"id": "ch9-4", "ko": "The Seal — Five Hundred Years Later"}]}, "pogu": {"ko": "THE HARBOUR", "en": "THE SOUTHERN COAST", "sub": "Where the boats leave · Salt and Waves", "text": "Where the road of exile ends and the sea begins. A black sail goes up, an old fisherman casts his net, and a ship that sank ten years ago comes back up here.", "songs": [{"id": "ch4-1", "ko": "Road of Exile"}, {"id": "ch4-2", "ko": "Black Sail"}, {"id": "ch4-3", "ko": "Old Net"}, {"id": "ch5-1", "ko": "The Storm"}]}, "jeju": {"ko": "JEJU", "en": "THE ISLAND OF EXILE", "sub": "Sea and Bones", "text": "The island Su-gyeom is sent to. A diver goes under on one breath, and a salt-cured document comes up out of the water. He was not exiled for writing the truth. He was sent to the place where the truth was buried.", "songs": [{"id": "ch4-4", "ko": "Sumbisori"}, {"id": "ch5-2", "ko": "The Sunken Ship"}, {"id": "ch5-3", "ko": "Salt Letter"}, {"id": "ch5-4", "ko": "Beneath the Water"}, {"id": "ch6-2", "ko": "The Woman Who Returned to the Water"}]}, "ieodo": {"ko": "IEODO", "en": "THE ISLAND UNDER THE WATER", "sub": "Island and Stars", "text": "A real submerged reef in the sea south of Jeju. The island where those who did not come back were said to be living. The legend came before the discovery.", "songs": [{"id": "ch6-1", "ko": "Big Dipper"}, {"id": "ch6-3", "ko": "At the Temple Gate"}, {"id": "ch6-4", "ko": "Ieodo"}]}};
+
+const $ = id => document.getElementById(id);
+function show(id){
+  const p = PLACES[id]; if(!p) return;
+  $('p-en').textContent = p.en;
+  $('p-ko').textContent = p.ko;
+  $('p-sub').textContent = p.sub;
+  $('p-text').textContent = p.text;
+  const box = $('p-songs'); box.innerHTML = '';
+  p.songs.forEach(s => {
+    const a = document.createElement('a');
+    a.href = 'songs/' + s.id + '.html';
+    a.innerHTML = '<span class="t">' + s.ko + '</span><span class="go">lyrics →</span>';
+    box.appendChild(a);
+  });
+  document.querySelectorAll('.cart').forEach(el => el.classList.toggle('on', el.dataset.id === id));
+  if (typeof gtag === 'function') gtag('event', 'map_place', { place: id });
+}
+document.querySelectorAll('.cart').forEach(el => {
+  el.addEventListener('click', () => show(el.dataset.id));
+  el.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); show(el.dataset.id); }
+  });
 });
+show('hanyang');
 </script>
 <div class="scrollcue" aria-hidden="true"><span>아래로</span><span class="chev"></span></div>
 <script>
@@ -484,6 +605,6 @@ document.getElementById('copy').addEventListener('click', function(){
 })();
 </script>
 
-<script src="lang.js" defer></script>
+<script src="../lang-en.js" defer></script>
 </body>
 </html>
