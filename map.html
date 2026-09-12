@@ -416,7 +416,7 @@
   <div class="mapwrap">
     <svg viewBox="0 0 1352 2176" role="img" aria-label="조선 이야기 지도">
       <image href="art/map-base.jpg" x="0" y="0" width="1352" height="2176"/>
-      <path class="route" d="M612 236 L742 604 L486 906 L772 1208 L860 1420 L560 1690 L216 1972 L610 2080"/>
+      <path class="route" d="M612 236 L742 604 L486 906 L772 1208 L860 1420 L560 1690 L430 1856 L430 1856 L216 1972 L610 2080"/>
       <g class="cart" id="pin-amnok" tabindex="0" role="button"
          aria-label="압록강" data-id="amnok">
         <path class="tick" d="M612 236 L656 236"/>
@@ -452,6 +452,17 @@
         <text x="837" y="1258" text-anchor="middle">산</text>
         <circle class="dot" cx="772" cy="1208" r="7"/>
       </g>
+      <g class="cart" id="pin-jeolla" tabindex="0" role="button"
+         aria-label="전라도 마을" data-id="jeolla">
+        <path class="tick" d="M396 1430 L440 1430"/>
+        <rect x="440" y="1324" width="42" height="212" rx="3"/>
+        <text x="461" y="1366" text-anchor="middle">전</text>
+        <text x="461" y="1404" text-anchor="middle">라</text>
+        <text x="461" y="1442" text-anchor="middle">도</text>
+        <text x="461" y="1480" text-anchor="middle">마</text>
+        <text x="461" y="1518" text-anchor="middle">을</text>
+        <circle class="dot" cx="396" cy="1430" r="7"/>
+      </g>
       <g class="cart" id="pin-bat" tabindex="0" role="button"
          aria-label="언 밭" data-id="bat">
         <path class="tick" d="M860 1420 L904 1420"/>
@@ -469,6 +480,16 @@
         <text x="495" y="1721" text-anchor="middle">포</text>
         <text x="495" y="1759" text-anchor="middle">구</text>
         <circle class="dot" cx="560" cy="1690" r="7"/>
+      </g>
+      <g class="cart" id="pin-yeoul" tabindex="0" role="button"
+         aria-label="북쪽 여울" data-id="yeoul">
+        <path class="tick" d="M430 1856 L474 1856"/>
+        <rect x="474" y="1769" width="42" height="174" rx="3"/>
+        <text x="495" y="1811" text-anchor="middle">북</text>
+        <text x="495" y="1849" text-anchor="middle">쪽</text>
+        <text x="495" y="1887" text-anchor="middle">여</text>
+        <text x="495" y="1925" text-anchor="middle">울</text>
+        <circle class="dot" cx="430" cy="1856" r="7"/>
       </g>
       <g class="cart" id="pin-jeju" tabindex="0" role="button"
          aria-label="제주" data-id="jeju">
@@ -510,7 +531,7 @@
   <p><a href="book.html">이야기 전문 전자책 · 무료 →</a></p>
 </div>
 <script>
-const PLACES = {"amnok": {"ko": "압록강", "en": "THE NORTHERN BORDER", "sub": "국경 · 눈과 쇠", "text": "여진의 기척이 오르고 봉수가 하나에서 다섯으로 올라가는 밤입니다. 남쪽에서 올라온 사람들이 여기서 멈추고, 돛을 내리고, 모입니다.", "songs": [{"id": "ch7-1", "ko": "돛을 내리다"}, {"id": "ch7-2", "ko": "모여라"}]}, "daejanggan": {"ko": "대장간", "en": "THE FORGE", "sub": "산마을 · 쇠와 피", "text": "이름을 쇠에 새기는 곳입니다. 종이는 타지만 쇠는 남는다는 것을 알아낸 사람들이 여기서 첫 줄을 새깁니다. 봉인이 만들어지는 자리입니다.", "songs": [{"id": "ch7-3", "ko": "모루"}, {"id": "ch7-4", "ko": "빈 줄"}, {"id": "ch8-1", "ko": "첫 줄"}, {"id": "ch8-2", "ko": "두 걸음"}, {"id": "ch8-3", "ko": "이름을 듣소"}, {"id": "ch8-4", "ko": "봉인"}]}, "hanyang": {"ko": "한양", "en": "HANYANG", "sub": "궁궐과 저잣거리 · 피와 안개", "text": "이야기가 시작된 곳입니다. 한 여자가 기록에서 지워지고, 한 선비가 그것을 적었다가 붙잡힙니다. 탈을 쓴 광대가 그 글을 노래로 바꿔 저잣거리로 내보냅니다.", "songs": [{"id": "ch1-1", "ko": "왕의 길목"}, {"id": "ch1-2", "ko": "빈 궁궐 메아리"}, {"id": "ch1-3", "ko": "도깨비불"}, {"id": "ch1-4", "ko": "피의 옥새"}, {"id": "ch2-1", "ko": "붓끝에 칼"}, {"id": "ch2-2", "ko": "저잣거리"}]}, "songni": {"ko": "속리산", "en": "SONGNISAN", "sub": "산속 암자 · 재와 씨앗", "text": "정안이 머무는 산속 암자입니다. 산 아래에서 올라온 노래를 듣고, 그것이 누구의 글인지 알아봅니다. 불에서 살아남은 것들이 모이는 자리입니다.", "songs": [{"id": "ch2-3", "ko": "산사의 여인"}, {"id": "ch2-4", "ko": "마지막 봉화"}, {"id": "ch3-1", "ko": "마지막 붓"}, {"id": "ch3-2", "ko": "길 위의 그림자"}, {"id": "ch3-3", "ko": "빈 산"}, {"id": "ch3-4", "ko": "첫 번째 새싹"}]}, "bat": {"ko": "언 밭", "en": "THE FROZEN FIELD", "sub": "오백 년 뒤 · 봄과 녹", "text": "오백 년이 지나고, 한 농부가 밭에서 항아리를 꺼냅니다. 소금 속에서 종이가 나옵니다. 손녀가 할아버지에게 옛날 이야기를 여쭙고, 이야기는 다시 사람에게 옮겨집니다.", "songs": [{"id": "ch9-1", "ko": "언 밭"}, {"id": "ch9-2", "ko": "소금 항아리"}, {"id": "ch9-3", "ko": "우리 할아버지가요"}, {"id": "ch9-4", "ko": "봉인 · 오백 년 뒤"}]}, "pogu": {"ko": "남녘 포구", "en": "THE HARBOUR", "sub": "뱃머리 · 소금과 파도", "text": "유배길이 끝나고 바다가 시작되는 자리입니다. 검은 돛이 오르고, 늙은 어부가 그물을 던지고, 십 년 전 가라앉은 배의 이야기가 여기서 올라옵니다.", "songs": [{"id": "ch4-1", "ko": "유배길"}, {"id": "ch4-2", "ko": "검은 돛"}, {"id": "ch4-3", "ko": "늙은 그물"}, {"id": "ch5-1", "ko": "폭풍"}]}, "jeju": {"ko": "제주", "en": "JEJU", "sub": "유배지 · 바다와 뼈", "text": "수겸이 보내진 섬입니다. 해녀가 숨비소리를 내며 물 아래로 내려가고, 소금에 절여진 문서가 뭍으로 올라옵니다. 진실을 썼기 때문이 아니라, 진실이 묻힌 곳으로 보내진 것입니다.", "songs": [{"id": "ch4-4", "ko": "숨비소리"}, {"id": "ch5-2", "ko": "가라앉은 배"}, {"id": "ch5-3", "ko": "소금 편지"}, {"id": "ch5-4", "ko": "물 아래"}, {"id": "ch6-2", "ko": "물로 돌아간 여자"}]}, "ieodo": {"ko": "이어도", "en": "IEODO", "sub": "물 아래 · 섬과 별", "text": "제주 남쪽 바다 밑에 실제로 있는 수중 암초입니다. 돌아오지 못한 사람들이 가 있다고 전해지던 섬이고, 전설이 발견보다 먼저였습니다.", "songs": [{"id": "ch6-1", "ko": "북두칠성"}, {"id": "ch6-3", "ko": "산문 앞에서"}, {"id": "ch6-4", "ko": "이어도"}]}};
+const PLACES = {"amnok": {"ko": "압록강", "en": "THE NORTHERN BORDER", "sub": "국경 · 눈과 쇠 · 쇠와 피", "text": "압록이 얼고 봉수가 하나에서 다섯으로 올라간 밤입니다. 사면받은 도적과 관군이 같은 줄에 섭니다. 싸움이 끝난 아침에 임금이 오고, 교지가 오고, 봉인은 뜯기지 않은 채로 남습니다. 죽는 사람들의 이름을 적는 사람도 여기 있습니다.", "songs": [{"id": "ch7-2", "ko": "모여라"}, {"id": "ch7-4", "ko": "빈 줄"}, {"id": "ch8-1", "ko": "첫 줄"}, {"id": "ch8-2", "ko": "두 걸음"}, {"id": "ch8-3", "ko": "이름을 듣소"}, {"id": "ch8-4", "ko": "봉인"}]}, "daejanggan": {"ko": "대장간", "en": "THE FORGE", "sub": "산마을 · 눈과 쇠", "text": "쇠를 다루는 곳입니다. 종은 녹고 사슬은 풀려 창이 됩니다. 대장장이는 북으로 가지 않습니다. 그가 만든 쇠가 갑니다.", "songs": [{"id": "ch7-3", "ko": "모루"}]}, "hanyang": {"ko": "한양", "en": "HANYANG", "sub": "궁궐과 저잣거리 · 피와 안개", "text": "이야기가 시작된 곳입니다. 한 여자가 기록에서 지워지고, 한 선비가 그것을 적었다가 붙잡힙니다. 탈을 쓴 광대가 그 글을 노래로 바꿔 저잣거리로 내보냅니다.", "songs": [{"id": "ch1-1", "ko": "왕의 길목"}, {"id": "ch1-2", "ko": "빈 궁궐 메아리"}, {"id": "ch1-3", "ko": "도깨비불"}, {"id": "ch1-4", "ko": "피의 옥새"}, {"id": "ch2-1", "ko": "붓끝에 칼"}, {"id": "ch2-2", "ko": "저잣거리"}, {"id": "ch2-4", "ko": "마지막 봉화"}, {"id": "ch3-1", "ko": "마지막 붓"}]}, "songni": {"ko": "속리산", "en": "SONGNISAN", "sub": "산속 암자 · 재와 씨앗", "text": "정안이 머무는 산속 암자입니다. 산 아래에서 올라온 노래를 듣고, 그것이 누구의 글인지 알아봅니다. 불에서 살아남은 것들이 모이는 자리입니다.", "songs": [{"id": "ch2-3", "ko": "산사의 여인"}, {"id": "ch3-2", "ko": "길 위의 그림자"}, {"id": "ch3-3", "ko": "빈 산"}, {"id": "ch6-3", "ko": "산문 앞에서"}]}, "jeolla": {"ko": "전라도 마을", "en": "A VILLAGE IN JEOLLA", "sub": "마루 밑의 한지 · 재와 씨앗", "text": "논밭 사이의 작은 마을입니다. 글을 배운 적 없는 여자아이가 마루 밑에서 천에 감싼 한지를 찾아냅니다. 먹 냄새가 아직 남아 있었습니다. 사흘을 훈장 집 문 앞에 앉아 글을 배웁니다. 뒷날 국경에서 죽는 사람들의 이름을 적는 사람이 이 아이입니다.", "songs": [{"id": "ch3-4", "ko": "첫 번째 새싹"}]}, "bat": {"ko": "언 밭", "en": "THE FROZEN FIELD", "sub": "오백 년 뒤 · 봄과 녹", "text": "오백 년이 지나고, 한 농부가 밭에서 항아리를 꺼냅니다. 소금 속에서 종이가 나옵니다. 손녀가 할아버지에게 옛날 이야기를 여쭙고, 이야기는 다시 사람에게 옮겨집니다.", "songs": [{"id": "ch9-1", "ko": "언 밭"}, {"id": "ch9-2", "ko": "소금 항아리"}, {"id": "ch9-3", "ko": "우리 할아버지가요"}, {"id": "ch9-4", "ko": "봉인 · 오백 년 뒤"}]}, "pogu": {"ko": "남녘 포구", "en": "THE HARBOUR", "sub": "뱃머리 · 소금과 파도", "text": "유배길이 끝나고 바다가 시작되는 자리입니다. 검은 돛이 오르고, 늙은 어부가 그물을 던지고, 십 년 전 가라앉은 배의 이야기가 여기서 올라옵니다.", "songs": [{"id": "ch4-1", "ko": "유배길"}, {"id": "ch4-2", "ko": "검은 돛"}, {"id": "ch7-1", "ko": "돛을 내리다"}]}, "yeoul": {"ko": "북쪽 여울", "en": "THE NORTHERN SHOAL", "sub": "배가 가라앉은 물 · 바다와 뼈", "text": "십 년 전 관선 한 척이 가라앉은 자리입니다. 폭풍이 바닥을 뒤집은 새벽에 검은 뱃머리가 물 위로 솟고, 해녀가 숨 하나로 내려가 궤짝과 이름들을 안고 올라옵니다. 여기서 배는 북쪽으로 떠납니다.", "songs": [{"id": "ch5-2", "ko": "가라앉은 배"}, {"id": "ch5-4", "ko": "물 아래"}, {"id": "ch6-1", "ko": "북두칠성"}, {"id": "ch6-2", "ko": "물로 돌아간 여자"}]}, "jeju": {"ko": "제주", "en": "JEJU", "sub": "유배지 · 바다와 뼈", "text": "수겸이 보내진 섬입니다. 해녀가 숨비소리를 내며 물 아래로 내려가고, 소금에 절여진 문서가 뭍으로 올라옵니다. 진실을 썼기 때문이 아니라, 진실이 묻힌 곳으로 보내진 것입니다.", "songs": [{"id": "ch4-3", "ko": "늙은 그물"}, {"id": "ch4-4", "ko": "숨비소리"}, {"id": "ch5-1", "ko": "폭풍"}, {"id": "ch5-3", "ko": "소금 편지"}]}, "ieodo": {"ko": "이어도", "en": "IEODO", "sub": "물 아래 · 섬과 별", "text": "제주 남쪽 바다 밑에 실제로 있는 수중 암초입니다. 돌아오지 못한 사람들이 가 있다고 전해지던 섬이고, 전설이 발견보다 먼저였습니다.", "songs": [{"id": "ch6-4", "ko": "이어도"}]}};
 
 const $ = id => document.getElementById(id);
 function show(id){
