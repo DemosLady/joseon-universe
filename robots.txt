@@ -10,3 +10,4 @@ User-agent: Daum
 Allow: /
 
 Sitemap: https://joseon-universe.com/sitemap.xml
+Sitemap: https://joseon-universe.com/rss.xml
