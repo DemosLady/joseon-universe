@@ -6,13 +6,29 @@
     <atom:link href="https://joseon-universe.com/rss.xml" rel="self" type="application/rss+xml"/>
     <description>국악 힙합 아홉 장의 앨범, 서른여섯 곡으로 이어지는 조선 이야기.</description>
     <language>ko</language>
-    <lastBuildDate>Fri, 11 Sep 2026 20:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2026 02:02:11 +0900</lastBuildDate>
     <generator>joseon-universe</generator>
     <image>
       <url>https://joseon-universe.com/covers/ch1.jpg</url>
       <title>조선 이야기 · Joseon Stories</title>
       <link>https://joseon-universe.com/</link>
     </image>
+    <item>
+      <title>한판 (Hanpan) — 조선의 하루와 놀이, 여덟 곡</title>
+      <link>https://joseon-universe.com/lyrics-hanpan.html</link>
+      <guid isPermaLink="true">https://joseon-universe.com/lyrics-hanpan.html</guid>
+      <pubDate>Mon, 05 Oct 2026 02:02:11 +0900</pubDate>
+      <category>조선 이야기</category>
+      <description>이야기가 없는 앨범. 탈춤과 굿, 순라와 씨름, 강강술래와 서당, 기방과 암행어사 — 조선 사람들의 하루와 놀이를 국악 장단 위에 올린 여덟 곡.</description>
+    </item>
+    <item>
+      <title>0장 · 광대 (Chapter 0: The Clown) — 탈쇠의 기원 이야기</title>
+      <link>https://joseon-universe.com/lyrics-ch0.html</link>
+      <guid isPermaLink="true">https://joseon-universe.com/lyrics-ch0.html</guid>
+      <pubDate>Mon, 05 Oct 2026 01:57:31 +0900</pubDate>
+      <category>조선 이야기</category>
+      <description>조선 이야기 앨범 속 탈 쓴 광대, 탈쇠의 기원 이야기. 탈을 쓰기 전, 그는 양반의 아들이었다. 반듯한 글씨와 바른 몸가짐을 배우며 자란 한 소년이 이름과 가족과 세상을 잃고, 위험한 글을 노래로 바꾸는 광대 탈쇠가 되기까지의 네 곡.</description>
+    </item>
     <item>
       <title>제9장 · 봄과 녹 (Spring and Rust)</title>
       <link>https://joseon-universe.com/chapter9.html</link>

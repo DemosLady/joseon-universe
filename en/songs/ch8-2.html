@@ -46,7 +46,10 @@
   "name": "Two Steps",
   "alternateName": "두 걸음",
   "url": "https://joseon-universe.com/en/songs/ch8-2.html",
-  "sameAs": "https://soundcloud.com/demosaii/two-steps",
+  "sameAs": [
+    "https://www.youtube.com/watch?v=mMpUBhC_GVw&list=OLAK5uy_mxu8I4xZWb3hweYUKr1-J4W7fg8IOLVvU",
+    "https://soundcloud.com/demosaii/two-steps"
+  ],
   "byArtist": {
     "@id": "https://joseon-universe.com/#demosaii"
   },
@@ -294,6 +297,11 @@
   }
 
 
+  /* ---------- YouTube player on song pages ---------- */
+  .songplay{ max-width:680px; margin:0 auto 36px; padding:0 24px; }
+  .songplay .frame{ position:relative; width:100%; aspect-ratio:16/9; background:#0b1018;
+    border:1px solid rgba(143,158,186,.16); box-shadow:0 24px 60px rgba(0,0,0,.5); }
+  .songplay .frame iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
   /* ---------- single song pages ---------- */
   .songmeta{ max-width:680px; margin:0 auto 30px; padding:0 24px; text-align:center;
     font-family:"Gowun Dodum",sans-serif; font-size:12.5px; letter-spacing:.12em; color:#7d8ba6; }
@@ -394,6 +402,12 @@
   <a href="../../lyrics-ch8.html">Korean lyrics side by side →</a>
 </p>
 
+<div class="songplay">
+  <div class="frame">
+    <iframe src="https://www.youtube.com/embed/mMpUBhC_GVw?list=OLAK5uy_mxu8I4xZWb3hweYUKr1-J4W7fg8IOLVvU" title="Iron and Blood · Track 2" loading="lazy" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+  </div>
+</div>
+
 <article class="paper">
       <div class="st">
         <p class="ko" style="font-family:'Gowun Dodum',sans-serif;font-size:16px;">The king&#x27;s command</p>
@@ -432,7 +446,7 @@
 </nav>
 
 <div class="songlinks">
-  <p><a href="https://soundcloud.com/demosaii/two-steps" target="_blank" rel="noopener">Listen to this track · SoundCloud →</a></p>
+  <p><a href="https://www.youtube.com/watch?v=mMpUBhC_GVw&list=OLAK5uy_mxu8I4xZWb3hweYUKr1-J4W7fg8IOLVvU" target="_blank" rel="noopener">Listen to this track · YouTube →</a></p>
   <p><a href="../../lyrics-ch8.html">Full lyrics for Iron And Blood</a> &nbsp;·&nbsp;
      <a href="../songs.html">All thirty-six songs</a> &nbsp;·&nbsp;
      <a href="../references.html">History notes</a></p>

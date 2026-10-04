@@ -55,7 +55,10 @@
     "url": "https://joseon-universe.com/lyrics-ch8.html"
   },
   "position": 4,
-  "sameAs": "https://soundcloud.com/demosaii/the-seal",
+  "sameAs": [
+    "https://www.youtube.com/watch?v=e8VM_WlSLb4&list=OLAK5uy_mxu8I4xZWb3hweYUKr1-J4W7fg8IOLVvU",
+    "https://soundcloud.com/demosaii/the-seal"
+  ],
   "inLanguage": "ko",
   "genre": [
     "국악힙합",
@@ -295,6 +298,11 @@
   }
 
 
+  /* ---------- YouTube player on song pages ---------- */
+  .songplay{ max-width:680px; margin:0 auto 36px; padding:0 24px; }
+  .songplay .frame{ position:relative; width:100%; aspect-ratio:16/9; background:#0b1018;
+    border:1px solid rgba(143,158,186,.16); box-shadow:0 24px 60px rgba(0,0,0,.5); }
+  .songplay .frame iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
   /* ---------- single song pages ---------- */
   .songmeta{ max-width:680px; margin:0 auto 30px; padding:0 24px; text-align:center;
     font-family:"Gowun Dodum",sans-serif; font-size:12.5px; letter-spacing:.12em; color:#7d8ba6; }
@@ -397,6 +405,12 @@
   <a href="../chapter8.html">이 장의 이야기 읽기 →</a>
 </p>
 
+<div class="songplay">
+  <div class="frame">
+    <iframe src="https://www.youtube.com/embed/e8VM_WlSLb4?list=OLAK5uy_mxu8I4xZWb3hweYUKr1-J4W7fg8IOLVvU" title="쇠와 피 · TRACK 4" loading="lazy" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+  </div>
+</div>
+
 <article class="paper">
       <div class="st">
         <p class="ko">말발굽이 들리오<br>한 마리요<br>전투는 끝났는데 무엇이 급하오</p>
@@ -441,7 +455,7 @@
 </nav>
 
 <div class="songlinks">
-  <p><a href="https://soundcloud.com/demosaii/the-seal" target="_blank" rel="noopener">이 곡 듣기 · SoundCloud →</a></p>
+  <p><a href="https://www.youtube.com/watch?v=e8VM_WlSLb4&list=OLAK5uy_mxu8I4xZWb3hweYUKr1-J4W7fg8IOLVvU" target="_blank" rel="noopener">이 곡 듣기 · YouTube →</a></p>
   <p><a href="../lyrics-ch8.html">「쇠와 피」 전곡 가사</a> &nbsp;·&nbsp;
      <a href="../songs.html">서른여섯 곡 전체</a> &nbsp;·&nbsp;
      <a href="../references.html">역사 노트</a> &nbsp;·&nbsp; <a href="../en/songs/ch8-4.html">English</a></p>

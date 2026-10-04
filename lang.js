@@ -21,7 +21,7 @@
     if (/^(story|characters|timeline|ledger|search|songs|book|references|contact)\.html$/.test(file))
       return '/en/' + file;
     if (/^chapter[789]\.html$/.test(file)) return '/en/' + file;
-    if (/^songs\/ch\d+-\d+\.html$/.test(file)) return '/en/' + file;
+    if (/^songs\/[a-z]+\d*-\d+\.html$/.test(file)) return '/en/' + file;
     // lyrics pages are Korean only, so offer the English index instead
     return '/en/';
   }
