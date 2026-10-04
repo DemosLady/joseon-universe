@@ -22,7 +22,8 @@
       return '/en/' + file;
     if (/^chapter[789]\.html$/.test(file)) return '/en/' + file;
     if (/^songs\/[a-z]+\d*-\d+\.html$/.test(file)) return '/en/' + file;
-    // lyrics pages are Korean only, so offer the English index instead
+    // lyrics pages carry the English translation inline: never redirect away from them
+    if (/^lyrics-[a-z0-9]+\.html$/.test(file)) return null;
     return '/en/';
   }
 
