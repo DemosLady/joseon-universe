@@ -18,15 +18,6 @@
   gtag('js', new Date());
   gtag('config', 'G-J060GTVPQ1');
 </script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z5RGZRN1YF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-Z5RGZRN1YF');
-  gtag('config', 'G-FS3RY08FBH');
-</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>눈과 쇠 가사 · Lyrics | 조선 힙합 유니버스</title>
 <meta name="description" content="조선힙합 눈과 쇠 (Snow and Iron) 전곡 가사와 영어 번역. Full Korean lyrics with English translation.">
@@ -59,8 +50,9 @@
   "description": "눈과 쇠 (Snow and Iron) — 전곡 가사와 영어 번역. Full Korean lyrics with English translation."
 }
 </script>
-<link rel="icon" href="art/mark.png" type="image/png">
-<link rel="apple-touch-icon" href="art/mark.png">
+<link rel="icon" href="art/icon-64.png" type="image/png" sizes="64x64">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="art/icon-180.png">
 <meta name="theme-color" content="#0d1220">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 
@@ -282,6 +274,10 @@
   .albumplay .frame iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
   .albumplay .lbl{ font-family:"Gowun Dodum",sans-serif; font-size:11.5px; letter-spacing:.26em;
     color:#7d8ba6; text-align:center; margin:0 0 14px; }
+  /* unified topbar */
+  .topbar .navgroup{ display:contents; }
+  .topbar .langwrap{ display:flex; align-items:center; }
+  .topbar a[aria-current="page"]{ color:#e6ecf6; }
 </style>
   <link rel="alternate" type="application/rss+xml" title="조선 이야기" href="rss.xml">
 </head>
@@ -292,18 +288,22 @@
 
 <div class="topbar">
   <a href="chapter7.html">← 이야기로 · Back to the story</a>
-  <a href="index.html">목차 · Contents</a>
-  <a href="story.html">줄거리 · Story</a>
-  <a class="tosongs" href="songs.html">전곡 · All songs</a>
-    <a class="tobook" href="book.html">전자책 · Book</a>
+  <div class="navgroup">
+    <a href="index.html">목차 · Contents</a>
+    <a href="story.html">줄거리 · Story</a>
+    <a href="songs.html">전곡 · All songs</a>
+    <a href="book.html">전자책 · Book</a>
     <a href="map.html">지도 · Map</a>
-    <a class="tonotes" href="references.html">역사 노트 · History</a>
+    <a href="references.html">역사 노트 · History</a>
     <a href="characters.html">인물 · Characters</a>
-  <a class="tosearch" href="search.html">가사 검색 · Search</a>
-  <a class="totimeline" href="timeline.html">연표 · Timeline</a>
-  <a class="toledger" href="ledger.html">그 종이 · The ledger</a>
-    <a class="tocontact" href="contact.html">문의 · Contact</a>
-  <span class="langswitch"><svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg><span style="color:#7d8ba6;">한국어 &amp; English</span></span>
+    <a href="search.html">가사 검색 · Search</a>
+    <a href="timeline.html">연표 · Timeline</a>
+    <a href="ledger.html">그 종이 · The ledger</a>
+    <a href="contact.html">문의 · Contact</a>
+  </div>
+  <div class="langwrap">
+    <span class="langswitch"><svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg><span style="color:#7d8ba6;">한국어 &amp; English</span></span>
+  </div>
 </div>
 
 <header class="hero">
@@ -315,7 +315,7 @@
 <section class="albumplay">
   <p class="lbl">전곡 재생 · YOUTUBE</p>
   <div class="frame">
-    <iframe src="https://www.youtube.com/embed/videoseries?list=OLAK5uy_k2dCivhSXRN7BwkoBLmyV_d2NxP3ukFuk" title="눈과 쇠 전곡 재생" loading="lazy" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+    <iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=OLAK5uy_k2dCivhSXRN7BwkoBLmyV_d2NxP3ukFuk" title="눈과 쇠 전곡 재생" loading="lazy" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
   </div>
 </section>
 
@@ -580,5 +580,8 @@
 </script>
 
 <script src="lang.js" defer></script>
+<script id="topbar-pad">
+(function(){var b=document.querySelector('.topbar');if(!b)return;function f(){if(getComputedStyle(b).position==='fixed')document.body.style.paddingTop=b.offsetHeight+'px';}f();window.addEventListener('resize',f);window.addEventListener('load',f);})();
+</script>
 </body>
 </html>

@@ -1,0 +1,57 @@
+# ── build and generation tools (live in the folder, never on the site) ──
+*.py
+*.bat
+*.sh
+__pycache__/
+.env
+python
+
+# ── working files, source text, notes ──
+*.txt
+!robots.txt
+*.md
+*.json
+*.mp3
+*.wav
+*.mp4
+*.mov
+tracklist*.txt
+lyrics.txt
+thumbnail.png
+gitignore
+
+# ── generated assets and project folders ──
+playlist_frames/
+portraits_raw/
+frames/
+frames_old/
+videos/
+anchors/
+refs/
+mnt/
+BIN_GUNGGWOL/
+IEODO/
+MORU/
+MUL_ARAE/
+WANGUI_GILMOK/
+
+# ── stale and preview pages (superseded by tistory_ch*/chapter*/songs/) ──
+/ch1.html
+/ch2.html
+/ch3.html
+/ch4.html
+/ch5.html
+/ch6.html
+/ch5-3.html
+/index (5).html
+PREVIEW_*.html
+*_HEBREW.html
+*_backup.*
+*_old.*
+*.bak
+story_women_of_joseon.png
+
+# ── os junk ──
+.DS_Store
+Thumbs.db
+desktop.ini

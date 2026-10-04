@@ -18,16 +18,6 @@
   gtag('js', new Date());
   gtag('config', 'G-J060GTVPQ1');
 </script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z5RGZRN1YF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-Z5RGZRN1YF');
-  gtag('config', 'G-FS3RY08FBH');
-</script>
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ink and Embers — Chapter Two | The Joseon Hip-Hop Universe</title>
 <meta name="description" content="Chapter Two of the Joseon Hip-Hop Universe. Ink and Embers — the night one written line became a song, and the song became a roar.">
@@ -64,8 +54,9 @@
   "image": "https://joseon-universe.com/covers/ch2.jpg"
 }
 </script>
-<link rel="icon" href="../art/mark.png" type="image/png">
-<link rel="apple-touch-icon" href="../art/mark.png">
+<link rel="icon" href="../art/icon-64.png" type="image/png" sizes="64x64">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="../art/icon-180.png">
 <meta name="theme-color" content="#0d1220">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 
@@ -657,6 +648,10 @@
     .scrollcue{ bottom:16px; font-size:9.5px; letter-spacing:.2em; }
   }
 
+  /* unified topbar */
+  .topbar .navgroup{ display:contents; }
+  .topbar .langwrap{ display:flex; align-items:center; }
+  .topbar a[aria-current="page"]{ color:#e6ecf6; }
 </style>
   <link rel="alternate" type="application/rss+xml" title="조선 이야기" href="../rss.xml">
 </head>
@@ -666,22 +661,22 @@
 <div class="markmoon" aria-hidden="true"></div>
 
 <div class="topbar">
-  <a class="home" href="index.html">← Contents</a>
   <div class="navgroup">
-    <a class="tosongs" href="songs.html">All songs · 전곡</a>
+    <a href="index.html">Contents</a>
+    <a href="story.html">Story · 줄거리</a>
+    <a href="songs.html">All songs · 전곡</a>
+    <a href="book.html">Book · 책</a>
     <a href="map.html">Map · 지도</a>
-    <a class="tobook" href="book.html">Book · 책</a>
-    <a class="tonotes" href="references.html">History · 역사 노트</a>
-    <a class="tostory" href="story.html">Story · 줄거리</a>
-    <a class="tocast" href="characters.html">Characters · 인물</a>
-    <a class="tosearch" href="search.html">Search · 가사 검색</a>
-    <a class="totimeline" href="timeline.html">Timeline · 연표</a>
-    <a class="toledger" href="ledger.html">The ledger · 그 종이</a>
-    <a class="tocontact" href="contact.html">Contact · 문의</a>
+    <a href="references.html">History · 역사 노트</a>
+    <a href="characters.html">Characters · 인물</a>
+    <a href="search.html">Search · 가사 검색</a>
+    <a href="timeline.html">Timeline · 연표</a>
+    <a href="ledger.html">The ledger · 그 종이</a>
+    <a href="contact.html">Contact · 문의</a>
   </div>
   <div class="langwrap">
     <span class="langswitch"><svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg><a href="../tistory_ch2_ink_and_embers.html" hreflang="ko" lang="ko">한국어</a><span class="sep">/</span><a href="ch2.html" aria-current="true" hreflang="en" lang="en">EN</a></span>
-</div>
+  </div>
 </div>
 
 
@@ -916,7 +911,7 @@
   <p class="note">This story was music before it was prose.<br>Four songs from Chapter Two — listen while you read.</p>
 
   <div class="player" style="position:relative;aspect-ratio:16/9;background:#0b1018;">
-    <iframe style="position:absolute;inset:0;width:100%;height:100%;border:0;" src="https://www.youtube.com/embed/videoseries?list=OLAK5uy_mVKzjWWUsql3RNI09QtIJKOkCVOzqnA_Y" title="Ink and Embers · full album" loading="lazy" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+    <iframe style="position:absolute;inset:0;width:100%;height:100%;border:0;" src="https://www.youtube-nocookie.com/embed/videoseries?list=OLAK5uy_mVKzjWWUsql3RNI09QtIJKOkCVOzqnA_Y" title="Ink and Embers · full album" loading="lazy" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
   </div>
 
   <p class="credit">
@@ -1041,5 +1036,8 @@
 </script>
 
 <script src="../lang-en.js" defer></script>
+<script id="topbar-pad">
+(function(){var b=document.querySelector('.topbar');if(!b)return;function f(){if(getComputedStyle(b).position==='fixed')document.body.style.paddingTop=b.offsetHeight+'px';}f();window.addEventListener('resize',f);window.addEventListener('load',f);})();
+</script>
 </body>
 </html>

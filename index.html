@@ -18,19 +18,9 @@
   gtag('js', new Date());
   gtag('config', 'G-J060GTVPQ1');
 </script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z5RGZRN1YF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-Z5RGZRN1YF');
-  gtag('config', 'G-FS3RY08FBH');
-</script>
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>조선 힙합 유니버스 | 세 개의 삼부작, 서른여섯 곡의 이야기</title>
-<meta name="description" content="국악 힙합 아홉 장의 앨범, 서른여섯 곡으로 이어지는 조선 이야기. 전문은 무료 전자책으로.">>
+<meta name="description" content="국악 힙합 아홉 장의 앨범, 서른여섯 곡으로 이어지는 조선 이야기. 전문은 무료 전자책으로.">
 <meta name="keywords" content="조선힙합, 국악힙합, 웹소설, 사극, 단편소설, 한국힙합, 퓨전국악, demosaii">
 <meta name="author" content="demosaii">
 
@@ -146,8 +136,9 @@
     }
   }
 }</script>
-<link rel="icon" href="art/mark.png" type="image/png">
-<link rel="apple-touch-icon" href="art/mark.png">
+<link rel="icon" href="art/icon-64.png" type="image/png" sizes="64x64">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="art/icon-180.png">
 <meta name="theme-color" content="#0d1220">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 
@@ -745,6 +736,10 @@
     .book .facts{ gap:16px; font-size:10.5px; }
   }
 
+  /* unified topbar */
+  .topbar .navgroup{ display:contents; }
+  .topbar .langwrap{ display:flex; align-items:center; }
+  .topbar a[aria-current="page"]{ color:#e6ecf6; }
 </style>
 <script type="application/ld+json">
 {
@@ -804,20 +799,21 @@
 <div class="topbar">
   <a class="home" href="https://www.youtube.com/@demosaii">demosaii</a>
   <div class="navgroup">
-    <a class="tostory" href="story.html">줄거리 · Story</a>
-    <a class="tosongs" href="songs.html">전곡 · All songs</a>
-    <a class="tobook" href="book.html">전자책 · Book</a>
+    <a href="index.html" aria-current="page">목차 · Contents</a>
+    <a href="story.html">줄거리 · Story</a>
+    <a href="songs.html">전곡 · All songs</a>
+    <a href="book.html">전자책 · Book</a>
     <a href="map.html">지도 · Map</a>
-    <a class="tonotes" href="references.html">역사 노트 · History</a>
-    <a class="tocast" href="characters.html">인물 · Characters</a>
-    <a class="tosearch" href="search.html">가사 검색 · Search</a>
-    <a class="totimeline" href="timeline.html">연표 · Timeline</a>
-    <a class="toledger" href="ledger.html">그 종이 · The ledger</a>
-    <a class="tocontact" href="contact.html">문의 · Contact</a>
+    <a href="references.html">역사 노트 · History</a>
+    <a href="characters.html">인물 · Characters</a>
+    <a href="search.html">가사 검색 · Search</a>
+    <a href="timeline.html">연표 · Timeline</a>
+    <a href="ledger.html">그 종이 · The ledger</a>
+    <a href="contact.html">문의 · Contact</a>
   </div>
   <div class="langwrap">
     <span class="langswitch"><svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg><a href="index.html" aria-current="true" hreflang="ko" lang="ko">한국어</a><span class="sep">/</span><a href="en/index.html" hreflang="en" lang="en">EN</a></span>
-</div>
+  </div>
 </div>
 
 
@@ -840,7 +836,7 @@
 <section class="fullplay">
   <p class="lbl">전곡 연속 재생 · 1시간 57분</p>
   <div class="frame">
-    <iframe src="https://www.youtube.com/embed/yHdCZca0pvY"
+    <iframe src="https://www.youtube-nocookie.com/embed/yHdCZca0pvY"
       title="조선 힙합 32곡 연속 재생" loading="lazy" allowfullscreen
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
   </div>
@@ -1089,5 +1085,8 @@
 </script>
 
 <script src="lang.js" defer></script>
+<script id="topbar-pad">
+(function(){var b=document.querySelector('.topbar');if(!b)return;function f(){if(getComputedStyle(b).position==='fixed')document.body.style.paddingTop=b.offsetHeight+'px';}f();window.addEventListener('resize',f);window.addEventListener('load',f);})();
+</script>
 </body>
 </html>

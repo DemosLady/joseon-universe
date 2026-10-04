@@ -18,15 +18,6 @@
   gtag('js', new Date());
   gtag('config', 'G-J060GTVPQ1');
 </script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z5RGZRN1YF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-Z5RGZRN1YF');
-  gtag('config', 'G-FS3RY08FBH');
-</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>연표 | 조선 이야기</title>
 <meta name="description" content="이야기 전체를 한 줄로 — 육백 년, 아홉 장, 그리고 손에서 손으로 넘어가는 장부 한 벌.">
@@ -57,8 +48,9 @@
   "image": "https://joseon-universe.com/covers/ch1.jpg"
 }
 </script>
-<link rel="icon" href="art/mark.png" type="image/png">
-<link rel="apple-touch-icon" href="art/mark.png">
+<link rel="icon" href="art/icon-64.png" type="image/png" sizes="64x64">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="art/icon-180.png">
 <meta name="theme-color" content="#0d1220">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 
@@ -262,6 +254,10 @@
     .scrollcue{ bottom:16px; font-size:9.5px; letter-spacing:.2em; }
   }
 
+  /* unified topbar */
+  .topbar .navgroup{ display:contents; }
+  .topbar .langwrap{ display:flex; align-items:center; }
+  .topbar a[aria-current="page"]{ color:#e6ecf6; }
 </style>
   <link rel="alternate" type="application/rss+xml" title="조선 이야기" href="rss.xml">
 </head>
@@ -270,20 +266,24 @@
 <div class="panorama" aria-hidden="true"></div>
 <div class="markmoon" aria-hidden="true"></div>
 
-<nav class="topbar">
-  <a class="home" href="index.html">조선 이야기</a>
-  <a href="story.html">줄거리 · Story</a>
-  <a class="tosongs" href="songs.html">전곡 · All songs</a>
-    <a class="tobook" href="book.html">전자책 · Book</a>
+<div class="topbar">
+  <div class="navgroup">
+    <a href="index.html">목차 · Contents</a>
+    <a href="story.html">줄거리 · Story</a>
+    <a href="songs.html">전곡 · All songs</a>
+    <a href="book.html">전자책 · Book</a>
     <a href="map.html">지도 · Map</a>
-    <a class="tonotes" href="references.html">역사 노트 · History</a>
+    <a href="references.html">역사 노트 · History</a>
     <a href="characters.html">인물 · Characters</a>
-  <a href="search.html">가사 검색 · Search</a>
-  <a href="ledger.html">그 종이 · The ledger</a>
-    <a class="tocontact" href="contact.html">문의 · Contact</a>
-  <span class="sp"></span>
-  <span class="langswitch"><svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg><a href="timeline.html" aria-current="true" hreflang="ko" lang="ko">한국어</a><span class="sep">/</span><a href="en/timeline.html" hreflang="en" lang="en">EN</a></span>
-</nav>
+    <a href="search.html">가사 검색 · Search</a>
+    <a href="timeline.html" aria-current="page">연표 · Timeline</a>
+    <a href="ledger.html">그 종이 · The ledger</a>
+    <a href="contact.html">문의 · Contact</a>
+  </div>
+  <div class="langwrap">
+    <span class="langswitch"><svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/></svg><a href="timeline.html" aria-current="true" hreflang="ko" lang="ko">한국어</a><span class="sep">/</span><a href="en/timeline.html" hreflang="en" lang="en">EN</a></span>
+  </div>
+</div>
 
 <header class="hero">
   <h1>연표</h1>
@@ -512,5 +512,8 @@
 </script>
 
 <script src="lang.js" defer></script>
+<script id="topbar-pad">
+(function(){var b=document.querySelector('.topbar');if(!b)return;function f(){if(getComputedStyle(b).position==='fixed')document.body.style.paddingTop=b.offsetHeight+'px';}f();window.addEventListener('resize',f);window.addEventListener('load',f);})();
+</script>
 </body>
 </html>
