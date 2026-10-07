@@ -1,13 +1,5 @@
 User-agent: *
 Allow: /
 
-# Naver
-User-agent: Yeti
-Allow: /
-
-# Daum
-User-agent: Daum
-Allow: /
-
 Sitemap: https://joseon-universe.com/sitemap.xml
 Sitemap: https://joseon-universe.com/rss.xml
