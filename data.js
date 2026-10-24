@@ -369,72 +369,72 @@ const TRACKS = [
       "title": "Chuno",
       "ko": "추노",
       "page": "https://joseon-universe.com/en/songs/jn-1.html",
-      "listen": "https://soundcloud.com/demosaii/sets/jongno",
-      "embed": "https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fdemosaii%2Fsets%2Fjongno&color=%238c2f2a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
+      "listen": "https://soundcloud.com/demosaii/chuno",
+    "embed": "https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fdemosaii%2Fchuno&color=%238c2f2a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
   },
   {
       "id": "jn-2",
       "title": "Three Cups",
       "ko": "세 잔",
       "page": "https://joseon-universe.com/en/songs/jn-2.html",
-      "listen": "https://soundcloud.com/demosaii/sets/jongno",
-      "embed": "https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fdemosaii%2Fsets%2Fjongno&color=%238c2f2a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
+      "listen": "https://soundcloud.com/demosaii/three-cups",
+    "embed": "https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fdemosaii%2Fthree-cups&color=%238c2f2a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
   },
   {
       "id": "jn-3",
       "title": "Wall Has Ears",
       "ko": "벽에도 귀가 있다",
       "page": "https://joseon-universe.com/en/songs/jn-3.html",
-      "listen": "https://soundcloud.com/demosaii/sets/jongno",
-      "embed": "https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fdemosaii%2Fsets%2Fjongno&color=%238c2f2a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
+      "listen": "https://soundcloud.com/demosaii/wall-has-ears",
+    "embed": "https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fdemosaii%2Fwall-has-ears&color=%238c2f2a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
   },
   {
       "id": "jn-4",
       "title": "At the Well",
       "ko": "우물가",
       "page": "https://joseon-universe.com/en/songs/jn-4.html",
-      "listen": "https://soundcloud.com/demosaii/sets/jongno",
-      "embed": "https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fdemosaii%2Fsets%2Fjongno&color=%238c2f2a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
+      "listen": "https://soundcloud.com/demosaii/at-the-well",
+    "embed": "https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fdemosaii%2Fat-the-well&color=%238c2f2a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
   },
   {
       "id": "jn-5",
       "title": "Ink Drops",
       "ko": "먹 한 방울",
       "page": "https://joseon-universe.com/en/songs/jn-5.html",
-      "listen": "https://soundcloud.com/demosaii/sets/jongno",
-      "embed": "https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fdemosaii%2Fsets%2Fjongno&color=%238c2f2a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
+      "listen": "https://soundcloud.com/demosaii/ink-drops",
+    "embed": "https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fdemosaii%2Fink-drops&color=%238c2f2a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
   },
   {
       "id": "jn-6",
       "title": "The Broker",
       "ko": "거간꾼",
       "page": "https://joseon-universe.com/en/songs/jn-6.html",
-      "listen": "https://soundcloud.com/demosaii/sets/jongno",
-      "embed": "https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fdemosaii%2Fsets%2Fjongno&color=%238c2f2a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
+      "listen": "https://soundcloud.com/demosaii/the-broker",
+    "embed": "https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fdemosaii%2Fthe-broker&color=%238c2f2a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
   },
   {
       "id": "jn-7",
       "title": "The Rite",
       "ko": "굿",
       "page": "https://joseon-universe.com/en/songs/jn-7.html",
-      "listen": "https://soundcloud.com/demosaii/sets/jongno",
-      "embed": "https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fdemosaii%2Fsets%2Fjongno&color=%238c2f2a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
+      "listen": "https://soundcloud.com/demosaii/the-rite",
+    "embed": "https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fdemosaii%2Fthe-rite&color=%238c2f2a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
   },
   {
       "id": "jn-8",
       "title": "Market Day",
       "ko": "장날",
       "page": "https://joseon-universe.com/en/songs/jn-8.html",
-      "listen": "https://soundcloud.com/demosaii/sets/jongno",
-      "embed": "https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fdemosaii%2Fsets%2Fjongno&color=%238c2f2a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
+      "listen": "https://soundcloud.com/demosaii/market-day",
+    "embed": "https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fdemosaii%2Fmarket-day&color=%238c2f2a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
   },
   {
       "id": "jn-9",
       "title": "The King",
       "ko": "왕",
       "page": "https://joseon-universe.com/en/songs/jn-9.html",
-      "listen": "https://soundcloud.com/demosaii/sets/jongno",
-      "embed": "https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fdemosaii%2Fsets%2Fjongno&color=%238c2f2a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
+      "listen": "https://soundcloud.com/demosaii/the-king",
+    "embed": "https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fdemosaii%2Fthe-king&color=%238c2f2a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
   },
   {
       "id": "sn-1",
