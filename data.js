@@ -363,8 +363,153 @@ const TRACKS = [
     "ko": "마패",
     "page": "https://joseon-universe.com/en/songs/hp-8.html",
     "listen": "https://www.youtube.com/watch?v=LTvQ8D78YaI&list=OLAK5uy_kCUwmP0ehX0JsnBSS2NYaS9mweOY8X_Rk"
+  },
+  {
+      "id": "jn-1",
+      "title": "Chuno",
+      "ko": "추노",
+      "page": "https://joseon-universe.com/en/songs/jn-1.html",
+      "listen": "https://soundcloud.com/demosaii/sets/jongno",
+      "embed": "https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fdemosaii%2Fsets%2Fjongno&color=%238c2f2a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
+  },
+  {
+      "id": "jn-2",
+      "title": "Three Cups",
+      "ko": "세 잔",
+      "page": "https://joseon-universe.com/en/songs/jn-2.html",
+      "listen": "https://soundcloud.com/demosaii/sets/jongno",
+      "embed": "https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fdemosaii%2Fsets%2Fjongno&color=%238c2f2a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
+  },
+  {
+      "id": "jn-3",
+      "title": "Wall Has Ears",
+      "ko": "벽에도 귀가 있다",
+      "page": "https://joseon-universe.com/en/songs/jn-3.html",
+      "listen": "https://soundcloud.com/demosaii/sets/jongno",
+      "embed": "https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fdemosaii%2Fsets%2Fjongno&color=%238c2f2a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
+  },
+  {
+      "id": "jn-4",
+      "title": "At the Well",
+      "ko": "우물가",
+      "page": "https://joseon-universe.com/en/songs/jn-4.html",
+      "listen": "https://soundcloud.com/demosaii/sets/jongno",
+      "embed": "https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fdemosaii%2Fsets%2Fjongno&color=%238c2f2a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
+  },
+  {
+      "id": "jn-5",
+      "title": "Ink Drops",
+      "ko": "먹 한 방울",
+      "page": "https://joseon-universe.com/en/songs/jn-5.html",
+      "listen": "https://soundcloud.com/demosaii/sets/jongno",
+      "embed": "https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fdemosaii%2Fsets%2Fjongno&color=%238c2f2a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
+  },
+  {
+      "id": "jn-6",
+      "title": "The Broker",
+      "ko": "거간꾼",
+      "page": "https://joseon-universe.com/en/songs/jn-6.html",
+      "listen": "https://soundcloud.com/demosaii/sets/jongno",
+      "embed": "https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fdemosaii%2Fsets%2Fjongno&color=%238c2f2a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
+  },
+  {
+      "id": "jn-7",
+      "title": "The Rite",
+      "ko": "굿",
+      "page": "https://joseon-universe.com/en/songs/jn-7.html",
+      "listen": "https://soundcloud.com/demosaii/sets/jongno",
+      "embed": "https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fdemosaii%2Fsets%2Fjongno&color=%238c2f2a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
+  },
+  {
+      "id": "jn-8",
+      "title": "Market Day",
+      "ko": "장날",
+      "page": "https://joseon-universe.com/en/songs/jn-8.html",
+      "listen": "https://soundcloud.com/demosaii/sets/jongno",
+      "embed": "https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fdemosaii%2Fsets%2Fjongno&color=%238c2f2a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
+  },
+  {
+      "id": "jn-9",
+      "title": "The King",
+      "ko": "왕",
+      "page": "https://joseon-universe.com/en/songs/jn-9.html",
+      "listen": "https://soundcloud.com/demosaii/sets/jongno",
+      "embed": "https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fdemosaii%2Fsets%2Fjongno&color=%238c2f2a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
+  },
+  {
+      "id": "sn-1",
+      "title": "Hanji Protocol",
+      "ko": "한지 프로토콜",
+      "page": "https://joseon-universe.com/en/songs/sn-1.html",
+      "listen": "https://www.youtube.com/watch?v=TpxrgJvS4Fs&list=OLAK5uy_ncKjcByF5SHIMjp6nUm-TiQwa5qrAKoP0"
+  },
+  {
+      "id": "sn-2",
+      "title": "A Memory That Never Was",
+      "ko": "없던 기억",
+      "page": "https://joseon-universe.com/en/songs/sn-2.html",
+      "listen": "https://www.youtube.com/watch?v=44dwuJ1oUKw&list=OLAK5uy_ncKjcByF5SHIMjp6nUm-TiQwa5qrAKoP0"
+  },
+  {
+      "id": "sn-3",
+      "title": "The Season That Never Was",
+      "ko": "없는 계절",
+      "page": "https://joseon-universe.com/en/songs/sn-3.html",
+      "listen": "https://www.youtube.com/watch?v=o8E33EMXp4M&list=OLAK5uy_ncKjcByF5SHIMjp6nUm-TiQwa5qrAKoP0"
+  },
+  {
+      "id": "sn-4",
+      "title": "Borrowed Season",
+      "ko": "빌린 계절",
+      "page": "https://joseon-universe.com/en/songs/sn-4.html",
+      "listen": "https://www.youtube.com/watch?v=yldmS9ecO4U&list=OLAK5uy_ncKjcByF5SHIMjp6nUm-TiQwa5qrAKoP0"
+  },
+  {
+      "id": "sn-5",
+      "title": "The Nameless Poet",
+      "ko": "이름 없는 시인",
+      "page": "https://joseon-universe.com/en/songs/sn-5.html",
+      "listen": "https://www.youtube.com/watch?v=GTNWWj05wKQ&list=OLAK5uy_ncKjcByF5SHIMjp6nUm-TiQwa5qrAKoP0"
+  },
+  {
+      "id": "sn-6",
+      "title": "Flower of Error",
+      "ko": "오류의 꽃",
+      "page": "https://joseon-universe.com/en/songs/sn-6.html",
+      "listen": "https://www.youtube.com/watch?v=Vl9cSEuhGD8&list=OLAK5uy_ncKjcByF5SHIMjp6nUm-TiQwa5qrAKoP0"
+  },
+  {
+      "id": "sn-7",
+      "title": "Leave One Line",
+      "ko": "한 줄 남기고",
+      "page": "https://joseon-universe.com/en/songs/sn-7.html",
+      "listen": "https://www.youtube.com/watch?v=sYujXX2XOS4&list=OLAK5uy_ncKjcByF5SHIMjp6nUm-TiQwa5qrAKoP0"
+  },
+  {
+      "id": "sn-8",
+      "title": "The Life I Never Lived",
+      "ko": "내가 살지 않은 삶",
+      "page": "https://joseon-universe.com/en/songs/sn-8.html",
+      "listen": "https://www.youtube.com/watch?v=3hVoRntNhl4&list=OLAK5uy_ncKjcByF5SHIMjp6nUm-TiQwa5qrAKoP0"
+  },
+  {
+      "id": "sn-9",
+      "title": "A Season We Write",
+      "ko": "새로 쓰는 계절",
+      "page": "https://joseon-universe.com/en/songs/sn-9.html",
+      "listen": "https://www.youtube.com/watch?v=mAm9JhUhWok&list=OLAK5uy_ncKjcByF5SHIMjp6nUm-TiQwa5qrAKoP0"
   }
 ];
+
+// Albums outside the nine chapters. prefix = track id prefix; title shown per language.
+const SIDE_ALBUMS={
+  ch0:{prefix:'ch0-',title:{en:'Nameless',ko:'이름 없는 · Nameless'},short:{en:'Nameless',ko:'이름 없는'},genre:'Gugak hip-hop',label:{en:'Chapter 0 · origin EP · four songs',ko:'0장 · 기원 외전 · 네 곡'},filter:{en:'Nameless',ko:'이름 없는'},blurb:{en:'The story of TALSWE before he wore the mask. Read and listen in the order below.',ko:'탈쇠가 탈을 쓰기 전의 이야기. 아래 순서대로 읽고 들어보세요.'},listen:'https://soundcloud.com/demosaii/sets/chapter-0-the-clown'},
+  jongno:{prefix:'jn-',title:{en:'Jongno',ko:'종로 · Jongno'},short:{en:'Jongno',ko:'종로'},genre:'Gugak hip-hop',label:{en:'Separate album · Gugak hip-hop · nine songs',ko:'독립 앨범 · 국악 힙합 · 아홉 곡'},filter:{en:'Jongno',ko:'종로'},blurb:{en:'One street in Joseon-era Seoul. A runaway, an executioner, a maid who sells secrets, a man who bought a noble name, a broker, a shaman — none of them with a name — and a king who knows them all and looks away.',ko:'조선 한양의 거리 하나, 종로. 도망친 노비, 망나니, 말을 파는 계집종, 성을 산 사내, 거간꾼, 무당 — 이름 없는 사람들과, 그들을 다 알면서 모른 척하는 왕.'},listen:'https://soundcloud.com/demosaii/sets/jongno'},
+  seasons:{prefix:'sn-',title:{en:'Seasons That Never Were',ko:'없는 계절들 · Seasons That Never Were'},short:{en:'Seasons That Never Were',ko:'없는 계절들'},genre:'Circuit Gugak',label:{en:'CIRCUIT GUGAK · nine songs',ko:'서킷 국악 · 아홉 곡'},filter:{en:'Seasons',ko:'없는 계절들'},blurb:{en:'A Joseon that never fell. An unnamed princess finds a hanji notebook left by a nameless poet and begins to remember lives she never lived. Electronic sound and traditional instruments.',ko:'끝나지 않은 조선. 이름 없는 공주가 이름 없는 시인이 남긴 한지 공책을 발견하고, 살아보지 않은 삶을 기억하기 시작한다. 전자음악과 전통음악.'},listen:'https://www.youtube.com/playlist?list=OLAK5uy_ncKjcByF5SHIMjp6nUm-TiQwa5qrAKoP0'},
+  hanpan:{prefix:'hp-',title:{en:'한판 · HANPAN',ko:'한판 · HANPAN'},short:{en:'HANPAN',ko:'한판'},genre:'Gugak House',label:{en:'Separate album · Gugak House · eight songs',ko:'독립 앨범 · 국악 하우스 · 여덟 곡'},filter:{en:'HANPAN',ko:'한판'},blurb:{en:'Scenes of Korean life and play, with no continuing plot.',ko:'이어지는 줄거리 없이, 한국의 삶과 놀이를 담은 장면들.'},listen:'https://www.youtube.com/playlist?list=OLAK5uy_kCUwmP0ehX0JsnBSS2NYaS9mweOY8X_Rk'}
+};
+const albumOf=id=>Object.keys(SIDE_ALBUMS).find(k=>id.startsWith(SIDE_ALBUMS[k].prefix))||id.split('-')[0];
+const albumPrefix=id=>SIDE_ALBUMS[id]?SIDE_ALBUMS[id].prefix:id+'-';
 
 TRACKS.find(t => t.id === 'ch0-4').title = 'TALSWE';
 

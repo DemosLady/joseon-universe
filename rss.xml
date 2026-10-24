@@ -6,13 +6,29 @@
     <atom:link href="https://joseon-universe.com/rss.xml" rel="self" type="application/rss+xml"/>
     <description>국악 힙합 아홉 장의 앨범, 서른여섯 곡으로 이어지는 조선 이야기.</description>
     <language>ko</language>
-    <lastBuildDate>Mon, 05 Oct 2026 02:02:11 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 24 Oct 2026 21:00:00 +0900</lastBuildDate>
     <generator>joseon-universe</generator>
     <image>
       <url>https://joseon-universe.com/covers/ch1.jpg</url>
       <title>조선 이야기 · Joseon Stories</title>
       <link>https://joseon-universe.com/</link>
     </image>
+    <item>
+      <title>종로 (Jongno) — 이름 없는 아홉 사람, 하나의 거리</title>
+      <link>https://joseon-universe.com/lyrics-jongno.html</link>
+      <guid isPermaLink="true">https://joseon-universe.com/lyrics-jongno.html</guid>
+      <pubDate>Sat, 24 Oct 2026 21:00:00 +0900</pubDate>
+      <category>조선 이야기</category>
+      <description>조선 한양의 거리 하나, 종로. 도망친 노비, 망나니, 말을 파는 계집종, 성을 산 사내, 거간꾼, 무당 — 이름 없는 사람들과, 그들을 다 알면서 모른 척하는 왕. 국악 힙합 아홉 곡, 한국어 가사와 영어 번역.</description>
+    </item>
+    <item>
+      <title>없는 계절들 (Seasons That Never Were) — 서킷 국악, 아홉 곡</title>
+      <link>https://joseon-universe.com/lyrics-seasons.html</link>
+      <guid isPermaLink="true">https://joseon-universe.com/lyrics-seasons.html</guid>
+      <pubDate>Sat, 24 Oct 2026 21:00:00 +0900</pubDate>
+      <category>서킷 국악</category>
+      <description>끝나지 않은 조선. 이름 없는 공주가 이름 없는 시인이 남긴 한지 공책을 발견하고, 살아보지 않은 삶을 기억하기 시작한다. 전자음악과 전통음악, 아홉 곡의 가사와 번역.</description>
+    </item>
     <item>
       <title>한판 (Hanpan) — 조선의 하루와 놀이, 여덟 곡</title>
       <link>https://joseon-universe.com/lyrics-hanpan.html</link>
@@ -22,7 +38,7 @@
       <description>이야기가 없는 앨범. 탈춤과 굿, 순라와 씨름, 강강술래와 서당, 기방과 암행어사 — 조선 사람들의 하루와 놀이를 국악 장단 위에 올린 여덟 곡.</description>
     </item>
     <item>
-      <title>0장 · 광대 (Chapter 0: The Clown) — 탈쇠의 기원 이야기</title>
+      <title>이름 없는 (Nameless) — 0장, 탈쇠의 기원 이야기</title>
       <link>https://joseon-universe.com/lyrics-ch0.html</link>
       <guid isPermaLink="true">https://joseon-universe.com/lyrics-ch0.html</guid>
       <pubDate>Mon, 05 Oct 2026 01:57:31 +0900</pubDate>
