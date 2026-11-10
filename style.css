@@ -563,3 +563,24 @@ dialog::backdrop{background:rgba(28,30,33,.82)}
   html{scroll-behavior:auto}
   *,*:before,*:after{transition:none!important;animation:none!important}
 }
+
+
+/* ============================================================
+   HANJI & INK  (added 2026-11-10)
+   1. paper grain   2. brush mark on the selected chapter
+   3. dark band for the extra albums   4. ink-blot canvas (see app.js)
+   ============================================================ */
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27320%27%20height%3D%27320%27%3E%3Cfilter%20id%3D%27n%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%27.9%27%20numOctaves%3D%273%27%20stitchTiles%3D%27stitch%27%2F%3E%3CfeColorMatrix%20values%3D%270%200%200%200%20.32%200%200%200%200%20.26%200%200%200%200%20.17%200%200%200%20.5%200%27%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%27100%25%27%20height%3D%27100%25%27%20filter%3D%27url%28%23n%29%27%2F%3E%3C%2Fsvg%3E");opacity:.55;mix-blend-mode:multiply}
+.chapter-buttons :is(button,a){position:relative;isolation:isolate}
+.chapter-buttons :is(button,a)[aria-pressed="true"]{border-bottom-color:transparent}
+.chapter-buttons :is(button,a)[aria-pressed="true"]::before{content:"";position:absolute;z-index:-1;left:-8px;top:2px;width:70px;height:40px;background:var(--accent);opacity:.2;-webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20200%2060%27%20preserveAspectRatio%3D%27none%27%3E%3Cfilter%20id%3D%27r%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%27.08%27%20numOctaves%3D%272%27%20seed%3D%274%27%2F%3E%3CfeDisplacementMap%20in%3D%27SourceGraphic%27%20scale%3D%279%27%2F%3E%3C%2Ffilter%3E%3Cpath%20filter%3D%27url%28%23r%29%27%20d%3D%27M8%2036%20C%2024%2016%2C%2064%2012%2C%20112%2013%20S%20186%2015%2C%20193%2025%20C%20197%2035%2C%20184%2044%2C%20148%2046%20S%2064%2051%2C%2024%2050%20C%2010%2048%2C%203%2043%2C%208%2036%20Z%27%2F%3E%3C%2Fsvg%3E") center/100% 100% no-repeat;mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20200%2060%27%20preserveAspectRatio%3D%27none%27%3E%3Cfilter%20id%3D%27r%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%27.08%27%20numOctaves%3D%272%27%20seed%3D%274%27%2F%3E%3CfeDisplacementMap%20in%3D%27SourceGraphic%27%20scale%3D%279%27%2F%3E%3C%2Ffilter%3E%3Cpath%20filter%3D%27url%28%23r%29%27%20d%3D%27M8%2036%20C%2024%2016%2C%2064%2012%2C%20112%2013%20S%20186%2015%2C%20193%2025%20C%20197%2035%2C%20184%2044%2C%20148%2046%20S%2064%2051%2C%2024%2050%20C%2010%2048%2C%203%2043%2C%208%2036%20Z%27%2F%3E%3C%2Fsvg%3E") center/100% 100% no-repeat;transform-origin:left center;animation:jiBrush .55s cubic-bezier(.6,0,.2,1) both}
+@keyframes jiBrush{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media(max-width:700px){.chapter-buttons :is(button,a)[aria-pressed="true"]::before{width:46px;height:30px;left:-6px;top:1px}}
+.extras{position:relative;border-top:0;margin-top:56px;padding:56px 0 48px;background:#181614;box-shadow:0 0 0 100vmax #181614;clip-path:inset(0 -100vmax);color:#d9d0bf}
+.extras :is(h3,h4){color:#f2ece0}
+.extras p:not(.eyebrow),.extras .extra-card>p:not(.eyebrow){color:#bfb6a6}
+.extras .eyebrow{color:#e0675a}
+.extras :is(.small-button,.outline-button){color:#f2ece0;border-color:#f2ece0;background:transparent}
+.extras :is(.small-button,.outline-button):hover{background:#f2ece0;color:#181614}
+.extras img{outline-color:#3a342c}
+#ji-ink{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;mix-blend-mode:multiply}

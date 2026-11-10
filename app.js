@@ -60,3 +60,62 @@ document.addEventListener('change',event=>{if(event.target.id==='map-select'){na
 document.addEventListener('keydown',event=>{if(event.target.getAttribute('role')!=='tab'||!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;event.preventDefault();const tabs=$$('[data-tab]'),i=tabs.indexOf(event.target),next=event.key==='Home'?0:event.key==='End'?tabs.length-1:(i+(event.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length,id=tabs[next].dataset.tab;navigate(id,'',false);$('#tab-'+id)?.focus()});
 window.addEventListener('hashchange',()=>{if(ROUTES.legacy(location.hash,state.lang))applyRoute()});window.addEventListener('popstate',applyRoute);
 applyRoute();
+
+/* ============================================================
+   INK BLOTS  (added 2026-11-10)
+   A click on empty paper leaves a small ink blot that spreads
+   and fades in under three seconds. Never on text, links,
+   buttons, images or the player. Styles live in style.css.
+   ============================================================ */
+(function(){
+  if(window.__joseonInk)return;window.__joseonInk=true;
+  if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var cv=document.createElement('canvas');cv.id='ji-ink';cv.setAttribute('aria-hidden','true');document.body.appendChild(cv);
+  var c=cv.getContext('2d'),blobs=[],running=false,d=1;
+  function size(){d=Math.min(window.devicePixelRatio||1,2);cv.width=innerWidth*d;cv.height=innerHeight*d}
+  size();window.addEventListener('resize',size);
+  function rnd(a,b){return a+Math.random()*(b-a)}
+  function shape(){var k=16,a=[],i,p;for(i=0;i<k;i++)a.push(rnd(.78,1.14));for(p=0;p<2;p++)for(i=0;i<k;i++)a[i]=(a[i]+a[(i+1)%k]+a[(i+k-1)%k])/3;return a}
+  function add(x,y){
+    var R=rnd(34,66),parts=[{dx:0,dy:0,r:1,s:shape()}],n=4+(Math.random()*6|0);
+    for(var i=0;i<n;i++){var an=rnd(0,6.283),dd=rnd(.6,1.5);parts.push({dx:Math.cos(an)*dd,dy:Math.sin(an)*dd,r:rnd(.06,.26),s:shape()})}
+    blobs.push({x:x,y:y,R:R,t0:performance.now(),life:2800,parts:parts});
+    if(blobs.length>6)blobs.shift();
+    if(!running){running=true;requestAnimationFrame(tick)}
+  }
+  function tick(now){
+    c.setTransform(1,0,0,1,0,0);c.clearRect(0,0,cv.width,cv.height);c.setTransform(d,0,0,d,0,0);
+    blobs=blobs.filter(function(b){return now-b.t0<b.life});
+    var sy=window.scrollY;
+    blobs.forEach(function(b){
+      var age=now-b.t0,g=1-Math.pow(1-Math.min(age/900,1),3),lf=age/b.life;
+      var a=.42*Math.min(1,age/90)*(lf<.45?1:1-(lf-.45)/.55);
+      b.parts.forEach(function(p){
+        var sp=.4+.6*g,cx=b.x+p.dx*b.R*sp,cy=b.y-sy+p.dy*b.R*sp,r=p.r*b.R*(.3+.7*g);
+        var gr=c.createRadialGradient(cx,cy,0,cx,cy,r*1.15);
+        gr.addColorStop(0,'rgba(24,20,16,'+a+')');gr.addColorStop(.6,'rgba(24,20,16,'+a*.8+')');
+        gr.addColorStop(.88,'rgba(24,20,16,'+a*.3+')');gr.addColorStop(1,'rgba(24,20,16,0)');
+        c.fillStyle=gr;c.beginPath();
+        for(var k=0;k<p.s.length;k++){var an=k/p.s.length*6.283,rr=r*p.s[k]*1.15,X=cx+Math.cos(an)*rr,Y=cy+Math.sin(an)*rr;if(k)c.lineTo(X,Y);else c.moveTo(X,Y)}
+        c.closePath();c.fill();
+      });
+    });
+    if(blobs.length)requestAnimationFrame(tick);
+    else{running=false;c.setTransform(1,0,0,1,0,0);c.clearRect(0,0,cv.width,cv.height)}
+  }
+  function onText(x,y){
+    var r=document.caretRangeFromPoint?document.caretRangeFromPoint(x,y):null;
+    if(!r||r.startContainer.nodeType!==3)return false;
+    var t=r.startContainer,o=Math.min(r.startOffset,t.length-1);if(o<0)return false;
+    var rr=document.createRange();rr.setStart(t,o);rr.setEnd(t,o+1);
+    var b=rr.getBoundingClientRect();
+    return x>=b.left-4&&x<=b.right+4&&y>=b.top-4&&y<=b.bottom+4;
+  }
+  document.addEventListener('click',function(ev){
+    if(ev.button!==0)return;
+    if(ev.target.closest('a,button,input,textarea,select,label,summary,img,svg,audio,video,iframe,dialog,[role=button],[data-play],.extras,.intro-art'))return;
+    if(String(window.getSelection?window.getSelection():''))return;
+    if(onText(ev.clientX,ev.clientY))return;
+    add(ev.clientX,ev.clientY+window.scrollY);
+  });
+})();
