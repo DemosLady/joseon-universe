@@ -64,7 +64,7 @@ applyRoute();
 /* ============================================================
    INK BLOTS  (added 2026-11-10)
    A click on empty paper leaves a small ink blot that spreads
-   and fades in under three seconds. Never on text, links,
+   and fades in under three seconds, with one soft gayageum note. Never on text, links,
    buttons, images or the player. Styles live in style.css.
    ============================================================ */
 (function(){
@@ -103,6 +103,43 @@ applyRoute();
     if(blobs.length)requestAnimationFrame(tick);
     else{running=false;c.setTransform(1,0,0,1,0,0);c.clearRect(0,0,cv.width,cv.height)}
   }
+
+  /* a soft gayageum string with each blot — made in code, no audio files */
+  var ac=null,out=null,bufs=[];
+  var NOTES=[155.56,174.61,207.65,233.08,261.63,311.13,349.23,415.30,466.16,523.25,622.25,698.46];
+  function pluckBuf(f){
+    var sr=ac.sampleRate,L=Math.floor(sr*2.6),N=Math.max(2,Math.round(sr/f)),b=ac.createBuffer(1,L,sr),o=b.getChannelData(0),dl=new Float32Array(N),i,k=0,m=0,pk=0;
+    for(i=0;i<N;i++)dl[i]=Math.random()*2-1;
+    for(i=1;i<N;i++)dl[i]=(dl[i]+dl[i-1])*.5;
+    for(i=0;i<N;i++)m+=dl[i];m/=N;for(i=0;i<N;i++)dl[i]-=m;
+    var g=Math.pow(.5,1/(f*.9));
+    for(i=0;i<L;i++){var a=dl[k];dl[k]=(a+dl[(k+1)%N])*.5*g;o[i]=a;if(Math.abs(a)>pk)pk=Math.abs(a);k=(k+1)%N}
+    var fade=Math.floor(sr*.25);for(i=0;i<L;i++){o[i]*=.9/(pk||1);if(i>L-fade)o[i]*=(L-i)/fade}
+    return b;
+  }
+  function initSound(){
+    if(ac)return true;
+    var AC=window.AudioContext||window.webkitAudioContext;if(!AC)return false;
+    try{
+      ac=new AC();
+      out=ac.createGain();out.gain.value=.32;out.connect(ac.destination);
+      var rv=ac.createConvolver(),sr=ac.sampleRate,L=Math.floor(sr*1.8),ir=ac.createBuffer(2,L,sr);
+      for(var ch=0;ch<2;ch++){var x=ir.getChannelData(ch);for(var i=0;i<L;i++)x[i]=(Math.random()*2-1)*Math.pow(1-i/L,3)}
+      rv.buffer=ir;var wet=ac.createGain();wet.gain.value=.28;out.connect(wet);wet.connect(rv);rv.connect(ac.destination);
+    }catch(err){ac=null;return false}
+    return true;
+  }
+  function pluck(x){
+    if(!initSound())return;
+    if(ac.state==='suspended')ac.resume();
+    var i=Math.max(0,Math.min(11,Math.round(x/innerWidth*11+rnd(-1,1))));
+    if(!bufs[i])bufs[i]=pluckBuf(NOTES[i]);
+    var t=ac.currentTime+.01,s=ac.createBufferSource(),lp=ac.createBiquadFilter(),g=ac.createGain();
+    s.buffer=bufs[i];lp.type='lowpass';lp.frequency.value=3200;g.gain.value=rnd(.7,1);
+    s.connect(lp);lp.connect(g);g.connect(out);
+    if(Math.random()<.35){s.playbackRate.setValueAtTime(1,t+.18);s.playbackRate.linearRampToValueAtTime(Math.random()<.5?1.06:.945,t+.45)}
+    s.start(t);s.stop(t+2.7);
+  }
   function onText(x,y){
     var r=document.caretRangeFromPoint?document.caretRangeFromPoint(x,y):null;
     if(!r||r.startContainer.nodeType!==3)return false;
@@ -117,5 +154,6 @@ applyRoute();
     if(String(window.getSelection?window.getSelection():''))return;
     if(onText(ev.clientX,ev.clientY))return;
     add(ev.clientX,ev.clientY+window.scrollY);
+    try{pluck(ev.clientX)}catch(err){}
   });
 })();
